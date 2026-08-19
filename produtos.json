@@ -14,5 +14,13 @@
         "preco": "R$ 135,00",
         "imagem": "img/liquidificador.jpg",
         "categoria": "Eletrodomésticos"
-    }
+    },
+    {
+        "id": 3,
+        "nome": "Produto Teste",
+        "descricao": "550W - Copo 2 litros",
+        "preco": "R$ 135,00",
+        "imagem": "img/liquidificador.jpg",
+        "categoria": "Eletrodomésticos"
+    }    
 ]
