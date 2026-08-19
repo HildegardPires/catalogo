@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nome": "Furadeira Bosch 650W",
+        "descricao": "Mandril 3/8, 650W, com chave.",
+        "preco": "R$ 299,00",
+        "imagem": "img/furadeira.webp",
+        "categoria": "Ferramentas"
+    },
+    {
+        "id": 2,
+        "nome": "Liquidificador Mondial",
+        "descricao": "550W - Copo 2 litros",
+        "preco": "R$ 135,00",
+        "imagem": "img/liquidificador.jpg",
+        "categoria": "Eletrodomésticos"
+    }
+]
