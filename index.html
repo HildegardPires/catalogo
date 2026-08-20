@@ -1,40 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Classificados do Will</title>
+    <title>Classificados do Will</title>
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<header>
+    <header class="bg-success text-white shadow-sm sticky-top">
 
-<h1>🛒 Classificados do Will</h1>
+        <div class="container py-4">
 
-<p>Entrega grátis em Taquaralto e Região</p>
+            <h1 class="fw-bold text-center mb-2">
+                🛒 Classificados do Will
+            </h1>
 
-<input
-type="text"
-id="pesquisa"
-placeholder="Pesquisar produto...">
+            <p class="text-center mb-4">
+                Entrega grátis em Taquaralto e Região
+            </p>
 
-</header>
+            <input
+                class="form-control form-control-lg"
+                id="pesquisa"
+                type="text"
+                placeholder="🔍 Pesquisar produtos...">
 
-<main id="produtos"></main>
+        </div>
 
-<script src="script.js"></script>
+    </header>
+
+    <main class="container my-4">
+
+        <div
+            id="produtos"
+            class="row g-4">
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 
