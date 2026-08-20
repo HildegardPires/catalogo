@@ -22,5 +22,13 @@
         "preco": "R$ 135,00",
         "imagem": "img/liquidificador.jpg",
         "categoria": "Eletrodomésticos"
-    }    
+    },
+    {
+        "id": 4,
+        "nome": "Liquidificador Britania",
+        "descricao": "Produto Teste 2",
+        "preco": "R$ 135,00",
+        "imagem": "img/liquidificador_britania.jpg",
+        "categoria": "Eletrodomésticos"
+    } 
 ]
