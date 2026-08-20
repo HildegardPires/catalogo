@@ -1,34 +1,82 @@
 [
     {
         "id": 1,
-        "nome": "Furadeira Bosch 650W",
-        "descricao": "Mandril 3/8, 650W, com chave.",
+        "nome": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+        "descricao": "",
         "preco": "R$ 299,00",
-        "imagem": "img/furadeira.webp",
-        "categoria": "Ferramentas"
+        "imagem": "img/panela_eletrica_itatiaia.webp",
+        "categoria": "Eletrodomésticos"
     },
     {
         "id": 2,
-        "nome": "Liquidificador Mondial",
-        "descricao": "550W - Copo 2 litros",
-        "preco": "R$ 135,00",
-        "imagem": "img/liquidificador.jpg",
+        "nome": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+        "descricao": "",
+        "preco": "R$ 299,00",
+        "imagem": "img/fritadeira_midea.webp",
         "categoria": "Eletrodomésticos"
     },
     {
         "id": 3,
-        "nome": "Produto Teste",
-        "descricao": "550W - Copo 2 litros",
-        "preco": "R$ 135,00",
-        "imagem": "img/liquidificador.jpg",
+        "nome": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+        "descricao": "",
+        "preco": "R$ 279,99",
+        "imagem": "img/fritadeira_wap.webp",
         "categoria": "Eletrodomésticos"
     },
     {
         "id": 4,
-        "nome": "Liquidificador Britania",
-        "descricao": "Produto Teste 2",
-        "preco": "R$ 135,00",
+        "nome": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+        "descricao": "",
+        "preco": "R$ 134,99",
         "imagem": "img/liquidificador_britania.jpg",
         "categoria": "Eletrodomésticos"
-    } 
+    },
+    {
+        "id": 5,
+        "nome": "Liquidificador 2,2 Litros 3 Velocidades Turbo",
+        "descricao": "",
+        "preco": "R$ 134,99",
+        "imagem": "img/liquidificador_mondial.jpg",
+        "categoria": "Eletrodomésticos"
+    },
+    {
+        "id": 6,
+        "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+        "descricao": "",
+        "preco": "R$ 169,99",
+        "imagem": "img/panela_arroz_elgin_inox.webp",
+        "categoria": "Eletrodomésticos"
+    },
+    {
+        "id": 7,
+        "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+        "descricao": "",
+        "preco": "R$ 149,99",
+        "imagem": "img/panela_arroz_agratto.webp",
+        "categoria": "Eletrodomésticos"
+    },
+    {
+        "id": 8,
+        "nome": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
+        "descricao": "",
+        "preco": "R$ 79,99",
+        "imagem": "img/sanduicheira_multilaser.webp",
+        "categoria": "Eletrodomésticos"
+    },
+    {
+        "id": 9,
+        "nome": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+        "descricao": "",
+        "preco": "R$ 81,99",
+        "imagem": "img/sanduicheira_sumay.webp",
+        "categoria": "Eletrodomésticos"
+    },
+    {
+        "id": 10,
+        "nome": "Chaleira Elétrica 2 litros",
+        "descricao": "",
+        "preco": "R$ 59,99",
+        "imagem": "img/chaleira.webp",
+        "categoria": "Eletrodomésticos"
+    }   
 ]
