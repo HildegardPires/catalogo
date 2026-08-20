@@ -24,32 +24,47 @@ function mostrarProdutos(produtos){
             `Olá! Tenho interesse no produto:\n\n${produto.nome}\n${produto.preco}`
         );
 
-        container.innerHTML += `
+container.innerHTML += `
 
-        <div class="card">
+<div class="col-sm-6 col-md-4 col-lg-3">
 
-            <img src="${produto.imagem}">
+    <div class="card h-100 shadow-sm">
 
-            <div class="info">
+        <img
+            src="${produto.imagem}"
+            class="card-img-top"
+            alt="${produto.nome}">
 
-                <h2>${produto.nome}</h2>
+        <div class="card-body d-flex flex-column">
 
-                <p>${produto.descricao}</p>
+            <h5 class="card-title">
+                ${produto.nome}
+            </h5>
 
-                <div class="preco">${produto.preco}</div>
+            <p class="card-text">
+                ${produto.descricao}
+            </p>
 
-                <a
-                    class="botao"
-                    target="_blank"
-                    href="https://wa.me/${numero}?text=${mensagem}">
-                    Comprar pelo WhatsApp
-                </a>
-
+            <div class="preco mb-3">
+                ${produto.preco}
             </div>
+
+            <a
+                href="https://wa.me/${numero}?text=${mensagem}"
+                target="_blank"
+                class="btn btn-success mt-auto">
+
+                Comprar pelo WhatsApp
+
+            </a>
 
         </div>
 
-        `;
+    </div>
+
+</div>
+
+`;
 
     });
 
