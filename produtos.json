@@ -91,11 +91,101 @@
     },
     {
         "id": 11,
-        "nome": "Chaleira Elétrica 2 litros",
+        "nome": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
         "descricao": "",
-        "preco": "R$ 59.99",
-        "imagem": "img/chaleira.webp",
-        "categoria": "Eletrodomésticos",
+        "preco": "R$ 189.99",
+        "imagem": "img/jogo_soquete_17_pecas_tramontina.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 12,
+        "nome": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+        "descricao": "",
+        "preco": "R$ 50.00",
+        "imagem": "img/jogo_soquete_27_pecas.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 13,
+        "nome": "Chave Tigre de Boca Multifuncional 360 Graus",
+        "descricao": "",
+        "preco": "R$ 38.00",
+        "imagem": "img/chave_tigre_bomvink.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 14,
+        "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8'",
+        "descricao": "",
+        "preco": "R$ 48.00",
+        "imagem": "img/jogo_soquete_40_pecas_black_tools.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 15,
+        "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças",
+        "descricao": "",
+        "preco": "R$ 45.00",
+        "imagem": "img/jogo_soquete_40_pecas_sparta.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 16,
+        "nome": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
+        "descricao": "",
+        "preco": "R$ 169.99",
+        "imagem": "img/jogo_soquete_22_pecas_black_tools.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 17,
+        "nome": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
+        "descricao": "",
+        "preco": "R$ 40.00",
+        "imagem": "img/jogo_soquete_12_pecas.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 18,
+        "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8",
+        "descricao": "",
+        "preco": "R$ 42.00",
+        "imagem": "img/jogo_soquete_40_pecas_faster_tools.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 19,
+        "nome": "Furadeira De Impacto Mondial",
+        "descricao": "",
+        "preco": "R$ 149.99",
+        "imagem": "img/furadeira_mondial.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 20,
+        "nome": "Parafusadeira Furadeira 1 Bateria 12v",
+        "descricao": "",
+        "preco": "R$ 95.00",
+        "imagem": "img/parafusadeira_black_tools_12v.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 21,
+        "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
+        "descricao": "",
+        "preco": "R$ 135.00",
+        "imagem": "img/parafusadeira_arstheco_21v.webp",
+        "categoria": "Ferramentas",
 		"estoque": 1
     }
 	
