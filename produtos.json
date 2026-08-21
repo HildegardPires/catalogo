@@ -331,6 +331,15 @@
         "imagem": "img/som_automotivo_first_option.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
+    },
+    {
+        "id": 38,
+        "nome": "Parafusadeira Furadeira 2 Baterias 48v + Acessórios + Maleta",
+        "descricao": "",
+        "preco": "R$ 144.99",
+        "imagem": "img/parafusadeira_soarfly_48v.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
     }
 	
 ]
