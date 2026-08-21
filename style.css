@@ -57,3 +57,12 @@ body{
     font-weight: 700;
     color: #198754;
 }
+
+.imagem-produto{
+    cursor:pointer;
+    transition:.25s;
+}
+
+.imagem-produto:hover{
+    transform:scale(1.05);
+}
