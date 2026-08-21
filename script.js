@@ -477,17 +477,20 @@ function criarCardProduto(
 
             <img
 
-                src="${escaparHtml(produto.imagem)}"
-
-                class="card-img-top produto-imagem"
-
-                alt="${escaparHtml(produto.nome)}"
+				src="${escaparHtml(produto.imagem)}"
+				class="card-img-top produto-imagem imagem-produto"
+				alt="${escaparHtml(produto.nome)}"
 
                 loading="lazy"
 
                 onerror="
                     this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eeeeee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3Imagem indisponível%3C/text%3E%3C/svg%3E';
                 "
+				
+				onclick="abrirImagem(
+						'${escaparHtml(produto.imagem)}',
+						'${escaparHtml(produto.nome)}'
+				)"				
 
             >
 
@@ -748,6 +751,23 @@ function escaparHtml(
 
 }
 
+// ======================================================
+// ABRIR IMAGEM
+// ======================================================
+
+function abrirImagem(imagem, titulo) {
+
+    document.getElementById("imagemModal").src = imagem;
+
+    document.getElementById("tituloImagem").textContent = titulo;
+
+    const modal = new bootstrap.Modal(
+        document.getElementById("modalImagem")
+    );
+
+    modal.show();
+
+}
 
 // =============================================================
 // INICIALIZAÇÃO
