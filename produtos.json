@@ -3,7 +3,7 @@
         "id": 1,
         "nome": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
         "descricao": "",
-        "preco": "R$ 299,99",
+        "preco": "R$ 299.99",
         "imagem": "img/panela_eletrica_itatiaia.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -12,7 +12,7 @@
         "id": 2,
         "nome": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
         "descricao": "",
-        "preco": "R$ 299,99",
+        "preco": "R$ 299.99",
         "imagem": "img/fritadeira_midea.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -21,7 +21,7 @@
         "id": 3,
         "nome": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
         "descricao": "",
-        "preco": "R$ 279,99",
+        "preco": "R$ 279.99",
         "imagem": "img/fritadeira_wap.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -30,7 +30,7 @@
         "id": 4,
         "nome": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
         "descricao": "",
-        "preco": "R$ 134,99",
+        "preco": "R$ 134.99",
         "imagem": "img/liquidificador_britania.jpg",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -39,7 +39,7 @@
         "id": 5,
         "nome": "Liquidificador 2,2 Litros 3 Velocidades Turbo",
         "descricao": "",
-        "preco": "R$ 134,99",
+        "preco": "R$ 134.99",
         "imagem": "img/liquidificador_mondial.jpg",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -48,7 +48,7 @@
         "id": 6,
         "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
         "descricao": "",
-        "preco": "R$ 169,99",
+        "preco": "R$ 169.99",
         "imagem": "img/panela_arroz_elgin_inox.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -57,7 +57,7 @@
         "id": 7,
         "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
         "descricao": "",
-        "preco": "R$ 149,99",
+        "preco": "R$ 149.99",
         "imagem": "img/panela_arroz_agratto.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -66,7 +66,7 @@
         "id": 8,
         "nome": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
         "descricao": "",
-        "preco": "R$ 79,99",
+        "preco": "R$ 79.99",
         "imagem": "img/sanduicheira_multilaser.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -75,7 +75,7 @@
         "id": 9,
         "nome": "Sanduicheira Grill Elétrica Antiaderente Sumay",
         "descricao": "",
-        "preco": "R$ 81,99",
+        "preco": "R$ 81.99",
         "imagem": "img/sanduicheira_sumay.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -84,7 +84,7 @@
         "id": 10,
         "nome": "Chaleira Elétrica 2 litros",
         "descricao": "",
-        "preco": "R$ 59,99",
+        "preco": "R$ 59.99",
         "imagem": "img/chaleira.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
@@ -93,7 +93,7 @@
         "id": 11,
         "nome": "Chaleira Elétrica 2 litros",
         "descricao": "",
-        "preco": "R$ 59,99",
+        "preco": "R$ 59.99",
         "imagem": "img/chaleira.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
