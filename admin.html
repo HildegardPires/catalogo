@@ -197,28 +197,69 @@
                         </div>
 
 
+                        <!-- ================================================= -->
                         <!-- IMAGEM -->
+                        <!-- ================================================= -->
 
                         <div class="mb-3">
 
                             <label
-                                for="imagem"
+                                for="arquivoImagem"
                                 class="form-label">
 
-                                Imagem
+                                Imagem do produto
 
                             </label>
 
+
+                            <input
+                                type="file"
+                                class="form-control"
+                                id="arquivoImagem"
+                                accept="image/*">
+
+
+                            <div class="form-text">
+
+                                Selecione uma imagem do seu computador.
+
+                            </div>
+
+
+                            <!-- PRÉVIA -->
+
+                            <div
+                                id="previewContainer"
+                                class="mt-3 text-center d-none">
+
+
+                                <img
+                                    id="previewImagem"
+                                    src=""
+                                    alt="Prévia"
+                                    class="img-fluid rounded border"
+                                    style="
+                                        max-height: 250px;
+                                        object-fit: contain;
+                                    ">
+
+
+                            </div>
+
+
+                            <!-- CAMINHO DA IMAGEM -->
+
                             <input
                                 type="text"
-                                class="form-control"
+                                class="form-control mt-3"
                                 id="imagem"
                                 placeholder="img/furadeira.jpg"
                                 required>
 
+
                             <div class="form-text">
 
-                                Exemplo: img/furadeira.jpg
+                                Caminho que será salvo no JSON.
 
                             </div>
 
@@ -342,6 +383,20 @@
                             0 produtos
 
                         </span>
+
+                    </div>
+
+
+                    <div
+                        id="avisoImagem"
+                        class="alert alert-warning">
+
+                        <strong>⚠️ Imagens:</strong>
+
+                        Depois de selecionar uma imagem,
+                        copie o arquivo para a pasta
+                        <strong>img/</strong> do projeto antes de
+                        fazer o <strong>git push</strong>.
 
                     </div>
 
@@ -544,6 +599,102 @@ const btnCancelar =
 const tituloFormulario =
     document.getElementById("tituloFormulario");
 
+const arquivoImagem =
+    document.getElementById("arquivoImagem");
+
+const previewContainer =
+    document.getElementById("previewContainer");
+
+const previewImagem =
+    document.getElementById("previewImagem");
+
+const campoImagem =
+    document.getElementById("imagem");
+
+
+// =============================================================
+// SELEÇÃO DA IMAGEM
+// =============================================================
+
+arquivoImagem.addEventListener(
+    "change",
+    function() {
+
+        const arquivo =
+            this.files[0];
+
+
+        if (!arquivo) {
+
+            previewContainer.classList.add("d-none");
+
+            return;
+
+        }
+
+
+        // Verificar se é imagem
+
+        if (!arquivo.type.startsWith("image/")) {
+
+            mostrarMensagem(
+                mensagem,
+                "Selecione um arquivo de imagem válido.",
+                "danger"
+            );
+
+            this.value = "";
+
+            previewContainer.classList.add("d-none");
+
+            return;
+
+        }
+
+
+        // =====================================================
+        // NOME DO ARQUIVO
+        // =====================================================
+
+        const nomeArquivo =
+            arquivo.name
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, "-")
+                .replace(/[^a-zA-Z0-9._-]/g, "")
+                .toLowerCase();
+
+
+        campoImagem.value =
+            `img/${nomeArquivo}`;
+
+
+        // =====================================================
+        // PRÉVIA
+        // =====================================================
+
+        const leitor =
+            new FileReader();
+
+
+        leitor.onload =
+            function(event) {
+
+                previewImagem.src =
+                    event.target.result;
+
+                previewContainer.classList.remove(
+                    "d-none"
+                );
+
+            };
+
+
+        leitor.readAsDataURL(arquivo);
+
+    }
+);
+
 
 // =============================================================
 // CARREGAR PRODUTOS.JSON
@@ -632,6 +783,7 @@ function atualizarTudo() {
     atualizarTabela();
 
     atualizarContadores();
+
 
     if (produtoEditando === null) {
 
@@ -748,11 +900,11 @@ function atualizarTabela() {
 
                 <img
                     src="${produto.imagem}"
-                    alt="${produto.nome}"
+                    alt="${escaparHtml(produto.nome)}"
                     width="70"
                     height="70"
                     class="rounded object-fit-contain bg-light p-1"
-                    onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2270%22 height=%2270%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2210%22%3ESem imagem%3C/text%3E%3C/svg%3E';">
+                    onerror="this.style.display='none';">
 
             </td>
 
@@ -798,7 +950,8 @@ function atualizarTabela() {
 
             <td>
 
-                ${produto.estoque > 0
+                ${
+                    produto.estoque > 0
 
                     ? `<span class="badge text-bg-success">
                         ${produto.estoque}
@@ -807,7 +960,6 @@ function atualizarTabela() {
                     : `<span class="badge text-bg-danger">
                         Sem estoque
                        </span>`
-
                 }
 
             </td>
@@ -876,8 +1028,6 @@ function editarProduto(id) {
     produtoEditando = id;
 
 
-    // Preencher formulário
-
     document.getElementById("id").value =
         produto.id;
 
@@ -906,7 +1056,21 @@ function editarProduto(id) {
         produto.estoque;
 
 
-    // Alterar interface
+    // =========================================================
+    // MOSTRAR IMAGEM EXISTENTE
+    // =========================================================
+
+    if (produto.imagem) {
+
+        previewImagem.src =
+            produto.imagem;
+
+        previewContainer.classList.remove(
+            "d-none"
+        );
+
+    }
+
 
     tituloFormulario.textContent =
         "Editar produto";
@@ -916,15 +1080,19 @@ function editarProduto(id) {
         "💾 Salvar alterações";
 
 
-    btnSalvar.classList.remove("btn-success");
+    btnSalvar.classList.remove(
+        "btn-success"
+    );
 
-    btnSalvar.classList.add("btn-primary");
+    btnSalvar.classList.add(
+        "btn-primary"
+    );
 
 
-    btnCancelar.classList.remove("d-none");
+    btnCancelar.classList.remove(
+        "d-none"
+    );
 
-
-    // Scroll para o formulário
 
     window.scrollTo({
         top: 0,
@@ -1037,7 +1205,6 @@ form.addEventListener(
 
             cancelarEdicao();
 
-
         }
 
 
@@ -1084,6 +1251,11 @@ form.addEventListener(
             document.getElementById("estoque").value =
                 1;
 
+
+            previewContainer.classList.add(
+                "d-none"
+            );
+
         }
 
 
@@ -1128,15 +1300,26 @@ function cancelarEdicao() {
         "➕ Adicionar produto";
 
 
-    btnSalvar.classList.remove("btn-primary");
+    btnSalvar.classList.remove(
+        "btn-primary"
+    );
 
-    btnSalvar.classList.add("btn-success");
+    btnSalvar.classList.add(
+        "btn-success"
+    );
 
 
-    btnCancelar.classList.add("d-none");
+    btnCancelar.classList.add(
+        "d-none"
+    );
 
 
-    mensagem.classList.add("d-none");
+    previewContainer.classList.add(
+        "d-none"
+    );
+
+
+    previewImagem.src = "";
 
 }
 
@@ -1181,8 +1364,6 @@ function excluirProduto(id) {
                 Number(item.id) !== Number(id)
         );
 
-
-    // Se estava editando o produto excluído
 
     if (
         produtoEditando !== null &&
@@ -1371,7 +1552,10 @@ function formatarPreco(valor) {
 
 function escaparHtml(texto) {
 
-    if (texto === null || texto === undefined) {
+    if (
+        texto === null ||
+        texto === undefined
+    ) {
 
         return "";
 
