@@ -340,6 +340,78 @@
         "imagem": "img/parafusadeira_soarfly_48v.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
+    },
+    {
+        "id": 39,
+        "nome": "Brinquedo Arminha Catapulta Avião",
+        "descricao": "",
+        "preco": "R$ 34.99",
+        "imagem": "img/brinquedo_arma_catapulta_aviao.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },
+    {
+        "id": 40,
+        "nome": "Brinquedo Lançador de Foguete Com Pé",
+        "descricao": "",
+        "preco": "R$ 39.99",
+        "imagem": "img/brinquedo_lancador_foguete.webp",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },
+    {
+        "id": 41,
+        "nome": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
+        "descricao": "",
+        "preco": "R$ 53.00",
+        "imagem": "img/brinquedo_arco_flecha_alvo_dinossauro.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },
+    {
+        "id": 42,
+        "nome": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
+        "descricao": "",
+        "preco": "R$ 34.99",
+        "imagem": "img/brinquedo_quebra_cabeca_alfabeto.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },
+    {
+        "id": 43,
+        "nome": "Brinquedo Arminha Lançador de Discos",
+        "descricao": "",
+        "preco": "R$ 25.00",
+        "imagem": "img/brinquedo_arminha_lancador_disco.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },
+    {
+        "id": 44,
+        "nome": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
+        "descricao": "",
+        "preco": "R$ 29.99",
+        "imagem": "img/brinquedo_tiro_alvo_jacare.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },	
+    {
+        "id": 45,
+        "nome": "Brinquedo Arco e Flecha com Alvo",
+        "descricao": "",
+        "preco": "R$ 39.99",
+        "imagem": "img/brinquedo_tiro_alvo.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
+    },	
+    {
+        "id": 46,
+        "nome": "Piscina Inflável Redonda 100 Litros 3 Aneis",
+        "descricao": "",
+        "preco": "R$ 49.99",
+        "imagem": "img/brinquedo_piscina_100lt.png",
+        "categoria": "Brinquedos",
+		"estoque": 1
     }
 	
 ]
