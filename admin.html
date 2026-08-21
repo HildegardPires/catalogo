@@ -1535,7 +1535,47 @@ document
 
 function formatarPreco(valor) {
 
-    return Number(valor).toLocaleString(
+    if (valor === null || valor === undefined || valor === "") {
+        return "0,00";
+    }
+
+    // Se já for número
+    if (typeof valor === "number") {
+
+        return valor.toLocaleString(
+            "pt-BR",
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
+
+    }
+
+    // Se for texto
+    let texto = String(valor).trim();
+
+    // Remove R$, espaços etc.
+    texto = texto
+        .replace(/R\$/gi, "")
+        .replace(/\s/g, "");
+
+    // Se estiver no formato brasileiro: 1.299,90
+    if (texto.includes(",")) {
+
+        texto = texto
+            .replace(/\./g, "")
+            .replace(",", ".");
+
+    }
+
+    const numero = parseFloat(texto);
+
+    if (isNaN(numero)) {
+        return "0,00";
+    }
+
+    return numero.toLocaleString(
         "pt-BR",
         {
             minimumFractionDigits: 2,
