@@ -161,8 +161,17 @@
         "categoria": "Ferramentas",
 		"estoque": 1
     },
-    {
+	{
         "id": 19,
+        "nome": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
+        "descricao": "",
+        "preco": "R$ 40.00",
+        "imagem": "img/jogo_catraca_46_pecas.webp",
+        "categoria": "Ferramentas",
+		"estoque": 1
+    },	
+    {
+        "id": 20,
         "nome": "Furadeira De Impacto Mondial",
         "descricao": "",
         "preco": "R$ 149.99",
@@ -171,7 +180,7 @@
 		"estoque": 1
     },
     {
-        "id": 20,
+        "id": 21,
         "nome": "Parafusadeira Furadeira 1 Bateria 12v",
         "descricao": "",
         "preco": "R$ 95.00",
@@ -180,7 +189,7 @@
 		"estoque": 1
     },
     {
-        "id": 21,
+        "id": 22,
         "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
         "descricao": "",
         "preco": "R$ 135.00",
@@ -189,7 +198,7 @@
 		"estoque": 1
     },
     {
-        "id": 22,
+        "id": 23,
         "nome": "Projetor MAGCUBIC HY300 PRO Android 11 Wifi 5g Espelhamento",
         "descricao": "",
         "preco": "R$ 249.99",
@@ -198,7 +207,16 @@
 		"estoque": 1
     },
     {
-        "id": 23,
+        "id": 24,
+        "nome": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+        "descricao": "",
+        "preco": "R$ 204.99",
+        "imagem": "img/projetor_hy300.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },	
+    {
+        "id": 25,
         "nome": "Câmera De Segurança Wifi Externa Full Hd Infravermelho Prova D'água",
         "descricao": "",
         "preco": "R$ 94.99",
@@ -207,7 +225,7 @@
 		"estoque": 1
     },
     {
-        "id": 24,
+        "id": 26,
         "nome": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
         "descricao": "",
         "preco": "R$ 59.99",
@@ -216,7 +234,7 @@
 		"estoque": 1
     },
     {
-        "id": 25,
+        "id": 27,
         "nome": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
         "descricao": "",
         "preco": "R$ 54.99",
@@ -225,7 +243,7 @@
 		"estoque": 1
     },
     {
-        "id": 26,
+        "id": 28,
         "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
         "descricao": "",
         "preco": "R$ 48.00",
@@ -234,7 +252,7 @@
 		"estoque": 1
     },
     {
-        "id": 27,
+        "id": 29,
         "nome": "Caixa de Som Bluetooth 20w Vermelha",
         "descricao": "",
         "preco": "R$ 48.00",
@@ -243,7 +261,7 @@
 		"estoque": 1
     },
     {
-        "id": 28,
+        "id": 30,
         "nome": "Caixa De Som Bluetooth 50w Led USB, SD e rádio FM",
         "descricao": "",
         "preco": "R$ 134.99",
@@ -252,7 +270,7 @@
 		"estoque": 1
     },	
     {
-        "id": 29,
+        "id": 31,
         "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD",
         "descricao": "",
         "preco": "R$ 164.99",
@@ -261,7 +279,7 @@
 		"estoque": 1
     },	
     {
-        "id": 30,
+        "id": 32,
         "nome": "Fone De Ouvido Sem Fio Bluetooth",
         "descricao": "",
         "preco": "R$ 39.99",
@@ -270,11 +288,47 @@
 		"estoque": 1
     },
     {
-        "id": 31,
+        "id": 33,
         "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
         "descricao": "",
         "preco": "R$ 34.99",
         "imagem": "img/fone_ouvido_x55.png",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 34,
+        "nome": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
+        "descricao": "",
+        "preco": "R$ 64.99",
+        "imagem": "img/smartwatch_8_ultra.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 35,
+        "nome": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
+        "descricao": "",
+        "preco": "R$ 69.99",
+        "imagem": "img/smartwatch_t800_ultra.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 36,
+        "nome": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
+        "descricao": "",
+        "preco": "R$ 74.99",
+        "imagem": "img/carregador_powerbank_20000mah.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 37,
+        "nome": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+        "descricao": "",
+        "preco": "R$ 87.99",
+        "imagem": "img/som_automotivo_first_option.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
     }
