@@ -184,8 +184,98 @@
         "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
         "descricao": "",
         "preco": "R$ 135.00",
-        "imagem": "img/parafusadeira_arstheco_21v.webp",
+        "imagem": "img/parafusadeira_arstheco_21v.jpg",
         "categoria": "Ferramentas",
+		"estoque": 1
+    },
+    {
+        "id": 22,
+        "nome": "Projetor MAGCUBIC HY300 PRO Android 11 Wifi 5g Espelhamento",
+        "descricao": "",
+        "preco": "R$ 249.99",
+        "imagem": "img/projetor_hy300_magcubic.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 23,
+        "nome": "Câmera De Segurança Wifi Externa Full Hd Infravermelho Prova D'água",
+        "descricao": "",
+        "preco": "R$ 94.99",
+        "imagem": "img/camera_seguranca_jortan.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 24,
+        "nome": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
+        "descricao": "",
+        "preco": "R$ 59.99",
+        "imagem": "img/caixa_som_altomex_al_8787.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 25,
+        "nome": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
+        "descricao": "",
+        "preco": "R$ 54.99",
+        "imagem": "img/caixa_som_grasep_d_y03.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 26,
+        "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
+        "descricao": "",
+        "preco": "R$ 48.00",
+        "imagem": "img/caixa_som_grasep_d_y05.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 27,
+        "nome": "Caixa de Som Bluetooth 20w Vermelha",
+        "descricao": "",
+        "preco": "R$ 48.00",
+        "imagem": "img/caixa_som_charce.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 28,
+        "nome": "Caixa De Som Bluetooth 50w Led USB, SD e rádio FM",
+        "descricao": "",
+        "preco": "R$ 134.99",
+        "imagem": "img/caixa_som_altomex_al_3629.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },	
+    {
+        "id": 29,
+        "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD",
+        "descricao": "",
+        "preco": "R$ 164.99",
+        "imagem": "img/caixa_som_first_option_ds14.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },	
+    {
+        "id": 30,
+        "nome": "Fone De Ouvido Sem Fio Bluetooth",
+        "descricao": "",
+        "preco": "R$ 39.99",
+        "imagem": "img/fone_ouvido_redmi.jpg",
+        "categoria": "Eletrônicos",
+		"estoque": 1
+    },
+    {
+        "id": 31,
+        "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
+        "descricao": "",
+        "preco": "R$ 34.99",
+        "imagem": "img/fone_ouvido_x55.png",
+        "categoria": "Eletrônicos",
 		"estoque": 1
     }
 	
