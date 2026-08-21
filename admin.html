@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Administração Catálogo</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="bg-light">
+
+
+<!-- ========================================================= -->
+<!-- CABEÇALHO -->
+<!-- ========================================================= -->
+
+<header class="bg-success text-white shadow-sm">
+
+    <div class="container py-4">
+
+        <h1 class="text-center fw-bold mb-1">
+            🛒 Administração do Catálogo
+        </h1>
+
+        <p class="text-center mb-0">
+            Gerenciamento de produtos
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================= -->
+<!-- CONTEÚDO -->
+<!-- ========================================================= -->
+
+<main class="container my-5">
+
+
+    <!-- STATUS -->
+
+    <div
+        id="status"
+        class="alert alert-info">
+
+        Carregando produtos.json...
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <!-- ================================================= -->
+        <!-- FORMULÁRIO -->
+        <!-- ================================================= -->
+
+        <div class="col-lg-5">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4">
+
+
+                    <h3 class="mb-4">
+
+                        <span id="tituloFormulario">
+                            Cadastrar produto
+                        </span>
+
+                    </h3>
+
+
+                    <form id="formProduto">
+
+
+                        <!-- ID -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="id"
+                                class="form-label">
+
+                                ID
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="id"
+                                min="1"
+                                required
+                                readonly>
+
+                            <div class="form-text">
+
+                                O ID é preenchido automaticamente.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- NOME -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="nome"
+                                class="form-label">
+
+                                Nome
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nome"
+                                placeholder="Ex.: Furadeira Bosch 650W"
+                                required>
+
+                        </div>
+
+
+                        <!-- DESCRIÇÃO -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="descricao"
+                                class="form-label">
+
+                                Descrição
+
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="descricao"
+                                rows="3"
+                                placeholder="Descrição do produto"
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- PREÇO -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="preco"
+                                class="form-label">
+
+                                Preço
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    R$
+                                </span>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="preco"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="299.00"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- IMAGEM -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="imagem"
+                                class="form-label">
+
+                                Imagem
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="imagem"
+                                placeholder="img/furadeira.jpg"
+                                required>
+
+                            <div class="form-text">
+
+                                Exemplo: img/furadeira.jpg
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CATEGORIA -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="categoria"
+                                class="form-label">
+
+                                Categoria
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="categoria"
+                                placeholder="Ex.: Ferramentas"
+                                required>
+
+                        </div>
+
+
+                        <!-- ESTOQUE -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="estoque"
+                                class="form-label">
+
+                                Estoque
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="estoque"
+                                min="0"
+                                value="1"
+                                required>
+
+                        </div>
+
+
+                        <!-- BOTÕES -->
+
+                        <div class="d-flex gap-2">
+
+
+                            <button
+                                type="submit"
+                                id="btnSalvar"
+                                class="btn btn-success btn-lg">
+
+                                ➕ Adicionar produto
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="btnCancelar"
+                                class="btn btn-secondary btn-lg d-none">
+
+                                Cancelar
+
+                            </button>
+
+
+                        </div>
+
+
+                    </form>
+
+
+                    <div
+                        id="mensagem"
+                        class="alert d-none mt-3">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- JSON -->
+        <!-- ================================================= -->
+
+        <div class="col-lg-7">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4">
+
+
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-3">
+
+                        <h3 class="mb-0">
+
+                            produtos.json
+
+                        </h3>
+
+
+                        <span
+                            id="contador"
+                            class="badge bg-success">
+
+                            0 produtos
+
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="json"
+                        class="form-control font-monospace"
+                        rows="20"
+                        spellcheck="false">
+                    </textarea>
+
+
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+
+
+                        <button
+                            type="button"
+                            id="copiar"
+                            class="btn btn-primary">
+
+                            📋 Copiar JSON
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="formatar"
+                            class="btn btn-secondary">
+
+                            ✨ Formatar JSON
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="limpar"
+                            class="btn btn-outline-danger ms-auto">
+
+                            🗑️ Limpar
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div
+                        id="mensagemJson"
+                        class="alert d-none mt-3">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- LISTA DE PRODUTOS -->
+    <!-- ===================================================== -->
+
+    <div class="card shadow-sm border-0 mt-4">
+
+        <div class="card-body p-4">
+
+
+            <div
+                class="d-flex justify-content-between align-items-center mb-4">
+
+                <h3 class="mb-0">
+
+                    📦 Produtos cadastrados
+
+                </h3>
+
+
+                <span
+                    id="contadorTabela"
+                    class="text-muted">
+
+                    0 produtos
+
+                </span>
+
+            </div>
+
+
+            <div class="table-responsive">
+
+                <table
+                    class="table table-hover align-middle">
+
+                    <thead class="table-success">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Imagem</th>
+
+                            <th>Produto</th>
+
+                            <th>Categoria</th>
+
+                            <th>Preço</th>
+
+                            <th>Estoque</th>
+
+                            <th class="text-center">
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabelaProdutos">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                id="semProdutos"
+                class="text-center text-muted py-4 d-none">
+
+                Nenhum produto cadastrado.
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
+
+<script>
+
+
+// =============================================================
+// VARIÁVEIS
+// =============================================================
+
+let produtos = [];
+
+let produtoEditando = null;
+
+
+const form =
+    document.getElementById("formProduto");
+
+const textareaJson =
+    document.getElementById("json");
+
+const contador =
+    document.getElementById("contador");
+
+const contadorTabela =
+    document.getElementById("contadorTabela");
+
+const tabelaProdutos =
+    document.getElementById("tabelaProdutos");
+
+const semProdutos =
+    document.getElementById("semProdutos");
+
+const mensagem =
+    document.getElementById("mensagem");
+
+const mensagemJson =
+    document.getElementById("mensagemJson");
+
+const status =
+    document.getElementById("status");
+
+const btnSalvar =
+    document.getElementById("btnSalvar");
+
+const btnCancelar =
+    document.getElementById("btnCancelar");
+
+const tituloFormulario =
+    document.getElementById("tituloFormulario");
+
+
+// =============================================================
+// CARREGAR PRODUTOS.JSON
+// =============================================================
+
+async function carregarProdutos() {
+
+    try {
+
+        const resposta =
+            await fetch("produtos.json");
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                `Erro HTTP: ${resposta.status}`
+            );
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (!Array.isArray(dados)) {
+
+            throw new Error(
+                "O produtos.json precisa conter um array."
+            );
+
+        }
+
+
+        produtos = dados;
+
+
+        atualizarTudo();
+
+
+        status.className =
+            "alert alert-success";
+
+        status.textContent =
+            "✓ produtos.json carregado com sucesso.";
+
+
+    } catch (erro) {
+
+        console.error(erro);
+
+
+        produtos = [];
+
+
+        atualizarTudo();
+
+
+        status.className =
+            "alert alert-danger";
+
+        status.innerHTML = `
+            Não foi possível carregar o
+            <strong>produtos.json</strong>.
+
+            <br><br>
+
+            Verifique se o arquivo existe na mesma
+            pasta do admin.html.
+        `;
+
+    }
+
+}
+
+
+// =============================================================
+// ATUALIZAR TUDO
+// =============================================================
+
+function atualizarTudo() {
+
+    atualizarJson();
+
+    atualizarTabela();
+
+    atualizarContadores();
+
+    if (produtoEditando === null) {
+
+        document.getElementById("id").value =
+            obterProximoId();
+
+    }
+
+}
+
+
+// =============================================================
+// ATUALIZAR JSON
+// =============================================================
+
+function atualizarJson() {
+
+    textareaJson.value =
+        JSON.stringify(
+            produtos,
+            null,
+            4
+        );
+
+}
+
+
+// =============================================================
+// CONTADORES
+// =============================================================
+
+function atualizarContadores() {
+
+    const quantidade =
+        produtos.length;
+
+
+    contador.textContent =
+        quantidade === 1
+            ? "1 produto"
+            : `${quantidade} produtos`;
+
+
+    contadorTabela.textContent =
+        quantidade === 1
+            ? "1 produto"
+            : `${quantidade} produtos`;
+
+}
+
+
+// =============================================================
+// PRÓXIMO ID
+// =============================================================
+
+function obterProximoId() {
+
+    if (produtos.length === 0) {
+
+        return 1;
+
+    }
+
+
+    return Math.max(
+        ...produtos.map(
+            produto =>
+                Number(produto.id) || 0
+        )
+    ) + 1;
+
+}
+
+
+// =============================================================
+// ATUALIZAR TABELA
+// =============================================================
+
+function atualizarTabela() {
+
+
+    tabelaProdutos.innerHTML = "";
+
+
+    if (produtos.length === 0) {
+
+        semProdutos.classList.remove("d-none");
+
+        return;
+
+    }
+
+
+    semProdutos.classList.add("d-none");
+
+
+    produtos.forEach(function(produto) {
+
+
+        const tr =
+            document.createElement("tr");
+
+
+        tr.innerHTML = `
+
+            <td>
+                <strong>
+                    ${produto.id}
+                </strong>
+            </td>
+
+
+            <td>
+
+                <img
+                    src="${produto.imagem}"
+                    alt="${produto.nome}"
+                    width="70"
+                    height="70"
+                    class="rounded object-fit-contain bg-light p-1"
+                    onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2270%22 height=%2270%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2210%22%3ESem imagem%3C/text%3E%3C/svg%3E';">
+
+            </td>
+
+
+            <td>
+
+                <strong>
+                    ${escaparHtml(produto.nome)}
+                </strong>
+
+                <br>
+
+                <small class="text-muted">
+
+                    ${escaparHtml(produto.descricao)}
+
+                </small>
+
+            </td>
+
+
+            <td>
+
+                <span class="badge text-bg-secondary">
+
+                    ${escaparHtml(produto.categoria)}
+
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <strong class="text-success">
+
+                    R$ ${formatarPreco(produto.preco)}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
+                ${produto.estoque > 0
+
+                    ? `<span class="badge text-bg-success">
+                        ${produto.estoque}
+                       </span>`
+
+                    : `<span class="badge text-bg-danger">
+                        Sem estoque
+                       </span>`
+
+                }
+
+            </td>
+
+
+            <td class="text-center">
+
+                <div class="d-flex justify-content-center gap-1">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-primary"
+                        onclick="editarProduto(${produto.id})">
+
+                        ✏️
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-danger"
+                        onclick="excluirProduto(${produto.id})">
+
+                        🗑️
+
+                    </button>
+
+
+                </div>
+
+            </td>
+
+        `;
+
+
+        tabelaProdutos.appendChild(tr);
+
+    });
+
+}
+
+
+// =============================================================
+// EDITAR PRODUTO
+// =============================================================
+
+function editarProduto(id) {
+
+
+    const produto =
+        produtos.find(
+            item =>
+                Number(item.id) === Number(id)
+        );
+
+
+    if (!produto) {
+
+        return;
+
+    }
+
+
+    produtoEditando = id;
+
+
+    // Preencher formulário
+
+    document.getElementById("id").value =
+        produto.id;
+
+
+    document.getElementById("nome").value =
+        produto.nome;
+
+
+    document.getElementById("descricao").value =
+        produto.descricao;
+
+
+    document.getElementById("preco").value =
+        produto.preco;
+
+
+    document.getElementById("imagem").value =
+        produto.imagem;
+
+
+    document.getElementById("categoria").value =
+        produto.categoria;
+
+
+    document.getElementById("estoque").value =
+        produto.estoque;
+
+
+    // Alterar interface
+
+    tituloFormulario.textContent =
+        "Editar produto";
+
+
+    btnSalvar.textContent =
+        "💾 Salvar alterações";
+
+
+    btnSalvar.classList.remove("btn-success");
+
+    btnSalvar.classList.add("btn-primary");
+
+
+    btnCancelar.classList.remove("d-none");
+
+
+    // Scroll para o formulário
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    mostrarMensagem(
+        mensagem,
+        `Editando produto #${id}.`,
+        "info"
+    );
+
+}
+
+
+// =============================================================
+// SALVAR / ADICIONAR
+// =============================================================
+
+form.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const id =
+            parseInt(
+                document
+                    .getElementById("id")
+                    .value
+            );
+
+
+        const produtoAtualizado = {
+
+            id: id,
+
+            nome:
+                document
+                    .getElementById("nome")
+                    .value
+                    .trim(),
+
+            descricao:
+                document
+                    .getElementById("descricao")
+                    .value
+                    .trim(),
+
+            preco:
+                parseFloat(
+                    document
+                        .getElementById("preco")
+                        .value
+                ),
+
+            imagem:
+                document
+                    .getElementById("imagem")
+                    .value
+                    .trim(),
+
+            categoria:
+                document
+                    .getElementById("categoria")
+                    .value
+                    .trim(),
+
+            estoque:
+                parseInt(
+                    document
+                        .getElementById("estoque")
+                        .value
+                )
+
+        };
+
+
+        // =====================================================
+        // EDIÇÃO
+        // =====================================================
+
+        if (produtoEditando !== null) {
+
+
+            const indice =
+                produtos.findIndex(
+                    produto =>
+                        Number(produto.id) ===
+                        Number(produtoEditando)
+                );
+
+
+            if (indice !== -1) {
+
+                produtos[indice] =
+                    produtoAtualizado;
+
+            }
+
+
+            mostrarMensagem(
+                mensagem,
+                "Produto atualizado com sucesso!",
+                "success"
+            );
+
+
+            cancelarEdicao();
+
+
+        }
+
+
+        // =====================================================
+        // NOVO PRODUTO
+        // =====================================================
+
+        else {
+
+
+            if (
+                produtos.some(
+                    produto =>
+                        Number(produto.id) === id
+                )
+            ) {
+
+                mostrarMensagem(
+                    mensagem,
+                    "Já existe um produto com esse ID.",
+                    "danger"
+                );
+
+                return;
+
+            }
+
+
+            produtos.push(
+                produtoAtualizado
+            );
+
+
+            mostrarMensagem(
+                mensagem,
+                "Produto adicionado ao JSON!",
+                "success"
+            );
+
+
+            form.reset();
+
+
+            document.getElementById("estoque").value =
+                1;
+
+        }
+
+
+        atualizarTudo();
+
+    }
+);
+
+
+// =============================================================
+// CANCELAR EDIÇÃO
+// =============================================================
+
+btnCancelar.addEventListener(
+    "click",
+    cancelarEdicao
+);
+
+
+function cancelarEdicao() {
+
+
+    produtoEditando = null;
+
+
+    form.reset();
+
+
+    document.getElementById("estoque").value =
+        1;
+
+
+    document.getElementById("id").value =
+        obterProximoId();
+
+
+    tituloFormulario.textContent =
+        "Cadastrar produto";
+
+
+    btnSalvar.textContent =
+        "➕ Adicionar produto";
+
+
+    btnSalvar.classList.remove("btn-primary");
+
+    btnSalvar.classList.add("btn-success");
+
+
+    btnCancelar.classList.add("d-none");
+
+
+    mensagem.classList.add("d-none");
+
+}
+
+
+// =============================================================
+// EXCLUIR PRODUTO
+// =============================================================
+
+function excluirProduto(id) {
+
+
+    const produto =
+        produtos.find(
+            item =>
+                Number(item.id) === Number(id)
+        );
+
+
+    if (!produto) {
+
+        return;
+
+    }
+
+
+    const confirmar =
+        confirm(
+            `Deseja realmente excluir o produto "${produto.nome}"?`
+        );
+
+
+    if (!confirmar) {
+
+        return;
+
+    }
+
+
+    produtos =
+        produtos.filter(
+            item =>
+                Number(item.id) !== Number(id)
+        );
+
+
+    // Se estava editando o produto excluído
+
+    if (
+        produtoEditando !== null &&
+        Number(produtoEditando) === Number(id)
+    ) {
+
+        cancelarEdicao();
+
+    }
+
+
+    atualizarTudo();
+
+
+    mostrarMensagem(
+        mensagemJson,
+        `Produto "${produto.nome}" excluído.`,
+        "warning"
+    );
+
+}
+
+
+// =============================================================
+// COPIAR JSON
+// =============================================================
+
+document
+    .getElementById("copiar")
+    .addEventListener(
+        "click",
+        async function() {
+
+            try {
+
+                await navigator
+                    .clipboard
+                    .writeText(
+                        textareaJson.value
+                    );
+
+
+                mostrarMensagem(
+                    mensagemJson,
+                    "JSON copiado para a área de transferência!",
+                    "success"
+                );
+
+
+            } catch (erro) {
+
+                textareaJson.select();
+
+                document.execCommand("copy");
+
+
+                mostrarMensagem(
+                    mensagemJson,
+                    "JSON copiado!",
+                    "success"
+                );
+
+            }
+
+        }
+    );
+
+
+// =============================================================
+// FORMATAR JSON
+// =============================================================
+
+document
+    .getElementById("formatar")
+    .addEventListener(
+        "click",
+        function() {
+
+            try {
+
+                const dados =
+                    JSON.parse(
+                        textareaJson.value
+                    );
+
+
+                textareaJson.value =
+                    JSON.stringify(
+                        dados,
+                        null,
+                        4
+                    );
+
+
+                mostrarMensagem(
+                    mensagemJson,
+                    "JSON formatado!",
+                    "success"
+                );
+
+
+            } catch (erro) {
+
+                mostrarMensagem(
+                    mensagemJson,
+                    "O conteúdo não é um JSON válido.",
+                    "danger"
+                );
+
+            }
+
+        }
+    );
+
+
+// =============================================================
+// LIMPAR
+// =============================================================
+
+document
+    .getElementById("limpar")
+    .addEventListener(
+        "click",
+        function() {
+
+
+            if (produtos.length === 0) {
+
+                return;
+
+            }
+
+
+            const confirmar =
+                confirm(
+                    "Tem certeza que deseja remover TODOS os produtos?"
+                );
+
+
+            if (!confirmar) {
+
+                return;
+
+            }
+
+
+            produtos = [];
+
+
+            cancelarEdicao();
+
+
+            atualizarTudo();
+
+
+            mostrarMensagem(
+                mensagemJson,
+                "Todos os produtos foram removidos do JSON.",
+                "warning"
+            );
+
+        }
+    );
+
+
+// =============================================================
+// FORMATAR PREÇO
+// =============================================================
+
+function formatarPreco(valor) {
+
+    return Number(valor).toLocaleString(
+        "pt-BR",
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }
+    );
+
+}
+
+
+// =============================================================
+// ESCAPAR HTML
+// =============================================================
+
+function escaparHtml(texto) {
+
+    if (texto === null || texto === undefined) {
+
+        return "";
+
+    }
+
+
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// =============================================================
+// MENSAGENS
+// =============================================================
+
+function mostrarMensagem(
+    elemento,
+    texto,
+    tipo
+) {
+
+    elemento.className =
+        `alert alert-${tipo} mt-3`;
+
+    elemento.textContent =
+        texto;
+
+}
+
+
+// =============================================================
+// INICIALIZAÇÃO
+// =============================================================
+
+carregarProdutos();
+
+
+</script>
+
+
+</body>
+
+</html>
