@@ -195,7 +195,7 @@
         "preco": "R$ 135.00",
         "imagem": "img/parafusadeira_arstheco_21v.jpg",
         "categoria": "Ferramentas",
-		"estoque": 1
+		"estoque": 0
     },
     {
         "id": 23,
@@ -276,7 +276,7 @@
         "preco": "R$ 164.99",
         "imagem": "img/caixa_som_first_option_ds14.webp",
         "categoria": "Eletrônicos",
-		"estoque": 1
+		"estoque": 0
     },	
     {
         "id": 32,
@@ -415,36 +415,18 @@
     },	
     {
         "id": 47,
-        "nome": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
-        "descricao": "",
-        "preco": "R$ 65.00",
-        "imagem": "img/smartwatch_8ultra.webp",
-        "categoria": "Eletrônicos",
-		"estoque": 1
-    },	
-    {
-        "id": 48,
-        "nome": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
-        "descricao": "",
-        "preco": "R$ 65.00",
-        "imagem": "img/smartwatch_t800_ultra2.webp",
-        "categoria": "Eletrônicos",
-		"estoque": 1
-    },	
-    {
-        "id": 49,
         "nome": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
         "descricao": "",
-        "preco": "R$ 65.00",
+        "preco": "R$ 20.00",
         "imagem": "img/relogio_digital_preto.avif",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },	
     {
-        "id": 50,
+        "id": 48,
         "nome": "Relógio Digital Feminino Rosa Adulto/Infantil",
         "descricao": "",
-        "preco": "R$ 65.00",
+        "preco": "R$ 20.00",
         "imagem": "img/relogio_digital_rosa.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
