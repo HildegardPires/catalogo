@@ -87,7 +87,7 @@
         "preco": "R$ 59.99",
         "imagem": "img/chaleira.webp",
         "categoria": "Eletrodomésticos",
-		"estoque": 1
+		"estoque": 4
     },
     {
         "id": 11,
@@ -186,7 +186,7 @@
         "preco": "R$ 95.00",
         "imagem": "img/parafusadeira_black_tools_12v.webp",
         "categoria": "Ferramentas",
-		"estoque": 1
+		"estoque": 2
     },
     {
         "id": 22,
@@ -204,7 +204,7 @@
         "preco": "R$ 249.99",
         "imagem": "img/projetor_hy300_magcubic.jpg",
         "categoria": "Eletrônicos",
-		"estoque": 1
+		"estoque": 0
     },
     {
         "id": 24,
@@ -213,7 +213,7 @@
         "preco": "R$ 204.99",
         "imagem": "img/projetor_hy300.jpg",
         "categoria": "Eletrônicos",
-		"estoque": 1
+		"estoque": 0
     },	
     {
         "id": 25,
@@ -222,7 +222,7 @@
         "preco": "R$ 94.99",
         "imagem": "img/camera_seguranca_jortan.jpg",
         "categoria": "Eletrônicos",
-		"estoque": 1
+		"estoque": 0
     },
     {
         "id": 26,
