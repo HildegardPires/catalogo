@@ -97,3 +97,22 @@ body{
 .imagem-produto:hover{
     transform:scale(1.05);
 }
+.busca-com-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-busca{
+    width:64px;
+    height:64px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+@media (max-width:576px){
+    .logo-busca{
+        width:52px;
+        height:52px;
+    }
+}
