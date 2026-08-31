@@ -1,13 +1,13 @@
-
+﻿
 // =============================================================
-// CONFIGURAÇÃO
+// CONFIGURAÃ‡ÃƒO
 // =============================================================
 
 const numeroWhatsApp = "5563984896172";
 
 
 // =============================================================
-// VARIÁVEIS
+// VARIÃVEIS
 // =============================================================
 
 let produtos = [];
@@ -84,7 +84,7 @@ async function carregarProdutos() {
 
                 <div class="alert alert-danger">
 
-                    Não foi possível carregar
+                    NÃ£o foi possÃ­vel carregar
                     os produtos.
 
                 </div>
@@ -205,8 +205,8 @@ function adicionarCategoria(
 
         ${
             categoria === "Todos"
-                ? "🏪"
-                : "🏷️"
+                ? "ðŸª"
+                : "ðŸ·ï¸"
         }
 
         <span class="ms-2">
@@ -272,7 +272,7 @@ function selecionarCategoria(
         categoria;
 
 
-    // Atualizar título
+    // Atualizar tÃ­tulo
 
     categoriaAtual.textContent =
         categoria === "Todos"
@@ -451,11 +451,11 @@ function criarCardProduto(
     const mensagem =
         encodeURIComponent(
 
-            `Olá! Tenho interesse no produto:\n\n` +
+            `OlÃ¡! Tenho interesse no produto:\n\n` +
 
             `${produto.nome}\n` +
 
-            `Preço: ${formatarPreco(produto.preco)}`
+            `PreÃ§o: ${formatarPreco(produto.preco)}`
 
         );
 
@@ -484,13 +484,8 @@ function criarCardProduto(
                 loading="lazy"
 
                 onerror="
-                    this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eeeeee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3Imagem indisponível%3C/text%3E%3C/svg%3E';
-                "
-				
-				onclick="abrirImagem(
-						'${escaparHtml(produto.imagem)}',
-						'${escaparHtml(produto.nome)}'
-				)"				
+                    this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eeeeee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3Imagem indisponÃ­vel%3C/text%3E%3C/svg%3E';
+                "				
 
             >
 
@@ -521,7 +516,7 @@ function criarCardProduto(
                 </h5>
 
 
-                <!-- DESCRIÇÃO -->
+                <!-- DESCRIÃ‡ÃƒO -->
 
                 <p class="card-text text-muted">
 
@@ -532,7 +527,7 @@ function criarCardProduto(
                 </p>
 
 
-                <!-- PREÇO -->
+                <!-- PREÃ‡O -->
 
                 <div class="mt-auto">
 
@@ -554,13 +549,13 @@ function criarCardProduto(
                         ?
 
                         `<small class="text-success d-block mb-2">
-                            ✓ ${produto.estoque} em estoque
+                            âœ“ ${produto.estoque} em estoque
                         </small>`
 
                         :
 
                         `<small class="text-danger d-block mb-2">
-                            ✕ Produto sem estoque
+                            âœ• Produto sem estoque
                         </small>`
 
                     }
@@ -578,7 +573,7 @@ function criarCardProduto(
                             target="_blank"
                             class="btn btn-success w-100">
 
-                            💬 Comprar pelo WhatsApp
+                            ðŸ’¬ Comprar pelo WhatsApp
 
                         </a>`
 
@@ -588,7 +583,7 @@ function criarCardProduto(
                             class="btn btn-secondary w-100"
                             disabled>
 
-                            Produto indisponível
+                            Produto indisponÃ­vel
 
                         </button>`
 
@@ -603,6 +598,22 @@ function criarCardProduto(
         </div>
 
     `;
+
+
+    const imagemProduto =
+        coluna.querySelector(
+            ".imagem-produto"
+        );
+
+    imagemProduto.addEventListener(
+        "click",
+        function() {
+            abrirImagem(
+                produto.imagem,
+                produto.nome
+            );
+        }
+    );
 
 
     containerProdutos.appendChild(
@@ -627,7 +638,7 @@ pesquisa.addEventListener(
 
 
 // =============================================================
-// FORMATAR PREÇO
+// FORMATAR PREÃ‡O
 // =============================================================
 
 function formatarPreco(
@@ -770,7 +781,7 @@ function abrirImagem(imagem, titulo) {
 }
 
 // =============================================================
-// INICIALIZAÇÃO
+// INICIALIZAÃ‡ÃƒO
 // =============================================================
 
 carregarProdutos();
