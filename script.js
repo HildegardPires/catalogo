@@ -1,13 +1,13 @@
 ﻿
 // =============================================================
-// CONFIGURAÃ‡ÃƒO
+// CONFIGURAÇÃO
 // =============================================================
 
 const numeroWhatsApp = "5563984896172";
 
 
 // =============================================================
-// VARIÃVEIS
+// VARIÁVEIS
 // =============================================================
 
 let produtos = [];
@@ -84,7 +84,7 @@ async function carregarProdutos() {
 
                 <div class="alert alert-danger">
 
-                    NÃ£o foi possÃ­vel carregar
+                    Não foi possível carregar
                     os produtos.
 
                 </div>
@@ -205,8 +205,8 @@ function adicionarCategoria(
 
         ${
             categoria === "Todos"
-                ? "ðŸª"
-                : "ðŸ·ï¸"
+                ? "🏪"
+                : "🏷ï¸"
         }
 
         <span class="ms-2">
@@ -272,7 +272,7 @@ function selecionarCategoria(
         categoria;
 
 
-    // Atualizar tÃ­tulo
+    // Atualizar título
 
     categoriaAtual.textContent =
         categoria === "Todos"
@@ -451,11 +451,11 @@ function criarCardProduto(
     const mensagem =
         encodeURIComponent(
 
-            `OlÃ¡! Tenho interesse no produto:\n\n` +
+            `Olá! Tenho interesse no produto:\n\n` +
 
             `${produto.nome}\n` +
 
-            `PreÃ§o: ${formatarPreco(produto.preco)}`
+            `Preço: ${formatarPreco(produto.preco)}`
 
         );
 
@@ -484,7 +484,7 @@ function criarCardProduto(
                 loading="lazy"
 
                 onerror="
-                    this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eeeeee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3Imagem indisponÃ­vel%3C/text%3E%3C/svg%3E';
+                    this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23eeeeee%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3Imagem indisponível%3C/text%3E%3C/svg%3E';
                 "				
 
             >
@@ -516,7 +516,7 @@ function criarCardProduto(
                 </h5>
 
 
-                <!-- DESCRIÃ‡ÃƒO -->
+                <!-- DESCRIÇÃO -->
 
                 <p class="card-text text-muted">
 
@@ -527,7 +527,7 @@ function criarCardProduto(
                 </p>
 
 
-                <!-- PREÃ‡O -->
+                <!-- PREÇO -->
 
                 <div class="mt-auto">
 
@@ -549,13 +549,13 @@ function criarCardProduto(
                         ?
 
                         `<small class="text-success d-block mb-2">
-                            âœ“ ${produto.estoque} em estoque
+                            ✓ ${produto.estoque} em estoque
                         </small>`
 
                         :
 
                         `<small class="text-danger d-block mb-2">
-                            âœ• Produto sem estoque
+                            ✕ Produto sem estoque
                         </small>`
 
                     }
@@ -573,7 +573,7 @@ function criarCardProduto(
                             target="_blank"
                             class="btn btn-success w-100">
 
-                            ðŸ’¬ Comprar pelo WhatsApp
+                            💬 Comprar pelo WhatsApp
 
                         </a>`
 
@@ -583,7 +583,7 @@ function criarCardProduto(
                             class="btn btn-secondary w-100"
                             disabled>
 
-                            Produto indisponÃ­vel
+                            Produto indisponível
 
                         </button>`
 
@@ -638,7 +638,7 @@ pesquisa.addEventListener(
 
 
 // =============================================================
-// FORMATAR PREÃ‡O
+// FORMATAR PREÇO
 // =============================================================
 
 function formatarPreco(
@@ -781,7 +781,8 @@ function abrirImagem(imagem, titulo) {
 }
 
 // =============================================================
-// INICIALIZAÃ‡ÃƒO
+// INICIALIZAÇÃO
 // =============================================================
 
 carregarProdutos();
+
