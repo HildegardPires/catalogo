@@ -206,7 +206,7 @@ function adicionarCategoria(
         ${
             categoria === "Todos"
                 ? "🏪"
-                : "🏷ï¸"
+                : "🏪"
         }
 
         <span class="ms-2">
