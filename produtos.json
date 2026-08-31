@@ -4,7 +4,7 @@
         "nome": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
         "descricao": "",
         "preco": "R$ 299.99",
-        "imagem": "img/panela_eletrica_itatiaia.webp",
+        "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -13,7 +13,7 @@
         "nome": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
         "descricao": "",
         "preco": "R$ 299.99",
-        "imagem": "img/fritadeira_midea.webp",
+        "imagem": "img/produtos/fritadeira_midea.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -22,7 +22,7 @@
         "nome": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
         "descricao": "",
         "preco": "R$ 279.99",
-        "imagem": "img/fritadeira_wap.webp",
+        "imagem": "img/produtos/fritadeira_wap.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -31,7 +31,7 @@
         "nome": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
         "descricao": "",
         "preco": "R$ 134.99",
-        "imagem": "img/liquidificador_britania.jpg",
+        "imagem": "img/produtos/liquidificador_britania.jpg",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -40,7 +40,7 @@
         "nome": "Liquidificador 2,2 Litros 3 Velocidades Turbo",
         "descricao": "",
         "preco": "R$ 134.99",
-        "imagem": "img/liquidificador_mondial.jpg",
+        "imagem": "img/produtos/liquidificador_mondial.jpg",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -49,7 +49,7 @@
         "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
         "descricao": "",
         "preco": "R$ 169.99",
-        "imagem": "img/panela_arroz_elgin_inox.webp",
+        "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -58,7 +58,7 @@
         "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
         "descricao": "",
         "preco": "R$ 149.99",
-        "imagem": "img/panela_arroz_agratto.webp",
+        "imagem": "img/produtos/panela_arroz_agratto.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -67,7 +67,7 @@
         "nome": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
         "descricao": "",
         "preco": "R$ 79.99",
-        "imagem": "img/sanduicheira_multilaser.webp",
+        "imagem": "img/produtos/sanduicheira_multilaser.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -76,7 +76,7 @@
         "nome": "Sanduicheira Grill Elétrica Antiaderente Sumay",
         "descricao": "",
         "preco": "R$ 81.99",
-        "imagem": "img/sanduicheira_sumay.webp",
+        "imagem": "img/produtos/sanduicheira_sumay.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 1
     },
@@ -85,7 +85,7 @@
         "nome": "Chaleira Elétrica 2 litros",
         "descricao": "",
         "preco": "R$ 59.99",
-        "imagem": "img/chaleira.webp",
+        "imagem": "img/produtos/chaleira.webp",
         "categoria": "Eletrodomésticos",
 		"estoque": 4
     },
@@ -94,7 +94,7 @@
         "nome": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
         "descricao": "",
         "preco": "R$ 189.99",
-        "imagem": "img/jogo_soquete_17_pecas_tramontina.webp",
+        "imagem": "img/produtos/jogo_soquete_17_pecas_tramontina.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -103,7 +103,7 @@
         "nome": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
         "descricao": "",
         "preco": "R$ 50.00",
-        "imagem": "img/jogo_soquete_27_pecas.webp",
+        "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -112,7 +112,7 @@
         "nome": "Chave Tigre de Boca Multifuncional 360 Graus",
         "descricao": "",
         "preco": "R$ 38.00",
-        "imagem": "img/chave_tigre_bomvink.webp",
+        "imagem": "img/produtos/chave_tigre_bomvink.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -121,7 +121,7 @@
         "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8'",
         "descricao": "",
         "preco": "R$ 48.00",
-        "imagem": "img/jogo_soquete_40_pecas_black_tools.webp",
+        "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -130,7 +130,7 @@
         "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças",
         "descricao": "",
         "preco": "R$ 45.00",
-        "imagem": "img/jogo_soquete_40_pecas_sparta.webp",
+        "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -139,7 +139,7 @@
         "nome": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
         "descricao": "",
         "preco": "R$ 169.99",
-        "imagem": "img/jogo_soquete_22_pecas_black_tools.webp",
+        "imagem": "img/produtos/jogo_soquete_22_pecas_black_tools.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -148,7 +148,7 @@
         "nome": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
         "descricao": "",
         "preco": "R$ 40.00",
-        "imagem": "img/jogo_soquete_12_pecas.webp",
+        "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -157,7 +157,7 @@
         "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8",
         "descricao": "",
         "preco": "R$ 42.00",
-        "imagem": "img/jogo_soquete_40_pecas_faster_tools.webp",
+        "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -166,7 +166,7 @@
         "nome": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
         "descricao": "",
         "preco": "R$ 40.00",
-        "imagem": "img/jogo_catraca_46_pecas.jpg",
+        "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
         "categoria": "Ferramentas",
 		"estoque": 1
     },	
@@ -175,7 +175,7 @@
         "nome": "Furadeira De Impacto Mondial",
         "descricao": "",
         "preco": "R$ 149.99",
-        "imagem": "img/furadeira_mondial.webp",
+        "imagem": "img/produtos/furadeira_mondial.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -184,7 +184,7 @@
         "nome": "Parafusadeira Furadeira 1 Bateria 12v",
         "descricao": "",
         "preco": "R$ 95.00",
-        "imagem": "img/parafusadeira_black_tools_12v.webp",
+        "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
         "categoria": "Ferramentas",
 		"estoque": 2
     },
@@ -193,7 +193,7 @@
         "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
         "descricao": "",
         "preco": "R$ 135.00",
-        "imagem": "img/parafusadeira_arstheco_21v.jpg",
+        "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
         "categoria": "Ferramentas",
 		"estoque": 0
     },
@@ -202,7 +202,7 @@
         "nome": "Projetor MAGCUBIC HY300 PRO Android 11 Wifi 5g Espelhamento",
         "descricao": "",
         "preco": "R$ 249.99",
-        "imagem": "img/projetor_hy300_magcubic.jpg",
+        "imagem": "img/produtos/projetor_hy300_magcubic.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 0
     },
@@ -211,7 +211,7 @@
         "nome": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
         "descricao": "",
         "preco": "R$ 204.99",
-        "imagem": "img/projetor_hy300.jpg",
+        "imagem": "img/produtos/projetor_hy300.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 0
     },	
@@ -220,7 +220,7 @@
         "nome": "Câmera De Segurança Wifi Externa Full Hd Infravermelho Prova D'água",
         "descricao": "",
         "preco": "R$ 94.99",
-        "imagem": "img/camera_seguranca_jortan.jpg",
+        "imagem": "img/produtos/camera_seguranca_jortan.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 0
     },
@@ -229,7 +229,7 @@
         "nome": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
         "descricao": "",
         "preco": "R$ 59.99",
-        "imagem": "img/caixa_som_altomex_al_8787.jpg",
+        "imagem": "img/produtos/caixa_som_altomex_al_8787.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -238,7 +238,7 @@
         "nome": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
         "descricao": "",
         "preco": "R$ 54.99",
-        "imagem": "img/caixa_som_grasep_d_y03.jpg",
+        "imagem": "img/produtos/caixa_som_grasep_d_y03.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -247,7 +247,7 @@
         "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
         "descricao": "",
         "preco": "R$ 48.00",
-        "imagem": "img/caixa_som_grasep_d_y05.webp",
+        "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -256,7 +256,7 @@
         "nome": "Caixa de Som Bluetooth 20w Vermelha",
         "descricao": "",
         "preco": "R$ 48.00",
-        "imagem": "img/caixa_som_charce.webp",
+        "imagem": "img/produtos/caixa_som_charce.webp",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -265,7 +265,7 @@
         "nome": "Caixa De Som Bluetooth 50w Led USB, SD e rádio FM",
         "descricao": "",
         "preco": "R$ 134.99",
-        "imagem": "img/caixa_som_altomex_al_3629.webp",
+        "imagem": "img/produtos/caixa_som_altomex_al_3629.webp",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },	
@@ -274,7 +274,7 @@
         "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD",
         "descricao": "",
         "preco": "R$ 164.99",
-        "imagem": "img/caixa_som_first_option_ds14.webp",
+        "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
         "categoria": "Eletrônicos",
 		"estoque": 0
     },	
@@ -283,7 +283,7 @@
         "nome": "Fone De Ouvido Sem Fio Bluetooth",
         "descricao": "",
         "preco": "R$ 39.99",
-        "imagem": "img/fone_ouvido_redmi.jpg",
+        "imagem": "img/produtos/fone_ouvido_redmi.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -292,7 +292,7 @@
         "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
         "descricao": "",
         "preco": "R$ 34.99",
-        "imagem": "img/fone_ouvido_x55.png",
+        "imagem": "img/produtos/fone_ouvido_x55.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -301,7 +301,7 @@
         "nome": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
         "descricao": "",
         "preco": "R$ 64.99",
-        "imagem": "img/smartwatch_8_ultra.jpg",
+        "imagem": "img/produtos/smartwatch_8_ultra.jpg",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -310,7 +310,7 @@
         "nome": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
         "descricao": "",
         "preco": "R$ 69.99",
-        "imagem": "img/smartwatch_t800_ultra.webp",
+        "imagem": "img/produtos/smartwatch_t800_ultra.webp",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -319,7 +319,7 @@
         "nome": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
         "descricao": "",
         "preco": "R$ 74.99",
-        "imagem": "img/carregador_powerbank_20000mah.webp",
+        "imagem": "img/produtos/carregador_powerbank_20000mah.webp",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -328,7 +328,7 @@
         "nome": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
         "descricao": "",
         "preco": "R$ 87.99",
-        "imagem": "img/som_automotivo_first_option.png",
+        "imagem": "img/produtos/som_automotivo_first_option.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },
@@ -337,7 +337,7 @@
         "nome": "Parafusadeira Furadeira 2 Baterias 48v + Acessórios + Maleta",
         "descricao": "",
         "preco": "R$ 144.99",
-        "imagem": "img/parafusadeira_soarfly_48v.webp",
+        "imagem": "img/produtos/parafusadeira_soarfly_48v.webp",
         "categoria": "Ferramentas",
 		"estoque": 1
     },
@@ -346,7 +346,7 @@
         "nome": "Brinquedo Arminha Catapulta Avião",
         "descricao": "",
         "preco": "R$ 34.99",
-        "imagem": "img/brinquedo_arma_catapulta_aviao.png",
+        "imagem": "img/produtos/brinquedo_arma_catapulta_aviao.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },
@@ -355,7 +355,7 @@
         "nome": "Brinquedo Lançador de Foguete Com Pé",
         "descricao": "",
         "preco": "R$ 39.99",
-        "imagem": "img/brinquedo_lancador_foguete.webp",
+        "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
         "categoria": "Brinquedos",
 		"estoque": 1
     },
@@ -364,7 +364,7 @@
         "nome": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
         "descricao": "",
         "preco": "R$ 53.00",
-        "imagem": "img/brinquedo_arco_flecha_alvo_dinossauro.png",
+        "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },
@@ -373,7 +373,7 @@
         "nome": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
         "descricao": "",
         "preco": "R$ 34.99",
-        "imagem": "img/brinquedo_quebra_cabeca_alfabeto.png",
+        "imagem": "img/produtos/brinquedo_quebra_cabeca_alfabeto.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },
@@ -382,7 +382,7 @@
         "nome": "Brinquedo Arminha Lançador de Discos",
         "descricao": "",
         "preco": "R$ 25.00",
-        "imagem": "img/brinquedo_arminha_lancador_disco.png",
+        "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },
@@ -391,7 +391,7 @@
         "nome": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
         "descricao": "",
         "preco": "R$ 29.99",
-        "imagem": "img/brinquedo_tiro_alvo_jacare.png",
+        "imagem": "img/produtos/brinquedo_tiro_alvo_jacare.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },	
@@ -400,7 +400,7 @@
         "nome": "Brinquedo Arco e Flecha com Alvo",
         "descricao": "",
         "preco": "R$ 39.99",
-        "imagem": "img/brinquedo_tiro_alvo.png",
+        "imagem": "img/produtos/brinquedo_tiro_alvo.png",
         "categoria": "Brinquedos",
 		"estoque": 1
     },	
@@ -409,7 +409,7 @@
         "nome": "Piscina Inflável Redonda 100 Litros 3 Aneis",
         "descricao": "",
         "preco": "R$ 49.99",
-        "imagem": "img/brinquedo_piscina_100lt.webp",
+        "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
         "categoria": "Brinquedos",
 		"estoque": 1
     },	
@@ -418,7 +418,7 @@
         "nome": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
         "descricao": "",
         "preco": "R$ 20.00",
-        "imagem": "img/relogio_digital_preto.avif",
+        "imagem": "img/produtos/relogio_digital_preto.avif",
         "categoria": "Eletrônicos",
 		"estoque": 1
     },	
@@ -427,7 +427,7 @@
         "nome": "Relógio Digital Feminino Rosa Adulto/Infantil",
         "descricao": "",
         "preco": "R$ 20.00",
-        "imagem": "img/relogio_digital_rosa.png",
+        "imagem": "img/produtos/relogio_digital_rosa.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
     }
