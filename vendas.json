@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "nomeCliente": "Aninha Cardoso",
+        "telefoneCliente": "63992972999",
+        "data": "04/09/2026",
+        "totalVenda": 200.00,
+        "produtos":[
+            {
+                "id": 1,
+                "codProduto": 4,
+                "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+                "quantidade": 1,
+                "precoUnitario": 127.50
+            },
+            {
+                "id": 2,
+                "codProduto": 9,
+                "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+                "quantidade": 1,
+                "precoUnitario": 72.50
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nomeCliente": "Jose Alves",
+        "telefoneCliente": "63991103810",
+        "data": "04/09/2026",
+        "totalVenda": 140.00,
+        "produtos":[
+            {
+                "id": 1,
+                "codProduto": 50,
+                "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
+                "quantidade": 1,
+                "precoUnitario": 140.00
+            }
+        ]
+    }
+]

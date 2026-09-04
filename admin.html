@@ -571,9 +571,9 @@
 
                             <th>Categoria</th>
 
-                            <th>Preço de venda</th>
-
                             <th>Preço de custo</th>
+
+                            <th>Preço de venda</th>
 
                             <th>Lucro</th>
 
@@ -599,9 +599,9 @@
 
                             <th colspan="4" class="text-end">Totais</th>
 
-                            <th id="totalVenda">R$ 0,00</th>
-
                             <th id="totalCusto">R$ 0,00</th>
+
+                            <th id="totalVenda">R$ 0,00</th>
 
                             <th id="totalLucro">R$ 0,00</th>
 
@@ -1141,9 +1141,9 @@ function atualizarTabela() {
 
             <td>
 
-                <strong class="text-success">
+                <strong class="text-secondary">
 
-                    R$ ${formatarPreco(produto.preco)}
+                    R$ ${formatarPreco(custo)}
 
                 </strong>
 
@@ -1152,9 +1152,9 @@ function atualizarTabela() {
 
             <td>
 
-                <strong class="text-secondary">
+                <strong class="text-success">
 
-                    R$ ${formatarPreco(custo)}
+                    R$ ${formatarPreco(produto.preco)}
 
                 </strong>
 
