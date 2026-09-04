@@ -522,6 +522,38 @@
             </div>
 
 
+            <div class="row g-3 align-items-end mb-4">
+
+                <div class="col-md-5">
+
+                    <label for="filtroCategoria" class="form-label">
+                        Categoria
+                    </label>
+
+                    <select id="filtroCategoria" class="form-select">
+                        <option value="">Todas as categorias</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="form-check mb-2">
+                        <input
+                            id="filtroEstoque"
+                            class="form-check-input"
+                            type="checkbox">
+
+                        <label for="filtroEstoque" class="form-check-label">
+                            Apenas produtos com estoque
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+
             <div class="table-responsive">
 
                 <table
@@ -559,6 +591,25 @@
                     <tbody id="tabelaProdutos">
 
                     </tbody>
+
+
+                    <tfoot class="table-light">
+
+                        <tr>
+
+                            <th colspan="4" class="text-end">Totais</th>
+
+                            <th id="totalVenda">R$ 0,00</th>
+
+                            <th id="totalCusto">R$ 0,00</th>
+
+                            <th id="totalLucro">R$ 0,00</th>
+
+                            <th colspan="2"></th>
+
+                        </tr>
+
+                    </tfoot>
 
                 </table>
 
@@ -615,6 +666,21 @@ const tabelaProdutos =
 
 const semProdutos =
     document.getElementById("semProdutos");
+
+const filtroCategoria =
+    document.getElementById("filtroCategoria");
+
+const filtroEstoque =
+    document.getElementById("filtroEstoque");
+
+const totalVenda =
+    document.getElementById("totalVenda");
+
+const totalCusto =
+    document.getElementById("totalCusto");
+
+const totalLucro =
+    document.getElementById("totalLucro");
 
 const mensagem =
     document.getElementById("mensagem");
@@ -815,6 +881,8 @@ function atualizarTudo() {
 
     atualizarJson();
 
+    atualizarFiltroCategoria();
+
     atualizarTabela();
 
     atualizarContadores();
@@ -862,10 +930,14 @@ function atualizarContadores() {
             : `${quantidade} produtos`;
 
 
+    const quantidadeFiltrada =
+        obterProdutosFiltrados().length;
+
+
     contadorTabela.textContent =
-        quantidade === 1
-            ? "1 produto"
-            : `${quantidade} produtos`;
+        quantidadeFiltrada === 1
+            ? "1 produto exibido"
+            : `${quantidadeFiltrada} produtos exibidos`;
 
 }
 
@@ -897,15 +969,83 @@ function obterProximoId() {
 // ATUALIZAR TABELA
 // =============================================================
 
+function atualizarFiltroCategoria() {
+
+    const categoriaSelecionada =
+        filtroCategoria.value;
+
+    const categorias = [
+        ...new Set(
+            produtos
+                .map(produto => produto.categoria)
+                .filter(categoria => categoria)
+        )
+    ].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+
+    filtroCategoria.innerHTML =
+        '<option value="">Todas as categorias</option>';
+
+
+    categorias.forEach(function(categoria) {
+
+        const opcao =
+            document.createElement("option");
+
+        opcao.value = categoria;
+
+        opcao.textContent = categoria;
+
+        filtroCategoria.appendChild(opcao);
+
+    });
+
+
+    if (categorias.includes(categoriaSelecionada)) {
+        filtroCategoria.value = categoriaSelecionada;
+    }
+
+}
+
+
+function obterProdutosFiltrados() {
+
+    return produtos.filter(function(produto) {
+
+        const correspondeCategoria =
+            !filtroCategoria.value ||
+            produto.categoria === filtroCategoria.value;
+
+        const correspondeEstoque =
+            !filtroEstoque.checked ||
+            Number(produto.estoque) > 0;
+
+        return correspondeCategoria && correspondeEstoque;
+
+    });
+
+}
+
+
 function atualizarTabela() {
 
 
     tabelaProdutos.innerHTML = "";
 
 
-    if (produtos.length === 0) {
+    const produtosFiltrados =
+        obterProdutosFiltrados();
+
+
+    if (produtosFiltrados.length === 0) {
 
         semProdutos.classList.remove("d-none");
+
+        totalVenda.textContent = "R$ 0,00";
+
+        totalCusto.textContent = "R$ 0,00";
+
+        totalLucro.textContent = "R$ 0,00";
 
         return;
 
@@ -915,7 +1055,14 @@ function atualizarTabela() {
     semProdutos.classList.add("d-none");
 
 
-    produtos.forEach(function(produto) {
+    let somaVenda = 0;
+
+    let somaCusto = 0;
+
+    let somaLucro = 0;
+
+
+    produtosFiltrados.forEach(function(produto) {
 
 
         const custo =
@@ -923,6 +1070,13 @@ function atualizarTabela() {
 
         const lucro =
             converterPreco(produto.preco) - custo;
+
+
+        somaVenda += converterPreco(produto.preco);
+
+        somaCusto += custo;
+
+        somaLucro += lucro;
 
 
         const classeLucro =
@@ -941,28 +1095,6 @@ function atualizarTabela() {
                 <strong>
                     ${produto.id}
                 </strong>
-            </td>
-
-
-            <td>
-
-                <strong class="text-secondary">
-
-                    R$ ${formatarPreco(custo)}
-
-                </strong>
-
-            </td>
-
-
-            <td>
-
-                <strong class="${classeLucro}">
-
-                    R$ ${formatarPreco(lucro)}
-
-                </strong>
-
             </td>
 
 
@@ -1020,6 +1152,28 @@ function atualizarTabela() {
 
             <td>
 
+                <strong class="text-secondary">
+
+                    R$ ${formatarPreco(custo)}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
+                <strong class="${classeLucro}">
+
+                    R$ ${formatarPreco(lucro)}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
                 ${
                     produto.estoque > 0
 
@@ -1045,7 +1199,7 @@ function atualizarTabela() {
                         class="btn btn-sm btn-primary"
                         onclick="editarProduto(${produto.id})">
 
-                        ✏ï¸
+                        &#9998;
 
                     </button>
 
@@ -1055,7 +1209,7 @@ function atualizarTabela() {
                         class="btn btn-sm btn-danger"
                         onclick="excluirProduto(${produto.id})">
 
-                        🗑ï¸
+                        &#128465;
 
                     </button>
 
@@ -1070,6 +1224,16 @@ function atualizarTabela() {
         tabelaProdutos.appendChild(tr);
 
     });
+
+
+    totalVenda.textContent =
+        `R$ ${formatarPreco(somaVenda)}`;
+
+    totalCusto.textContent =
+        `R$ ${formatarPreco(somaCusto)}`;
+
+    totalLucro.textContent =
+        `R$ ${formatarPreco(somaLucro)}`;
 
 }
 
@@ -1742,6 +1906,30 @@ function mostrarMensagem(
 // =============================================================
 // INICIALIZAÇÃO
 // =============================================================
+
+filtroCategoria.addEventListener(
+    "change",
+    function() {
+
+        atualizarTabela();
+
+        atualizarContadores();
+
+    }
+);
+
+
+filtroEstoque.addEventListener(
+    "change",
+    function() {
+
+        atualizarTabela();
+
+        atualizarContadores();
+
+    }
+);
+
 
 carregarProdutos();
 
