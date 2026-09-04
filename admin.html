@@ -170,6 +170,37 @@
                         <div class="mb-3">
 
                             <label
+                                for="custo"
+                                class="form-label">
+
+                                Preço de custo
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    R$
+                                </span>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="custo"
+                                    min="0"
+                                    step="0.01"
+                                    value="0"
+                                    placeholder="0.00"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label
                                 for="preco"
                                 class="form-label">
 
@@ -391,7 +422,7 @@
                         id="avisoImagem"
                         class="alert alert-warning">
 
-                        <strong>⚠ï¸ Imagens:</strong>
+                        <strong>Imagens:</strong>
 
                         Depois de selecionar uma imagem,
                         copie o arquivo para a pasta
@@ -437,7 +468,7 @@
                             id="limpar"
                             class="btn btn-outline-danger ms-auto">
 
-                            🗑ï¸ Limpar
+                            Limpar
 
                         </button>
 
@@ -508,7 +539,11 @@
 
                             <th>Categoria</th>
 
-                            <th>Preço</th>
+                            <th>Preço de venda</th>
+
+                            <th>Preço de custo</th>
+
+                            <th>Lucro</th>
 
                             <th>Estoque</th>
 
@@ -883,6 +918,19 @@ function atualizarTabela() {
     produtos.forEach(function(produto) {
 
 
+        const custo =
+            converterPreco(produto.custo);
+
+        const lucro =
+            converterPreco(produto.preco) - custo;
+
+
+        const classeLucro =
+            lucro >= 0
+                ? "text-success"
+                : "text-danger";
+
+
         const tr =
             document.createElement("tr");
 
@@ -893,6 +941,28 @@ function atualizarTabela() {
                 <strong>
                     ${produto.id}
                 </strong>
+            </td>
+
+
+            <td>
+
+                <strong class="text-secondary">
+
+                    R$ ${formatarPreco(custo)}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
+                <strong class="${classeLucro}">
+
+                    R$ ${formatarPreco(lucro)}
+
+                </strong>
+
             </td>
 
 
@@ -1044,6 +1114,10 @@ function editarProduto(id) {
         produto.preco;
 
 
+    document.getElementById("custo").value =
+        converterPreco(produto.custo);
+
+
     document.getElementById("imagem").value =
         produto.imagem;
 
@@ -1143,6 +1217,13 @@ form.addEventListener(
                     .getElementById("descricao")
                     .value
                     .trim(),
+
+            custo:
+                parseFloat(
+                    document
+                        .getElementById("custo")
+                        .value
+                ),
 
             preco:
                 parseFloat(
@@ -1532,6 +1613,33 @@ document
 // =============================================================
 // FORMATAR PREÇO
 // =============================================================
+
+function converterPreco(valor) {
+
+    if (valor === null || valor === undefined || valor === "") {
+        return 0;
+    }
+
+    if (typeof valor === "number") {
+        return Number.isFinite(valor) ? valor : 0;
+    }
+
+    let texto = String(valor)
+        .replace(/R\$/gi, "")
+        .replace(/\s/g, "");
+
+    if (texto.includes(",")) {
+        texto = texto
+            .replace(/\./g, "")
+            .replace(",", ".");
+    }
+
+    const numero = parseFloat(texto);
+
+    return Number.isFinite(numero) ? numero : 0;
+
+}
+
 
 function formatarPreco(valor) {
 
