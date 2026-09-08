@@ -37,5 +37,51 @@
                 "precoUnitario": 140.00
             }
         ]
+    },
+    {
+        "id": 3,
+        "nomeCliente": "Luciano",
+        "telefoneCliente": "63992964293",
+        "data": "05/09/2026",
+        "totalVenda": 400.00,
+        "produtos":[
+            {
+                "id": 1,
+                "codProduto": 3,
+                "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+                "quantidade": 1,
+                "precoUnitario": 270.00
+            },
+            {
+                "id": 2,
+                "codProduto": 7,
+                "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+                "quantidade": 1,
+                "precoUnitario": 130.00
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nomeCliente": "Laura",
+        "telefoneCliente": "63992690357",
+        "data": "07/09/2026",
+        "totalVenda": 260.00,
+        "produtos":[
+            {
+                "id": 1,
+                "codProduto": 50,
+                "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
+                "quantidade": 1,
+                "precoUnitario": 132.50
+            },
+            {
+                "id": 2,
+                "codProduto": 5,
+                "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+                "quantidade": 1,
+                "precoUnitario": 127.50
+            }
+        ]
     }
 ]
