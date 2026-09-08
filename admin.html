@@ -48,12 +48,35 @@
 </header>
 
 
+<nav class="bg-white border-bottom shadow-sm">
+
+    <div class="container">
+
+        <div class="nav nav-pills py-3 gap-2" id="menuAdmin">
+            <button type="button" class="nav-link active" data-tela="produtos">
+                Cadastro de Produtos
+            </button>
+            <button type="button" class="nav-link" data-tela="vendas">
+                Vendas
+            </button>
+            <button type="button" class="nav-link" data-tela="relatorios">
+                Relatórios
+            </button>
+        </div>
+
+    </div>
+
+</nav>
+
+
 <!-- ========================================================= -->
 <!-- CONTEÚDO -->
 <!-- ========================================================= -->
 
 <main class="container my-5">
 
+
+    <section id="telaProdutos">
 
     <!-- STATUS -->
 
@@ -161,6 +184,47 @@
                                 rows="3"
                                 placeholder="Descrição do produto"
                                 required></textarea>
+
+                        </div>
+
+
+                        <!-- DATA DA COMPRA -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="datacompra"
+                                class="form-label">
+
+                                Data da compra
+
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="datacompra">
+
+                        </div>
+
+
+                        <!-- LINK DA COMPRA -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="linkcompra"
+                                class="form-label">
+
+                                Link da compra
+
+                            </label>
+
+                            <input
+                                type="url"
+                                class="form-control"
+                                id="linkcompra"
+                                placeholder="https://...">
 
                         </div>
 
@@ -630,6 +694,101 @@
     </div>
 
 
+    </section>
+
+
+    <section id="telaVendas" class="d-none">
+
+        <div class="row g-4">
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">🧾 Nova venda</h3>
+
+                        <form id="formVenda">
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="nomeCliente" class="form-label">Nome do cliente</label>
+                                    <input id="nomeCliente" type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefoneCliente" class="form-label">Telefone do cliente</label>
+                                    <input id="telefoneCliente" type="tel" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dataVenda" class="form-label">Data da compra</label>
+                                    <input id="dataVenda" type="date" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <h5 class="border-top pt-4">Itens da venda</h5>
+                            <div class="row g-3 align-items-end">
+                                <div class="col-md-6">
+                                    <label for="produtoVenda" class="form-label">Produto</label>
+                                    <select id="produtoVenda" class="form-select">
+                                        <option value="">Selecione um produto</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="quantidadeVenda" class="form-label">Qtd.</label>
+                                    <input id="quantidadeVenda" type="number" class="form-control" min="1" value="1">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="precoVenda" class="form-label">Preço</label>
+                                    <input id="precoVenda" type="number" class="form-control" min="0" step="0.01">
+                                </div>
+                                <div class="col-md-2 d-grid">
+                                    <button id="btnAdicionarItem" type="button" class="btn btn-outline-success">Adicionar</button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table align-middle">
+                                    <thead class="table-success">
+                                        <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Subtotal</th><th></th></tr>
+                                    </thead>
+                                    <tbody id="itensVenda"></tbody>
+                                    <tfoot class="table-light">
+                                        <tr><th colspan="3" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg">💾 Salvar venda</button>
+                        </form>
+
+                        <div id="mensagemVenda" class="alert d-none mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">vendas.json</h3>
+                        <p class="text-muted small">Copie este conteúdo para o arquivo <strong>vendas.json</strong> antes de enviar as alterações.</p>
+                        <textarea id="jsonVendas" class="form-control font-monospace" rows="24" spellcheck="false"></textarea>
+                        <button id="copiarVendas" type="button" class="btn btn-primary mt-3">📋 Copiar JSON</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="telaRelatorios" class="d-none">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h3>📊 Relatórios</h3>
+                <p class="text-muted mb-0">Use o menu Vendas para registrar e consultar os dados que serão usados nos relatórios.</p>
+            </div>
+        </div>
+    </section>
+
+
 </main>
 
 
@@ -647,6 +806,10 @@
 let produtos = [];
 
 let produtoEditando = null;
+
+let vendas = [];
+
+let itensDaVenda = [];
 
 
 const form =
@@ -711,6 +874,15 @@ const previewImagem =
 
 const campoImagem =
     document.getElementById("imagem");
+
+const formVenda = document.getElementById("formVenda");
+const produtoVenda = document.getElementById("produtoVenda");
+const quantidadeVenda = document.getElementById("quantidadeVenda");
+const precoVenda = document.getElementById("precoVenda");
+const itensVenda = document.getElementById("itensVenda");
+const totalPedido = document.getElementById("totalPedido");
+const jsonVendas = document.getElementById("jsonVendas");
+const mensagemVenda = document.getElementById("mensagemVenda");
 
 
 // =============================================================
@@ -886,6 +1058,8 @@ function atualizarTudo() {
     atualizarTabela();
 
     atualizarContadores();
+
+    atualizarProdutosParaVenda();
 
 
     if (produtoEditando === null) {
@@ -1274,6 +1448,14 @@ function editarProduto(id) {
         produto.descricao;
 
 
+    document.getElementById("datacompra").value =
+        converterDataParaInput(produto.datacompra);
+
+
+    document.getElementById("linkcompra").value =
+        produto.linkcompra || "";
+
+
     document.getElementById("preco").value =
         produto.preco;
 
@@ -1379,6 +1561,19 @@ form.addEventListener(
             descricao:
                 document
                     .getElementById("descricao")
+                    .value
+                    .trim(),
+
+            datacompra:
+                converterDataParaJson(
+                    document
+                        .getElementById("datacompra")
+                        .value
+                ),
+
+            linkcompra:
+                document
+                    .getElementById("linkcompra")
                     .value
                     .trim(),
 
@@ -1778,6 +1973,40 @@ document
 // FORMATAR PREÇO
 // =============================================================
 
+function converterDataParaInput(data) {
+
+    if (!data) {
+        return "";
+    }
+
+    const partes = String(data).split("/");
+
+    if (partes.length === 3) {
+        return `${partes[2]}-${partes[1]}-${partes[0]}`;
+    }
+
+    return data;
+
+}
+
+
+function converterDataParaJson(data) {
+
+    if (!data) {
+        return "";
+    }
+
+    const partes = data.split("-");
+
+    if (partes.length === 3) {
+        return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    }
+
+    return data;
+
+}
+
+
 function converterPreco(valor) {
 
     if (valor === null || valor === undefined || valor === "") {
@@ -1931,7 +2160,170 @@ filtroEstoque.addEventListener(
 );
 
 
+// =============================================================
+// VENDAS
+// =============================================================
+
+function atualizarProdutosParaVenda() {
+
+    const selecionado = produtoVenda.value;
+    produtoVenda.innerHTML = '<option value="">Selecione um produto</option>';
+
+    produtos.filter(produto => Number(produto.estoque) > 0).forEach(function(produto) {
+        const opcao = document.createElement("option");
+        opcao.value = produto.id;
+        opcao.textContent = `${produto.nome} (${produto.estoque} em estoque)`;
+        produtoVenda.appendChild(opcao);
+    });
+
+    produtoVenda.value = selecionado;
+
+}
+
+
+function atualizarItensDaVenda() {
+
+    itensVenda.innerHTML = "";
+    let total = 0;
+
+    itensDaVenda.forEach(function(item, indice) {
+        const subtotal = item.quantidade * item.precoUnitario;
+        total += subtotal;
+
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${escaparHtml(item.nomeProduto)}</td>
+            <td>${item.quantidade}</td>
+            <td>R$ ${formatarPreco(item.precoUnitario)}</td>
+            <td>R$ ${formatarPreco(subtotal)}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover item">×</button></td>
+        `;
+
+        linha.querySelector("button").addEventListener("click", function() {
+            itensDaVenda.splice(indice, 1);
+            atualizarItensDaVenda();
+        });
+
+        itensVenda.appendChild(linha);
+    });
+
+    totalPedido.textContent = `R$ ${formatarPreco(total)}`;
+
+}
+
+
+function obterTotalDaVenda() {
+    return itensDaVenda.reduce(function(total, item) {
+        return total + item.quantidade * item.precoUnitario;
+    }, 0);
+}
+
+
+produtoVenda.addEventListener("change", function() {
+    const produto = produtos.find(item => Number(item.id) === Number(this.value));
+    precoVenda.value = produto ? converterPreco(produto.preco).toFixed(2) : "";
+});
+
+
+document.getElementById("btnAdicionarItem").addEventListener("click", function() {
+    const produto = produtos.find(item => Number(item.id) === Number(produtoVenda.value));
+    const quantidade = parseInt(quantidadeVenda.value);
+    const precoUnitario = parseFloat(precoVenda.value);
+
+    if (!produto || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
+        mostrarMensagem(mensagemVenda, "Informe um produto, quantidade e preço válidos.", "danger");
+        return;
+    }
+
+    if (quantidade > Number(produto.estoque)) {
+        mostrarMensagem(mensagemVenda, "A quantidade informada é maior que o estoque disponível.", "danger");
+        return;
+    }
+
+    itensDaVenda.push({
+        id: itensDaVenda.length + 1,
+        codProduto: produto.id,
+        nomeProduto: produto.nome,
+        quantidade: quantidade,
+        precoUnitario: precoUnitario
+    });
+
+    produtoVenda.value = "";
+    quantidadeVenda.value = 1;
+    precoVenda.value = "";
+    atualizarItensDaVenda();
+    mensagemVenda.classList.add("d-none");
+});
+
+
+formVenda.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (itensDaVenda.length === 0) {
+        mostrarMensagem(mensagemVenda, "Adicione pelo menos um item à venda.", "danger");
+        return;
+    }
+
+    const novaVenda = {
+        id: vendas.length ? Math.max(...vendas.map(venda => Number(venda.id) || 0)) + 1 : 1,
+        nomeCliente: document.getElementById("nomeCliente").value.trim(),
+        telefoneCliente: document.getElementById("telefoneCliente").value.trim(),
+        data: converterDataParaJson(document.getElementById("dataVenda").value),
+        totalVenda: obterTotalDaVenda(),
+        produtos: itensDaVenda
+    };
+
+    vendas.push(novaVenda);
+    jsonVendas.value = JSON.stringify(vendas, null, 4);
+    formVenda.reset();
+    document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
+    itensDaVenda = [];
+    atualizarItensDaVenda();
+    mostrarMensagem(mensagemVenda, "Venda adicionada ao JSON com sucesso!", "success");
+});
+
+
+document.getElementById("copiarVendas").addEventListener("click", async function() {
+    try {
+        await navigator.clipboard.writeText(jsonVendas.value);
+    } catch (erro) {
+        jsonVendas.select();
+        document.execCommand("copy");
+    }
+    mostrarMensagem(mensagemVenda, "JSON das vendas copiado.", "success");
+});
+
+
+async function carregarVendas() {
+    try {
+        const resposta = await fetch("vendas.json");
+        if (!resposta.ok) throw new Error(`Erro HTTP: ${resposta.status}`);
+        const dados = await resposta.json();
+        vendas = Array.isArray(dados) ? dados : [];
+    } catch (erro) {
+        console.warn("Não foi possível carregar vendas.json", erro);
+        vendas = [];
+    }
+
+    jsonVendas.value = JSON.stringify(vendas, null, 4);
+}
+
+
+document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
+    botao.addEventListener("click", function() {
+        const tela = this.dataset.tela;
+        document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
+        document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
+        document.getElementById("telaRelatorios").classList.toggle("d-none", tela !== "relatorios");
+        document.querySelectorAll("#menuAdmin [data-tela]").forEach(item => item.classList.toggle("active", item === this));
+    });
+});
+
+
+document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
+
 carregarProdutos();
+carregarVendas();
 
 
 </script>
