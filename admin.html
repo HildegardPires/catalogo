@@ -310,7 +310,7 @@
                                 type="text"
                                 class="form-control mt-3"
                                 id="imagem"
-                                placeholder="img/furadeira.jpg"
+                                placeholder="img/produtos/furadeira.jpg"
                                 required>
 
 
@@ -779,15 +779,13 @@
             <div id="avisoImagem" class="alert alert-warning">
                 <strong>Imagens:</strong>
                 Depois de selecionar uma imagem, copie o arquivo para a pasta
-                <strong>img/</strong> do projeto antes de fazer o <strong>git push</strong>.
+                <strong>img/produtos/</strong> do projeto antes de fazer o <strong>git push</strong>.
             </div>
 
-            <textarea id="json" class="form-control font-monospace" rows="18" spellcheck="false"></textarea>
+            <textarea id="json" class="form-control font-monospace" rows="18" spellcheck="false" readonly></textarea>
 
             <div class="d-flex flex-wrap gap-2 mt-3">
-                <button type="button" id="copiar" class="btn btn-primary">📋 Copiar JSON</button>
-                <button type="button" id="formatar" class="btn btn-secondary">✨ Formatar JSON</button>
-                <button type="button" id="limpar" class="btn btn-outline-danger ms-auto">Limpar</button>
+                <button type="button" id="salvarJson" class="btn btn-primary">💾 Salvar JSON</button>
             </div>
 
             <div id="mensagemJson" class="alert d-none mt-3"></div>
@@ -820,6 +818,8 @@ let vendas = [];
 let itensDaVenda = [];
 
 let compras = [];
+
+const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
 
 const form =
@@ -962,7 +962,7 @@ arquivoImagem.addEventListener(
 
 
         campoImagem.value =
-            `img/${nomeArquivo}`;
+            `img/produtos/${nomeArquivo}`;
 
 
         // =====================================================
@@ -1000,6 +1000,25 @@ async function carregarProdutos() {
 
     try {
 
+        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
+
+        if (dadosSalvos) {
+
+            const dados = JSON.parse(dadosSalvos);
+
+            if (dados && Array.isArray(dados.produtos)) {
+                produtos = dados.produtos;
+                vendas = Array.isArray(dados.vendas) ? dados.vendas : [];
+                compras = Array.isArray(dados.compras) ? dados.compras : [];
+
+                atualizarTudo();
+
+                status.className = "alert alert-success";
+                status.textContent = "✓ Dados carregados do armazenamento local.";
+                return;
+            }
+        }
+
         const resposta =
             await fetch("database/dados.json");
 
@@ -1032,6 +1051,7 @@ async function carregarProdutos() {
 
         compras = Array.isArray(dados.compras) ? dados.compras : [];
 
+        salvarDadosLocalmente();
 
         atualizarTudo();
 
@@ -1120,6 +1140,23 @@ function atualizarJson() {
     const json = JSON.stringify(dados, null, 4);
 
     textareaJson.value = json;
+    salvarDadosLocalmente();
+
+}
+
+
+function salvarDadosLocalmente() {
+
+    const dados = {
+        produtos: produtos,
+        vendas: vendas,
+        compras: compras
+    };
+
+    localStorage.setItem(
+        CHAVE_DADOS_LOCAL,
+        JSON.stringify(dados)
+    );
 
 }
 
@@ -1843,142 +1880,68 @@ function excluirProduto(id) {
 
 
 // =============================================================
-// COPIAR JSON
+// SALVAR JSON
 // =============================================================
 
 document
-    .getElementById("copiar")
+    .getElementById("salvarJson")
     .addEventListener(
         "click",
         async function() {
 
-            try {
-
-                await navigator
-                    .clipboard
-                    .writeText(
-                        textareaJson.value
-                    );
-
-
-                mostrarMensagem(
-                    mensagemJson,
-                    "JSON copiado para a área de transferência!",
-                    "success"
-                );
-
-
-            } catch (erro) {
-
-                textareaJson.select();
-
-                document.execCommand("copy");
-
-
-                mostrarMensagem(
-                    mensagemJson,
-                    "JSON copiado!",
-                    "success"
-                );
-
-            }
-
-        }
-    );
-
-
-// =============================================================
-// FORMATAR JSON
-// =============================================================
-
-document
-    .getElementById("formatar")
-    .addEventListener(
-        "click",
-        function() {
+            const conteudo = textareaJson.value;
+            const arquivo = new Blob(
+                [conteudo],
+                { type: "application/json;charset=utf-8" }
+            );
 
             try {
 
-                const dados =
-                    JSON.parse(
-                        textareaJson.value
-                    );
+                if ("showSaveFilePicker" in window) {
+                    const manipulador = await window.showSaveFilePicker({
+                        suggestedName: "dados.json",
+                        types: [
+                            {
+                                description: "Arquivo JSON",
+                                accept: { "application/json": [".json"] }
+                            }
+                        ]
+                    });
 
+                    const gravador = await manipulador.createWritable();
+                    await gravador.write(conteudo);
+                    await gravador.close();
 
-                textareaJson.value =
-                    JSON.stringify(
-                        dados,
-                        null,
-                        4
-                    );
+                } else {
 
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(arquivo);
+                    link.download = "dados.json";
+                    link.click();
+                    URL.revokeObjectURL(link.href);
+
+                }
 
                 mostrarMensagem(
                     mensagemJson,
-                    "JSON formatado!",
+                    "JSON salvo com sucesso.",
                     "success"
                 );
 
-
             } catch (erro) {
 
+                if (erro.name === "AbortError") {
+                    return;
+                }
+
+                console.error(erro);
                 mostrarMensagem(
                     mensagemJson,
-                    "O conteúdo não é um JSON válido.",
+                    "Não foi possível salvar o JSON.",
                     "danger"
                 );
 
             }
-
-        }
-    );
-
-
-// =============================================================
-// LIMPAR
-// =============================================================
-
-document
-    .getElementById("limpar")
-    .addEventListener(
-        "click",
-        function() {
-
-
-            if (produtos.length === 0) {
-
-                return;
-
-            }
-
-
-            const confirmar =
-                confirm(
-                    "Tem certeza que deseja remover TODOS os produtos?"
-                );
-
-
-            if (!confirmar) {
-
-                return;
-
-            }
-
-
-            produtos = [];
-
-
-            cancelarEdicao();
-
-
-            atualizarTudo();
-
-
-            mostrarMensagem(
-                mensagemJson,
-                "Todos os produtos foram removidos do JSON.",
-                "warning"
-            );
 
         }
     );
