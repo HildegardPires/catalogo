@@ -528,7 +528,8 @@
                 "codProduto": 4,
                 "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
                 "quantidade": 1,
-                "precoUnitario": 127.5
+                "precoUnitario": 127.5,
+                "idCompra": null
             },
             {
                 "id": 2,
@@ -536,7 +537,8 @@
                 "codProduto": 9,
                 "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
                 "quantidade": 1,
-                "precoUnitario": 72.5
+                "precoUnitario": 72.5,
+                "idCompra": null
             }
         ]
     },
@@ -553,7 +555,8 @@
                 "codProduto": 50,
                 "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
                 "quantidade": 1,
-                "precoUnitario": 140
+                "precoUnitario": 140,
+                "idCompra": null
             }
         ]
     },
@@ -570,7 +573,8 @@
                 "codProduto": 3,
                 "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
                 "quantidade": 1,
-                "precoUnitario": 270
+                "precoUnitario": 270,
+                "idCompra": null
             },
             {
                 "id": 5,
@@ -578,7 +582,8 @@
                 "codProduto": 7,
                 "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
                 "quantidade": 1,
-                "precoUnitario": 130
+                "precoUnitario": 130,
+                "idCompra": null
             }
         ]
     },
@@ -595,7 +600,8 @@
                 "codProduto": 50,
                 "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
                 "quantidade": 1,
-                "precoUnitario": 132.5
+                "precoUnitario": 132.5,
+                "idCompra": null
             },
             {
                 "id": 7,
@@ -603,7 +609,8 @@
                 "codProduto": 5,
                 "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
                 "quantidade": 1,
-                "precoUnitario": 127.5
+                "precoUnitario": 127.5,
+                "idCompra": null
             }
         ]
     },
@@ -617,10 +624,11 @@
             {
                 "id": 8,
                 "ordem": 1,
-                "codProduto": 51,
+                "codProduto": 24,
                 "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
                 "quantidade": 1,
-                "precoUnitario": 170
+                "precoUnitario": 170,
+                "idCompra": 1
             }
         ]
     }
@@ -628,12 +636,35 @@
 "compras":
 [
     {
+        "id": 1,
+        "codProduto": 24,
+        "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+        "datacompra": "31/08/2026",
+        "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014804787671/status?packId=2000014804787673&orderId=2000018218667352",
+        "quantidade": 1,
+        "precoCusto": 170.00,
+        "precoVenda": 170.00
+
+    },
+    {
+        "id": 2,
+        "codProduto": 24,
+        "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+        "datacompra": "04/09/2026",
+        "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018278711242/status?packId=2000018278711242&orderId=2000018278711242",
+        "quantidade": 2,
+        "precoCusto": 167.04,
+        "precoVenda": 205.00
+
+    },   
+    {
+        "id": 3,
         "codProduto": 51,
         "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
         "datacompra": "06/09/2026",
         "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018308097568/status?packId=2000018308097568&orderId=2000018308097568",
         "quantidade": 1,
-        "precoCusto": 182.76,
+        "precoCusto": 182.00,
         "precoVenda": 250.00
 
     }
