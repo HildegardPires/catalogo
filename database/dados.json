@@ -55,7 +55,7 @@
             "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
             "descricao": "",
             "custo": 129.9,
-            "preco": 170.00,
+            "preco": 170,
             "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
             "categoria": "Eletrodomésticos",
             "estoque": 1
@@ -115,7 +115,7 @@
             "nome": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
             "descricao": "",
             "custo": 31.04,
-            "preco": 50.00,
+            "preco": 50,
             "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -125,7 +125,7 @@
             "nome": "Chave Tigre de Boca Multifuncional 360 Graus",
             "descricao": "",
             "custo": 24.7,
-            "preco": 38.00,
+            "preco": 38,
             "imagem": "img/produtos/chave_tigre_bomvink.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -135,7 +135,7 @@
             "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8'",
             "descricao": "",
             "custo": 28,
-            "preco": 48.00,
+            "preco": 48,
             "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -145,7 +145,7 @@
             "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças",
             "descricao": "",
             "custo": 24.06,
-            "preco": 45.00,
+            "preco": 45,
             "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -165,7 +165,7 @@
             "nome": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
             "descricao": "",
             "custo": 19.8,
-            "preco": 40.00,
+            "preco": 40,
             "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -175,7 +175,7 @@
             "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8",
             "descricao": "",
             "custo": 22.62,
-            "preco": 42.00,
+            "preco": 42,
             "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
             "categoria": "Ferramentas",
             "estoque": 1
@@ -185,7 +185,7 @@
             "nome": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
             "descricao": "",
             "custo": 24.99,
-            "preco": 40.00,
+            "preco": 40,
             "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
             "categoria": "Ferramentas",
             "estoque": 3
@@ -205,7 +205,7 @@
             "nome": "Parafusadeira Furadeira 1 Bateria 12v",
             "descricao": "",
             "custo": 67.8,
-            "preco": 95.00,
+            "preco": 95,
             "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
             "categoria": "Ferramentas",
             "estoque": 2
@@ -215,7 +215,7 @@
             "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
             "descricao": "",
             "custo": 0,
-            "preco": 135.00,
+            "preco": 135,
             "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
             "categoria": "Ferramentas",
             "estoque": 0
@@ -275,7 +275,7 @@
             "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
             "descricao": "",
             "custo": 29.99,
-            "preco": 48.00,
+            "preco": 48,
             "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -285,7 +285,7 @@
             "nome": "Caixa de Som Bluetooth 20w Vermelha",
             "descricao": "",
             "custo": 35.88,
-            "preco": 55.00,
+            "preco": 55,
             "imagem": "img/produtos/caixa_som_charce.webp",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -305,7 +305,7 @@
             "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
             "descricao": "",
             "custo": 103.7,
-            "preco": 165.00,
+            "preco": 165,
             "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -405,7 +405,7 @@
             "nome": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
             "descricao": "",
             "custo": 33.64,
-            "preco": 53.00,
+            "preco": 53,
             "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
             "categoria": "Brinquedos",
             "estoque": 1
@@ -425,7 +425,7 @@
             "nome": "Brinquedo Arminha Lançador de Discos",
             "descricao": "",
             "custo": 14.38,
-            "preco": 25.00,
+            "preco": 25,
             "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
             "categoria": "Brinquedos",
             "estoque": 1
@@ -465,7 +465,7 @@
             "nome": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
             "descricao": "",
             "custo": 16.45,
-            "preco": 20.00,
+            "preco": 20,
             "imagem": "img/produtos/relogio_digital_preto.avif",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -475,7 +475,7 @@
             "nome": "Relógio Digital Feminino Rosa Adulto/Infantil",
             "descricao": "",
             "custo": 18.52,
-            "preco": 20.00,
+            "preco": 20,
             "imagem": "img/produtos/relogio_digital_rosa.png",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -495,7 +495,7 @@
             "nome": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
             "descricao": "",
             "custo": 97.76,
-            "preco": 140.00,
+            "preco": 140,
             "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
             "categoria": "Ferramentas",
             "estoque": 0
@@ -505,7 +505,7 @@
             "nome": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
             "descricao": "",
             "custo": 170,
-            "preco": 205.00,
+            "preco": 205,
             "imagem": "img/produtos/projetor_hy320.png",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -515,7 +515,7 @@
             "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz",
             "descricao": "",
             "custo": 84,
-            "preco": 165.00,
+            "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
             "categoria": "Eletrônicos",
             "estoque": 1
@@ -710,6 +710,26 @@
             "quantidade": 1,
             "precoCusto": 84,
             "precoVenda": 165
+        },
+        {
+            "id": 6,
+            "codProduto": 53,
+            "nomeProduto": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
+            "datacompra": "05/09/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018304775146/status?packId=2000018304775146&orderId=2000018304775146",
+            "quantidade": 1,
+            "precoCusto": 85,
+            "precoVenda": 140
+        },
+        {
+            "id": 7,
+            "codProduto": 54,
+            "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
+            "datacompra": "06/09/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018314475504/status?packId=2000018314475504&orderId=2000018314475504",
+            "quantidade": 1,
+            "precoCusto": 59.49,
+            "precoVenda": 100
         }
     ]
 }
