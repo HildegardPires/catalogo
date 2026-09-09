@@ -589,6 +589,12 @@
 
                         <form id="formCompra">
                             <div class="mb-3">
+                                <label for="idCompra" class="form-label">ID</label>
+                                <input id="idCompra" type="number" class="form-control" min="1" readonly>
+                                <div class="form-text">O ID é preenchido automaticamente.</div>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="produtoCompra" class="form-label">Produto</label>
                                 <select id="produtoCompra" class="form-select" required>
                                     <option value="">Selecione um produto</option>
@@ -644,6 +650,7 @@
                             <table class="table align-middle">
                                 <thead class="table-success">
                                     <tr>
+                                        <th>ID</th>
                                         <th>Produto</th>
                                         <th>Data</th>
                                         <th>Qtd.</th>
@@ -678,6 +685,10 @@
 
                         <form id="formVenda">
                             <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="idVenda" class="form-label">ID</label>
+                                    <input id="idVenda" type="number" class="form-control" min="1" readonly>
+                                </div>
                                 <div class="col-md-6">
                                     <label for="nomeCliente" class="form-label">Nome do cliente</label>
                                     <input id="nomeCliente" type="text" class="form-control" required>
@@ -751,6 +762,7 @@
                             <table class="table align-middle">
                                 <thead class="table-success">
                                     <tr>
+                                        <th>ID</th>
                                         <th>Cliente</th>
                                         <th>Data</th>
                                         <th>Itens</th>
@@ -932,6 +944,8 @@ const precoVendaCompra = document.getElementById("precoVendaCompra");
 const tabelaCompras = document.getElementById("tabelaCompras");
 const semCompras = document.getElementById("semCompras");
 const mensagemCompra = document.getElementById("mensagemCompra");
+const idCompra = document.getElementById("idCompra");
+const idVenda = document.getElementById("idVenda");
 
 
 // =============================================================
@@ -1070,6 +1084,7 @@ async function carregarProdutos() {
         produtos = dadosCarregados.produtos;
         vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
         compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
+        normalizarIdsRegistros();
         jsonBaseLocal = jsonBaseAtual;
         salvarDadosLocalmente();
 
@@ -1149,6 +1164,9 @@ function atualizarTudo() {
 
     atualizarTabelaVendas();
 
+    idCompra.value = obterProximoIdRegistro(compras);
+    idVenda.value = obterProximoIdRegistro(vendas);
+
 
     if (produtoEditando === null) {
 
@@ -1156,6 +1174,38 @@ function atualizarTudo() {
             obterProximoId();
 
     }
+
+}
+
+
+function obterProximoIdRegistro(registros) {
+
+    return registros.length
+        ? Math.max(...registros.map(registro => Number(registro.id) || 0)) + 1
+        : 1;
+
+}
+
+
+function normalizarIdsRegistros() {
+
+    let proximoIdCompra = 1;
+    compras.forEach(function(compra) {
+        if (!Number.isInteger(Number(compra.id)) || Number(compra.id) < 1) {
+            compra.id = proximoIdCompra;
+        }
+
+        proximoIdCompra = Math.max(proximoIdCompra, Number(compra.id) + 1);
+    });
+
+    let proximoIdVenda = 1;
+    vendas.forEach(function(venda) {
+        if (!Number.isInteger(Number(venda.id)) || Number(venda.id) < 1) {
+            venda.id = proximoIdVenda;
+        }
+
+        proximoIdVenda = Math.max(proximoIdVenda, Number(venda.id) + 1);
+    });
 
 }
 
@@ -2227,6 +2277,7 @@ function atualizarTabelaCompras() {
             : "-";
 
         linha.innerHTML = `
+            <td>${escaparHtml(String(compra.id || ""))}</td>
             <td>${escaparHtml(String(compra.nomeProduto || ""))}</td>
             <td>${escaparHtml(String(compra.datacompra || ""))}</td>
             <td>${escaparHtml(String(compra.quantidade || 0))}</td>
@@ -2267,6 +2318,7 @@ formCompra.addEventListener("submit", function(event) {
     }
 
     compras.push({
+        id: Number(idCompra.value),
         codProduto: produto.id,
         nomeProduto: produto.nome,
         datacompra: converterDataParaJson(dataCompra.value),
@@ -2279,6 +2331,7 @@ formCompra.addEventListener("submit", function(event) {
     atualizarJson();
     atualizarTabelaCompras();
     formCompra.reset();
+    idCompra.value = obterProximoIdRegistro(compras);
     dataCompra.value = new Date().toISOString().slice(0, 10);
     quantidadeCompra.value = 1;
     mostrarMensagem(mensagemCompra, "Compra adicionada ao JSON com sucesso!", "success");
@@ -2355,6 +2408,7 @@ function atualizarTabelaVendas() {
 
         const linha = document.createElement("tr");
         linha.innerHTML = `
+            <td>${escaparHtml(String(venda.id || ""))}</td>
             <td>${escaparHtml(String(venda.nomeCliente || ""))}</td>
             <td>${escaparHtml(String(venda.data || ""))}</td>
             <td>${quantidadeItens}</td>
@@ -2365,7 +2419,7 @@ function atualizarTabelaVendas() {
         const linhaItens = document.createElement("tr");
         linhaItens.classList.add("d-none");
         linhaItens.innerHTML = `
-            <td colspan="5" class="bg-light">
+            <td colspan="6" class="bg-light">
                 <strong>Itens da venda</strong>
                 <div class="table-responsive mt-2">
                     <table class="table table-sm mb-0">
@@ -2454,6 +2508,7 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     itensDaVenda.push({
         codProduto: produto.id,
         nomeProduto: produto.nome,
+        idCompra: compra.id,
         quantidade: quantidade,
         precoUnitario: precoUnitario
     });
@@ -2490,13 +2545,14 @@ formVenda.addEventListener("submit", function(event) {
             ordem: indice + 1,
             codProduto: item.codProduto,
             nomeProduto: item.nomeProduto,
+            idCompra: item.idCompra,
             quantidade: item.quantidade,
             precoUnitario: item.precoUnitario
         };
     });
 
     const novaVenda = {
-        id: vendas.length ? Math.max(...vendas.map(venda => Number(venda.id) || 0)) + 1 : 1,
+        id: Number(idVenda.value),
         nomeCliente: document.getElementById("nomeCliente").value.trim(),
         telefoneCliente: document.getElementById("telefoneCliente").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
@@ -2508,6 +2564,7 @@ formVenda.addEventListener("submit", function(event) {
     atualizarJson();
     atualizarTabelaVendas();
     formVenda.reset();
+    idVenda.value = obterProximoIdRegistro(vendas);
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
     itensDaVenda = [];
     atualizarItensDaVenda();
