@@ -412,100 +412,21 @@
         </div>
 
 
-        <!-- ================================================= -->
-        <!-- JSON -->
-        <!-- ================================================= -->
-
         <div class="col-lg-7">
 
             <div class="card shadow-sm border-0">
 
                 <div class="card-body p-4">
 
-
-                    <div
-                        class="d-flex justify-content-between align-items-center mb-3">
-
-                        <h3 class="mb-0">
-
-                            database/dados.json
-
-                        </h3>
-
-
-                        <span
-                            id="contador"
-                            class="badge bg-success">
-
-                            0 produtos
-
-                        </span>
-
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="mb-0">Produtos cadastrados</h3>
+                        <span id="contador" class="badge bg-success">0 produtos</span>
                     </div>
 
-
-                    <div
-                        id="avisoImagem"
-                        class="alert alert-warning">
-
-                        <strong>Imagens:</strong>
-
-                        Depois de selecionar uma imagem,
-                        copie o arquivo para a pasta
-                        <strong>img/</strong> do projeto antes de
-                        fazer o <strong>git push</strong>.
-
-                    </div>
-
-
-                    <textarea
-                        id="json"
-                        class="form-control font-monospace"
-                        rows="20"
-                        spellcheck="false">
-                    </textarea>
-
-
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-
-
-                        <button
-                            type="button"
-                            id="copiar"
-                            class="btn btn-primary">
-
-                            📋 Copiar JSON
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            id="formatar"
-                            class="btn btn-secondary">
-
-                            ✨ Formatar JSON
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            id="limpar"
-                            class="btn btn-outline-danger ms-auto">
-
-                            Limpar
-
-                        </button>
-
-
-                    </div>
-
-
-                    <div
-                        id="mensagemJson"
-                        class="alert d-none mt-3">
-                    </div>
+                    <p class="text-muted mb-0">
+                        Use o formulário ao lado para cadastrar ou editar produtos.
+                        A lista completa aparece abaixo.
+                    </p>
 
 
                 </div>
@@ -823,10 +744,28 @@
             <div class="col-lg-5">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">database/dados.json</h3>
-                        <p class="text-muted small">Copie este conteúdo para o arquivo <strong>database/dados.json</strong> antes de enviar as alterações.</p>
-                        <textarea id="jsonVendas" class="form-control font-monospace" rows="24" spellcheck="false"></textarea>
-                        <button id="copiarVendas" type="button" class="btn btn-primary mt-3">📋 Copiar JSON</button>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="mb-0">Vendas cadastradas</h3>
+                            <span id="contadorVendas" class="badge bg-success">0 vendas</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Data</th>
+                                        <th>Itens</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaVendas"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="semVendas" class="text-center text-muted py-4 d-none">
+                            Nenhuma venda cadastrada.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -843,6 +782,36 @@
                 <p class="text-muted mb-0">Use o menu Vendas para registrar e consultar os dados que serão usados nos relatórios.</p>
             </div>
         </div>
+    </section>
+
+
+    <section id="painelJson" class="card shadow-sm border-0 mt-4">
+
+        <div class="card-body p-4">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">database/dados.json</h3>
+                <span class="badge bg-secondary">Dados completos</span>
+            </div>
+
+            <div id="avisoImagem" class="alert alert-warning">
+                <strong>Imagens:</strong>
+                Depois de selecionar uma imagem, copie o arquivo para a pasta
+                <strong>img/</strong> do projeto antes de fazer o <strong>git push</strong>.
+            </div>
+
+            <textarea id="json" class="form-control font-monospace" rows="18" spellcheck="false"></textarea>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <button type="button" id="copiar" class="btn btn-primary">📋 Copiar JSON</button>
+                <button type="button" id="formatar" class="btn btn-secondary">✨ Formatar JSON</button>
+                <button type="button" id="limpar" class="btn btn-outline-danger ms-auto">Limpar</button>
+            </div>
+
+            <div id="mensagemJson" class="alert d-none mt-3"></div>
+
+        </div>
+
     </section>
 
 
@@ -941,8 +910,10 @@ const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
 const itensVenda = document.getElementById("itensVenda");
 const totalPedido = document.getElementById("totalPedido");
-const jsonVendas = document.getElementById("jsonVendas");
 const mensagemVenda = document.getElementById("mensagemVenda");
+const tabelaVendas = document.getElementById("tabelaVendas");
+const semVendas = document.getElementById("semVendas");
+const contadorVendas = document.getElementById("contadorVendas");
 const formCompra = document.getElementById("formCompra");
 const produtoCompra = document.getElementById("produtoCompra");
 const dataCompra = document.getElementById("dataCompra");
@@ -1139,6 +1110,8 @@ function atualizarTudo() {
 
     atualizarTabelaCompras();
 
+    atualizarTabelaVendas();
+
 
     if (produtoEditando === null) {
 
@@ -1165,7 +1138,6 @@ function atualizarJson() {
     const json = JSON.stringify(dados, null, 4);
 
     textareaJson.value = json;
-    jsonVendas.value = json;
 
 }
 
@@ -2367,6 +2339,34 @@ function obterTotalDaVenda() {
 }
 
 
+function atualizarTabelaVendas() {
+
+    tabelaVendas.innerHTML = "";
+    semVendas.classList.toggle("d-none", vendas.length > 0);
+
+    contadorVendas.textContent =
+        vendas.length === 1 ? "1 venda" : `${vendas.length} vendas`;
+
+    vendas.forEach(function(venda) {
+        const itens = Array.isArray(venda.produtos) ? venda.produtos : [];
+        const quantidadeItens = itens.reduce(function(total, item) {
+            return total + (Number(item.quantidade) || 0);
+        }, 0);
+
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${escaparHtml(String(venda.nomeCliente || ""))}</td>
+            <td>${escaparHtml(String(venda.data || ""))}</td>
+            <td>${quantidadeItens}</td>
+            <td>R$ ${formatarPreco(venda.totalVenda)}</td>
+        `;
+
+        tabelaVendas.appendChild(linha);
+    });
+
+}
+
+
 produtoVenda.addEventListener("change", function() {
     const produto = produtos.find(item => Number(item.id) === Number(this.value));
     compraVenda.innerHTML = produto
@@ -2469,22 +2469,12 @@ formVenda.addEventListener("submit", function(event) {
 
     vendas.push(novaVenda);
     atualizarJson();
+    atualizarTabelaVendas();
     formVenda.reset();
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
     itensDaVenda = [];
     atualizarItensDaVenda();
     mostrarMensagem(mensagemVenda, "Venda adicionada ao JSON com sucesso!", "success");
-});
-
-
-document.getElementById("copiarVendas").addEventListener("click", async function() {
-    try {
-        await navigator.clipboard.writeText(jsonVendas.value);
-    } catch (erro) {
-        jsonVendas.select();
-        document.execCommand("copy");
-    }
-    mostrarMensagem(mensagemVenda, "JSON completo de dados copiado.", "success");
 });
 
 
