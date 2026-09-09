@@ -303,13 +303,13 @@
     },	
     {
         "id": 31,
-        "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD",
+        "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
         "descricao": "",
-        "custo": 107.00,
-        "preco": "R$ 164.99",
+        "custo": 103.70,
+        "preco": "R$ 165.00",
         "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
         "categoria": "Eletrônicos",
-		"estoque": 0
+		"estoque": 1
     },	
     {
         "id": 32,
@@ -510,6 +510,16 @@
         "imagem": "img/produtos/projetor_hy320.png",
         "categoria": "Eletrônicos",
 		"estoque": 1
+    },
+    {
+        "id": 52,
+        "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz",
+        "descricao": "",
+        "custo": 84.00,
+        "preco": "R$ 165.00",
+        "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
+        "categoria": "Eletrônicos",
+		"estoque": 1
     }
 	
 ],
@@ -666,6 +676,28 @@
         "quantidade": 1,
         "precoCusto": 182.00,
         "precoVenda": 250.00
+
+    },   
+    {
+        "id": 4,
+        "codProduto": 31,
+        "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+        "datacompra": "31/08/2026",
+        "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018206809932/status?packId=2000018206809932&orderId=2000018206809932",
+        "quantidade": 1,
+        "precoCusto": 103.70,
+        "precoVenda": 165.00
+
+    },   
+    {
+        "id": 5,
+        "codProduto": 52,
+        "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz",
+        "datacompra": "01/09/2026",
+        "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018222241440/status?packId=2000018222241440&orderId=2000018222241440",
+        "quantidade": 1,
+        "precoCusto": 84.00,
+        "precoVenda": 165.00
 
     }
 ]
