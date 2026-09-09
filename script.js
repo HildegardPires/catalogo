@@ -50,7 +50,7 @@ async function carregarProdutos() {
     try {
 
         const resposta =
-            await fetch("produtos.json");
+            await fetch("database/dados.json");
 
 
         if (!resposta.ok) {
@@ -62,8 +62,13 @@ async function carregarProdutos() {
         }
 
 
-        produtos =
-            await resposta.json();
+        const dados = await resposta.json();
+
+        if (!dados || !Array.isArray(dados.produtos)) {
+            throw new Error("O arquivo database/dados.json precisa conter a propriedade produtos como array.");
+        }
+
+        produtos = dados.produtos;
 
 
         criarCategorias();

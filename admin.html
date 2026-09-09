@@ -84,7 +84,7 @@
         id="status"
         class="alert alert-info">
 
-        Carregando produtos.json...
+        Carregando database/dados.json...
 
     </div>
 
@@ -466,7 +466,7 @@
 
                         <h3 class="mb-0">
 
-                            produtos.json
+                            database/dados.json
 
                         </h3>
 
@@ -766,8 +766,8 @@
             <div class="col-lg-5">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">vendas.json</h3>
-                        <p class="text-muted small">Copie este conteúdo para o arquivo <strong>vendas.json</strong> antes de enviar as alterações.</p>
+                        <h3 class="mb-3">database/dados.json</h3>
+                        <p class="text-muted small">Copie este conteúdo para o arquivo <strong>database/dados.json</strong> antes de enviar as alterações.</p>
                         <textarea id="jsonVendas" class="form-control font-monospace" rows="24" spellcheck="false"></textarea>
                         <button id="copiarVendas" type="button" class="btn btn-primary mt-3">📋 Copiar JSON</button>
                     </div>
@@ -810,6 +810,8 @@ let produtoEditando = null;
 let vendas = [];
 
 let itensDaVenda = [];
+
+let compras = [];
 
 
 const form =
@@ -970,7 +972,7 @@ arquivoImagem.addEventListener(
 
 
 // =============================================================
-// CARREGAR PRODUTOS.JSON
+// CARREGAR DADOS.JSON
 // =============================================================
 
 async function carregarProdutos() {
@@ -978,7 +980,7 @@ async function carregarProdutos() {
     try {
 
         const resposta =
-            await fetch("produtos.json");
+            await fetch("database/dados.json");
 
 
         if (!resposta.ok) {
@@ -994,16 +996,20 @@ async function carregarProdutos() {
             await resposta.json();
 
 
-        if (!Array.isArray(dados)) {
+        if (!dados || !Array.isArray(dados.produtos)) {
 
             throw new Error(
-                "O produtos.json precisa conter um array."
+                "O arquivo database/dados.json precisa conter a propriedade produtos como array."
             );
 
         }
 
 
-        produtos = dados;
+        produtos = dados.produtos;
+
+        vendas = Array.isArray(dados.vendas) ? dados.vendas : [];
+
+        compras = Array.isArray(dados.compras) ? dados.compras : [];
 
 
         atualizarTudo();
@@ -1013,7 +1019,7 @@ async function carregarProdutos() {
             "alert alert-success";
 
         status.textContent =
-            "✓ produtos.json carregado com sucesso.";
+            "✓ database/dados.json carregado com sucesso.";
 
 
     } catch (erro) {
@@ -1032,7 +1038,7 @@ async function carregarProdutos() {
 
         status.innerHTML = `
             Não foi possível carregar o
-            <strong>produtos.json</strong>.
+            <strong>database/dados.json</strong>.
 
             <br><br>
 
@@ -1078,12 +1084,16 @@ function atualizarTudo() {
 
 function atualizarJson() {
 
-    textareaJson.value =
-        JSON.stringify(
-            produtos,
-            null,
-            4
-        );
+    const dados = {
+        produtos: produtos,
+        vendas: vendas,
+        compras: compras
+    };
+
+    const json = JSON.stringify(dados, null, 4);
+
+    textareaJson.value = json;
+    jsonVendas.value = json;
 
 }
 
@@ -2292,7 +2302,7 @@ formVenda.addEventListener("submit", function(event) {
     };
 
     vendas.push(novaVenda);
-    jsonVendas.value = JSON.stringify(vendas, null, 4);
+    atualizarJson();
     formVenda.reset();
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
     itensDaVenda = [];
@@ -2308,23 +2318,8 @@ document.getElementById("copiarVendas").addEventListener("click", async function
         jsonVendas.select();
         document.execCommand("copy");
     }
-    mostrarMensagem(mensagemVenda, "JSON das vendas copiado.", "success");
+    mostrarMensagem(mensagemVenda, "JSON completo de dados copiado.", "success");
 });
-
-
-async function carregarVendas() {
-    try {
-        const resposta = await fetch("vendas.json");
-        if (!resposta.ok) throw new Error(`Erro HTTP: ${resposta.status}`);
-        const dados = await resposta.json();
-        vendas = Array.isArray(dados) ? dados : [];
-    } catch (erro) {
-        console.warn("Não foi possível carregar vendas.json", erro);
-        vendas = [];
-    }
-
-    jsonVendas.value = JSON.stringify(vendas, null, 4);
-}
 
 
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
@@ -2341,7 +2336,6 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
 document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
 
 carregarProdutos();
-carregarVendas();
 
 
 </script>
