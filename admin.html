@@ -2172,7 +2172,7 @@ function atualizarProdutosParaVenda() {
     produtos.filter(produto => Number(produto.estoque) > 0).forEach(function(produto) {
         const opcao = document.createElement("option");
         opcao.value = produto.id;
-        opcao.textContent = `${produto.nome} (${produto.estoque} em estoque)`;
+        opcao.textContent = `ID: ${produto.id} — ${produto.nome} (${produto.estoque} em estoque)`;
         produtoVenda.appendChild(opcao);
     });
 
