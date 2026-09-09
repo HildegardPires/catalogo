@@ -777,8 +777,14 @@
                             <div class="row g-3 align-items-end">
                                 <div class="col-md-6">
                                     <label for="produtoVenda" class="form-label">Produto</label>
-                                    <select id="produtoVenda" class="form-select">
+                                    <select id="produtoVenda" class="form-select" required>
                                         <option value="">Selecione um produto</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="compraVenda" class="form-label">Compra do produto</label>
+                                    <select id="compraVenda" class="form-select" required disabled>
+                                        <option value="">Selecione primeiro o produto</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
@@ -930,6 +936,7 @@ const campoImagem =
 
 const formVenda = document.getElementById("formVenda");
 const produtoVenda = document.getElementById("produtoVenda");
+const compraVenda = document.getElementById("compraVenda");
 const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
 const itensVenda = document.getElementById("itensVenda");
@@ -2362,17 +2369,43 @@ function obterTotalDaVenda() {
 
 produtoVenda.addEventListener("change", function() {
     const produto = produtos.find(item => Number(item.id) === Number(this.value));
-    precoVenda.value = produto ? converterPreco(produto.preco).toFixed(2) : "";
+    compraVenda.innerHTML = produto
+        ? '<option value="">Selecione uma compra</option>'
+        : '<option value="">Selecione primeiro o produto</option>';
+    compraVenda.disabled = !produto;
+    precoVenda.value = "";
+
+    if (!produto) {
+        return;
+    }
+
+    compras.forEach(function(compra, indice) {
+        if (Number(compra.codProduto) !== Number(produto.id)) {
+            return;
+        }
+
+        const opcao = document.createElement("option");
+        opcao.value = indice;
+        opcao.textContent = `${compra.datacompra || "Sem data"} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
+        compraVenda.appendChild(opcao);
+    });
+});
+
+
+compraVenda.addEventListener("change", function() {
+    const compra = compras[Number(this.value)];
+    precoVenda.value = compra ? Number(compra.precoVenda).toFixed(2) : "";
 });
 
 
 document.getElementById("btnAdicionarItem").addEventListener("click", function() {
     const produto = produtos.find(item => Number(item.id) === Number(produtoVenda.value));
+    const compra = compras[Number(compraVenda.value)];
     const quantidade = parseInt(quantidadeVenda.value);
     const precoUnitario = parseFloat(precoVenda.value);
 
-    if (!produto || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
-        mostrarMensagem(mensagemVenda, "Informe um produto, quantidade e preço válidos.", "danger");
+    if (!produto || !compra || Number(compra.codProduto) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
+        mostrarMensagem(mensagemVenda, "Informe produto, compra, quantidade e preço válidos.", "danger");
         return;
     }
 
@@ -2389,6 +2422,8 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     });
 
     produtoVenda.value = "";
+    compraVenda.innerHTML = '<option value="">Selecione primeiro o produto</option>';
+    compraVenda.disabled = true;
     quantidadeVenda.value = 1;
     precoVenda.value = "";
     atualizarItensDaVenda();
