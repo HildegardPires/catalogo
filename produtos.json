@@ -81,7 +81,7 @@
         "preco": "R$ 149.99",
         "imagem": "img/produtos/panela_arroz_agratto.webp",
         "categoria": "Eletrodomésticos",
-		"estoque": 1
+		"estoque": 0
     },
     {
         "id": 8,
@@ -225,7 +225,7 @@
         "preco": "R$ 40.00",
         "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
         "categoria": "Ferramentas",
-		"estoque": 1
+		"estoque": 3
     },	
     {
         "id": 20,
@@ -597,7 +597,7 @@
         "preco": "R$ 140.00",
         "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
         "categoria": "Ferramentas",
-		"estoque": 1
+		"estoque": 0
     },
     {
         "id": 51,
