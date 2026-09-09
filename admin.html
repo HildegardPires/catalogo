@@ -2241,7 +2241,6 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     }
 
     itensDaVenda.push({
-        id: itensDaVenda.length + 1,
         codProduto: produto.id,
         nomeProduto: produto.nome,
         quantidade: quantidade,
@@ -2264,13 +2263,32 @@ formVenda.addEventListener("submit", function(event) {
         return;
     }
 
+    const ultimoIdItem = vendas.reduce(function(maiorId, venda) {
+        const itens = Array.isArray(venda.produtos) ? venda.produtos : [];
+
+        return itens.reduce(function(maiorIdAtual, item) {
+            return Math.max(maiorIdAtual, Number(item.id) || 0);
+        }, maiorId);
+    }, 0);
+
+    const produtosDaVenda = itensDaVenda.map(function(item, indice) {
+        return {
+            id: ultimoIdItem + indice + 1,
+            ordem: indice + 1,
+            codProduto: item.codProduto,
+            nomeProduto: item.nomeProduto,
+            quantidade: item.quantidade,
+            precoUnitario: item.precoUnitario
+        };
+    });
+
     const novaVenda = {
         id: vendas.length ? Math.max(...vendas.map(venda => Number(venda.id) || 0)) + 1 : 1,
         nomeCliente: document.getElementById("nomeCliente").value.trim(),
         telefoneCliente: document.getElementById("telefoneCliente").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
         totalVenda: obterTotalDaVenda(),
-        produtos: itensDaVenda
+        produtos: produtosDaVenda
     };
 
     vendas.push(novaVenda);

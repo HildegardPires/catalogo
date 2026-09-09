@@ -8,6 +8,7 @@
         "produtos":[
             {
                 "id": 1,
+                "ordem": 1,
                 "codProduto": 4,
                 "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
                 "quantidade": 1,
@@ -15,6 +16,7 @@
             },
             {
                 "id": 2,
+                "ordem": 2,
                 "codProduto": 9,
                 "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
                 "quantidade": 1,
@@ -30,7 +32,8 @@
         "totalVenda": 140.00,
         "produtos":[
             {
-                "id": 1,
+                "id": 3,
+                "ordem": 1,
                 "codProduto": 50,
                 "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
                 "quantidade": 1,
@@ -46,14 +49,16 @@
         "totalVenda": 400.00,
         "produtos":[
             {
-                "id": 1,
+                "id": 4,
+                "ordem": 1,
                 "codProduto": 3,
                 "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
                 "quantidade": 1,
                 "precoUnitario": 270.00
             },
             {
-                "id": 2,
+                "id": 5,
+                "ordem": 2,
                 "codProduto": 7,
                 "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
                 "quantidade": 1,
@@ -69,14 +74,16 @@
         "totalVenda": 260.00,
         "produtos":[
             {
-                "id": 1,
+                "id": 6,
+                "ordem": 1,
                 "codProduto": 50,
                 "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
                 "quantidade": 1,
                 "precoUnitario": 132.50
             },
             {
-                "id": 2,
+                "id": 7,
+                "ordem": 2,
                 "codProduto": 5,
                 "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
                 "quantidade": 1,
