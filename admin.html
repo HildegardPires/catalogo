@@ -842,6 +842,8 @@ let compras = [];
 
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
+let jsonBaseLocal = "";
+
 
 const form =
     document.getElementById("formProduto");
@@ -1023,28 +1025,8 @@ arquivoImagem.addEventListener(
 async function carregarProdutos() {
 
     try {
-
-        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
-
-        if (dadosSalvos) {
-
-            const dados = JSON.parse(dadosSalvos);
-
-            if (dados && Array.isArray(dados.produtos)) {
-                produtos = dados.produtos;
-                vendas = Array.isArray(dados.vendas) ? dados.vendas : [];
-                compras = Array.isArray(dados.compras) ? dados.compras : [];
-
-                atualizarTudo();
-
-                status.className = "alert alert-success";
-                status.textContent = "✓ Dados carregados do armazenamento local.";
-                return;
-            }
-        }
-
         const resposta =
-            await fetch("database/dados.json");
+            await fetch("database/dados.json", { cache: "no-store" });
 
 
         if (!resposta.ok) {
@@ -1069,12 +1051,26 @@ async function carregarProdutos() {
         }
 
 
-        produtos = dados.produtos;
+        const jsonBaseAtual = JSON.stringify(dados);
+        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
+        let dadosLocais = null;
 
-        vendas = Array.isArray(dados.vendas) ? dados.vendas : [];
+        if (dadosSalvos) {
+            const armazenamento = JSON.parse(dadosSalvos);
 
-        compras = Array.isArray(dados.compras) ? dados.compras : [];
+            if (armazenamento && armazenamento.dados && armazenamento.baseJson) {
+                dadosLocais = armazenamento.baseJson === jsonBaseAtual
+                    ? armazenamento.dados
+                    : null;
+            }
+        }
 
+        const dadosCarregados = dadosLocais || dados;
+
+        produtos = dadosCarregados.produtos;
+        vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
+        compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
+        jsonBaseLocal = jsonBaseAtual;
         salvarDadosLocalmente();
 
         atualizarTudo();
@@ -1083,8 +1079,9 @@ async function carregarProdutos() {
         status.className =
             "alert alert-success";
 
-        status.textContent =
-            "✓ database/dados.json carregado com sucesso.";
+        status.textContent = dadosLocais
+            ? "✓ Dados locais carregados; nenhuma alteração externa foi detectada."
+            : "✓ database/dados.json atualizado e carregado com sucesso.";
 
 
     } catch (erro) {
@@ -1092,7 +1089,21 @@ async function carregarProdutos() {
         console.error(erro);
 
 
-        produtos = [];
+        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
+        const armazenamento = dadosSalvos ? JSON.parse(dadosSalvos) : null;
+        const dadosLocais = armazenamento && armazenamento.dados
+            ? armazenamento.dados
+            : null;
+
+        produtos = dadosLocais && Array.isArray(dadosLocais.produtos)
+            ? dadosLocais.produtos
+            : [];
+        vendas = dadosLocais && Array.isArray(dadosLocais.vendas)
+            ? dadosLocais.vendas
+            : [];
+        compras = dadosLocais && Array.isArray(dadosLocais.compras)
+            ? dadosLocais.compras
+            : [];
 
 
         atualizarTudo();
@@ -1179,7 +1190,10 @@ function salvarDadosLocalmente() {
 
     localStorage.setItem(
         CHAVE_DADOS_LOCAL,
-        JSON.stringify(dados)
+        JSON.stringify({
+            dados: dados,
+            baseJson: jsonBaseLocal
+        })
     );
 
 }
