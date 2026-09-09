@@ -526,17 +526,17 @@
             "descricao": "App: Icsee",
             "custo": 85,
             "preco": 140,
-            "imagem": "img/camera_seguranca_scb57.jpg",
+            "imagem": "img/produtos/camera_seguranca_scb57.jpg",
             "categoria": "Eletrônicos",
             "estoque": 1
         },
         {
             "id": 54,
-            "nome": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta",
+            "nome": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
             "descricao": "App: Yoosee",
             "custo": 59.49,
             "preco": 100,
-            "imagem": "img/camera_seguranca_jortan_jt8160.png",
+            "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
             "categoria": "Eletrônicos",
             "estoque": 1
         }
