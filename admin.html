@@ -56,6 +56,9 @@
             <button type="button" class="nav-link active" data-tela="produtos">
                 Cadastro de Produtos
             </button>
+            <button type="button" class="nav-link" data-tela="compras">
+                Compras
+            </button>
             <button type="button" class="nav-link" data-tela="vendas">
                 Vendas
             </button>
@@ -184,47 +187,6 @@
                                 rows="3"
                                 placeholder="Descrição do produto"
                                 required></textarea>
-
-                        </div>
-
-
-                        <!-- DATA DA COMPRA -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="datacompra"
-                                class="form-label">
-
-                                Data da compra
-
-                            </label>
-
-                            <input
-                                type="date"
-                                class="form-control"
-                                id="datacompra">
-
-                        </div>
-
-
-                        <!-- LINK DA COMPRA -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="linkcompra"
-                                class="form-label">
-
-                                Link da compra
-
-                            </label>
-
-                            <input
-                                type="url"
-                                class="form-control"
-                                id="linkcompra"
-                                placeholder="https://...">
 
                         </div>
 
@@ -697,6 +659,95 @@
     </section>
 
 
+    <section id="telaCompras" class="d-none">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">📦 Nova compra</h3>
+
+                        <form id="formCompra">
+                            <div class="mb-3">
+                                <label for="produtoCompra" class="form-label">Produto</label>
+                                <select id="produtoCompra" class="form-select" required>
+                                    <option value="">Selecione um produto</option>
+                                </select>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="dataCompra" class="form-label">Data da compra</label>
+                                    <input id="dataCompra" type="date" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="quantidadeCompra" class="form-label">Quantidade</label>
+                                    <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 mt-3">
+                                <label for="linkCompra" class="form-label">Link da compra</label>
+                                <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="precoCustoCompra" class="form-label">Preço de custo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="precoCustoCompra" type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="precoVendaCompra" class="form-label">Preço de venda</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="precoVendaCompra" type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg">💾 Salvar compra</button>
+                        </form>
+
+                        <div id="mensagemCompra" class="alert d-none mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">Compras cadastradas</h3>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Data</th>
+                                        <th>Qtd.</th>
+                                        <th>Custo</th>
+                                        <th>Venda</th>
+                                        <th>Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaCompras"></tbody>
+                            </table>
+                        </div>
+                        <div id="semCompras" class="text-center text-muted py-4 d-none">
+                            Nenhuma compra cadastrada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
     <section id="telaVendas" class="d-none">
 
         <div class="row g-4">
@@ -885,6 +936,16 @@ const itensVenda = document.getElementById("itensVenda");
 const totalPedido = document.getElementById("totalPedido");
 const jsonVendas = document.getElementById("jsonVendas");
 const mensagemVenda = document.getElementById("mensagemVenda");
+const formCompra = document.getElementById("formCompra");
+const produtoCompra = document.getElementById("produtoCompra");
+const dataCompra = document.getElementById("dataCompra");
+const linkCompra = document.getElementById("linkCompra");
+const quantidadeCompra = document.getElementById("quantidadeCompra");
+const precoCustoCompra = document.getElementById("precoCustoCompra");
+const precoVendaCompra = document.getElementById("precoVendaCompra");
+const tabelaCompras = document.getElementById("tabelaCompras");
+const semCompras = document.getElementById("semCompras");
+const mensagemCompra = document.getElementById("mensagemCompra");
 
 
 // =============================================================
@@ -1066,6 +1127,10 @@ function atualizarTudo() {
     atualizarContadores();
 
     atualizarProdutosParaVenda();
+
+    atualizarProdutosParaCompra();
+
+    atualizarTabelaCompras();
 
 
     if (produtoEditando === null) {
@@ -1458,14 +1523,6 @@ function editarProduto(id) {
         produto.descricao;
 
 
-    document.getElementById("datacompra").value =
-        converterDataParaInput(produto.datacompra);
-
-
-    document.getElementById("linkcompra").value =
-        produto.linkcompra || "";
-
-
     document.getElementById("preco").value =
         produto.preco;
 
@@ -1571,19 +1628,6 @@ form.addEventListener(
             descricao:
                 document
                     .getElementById("descricao")
-                    .value
-                    .trim(),
-
-            datacompra:
-                converterDataParaJson(
-                    document
-                        .getElementById("datacompra")
-                        .value
-                ),
-
-            linkcompra:
-                document
-                    .getElementById("linkcompra")
                     .value
                     .trim(),
 
@@ -2174,6 +2218,93 @@ filtroEstoque.addEventListener(
 // VENDAS
 // =============================================================
 
+function atualizarProdutosParaCompra() {
+
+    const selecionado = produtoCompra.value;
+    produtoCompra.innerHTML = '<option value="">Selecione um produto</option>';
+
+    produtos.forEach(function(produto) {
+        const opcao = document.createElement("option");
+        opcao.value = produto.id;
+        opcao.textContent = `ID: ${produto.id} — ${produto.nome}`;
+        produtoCompra.appendChild(opcao);
+    });
+
+    produtoCompra.value = selecionado;
+
+}
+
+
+function atualizarTabelaCompras() {
+
+    tabelaCompras.innerHTML = "";
+
+    semCompras.classList.toggle("d-none", compras.length > 0);
+
+    compras.forEach(function(compra) {
+        const linha = document.createElement("tr");
+        const link = compra.linkcompra
+            ? `<a href="${escaparHtml(compra.linkcompra)}" target="_blank" rel="noopener">Abrir</a>`
+            : "-";
+
+        linha.innerHTML = `
+            <td>${escaparHtml(String(compra.nomeProduto || ""))}</td>
+            <td>${escaparHtml(String(compra.datacompra || ""))}</td>
+            <td>${escaparHtml(String(compra.quantidade || 0))}</td>
+            <td>R$ ${formatarPreco(compra.precoCusto)}</td>
+            <td>R$ ${formatarPreco(compra.precoVenda)}</td>
+            <td>${link}</td>
+        `;
+
+        tabelaCompras.appendChild(linha);
+    });
+
+}
+
+
+produtoCompra.addEventListener("change", function() {
+    const produto = produtos.find(item => Number(item.id) === Number(this.value));
+
+    if (produto) {
+        precoCustoCompra.value = converterPreco(produto.custo).toFixed(2);
+        precoVendaCompra.value = converterPreco(produto.preco).toFixed(2);
+    }
+});
+
+
+formCompra.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const produto = produtos.find(item => Number(item.id) === Number(produtoCompra.value));
+    const quantidade = parseInt(quantidadeCompra.value);
+    const precoCusto = parseFloat(precoCustoCompra.value);
+    const precoVenda = parseFloat(precoVendaCompra.value);
+
+    if (!produto || !Number.isInteger(quantidade) || quantidade < 1 ||
+        !Number.isFinite(precoCusto) || precoCusto < 0 ||
+        !Number.isFinite(precoVenda) || precoVenda < 0) {
+        mostrarMensagem(mensagemCompra, "Informe produto, quantidade e preços válidos.", "danger");
+        return;
+    }
+
+    compras.push({
+        codProduto: produto.id,
+        nomeProduto: produto.nome,
+        datacompra: converterDataParaJson(dataCompra.value),
+        linkcompra: linkCompra.value.trim(),
+        quantidade: quantidade,
+        precoCusto: precoCusto,
+        precoVenda: precoVenda
+    });
+
+    atualizarJson();
+    atualizarTabelaCompras();
+    formCompra.reset();
+    dataCompra.value = new Date().toISOString().slice(0, 10);
+    quantidadeCompra.value = 1;
+    mostrarMensagem(mensagemCompra, "Compra adicionada ao JSON com sucesso!", "success");
+});
+
 function atualizarProdutosParaVenda() {
 
     const selecionado = produtoVenda.value;
@@ -2326,6 +2457,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
     botao.addEventListener("click", function() {
         const tela = this.dataset.tela;
         document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
+        document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
         document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
         document.getElementById("telaRelatorios").classList.toggle("d-none", tela !== "relatorios");
         document.querySelectorAll("#menuAdmin [data-tela]").forEach(item => item.classList.toggle("active", item === this));
@@ -2334,6 +2466,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
 
 
 document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
+dataCompra.value = new Date().toISOString().slice(0, 10);
 
 carregarProdutos();
 
