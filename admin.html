@@ -65,6 +65,9 @@
             <button type="button" class="nav-link" data-tela="relatorios">
                 Relatórios
             </button>
+            <button type="button" class="nav-link" data-tela="json">
+                JSON
+            </button>
         </div>
 
     </div>
@@ -475,6 +478,19 @@
 
                 </div>
 
+                <div class="col-md-3">
+
+                    <label for="ordenacaoProdutos" class="form-label">
+                        Ordenar por ID
+                    </label>
+
+                    <select id="ordenacaoProdutos" class="form-select">
+                        <option value="crescente">Crescente</option>
+                        <option value="decrescente">Decrescente</option>
+                    </select>
+
+                </div>
+
             </div>
 
 
@@ -739,6 +755,7 @@
                                         <th>Data</th>
                                         <th>Itens</th>
                                         <th>Total</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id="tabelaVendas"></tbody>
@@ -767,7 +784,9 @@
     </section>
 
 
-    <section id="painelJson" class="card shadow-sm border-0 mt-4">
+    <section id="telaJson" class="d-none">
+
+    <div id="painelJson" class="card shadow-sm border-0 mt-4">
 
         <div class="card-body p-4">
 
@@ -791,6 +810,8 @@
             <div id="mensagemJson" class="alert d-none mt-3"></div>
 
         </div>
+
+    </div>
 
     </section>
 
@@ -845,6 +866,9 @@ const filtroCategoria =
 
 const filtroEstoque =
     document.getElementById("filtroEstoque");
+
+const ordenacaoProdutos =
+    document.getElementById("ordenacaoProdutos");
 
 const totalVenda =
     document.getElementById("totalVenda");
@@ -1281,7 +1305,14 @@ function atualizarTabela() {
 
 
     const produtosFiltrados =
-        obterProdutosFiltrados();
+        obterProdutosFiltrados().sort(function(a, b) {
+            const comparacao =
+                (Number(a.id) || 0) - (Number(b.id) || 0);
+
+            return ordenacaoProdutos.value === "decrescente"
+                ? comparacao * -1
+                : comparacao;
+        });
 
 
     if (produtosFiltrados.length === 0) {
@@ -2138,6 +2169,16 @@ filtroEstoque.addEventListener(
 );
 
 
+ordenacaoProdutos.addEventListener(
+    "change",
+    function() {
+
+        atualizarTabela();
+
+    }
+);
+
+
 // =============================================================
 // VENDAS
 // =============================================================
@@ -2304,9 +2345,46 @@ function atualizarTabelaVendas() {
             <td>${escaparHtml(String(venda.data || ""))}</td>
             <td>${quantidadeItens}</td>
             <td>R$ ${formatarPreco(venda.totalVenda)}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-primary">Itens</button></td>
         `;
 
+        const linhaItens = document.createElement("tr");
+        linhaItens.classList.add("d-none");
+        linhaItens.innerHTML = `
+            <td colspan="5" class="bg-light">
+                <strong>Itens da venda</strong>
+                <div class="table-responsive mt-2">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr><th>Produto</th><th>Qtd.</th><th>Preço unitário</th><th>Subtotal</th></tr>
+                        </thead>
+                        <tbody>
+                            ${itens.length ? itens.map(function(item) {
+                                const subtotal = (Number(item.quantidade) || 0) * (Number(item.precoUnitario) || 0);
+                                return `
+                                    <tr>
+                                        <td>${escaparHtml(String(item.nomeProduto || ""))}</td>
+                                        <td>${Number(item.quantidade) || 0}</td>
+                                        <td>R$ ${formatarPreco(item.precoUnitario)}</td>
+                                        <td>R$ ${formatarPreco(subtotal)}</td>
+                                    </tr>
+                                `;
+                            }).join("") : '<tr><td colspan="4" class="text-muted">Nenhum item registrado.</td></tr>'}
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        `;
+
+        const botaoItens = linha.querySelector("button");
+        botaoItens.addEventListener("click", function() {
+            const oculto = linhaItens.classList.toggle("d-none");
+            botaoItens.textContent = oculto ? "Itens" : "Ocultar";
+            botaoItens.setAttribute("aria-expanded", String(!oculto));
+        });
+
         tabelaVendas.appendChild(linha);
+        tabelaVendas.appendChild(linhaItens);
     });
 
 }
@@ -2430,6 +2508,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
         document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
         document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
         document.getElementById("telaRelatorios").classList.toggle("d-none", tela !== "relatorios");
+        document.getElementById("telaJson").classList.toggle("d-none", tela !== "json");
         document.querySelectorAll("#menuAdmin [data-tela]").forEach(item => item.classList.toggle("active", item === this));
     });
 });
