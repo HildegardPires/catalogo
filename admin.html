@@ -2192,7 +2192,7 @@ function atualizarItensDaVenda() {
 
         const linha = document.createElement("tr");
         linha.innerHTML = `
-            <td>${escaparHtml(item.nomeProduto)}</td>
+            <td><span class="text-muted">ID: ${escaparHtml(String(item.codProduto))}</span> — ${escaparHtml(item.nomeProduto)}</td>
             <td>${item.quantidade}</td>
             <td>R$ ${formatarPreco(item.precoUnitario)}</td>
             <td>R$ ${formatarPreco(subtotal)}</td>
