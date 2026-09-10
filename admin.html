@@ -681,7 +681,7 @@
             <div class="col-lg-7">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h3 class="mb-4">🧾 Nova venda</h3>
+                        <h3 class="mb-4"><span id="tituloVenda">🧾 Nova venda</span></h3>
 
                         <form id="formVenda">
                             <div class="row g-3 mb-4">
@@ -742,7 +742,8 @@
                                 </table>
                             </div>
 
-                            <button type="submit" class="btn btn-success btn-lg">💾 Salvar venda</button>
+                            <button type="submit" id="btnSalvarVenda" class="btn btn-success btn-lg">💾 Salvar venda</button>
+                            <button type="button" id="btnCancelarVenda" class="btn btn-secondary btn-lg d-none">Cancelar</button>
                         </form>
 
                         <div id="mensagemVenda" class="alert d-none mt-3"></div>
@@ -850,6 +851,8 @@ let vendas = [];
 
 let itensDaVenda = [];
 
+let vendaEditando = null;
+
 let compras = [];
 
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
@@ -931,6 +934,9 @@ const precoVenda = document.getElementById("precoVenda");
 const itensVenda = document.getElementById("itensVenda");
 const totalPedido = document.getElementById("totalPedido");
 const mensagemVenda = document.getElementById("mensagemVenda");
+const tituloVenda = document.getElementById("tituloVenda");
+const btnSalvarVenda = document.getElementById("btnSalvarVenda");
+const btnCancelarVenda = document.getElementById("btnCancelarVenda");
 const tabelaVendas = document.getElementById("tabelaVendas");
 const semVendas = document.getElementById("semVendas");
 const contadorVendas = document.getElementById("contadorVendas");
@@ -2413,7 +2419,13 @@ function atualizarTabelaVendas() {
             <td>${escaparHtml(String(venda.data || ""))}</td>
             <td>${quantidadeItens}</td>
             <td>R$ ${formatarPreco(venda.totalVenda)}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-primary">Itens</button></td>
+            <td>
+                <div class="d-flex gap-1">
+                    <button type="button" class="btn btn-sm btn-outline-primary">Itens</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-acao="editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" data-acao="excluir">Excluir</button>
+                </div>
+            </td>
         `;
 
         const linhaItens = document.createElement("tr");
@@ -2445,15 +2457,100 @@ function atualizarTabelaVendas() {
         `;
 
         const botaoItens = linha.querySelector("button");
+        const botaoEditar = linha.querySelector('[data-acao="editar"]');
+        const botaoExcluir = linha.querySelector('[data-acao="excluir"]');
+
         botaoItens.addEventListener("click", function() {
             const oculto = linhaItens.classList.toggle("d-none");
             botaoItens.textContent = oculto ? "Itens" : "Ocultar";
             botaoItens.setAttribute("aria-expanded", String(!oculto));
         });
 
+        botaoEditar.addEventListener("click", function() {
+            editarVenda(venda.id);
+        });
+
+        botaoExcluir.addEventListener("click", function() {
+            excluirVenda(venda.id);
+        });
+
         tabelaVendas.appendChild(linha);
         tabelaVendas.appendChild(linhaItens);
     });
+
+}
+
+
+function editarVenda(id) {
+
+    const venda = vendas.find(item => Number(item.id) === Number(id));
+
+    if (!venda) {
+        return;
+    }
+
+    vendaEditando = Number(venda.id);
+    idVenda.value = venda.id;
+    document.getElementById("nomeCliente").value = venda.nomeCliente || "";
+    document.getElementById("telefoneCliente").value = venda.telefoneCliente || "";
+    document.getElementById("dataVenda").value = converterDataParaInput(venda.data);
+
+    itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
+        return {
+            codProduto: item.codProduto,
+            nomeProduto: item.nomeProduto,
+            idCompra: item.idCompra ?? null,
+            quantidade: Number(item.quantidade) || 0,
+            precoUnitario: Number(item.precoUnitario) || 0
+        };
+    });
+
+    atualizarItensDaVenda();
+    tituloVenda.textContent = `✏️ Editar venda #${venda.id}`;
+    btnSalvarVenda.textContent = "💾 Salvar alterações";
+    btnSalvarVenda.classList.replace("btn-success", "btn-primary");
+    btnCancelarVenda.classList.remove("d-none");
+    mostrarMensagem(mensagemVenda, `Editando venda #${venda.id}.`, "info");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+}
+
+
+function cancelarEdicaoVenda() {
+
+    vendaEditando = null;
+    itensDaVenda = [];
+    formVenda.reset();
+    idVenda.value = obterProximoIdRegistro(vendas);
+    document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
+    atualizarItensDaVenda();
+    tituloVenda.textContent = "🧾 Nova venda";
+    btnSalvarVenda.textContent = "💾 Salvar venda";
+    btnSalvarVenda.classList.replace("btn-primary", "btn-success");
+    btnCancelarVenda.classList.add("d-none");
+    mensagemVenda.classList.add("d-none");
+
+}
+
+
+function excluirVenda(id) {
+
+    const venda = vendas.find(item => Number(item.id) === Number(id));
+
+    if (!venda || !confirm(`Deseja realmente excluir a venda #${venda.id}?`)) {
+        return;
+    }
+
+    vendas = vendas.filter(item => Number(item.id) !== Number(id));
+
+    if (vendaEditando === Number(id)) {
+        cancelarEdicaoVenda();
+    }
+
+    atualizarJson();
+    atualizarTabelaVendas();
+    idVenda.value = obterProximoIdRegistro(vendas);
+    mostrarMensagem(mensagemVenda, `Venda #${id} excluída.`, "warning");
 
 }
 
@@ -2560,7 +2657,17 @@ formVenda.addEventListener("submit", function(event) {
         produtos: produtosDaVenda
     };
 
-    vendas.push(novaVenda);
+    if (vendaEditando === null) {
+        vendas.push(novaVenda);
+    } else {
+        const indiceVenda = vendas.findIndex(item => Number(item.id) === Number(vendaEditando));
+
+        if (indiceVenda !== -1) {
+            vendas[indiceVenda] = novaVenda;
+        }
+    }
+
+    vendaEditando = null;
     atualizarJson();
     atualizarTabelaVendas();
     formVenda.reset();
@@ -2568,8 +2675,15 @@ formVenda.addEventListener("submit", function(event) {
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
     itensDaVenda = [];
     atualizarItensDaVenda();
+    tituloVenda.textContent = "🧾 Nova venda";
+    btnSalvarVenda.textContent = "💾 Salvar venda";
+    btnSalvarVenda.classList.replace("btn-primary", "btn-success");
+    btnCancelarVenda.classList.add("d-none");
     mostrarMensagem(mensagemVenda, "Venda adicionada ao JSON com sucesso!", "success");
 });
+
+
+btnCancelarVenda.addEventListener("click", cancelarEdicaoVenda);
 
 
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
