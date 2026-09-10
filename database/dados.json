@@ -1,4 +1,4 @@
-{
+﻿{
     "produtos": [
         {
             "id": 1,
@@ -492,13 +492,13 @@
         },
         {
             "id": 50,
-            "nome": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
+            "nome": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
             "descricao": "",
             "custo": 97.76,
             "preco": 140,
             "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
             "categoria": "Ferramentas",
-            "estoque": 0
+            "estoque": 1
         },
         {
             "id": 51,
@@ -512,7 +512,7 @@
         },
         {
             "id": 52,
-            "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz",
+            "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
             "descricao": "",
             "custo": 84,
             "preco": 165,
@@ -538,6 +538,26 @@
             "preco": 100,
             "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
             "categoria": "Eletrônicos",
+            "estoque": 1
+        },
+        {
+            "id": 55,
+            "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
+            "descricao": "",
+            "custo": 99.00,
+            "preco": 165,
+            "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
+            "categoria": "Eletrônicos",
+            "estoque": 1
+        },
+        {
+            "id": 56,
+            "nome": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
+            "descricao": "",
+            "custo": 93.41,
+            "preco": 140,
+            "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
+            "categoria": "Ferramentas",
             "estoque": 1
         }
     ],
@@ -658,6 +678,42 @@
                     "idCompra": 1
                 }
             ]
+        },
+        {
+            "id": 6,
+            "nomeCliente": "Jakeline",
+            "telefoneCliente": "63991257224",
+            "data": "09/09/2026",
+            "totalVenda": 140,
+            "produtos": [
+                {
+                    "id": 10,
+                    "ordem": 1,
+                    "codProduto": 52,
+                    "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+                    "idCompra": 5,
+                    "quantidade": 1,
+                    "precoUnitario": 140
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nomeCliente": "Felipe",
+            "telefoneCliente": "63991115047",
+            "data": "09/09/2026",
+            "totalVenda": 100,
+            "produtos": [
+                {
+                    "id": 11,
+                    "ordem": 1,
+                    "codProduto": 54,
+                    "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
+                    "idCompra": 7,
+                    "quantidade": 1,
+                    "precoUnitario": 100
+                }
+            ]
         }
     ],
     "compras": [
@@ -704,7 +760,7 @@
         {
             "id": 5,
             "codProduto": 52,
-            "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz",
+            "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
             "datacompra": "01/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018222241440/status?packId=2000018222241440&orderId=2000018222241440",
             "quantidade": 1,
@@ -730,6 +786,56 @@
             "quantidade": 1,
             "precoCusto": 59.49,
             "precoVenda": 100
+        },
+        {
+            "id": 8,
+            "codProduto": 55,
+            "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
+            "datacompra": "31/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018207740048/status?packId=2000018207740048&orderId=2000018207740048",
+            "quantidade": 1,
+            "precoCusto": 99.00,
+            "precoVenda": 165
+        },
+        {
+            "id": 9,
+            "codProduto": 50,
+            "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
+            "datacompra": "03/09/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
+            "quantidade": 1,
+            "precoCusto": 85.60,
+            "precoVenda": 140
+        },
+        {
+            "id": 10,
+            "codProduto": 56,
+            "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
+            "datacompra": "02/09/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7363760-3623461&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "quantidade": 1,
+            "precoCusto": 93.41,
+            "precoVenda": 140
+        },
+        {
+            "id": 11,
+            "codProduto": 5,
+            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+            "datacompra": "07/09/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "quantidade": 1,
+            "precoCusto": 93.68,
+            "precoVenda": 135
+        },
+        {
+            "id": 12,
+            "codProduto": 4,
+            "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+            "datacompra": "07/09/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "quantidade": 1,
+            "precoCusto": 97.07,
+            "precoVenda": 135
         }
     ]
 }
