@@ -617,6 +617,11 @@
                                 <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
                             </div>
 
+                            <div class="mb-3">
+                                <label for="fornecedorCompra" class="form-label">Fornecedor</label>
+                                <input id="fornecedorCompra" type="text" class="form-control">
+                            </div>
+
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="precoCustoCompra" class="form-label">Preço de custo</label>
@@ -696,6 +701,27 @@
                                 <div class="col-md-6">
                                     <label for="telefoneCliente" class="form-label">Telefone do cliente</label>
                                     <input id="telefoneCliente" type="tel" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="localizacaoVenda" class="form-label">Localização</label>
+                                    <input id="localizacaoVenda" type="text" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="formaPagamentoVenda" class="form-label">Forma de pagamento</label>
+                                    <select id="formaPagamentoVenda" class="form-select" required>
+                                        <option value="">Selecione uma forma de pagamento</option>
+                                        <option value="Dinheiro">Dinheiro</option>
+                                        <option value="Pix">Pix</option>
+                                        <option value="Cartão Débito">Cartão Débito</option>
+                                        <option value="Cartão Crédito">Cartão Crédito</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="valorPagamentoVenda" class="form-label">Valor pago</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="valorPagamentoVenda" type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dataVenda" class="form-label">Data da compra</label>
@@ -944,6 +970,7 @@ const formCompra = document.getElementById("formCompra");
 const produtoCompra = document.getElementById("produtoCompra");
 const dataCompra = document.getElementById("dataCompra");
 const linkCompra = document.getElementById("linkCompra");
+const fornecedorCompra = document.getElementById("fornecedorCompra");
 const quantidadeCompra = document.getElementById("quantidadeCompra");
 const precoCustoCompra = document.getElementById("precoCustoCompra");
 const precoVendaCompra = document.getElementById("precoVendaCompra");
@@ -2329,6 +2356,7 @@ formCompra.addEventListener("submit", function(event) {
         nomeProduto: produto.nome,
         datacompra: converterDataParaJson(dataCompra.value),
         linkcompra: linkCompra.value.trim(),
+        fornecedor: fornecedorCompra.value.trim(),
         quantidade: quantidade,
         precoCusto: precoCusto,
         precoVenda: precoVenda
@@ -2493,6 +2521,10 @@ function editarVenda(id) {
     idVenda.value = venda.id;
     document.getElementById("nomeCliente").value = venda.nomeCliente || "";
     document.getElementById("telefoneCliente").value = venda.telefoneCliente || "";
+    document.getElementById("localizacaoVenda").value = venda.localizacao || "";
+    const pagamento = Array.isArray(venda.formaPagamento) ? venda.formaPagamento[0] : null;
+    document.getElementById("formaPagamentoVenda").value = pagamento?.tipo || "";
+    document.getElementById("valorPagamentoVenda").value = pagamento?.valor ?? "";
     document.getElementById("dataVenda").value = converterDataParaInput(venda.data);
 
     itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
@@ -2574,7 +2606,7 @@ produtoVenda.addEventListener("change", function() {
 
         const opcao = document.createElement("option");
         opcao.value = indice;
-        opcao.textContent = `${compra.datacompra || "Sem data"} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
+        opcao.textContent = `${compra.datacompra || "Sem data"} — ${compra.fornecedor || "Sem fornecedor"} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
         compraVenda.appendChild(opcao);
     });
 });
@@ -2652,8 +2684,13 @@ formVenda.addEventListener("submit", function(event) {
         id: Number(idVenda.value),
         nomeCliente: document.getElementById("nomeCliente").value.trim(),
         telefoneCliente: document.getElementById("telefoneCliente").value.trim(),
+        localizacao: document.getElementById("localizacaoVenda").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
         totalVenda: obterTotalDaVenda(),
+        formaPagamento: [{
+            tipo: document.getElementById("formaPagamentoVenda").value,
+            valor: Number(document.getElementById("valorPagamentoVenda").value)
+        }],
         produtos: produtosDaVenda
     };
 
