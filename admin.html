@@ -708,7 +708,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="formaPagamentoVenda" class="form-label">Forma de pagamento</label>
-                                    <select id="formaPagamentoVenda" class="form-select" required>
+                                    <select id="formaPagamentoVenda" class="form-select">
                                         <option value="">Selecione uma forma de pagamento</option>
                                         <option value="Dinheiro">Dinheiro</option>
                                         <option value="Pix">Pix</option>
@@ -720,8 +720,14 @@
                                     <label for="valorPagamentoVenda" class="form-label">Valor pago</label>
                                     <div class="input-group">
                                         <span class="input-group-text">R$</span>
-                                        <input id="valorPagamentoVenda" type="number" class="form-control" min="0" step="0.01" required>
+                                        <input id="valorPagamentoVenda" type="number" class="form-control" min="0" step="0.01">
                                     </div>
+                                </div>
+                                <div class="col-md-3 d-grid">
+                                    <button id="btnAdicionarPagamento" type="button" class="btn btn-outline-success">Adicionar pagamento</button>
+                                </div>
+                                <div class="col-12">
+                                    <div id="listaPagamentosVenda" class="list-group"></div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dataVenda" class="form-label">Data da compra</label>
@@ -876,6 +882,8 @@ let produtoEditando = null;
 let vendas = [];
 
 let itensDaVenda = [];
+
+let pagamentosDaVenda = [];
 
 let vendaEditando = null;
 
@@ -2426,6 +2434,42 @@ function obterTotalDaVenda() {
 }
 
 
+function atualizarListaPagamentos() {
+    const lista = document.getElementById("listaPagamentosVenda");
+    lista.innerHTML = "";
+
+    pagamentosDaVenda.forEach(function(pagamento, indice) {
+        const item = document.createElement("div");
+        item.className = "list-group-item d-flex justify-content-between align-items-center";
+        item.innerHTML = `
+            <span>${escaparHtml(pagamento.tipo)} — R$ ${formatarPreco(pagamento.valor)}</span>
+            <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover pagamento">Remover</button>
+        `;
+        item.querySelector("button").addEventListener("click", function() {
+            pagamentosDaVenda.splice(indice, 1);
+            atualizarListaPagamentos();
+        });
+        lista.appendChild(item);
+    });
+}
+
+
+document.getElementById("btnAdicionarPagamento").addEventListener("click", function() {
+    const tipo = document.getElementById("formaPagamentoVenda").value;
+    const valor = Number(document.getElementById("valorPagamentoVenda").value);
+
+    if (!tipo || !Number.isFinite(valor) || valor < 0) {
+        mostrarMensagem(mensagemVenda, "Informe uma forma de pagamento e um valor válido.", "danger");
+        return;
+    }
+
+    pagamentosDaVenda.push({ tipo: tipo, valor: valor });
+    atualizarListaPagamentos();
+    document.getElementById("formaPagamentoVenda").value = "";
+    document.getElementById("valorPagamentoVenda").value = "";
+});
+
+
 function atualizarTabelaVendas() {
 
     tabelaVendas.innerHTML = "";
@@ -2522,9 +2566,13 @@ function editarVenda(id) {
     document.getElementById("nomeCliente").value = venda.nomeCliente || "";
     document.getElementById("telefoneCliente").value = venda.telefoneCliente || "";
     document.getElementById("localizacaoVenda").value = venda.localizacao || "";
-    const pagamento = Array.isArray(venda.formaPagamento) ? venda.formaPagamento[0] : null;
-    document.getElementById("formaPagamentoVenda").value = pagamento?.tipo || "";
-    document.getElementById("valorPagamentoVenda").value = pagamento?.valor ?? "";
+    pagamentosDaVenda = Array.isArray(venda.formaPagamento)
+        ? venda.formaPagamento.map(pagamento => ({
+            tipo: pagamento.tipo || "",
+            valor: Number(pagamento.valor) || 0
+        }))
+        : [];
+    atualizarListaPagamentos();
     document.getElementById("dataVenda").value = converterDataParaInput(venda.data);
 
     itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
@@ -2552,6 +2600,7 @@ function cancelarEdicaoVenda() {
 
     vendaEditando = null;
     itensDaVenda = [];
+    pagamentosDaVenda = [];
     formVenda.reset();
     idVenda.value = obterProximoIdRegistro(vendas);
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
@@ -2660,6 +2709,11 @@ formVenda.addEventListener("submit", function(event) {
         return;
     }
 
+    if (pagamentosDaVenda.length === 0) {
+        mostrarMensagem(mensagemVenda, "Adicione pelo menos uma forma de pagamento.", "danger");
+        return;
+    }
+
     const ultimoIdItem = vendas.reduce(function(maiorId, venda) {
         const itens = Array.isArray(venda.produtos) ? venda.produtos : [];
 
@@ -2687,10 +2741,7 @@ formVenda.addEventListener("submit", function(event) {
         localizacao: document.getElementById("localizacaoVenda").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
         totalVenda: obterTotalDaVenda(),
-        formaPagamento: [{
-            tipo: document.getElementById("formaPagamentoVenda").value,
-            valor: Number(document.getElementById("valorPagamentoVenda").value)
-        }],
+        formaPagamento: pagamentosDaVenda,
         produtos: produtosDaVenda
     };
 
@@ -2711,7 +2762,9 @@ formVenda.addEventListener("submit", function(event) {
     idVenda.value = obterProximoIdRegistro(vendas);
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
     itensDaVenda = [];
+    pagamentosDaVenda = [];
     atualizarItensDaVenda();
+    atualizarListaPagamentos();
     tituloVenda.textContent = "🧾 Nova venda";
     btnSalvarVenda.textContent = "💾 Salvar venda";
     btnSalvarVenda.classList.replace("btn-primary", "btn-success");
