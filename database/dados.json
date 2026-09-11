@@ -1,4 +1,4 @@
-﻿{
+{
     "produtos": [
         {
             "id": 1,
@@ -559,6 +559,16 @@
             "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
             "categoria": "Ferramentas",
             "estoque": 1
+        },
+        {
+            "id": 57,
+            "nome": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
+            "descricao": "",
+            "custo": 77.52,
+            "preco": 128,
+            "imagem": "img/produtos/parafusadeira_btek_36v.webp",
+            "categoria": "Ferramentas",
+            "estoque": 1
         }
     ],
     "vendas": [
@@ -729,7 +739,7 @@
                 {
                     "tipo": "Dinheiro",
                     "valor": 100
-                },                
+                },
                 {
                     "tipo": "Pix",
                     "valor": 40
@@ -991,6 +1001,17 @@
             "quantidade": 1,
             "precoCusto": 253.76,
             "precoVenda": 273
+        },
+        {
+            "id": 14,
+            "codProduto": 57,
+            "nomeProduto": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
+            "datacompra": "04/09/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018289521378/status?packId=2000018289521378&orderId=2000018289521378",
+            "fornecedor": "Mercado Livre",
+            "quantidade": 1,
+            "precoCusto": 77.52,
+            "precoVenda": 128
         }
     ]
 }
