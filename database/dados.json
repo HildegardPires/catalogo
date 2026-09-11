@@ -1,4 +1,18 @@
-{
+﻿{
+    "fornecedores": [
+        {
+            "id": 1,
+            "nome":"Mercado Livre"
+        },
+        {
+            "id": 2,
+            "nome":"Amazon"
+        },
+        {
+            "id": 3,
+            "nome":"Shopee"
+        }                
+    ],
     "produtos": [
         {
             "id": 1,
@@ -865,7 +879,7 @@
             "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
             "datacompra": "31/08/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014804787671/status?packId=2000014804787673&orderId=2000018218667352",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 170,
             "precoVenda": 170
@@ -876,7 +890,7 @@
             "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
             "datacompra": "04/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018278711242/status?packId=2000018278711242&orderId=2000018278711242",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 2,
             "precoCusto": 167.04,
             "precoVenda": 205
@@ -887,7 +901,7 @@
             "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
             "datacompra": "06/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018308097568/status?packId=2000018308097568&orderId=2000018308097568",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 182,
             "precoVenda": 250
@@ -898,7 +912,7 @@
             "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
             "datacompra": "31/08/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018206809932/status?packId=2000018206809932&orderId=2000018206809932",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 103.7,
             "precoVenda": 165
@@ -909,7 +923,7 @@
             "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
             "datacompra": "01/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018222241440/status?packId=2000018222241440&orderId=2000018222241440",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 84,
             "precoVenda": 165
@@ -920,7 +934,7 @@
             "nomeProduto": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
             "datacompra": "05/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018304775146/status?packId=2000018304775146&orderId=2000018304775146",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 85,
             "precoVenda": 140
@@ -931,7 +945,7 @@
             "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
             "datacompra": "06/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018314475504/status?packId=2000018314475504&orderId=2000018314475504",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 59.49,
             "precoVenda": 100
@@ -942,7 +956,7 @@
             "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
             "datacompra": "31/08/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018207740048/status?packId=2000018207740048&orderId=2000018207740048",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 99,
             "precoVenda": 165
@@ -953,7 +967,7 @@
             "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
             "datacompra": "03/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 85.6,
             "precoVenda": 140
@@ -964,7 +978,7 @@
             "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
             "datacompra": "02/09/2026",
             "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7363760-3623461&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": "Amazon",
+            "fornecedor": 2,
             "quantidade": 1,
             "precoCusto": 93.41,
             "precoVenda": 140
@@ -975,7 +989,7 @@
             "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
             "datacompra": "07/09/2026",
             "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": "Amazon",
+            "fornecedor": 2,
             "quantidade": 1,
             "precoCusto": 93.68,
             "precoVenda": 135
@@ -986,7 +1000,7 @@
             "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
             "datacompra": "07/09/2026",
             "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": "Amazon",
+            "fornecedor": 2,
             "quantidade": 1,
             "precoCusto": 97.07,
             "precoVenda": 135
@@ -997,7 +1011,7 @@
             "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
             "datacompra": "08/08/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017833252596/status?packId=2000017833252596&orderId=2000017833252596",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 253.76,
             "precoVenda": 273
@@ -1008,7 +1022,7 @@
             "nomeProduto": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
             "datacompra": "04/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018289521378/status?packId=2000018289521378&orderId=2000018289521378",
-            "fornecedor": "Mercado Livre",
+            "fornecedor": 1,
             "quantidade": 1,
             "precoCusto": 77.52,
             "precoVenda": 128

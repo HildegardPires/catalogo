@@ -619,7 +619,9 @@
 
                             <div class="mb-3">
                                 <label for="fornecedorCompra" class="form-label">Fornecedor</label>
-                                <input id="fornecedorCompra" type="text" class="form-control">
+                                <select id="fornecedorCompra" class="form-select" required>
+                                    <option value="">Selecione um fornecedor</option>
+                                </select>
                             </div>
 
                             <div class="row g-3 mb-4">
@@ -893,6 +895,8 @@ let vendaEditando = null;
 
 let compras = [];
 
+let fornecedores = [];
+
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
 let jsonBaseLocal = "";
@@ -1127,6 +1131,7 @@ async function carregarProdutos() {
         const dadosCarregados = dadosLocais || dados;
 
         produtos = dadosCarregados.produtos;
+        fornecedores = Array.isArray(dadosCarregados.fornecedores) ? dadosCarregados.fornecedores : [];
         vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
         compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
         normalizarIdsRegistros();
@@ -1204,6 +1209,8 @@ function atualizarTudo() {
     atualizarProdutosParaVenda();
 
     atualizarProdutosParaCompra();
+
+    atualizarFornecedoresParaCompra();
 
     atualizarTabelaCompras();
 
@@ -2309,6 +2316,21 @@ function atualizarProdutosParaCompra() {
 }
 
 
+function atualizarFornecedoresParaCompra() {
+    const selecionado = fornecedorCompra.value;
+    fornecedorCompra.innerHTML = '<option value="">Selecione um fornecedor</option>';
+
+    fornecedores.forEach(function(fornecedor) {
+        const opcao = document.createElement("option");
+        opcao.value = fornecedor.id;
+        opcao.textContent = fornecedor.nome;
+        fornecedorCompra.appendChild(opcao);
+    });
+
+    fornecedorCompra.value = selecionado;
+}
+
+
 function atualizarTabelaCompras() {
 
     tabelaCompras.innerHTML = "";
@@ -2351,14 +2373,15 @@ formCompra.addEventListener("submit", function(event) {
     event.preventDefault();
 
     const produto = produtos.find(item => Number(item.id) === Number(produtoCompra.value));
+    const fornecedor = fornecedores.find(item => Number(item.id) === Number(fornecedorCompra.value));
     const quantidade = parseInt(quantidadeCompra.value);
     const precoCusto = parseFloat(precoCustoCompra.value);
     const precoVenda = parseFloat(precoVendaCompra.value);
 
-    if (!produto || !Number.isInteger(quantidade) || quantidade < 1 ||
+    if (!produto || !fornecedor || !Number.isInteger(quantidade) || quantidade < 1 ||
         !Number.isFinite(precoCusto) || precoCusto < 0 ||
         !Number.isFinite(precoVenda) || precoVenda < 0) {
-        mostrarMensagem(mensagemCompra, "Informe produto, quantidade e preços válidos.", "danger");
+        mostrarMensagem(mensagemCompra, "Informe produto, fornecedor, quantidade e preços válidos.", "danger");
         return;
     }
 
@@ -2368,7 +2391,7 @@ formCompra.addEventListener("submit", function(event) {
         nomeProduto: produto.nome,
         datacompra: converterDataParaJson(dataCompra.value),
         linkcompra: linkCompra.value.trim(),
-        fornecedor: fornecedorCompra.value.trim(),
+        fornecedor: fornecedor.id,
         quantidade: quantidade,
         precoCusto: precoCusto,
         precoVenda: precoVenda
@@ -2659,7 +2682,9 @@ produtoVenda.addEventListener("change", function() {
 
         const opcao = document.createElement("option");
         opcao.value = indice;
-        opcao.textContent = `${compra.datacompra || "Sem data"} — ${compra.fornecedor || "Sem fornecedor"} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
+        const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
+        const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
+        opcao.textContent = `${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
         compraVenda.appendChild(opcao);
     });
 });
