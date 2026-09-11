@@ -1,4 +1,4 @@
-﻿{
+{
     "produtos": [
         {
             "id": 1,
@@ -544,7 +544,7 @@
             "id": 55,
             "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
             "descricao": "",
-            "custo": 99.00,
+            "custo": 99,
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
             "categoria": "Eletrônicos",
@@ -714,6 +714,42 @@
                     "precoUnitario": 100
                 }
             ]
+        },
+        {
+            "id": 8,
+            "nomeCliente": "Gleysse",
+            "telefoneCliente": "63992701094",
+            "data": "10/09/2026",
+            "totalVenda": 250,
+            "produtos": [
+                {
+                    "id": 12,
+                    "ordem": 1,
+                    "codProduto": 51,
+                    "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+                    "idCompra": 3,
+                    "quantidade": 1,
+                    "precoUnitario": 250
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nomeCliente": "Poliana",
+            "telefoneCliente": "63991309444",
+            "data": "11/09/2026",
+            "totalVenda": 273,
+            "produtos": [
+                {
+                    "id": 13,
+                    "ordem": 1,
+                    "codProduto": 1,
+                    "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+                    "idCompra": 13,
+                    "quantidade": 1,
+                    "precoUnitario": 273
+                }
+            ]
         }
     ],
     "compras": [
@@ -794,7 +830,7 @@
             "datacompra": "31/08/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018207740048/status?packId=2000018207740048&orderId=2000018207740048",
             "quantidade": 1,
-            "precoCusto": 99.00,
+            "precoCusto": 99,
             "precoVenda": 165
         },
         {
@@ -804,7 +840,7 @@
             "datacompra": "03/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
             "quantidade": 1,
-            "precoCusto": 85.60,
+            "precoCusto": 85.6,
             "precoVenda": 140
         },
         {
@@ -836,6 +872,16 @@
             "quantidade": 1,
             "precoCusto": 97.07,
             "precoVenda": 135
+        },
+        {
+            "id": 13,
+            "codProduto": 1,
+            "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+            "datacompra": "08/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017833252596/status?packId=2000017833252596&orderId=2000017833252596",
+            "quantidade": 1,
+            "precoCusto": 253.76,
+            "precoVenda": 273
         }
     ]
 }
