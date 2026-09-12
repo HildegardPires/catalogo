@@ -73,6 +73,8 @@ async function carregarProdutos() {
         produtos = dados.produtos;
         categorias = Array.isArray(dados.categorias) ? dados.categorias : [];
 
+        aplicarCategoriaDaUrl();
+
 
         criarCategorias();
 
@@ -113,6 +115,27 @@ async function carregarProdutos() {
 function obterDescricaoCategoria(idCategoria) {
     const categoria = categorias.find(item => Number(item.id) === Number(idCategoria));
     return categoria ? categoria.descricao : String(idCategoria || "");
+}
+
+
+function criarSlugCategoria(descricao) {
+    return String(descricao || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+}
+
+
+function aplicarCategoriaDaUrl() {
+    const slug = new URLSearchParams(window.location.search).get("cat");
+    const categoria = categorias.find(item => criarSlugCategoria(item.descricao) === slug);
+
+    categoriaSelecionada = categoria ? categoria.descricao : "Todos";
+    categoriaAtual.textContent = categoriaSelecionada === "Todos"
+        ? "Todos os produtos"
+        : categoriaSelecionada;
 }
 
 function criarCategorias() {
