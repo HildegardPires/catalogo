@@ -62,6 +62,9 @@
             <button type="button" class="nav-link" data-tela="vendas">
                 Vendas
             </button>
+            <button type="button" class="nav-link" data-tela="estoque">
+                Estoque
+            </button>
             <button type="button" class="nav-link" data-tela="relatorios">
                 Relatórios
             </button>
@@ -826,6 +829,35 @@
     </section>
 
 
+    <section id="telaEstoque" class="d-none">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                    <h3 class="mb-0">Estoque</h3>
+                    <button type="button" id="btnAtualizarEstoque" class="btn btn-success">Atualizar Estoque</button>
+                </div>
+
+                <div id="mensagemEstoque" class="alert d-none"></div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="table-success">
+                            <tr>
+                                <th>ID</th>
+                                <th>Produto</th>
+                                <th>Compradas</th>
+                                <th>Vendidas</th>
+                                <th>Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaEstoque"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="telaRelatorios" class="d-none">
         <div class="card shadow-sm border-0">
             <div class="card-body p-4">
@@ -1003,6 +1035,9 @@ const semCompras = document.getElementById("semCompras");
 const mensagemCompra = document.getElementById("mensagemCompra");
 const idCompra = document.getElementById("idCompra");
 const idVenda = document.getElementById("idVenda");
+const tabelaEstoque = document.getElementById("tabelaEstoque");
+const mensagemEstoque = document.getElementById("mensagemEstoque");
+const btnAtualizarEstoque = document.getElementById("btnAtualizarEstoque");
 
 
 // =============================================================
@@ -1236,6 +1271,8 @@ function atualizarTudo() {
     atualizarTabelaCompras();
 
     atualizarTabelaVendas();
+
+    atualizarTabelaEstoque();
 
     idCompra.value = obterProximoIdRegistro(compras);
     idVenda.value = obterProximoIdRegistro(vendas);
@@ -2412,6 +2449,79 @@ function atualizarTabelaCompras() {
 }
 
 
+function obterResumoEstoque() {
+    const resumo = new Map();
+
+    produtos.forEach(function(produto) {
+        resumo.set(Number(produto.id), {
+            produto: produto,
+            compradas: 0,
+            vendidas: 0
+        });
+    });
+
+    compras.forEach(function(compra) {
+        const item = resumo.get(Number(compra.codProduto));
+
+        if (item) {
+            item.compradas += Number(compra.quantidade) || 0;
+        }
+    });
+
+    vendas.forEach(function(venda) {
+        (Array.isArray(venda.produtos) ? venda.produtos : []).forEach(function(itemVenda) {
+            const item = resumo.get(Number(itemVenda.codProduto));
+
+            if (item) {
+                item.vendidas += Number(itemVenda.quantidade) || 0;
+            }
+        });
+    });
+
+    return Array.from(resumo.values()).map(function(item) {
+        return {
+            produto: item.produto,
+            compradas: item.compradas,
+            vendidas: item.vendidas,
+            saldo: item.compradas - item.vendidas
+        };
+    });
+}
+
+
+function atualizarTabelaEstoque() {
+    tabelaEstoque.innerHTML = "";
+
+    obterResumoEstoque().forEach(function(item) {
+        const linha = document.createElement("tr");
+        const classeSaldo = item.saldo < 0 ? "text-danger fw-bold" : "";
+
+        linha.innerHTML = `
+            <td>${escaparHtml(String(item.produto.id))}</td>
+            <td>${escaparHtml(item.produto.nome)}</td>
+            <td>${item.compradas}</td>
+            <td>${item.vendidas}</td>
+            <td class="${classeSaldo}">${item.saldo}</td>
+        `;
+
+        tabelaEstoque.appendChild(linha);
+    });
+}
+
+
+btnAtualizarEstoque.addEventListener("click", function() {
+    obterResumoEstoque().forEach(function(item) {
+        item.produto.estoque = item.saldo;
+    });
+
+    atualizarJson();
+    atualizarTabela();
+    atualizarProdutosParaVenda();
+    atualizarTabelaEstoque();
+    mostrarMensagem(mensagemEstoque, "Estoque atualizado com sucesso!", "success");
+});
+
+
 produtoCompra.addEventListener("change", function() {
     const produto = produtos.find(item => Number(item.id) === Number(this.value));
 
@@ -2452,6 +2562,7 @@ formCompra.addEventListener("submit", function(event) {
 
     atualizarJson();
     atualizarTabelaCompras();
+    atualizarTabelaEstoque();
     formCompra.reset();
     idCompra.value = obterProximoIdRegistro(compras);
     dataCompra.value = new Date().toISOString().slice(0, 10);
@@ -2718,6 +2829,7 @@ function excluirVenda(id) {
 
     atualizarJson();
     atualizarTabelaVendas();
+    atualizarTabelaEstoque();
     idVenda.value = obterProximoIdRegistro(vendas);
     mostrarMensagem(mensagemVenda, `Venda #${id} excluída.`, "warning");
 
@@ -2848,6 +2960,7 @@ formVenda.addEventListener("submit", function(event) {
     vendaEditando = null;
     atualizarJson();
     atualizarTabelaVendas();
+    atualizarTabelaEstoque();
     formVenda.reset();
     idVenda.value = obterProximoIdRegistro(vendas);
     document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
@@ -2872,6 +2985,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
         document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
         document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
         document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
+        document.getElementById("telaEstoque").classList.toggle("d-none", tela !== "estoque");
         document.getElementById("telaRelatorios").classList.toggle("d-none", tela !== "relatorios");
         document.getElementById("telaJson").classList.toggle("d-none", tela !== "json");
         document.querySelectorAll("#menuAdmin [data-tela]").forEach(item => item.classList.toggle("active", item === this));
