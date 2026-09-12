@@ -1069,7 +1069,7 @@
             "datacompra": "03/09/2026",
             "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
             "fornecedor": 1,
-            "quantidade": 1,
+            "quantidade": 3,
             "precoCusto": 85.6,
             "precoVenda": 140
         },
@@ -1435,6 +1435,138 @@
             "quantidade": 2,
             "precoCusto": 26,
             "precoVenda": 70
+        },
+        {
+            "id": 43,
+            "codProduto": 36,
+            "nomeProduto": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
+            "datacompra": "21/06/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013629468081/status?packId=2000013629468085&orderId=2000017043217622",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 45.15,
+            "precoVenda": 75
+        },
+        {
+            "id": 44,
+            "codProduto": 48,
+            "nomeProduto": "Relógio Digital Feminino Rosa Adulto/Infantil",
+            "datacompra": "22/05/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.6b1bcaa4bu6BxK&orderId=8210300326264088",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 18.52,
+            "precoVenda": 20
+        },
+        {
+            "id": 45,
+            "codProduto": 39,
+            "nomeProduto": "Brinquedo Arminha Catapulta Avião",
+            "datacompra": "18/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.1.1c10caa4vhaNqQ&orderId=8212523503034132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 21.6,
+            "precoVenda": 35
+        },
+        {
+            "id": 46,
+            "codProduto": 40,
+            "nomeProduto": "Brinquedo Lançador de Foguete Com Pé",
+            "datacompra": "18/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.21.1c10caa4vhaNqQ&orderId=8211733456054132",
+            "fornecedor": 4,
+            "quantidade": 2,
+            "precoCusto": 24,
+            "precoVenda": 40
+        },
+        {
+            "id": 47,
+            "codProduto": 41,
+            "nomeProduto": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
+            "datacompra": "18/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.11.1c10caa4vhaNqQ&orderId=8212523503014132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 33.64,
+            "precoVenda": 53
+        },
+        {
+            "id": 48,
+            "codProduto": 42,
+            "nomeProduto": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
+            "datacompra": "18/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.16.1c10caa4vhaNqQ&orderId=8211733456034132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 19.16,
+            "precoVenda": 35
+        },
+        {
+            "id": 49,
+            "codProduto": 43,
+            "nomeProduto": "Brinquedo Arminha Lançador de Discos",
+            "datacompra": "18/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.1c10caa4vhaNqQ&orderId=8212523503054132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 14.38,
+            "precoVenda": 25
+        },
+        {
+            "id": 50,
+            "codProduto": 44,
+            "nomeProduto": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
+            "datacompra": "01/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.31.1c10caa4vhaNqQ&orderId=8211490592744132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 13.17,
+            "precoVenda": 30
+        },
+        {
+            "id": 51,
+            "codProduto": 45,
+            "nomeProduto": "Brinquedo Arco e Flecha com Alvo",
+            "datacompra": "01/06/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.36.1c10caa4vhaNqQ&orderId=8211490592764132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 28.82,
+            "precoVenda": 40
+        },
+        {
+            "id": 52,
+            "codProduto": 46,
+            "nomeProduto": "Piscina Inflável Redonda 100 Litros 3 Aneis",
+            "datacompra": "17/06/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013567638233/status?packId=2000013567638235&orderId=2000016984981716",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 22.75,
+            "precoVenda": 50
+        },
+        {
+            "id": 53,
+            "codProduto": 47,
+            "nomeProduto": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
+            "datacompra": "10/04/2026",
+            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.46.401ecaa4c09oot&orderId=8210889095314132",
+            "fornecedor": 4,
+            "quantidade": 1,
+            "precoCusto": 16.45,
+            "precoVenda": 20
+        },
+        {
+            "id": 54,
+            "codProduto": 49,
+            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Branco",
+            "datacompra": "30/08/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-8864569-4753058&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "fornecedor": 2,
+            "quantidade": 1,
+            "precoCusto": 89,
+            "precoVenda": 135
         }
     ]
 }
