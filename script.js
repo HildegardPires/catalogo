@@ -12,6 +12,8 @@ const numeroWhatsApp = "5563984896172";
 
 let produtos = [];
 
+let categorias = [];
+
 let categoriaSelecionada = "Todos";
 
 
@@ -69,6 +71,7 @@ async function carregarProdutos() {
         }
 
         produtos = dados.produtos;
+        categorias = Array.isArray(dados.categorias) ? dados.categorias : [];
 
 
         criarCategorias();
@@ -107,6 +110,11 @@ async function carregarProdutos() {
 // CRIAR CATEGORIAS
 // =============================================================
 
+function obterDescricaoCategoria(idCategoria) {
+    const categoria = categorias.find(item => Number(item.id) === Number(idCategoria));
+    return categoria ? categoria.descricao : String(idCategoria || "");
+}
+
 function criarCategorias() {
 
 
@@ -117,7 +125,7 @@ function criarCategorias() {
             ...new Set(
 
                 produtos
-                    .map(produto => produto.categoria)
+                    .map(produto => obterDescricaoCategoria(produto.categoria))
                     .filter(categoria => categoria)
 
             )
@@ -327,7 +335,7 @@ function mostrarProdutos() {
         produtosFiltrados =
             produtosFiltrados.filter(
                 produto =>
-                    produto.categoria ===
+                    obterDescricaoCategoria(produto.categoria) ===
                     categoriaSelecionada
             );
 
@@ -358,7 +366,7 @@ function mostrarProdutos() {
 
                     const categoria =
                         String(
-                            produto.categoria || ""
+                            obterDescricaoCategoria(produto.categoria)
                         ).toLowerCase();
 
 
@@ -504,7 +512,7 @@ function criarCardProduto(
                     class="badge text-bg-secondary align-self-start mb-2">
 
                     ${escaparHtml(
-                        produto.categoria
+                        obterDescricaoCategoria(produto.categoria)
                     )}
 
                 </span>
