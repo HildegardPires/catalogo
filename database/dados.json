@@ -1,4 +1,4 @@
-﻿{
+{
     "fornecedores": [
         {
             "id": 1,
@@ -48,7 +48,7 @@
             "preco": 299.99,
             "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
             "categoria": 1,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 2,
@@ -58,7 +58,7 @@
             "preco": 299.99,
             "imagem": "img/produtos/fritadeira_midea.webp",
             "categoria": 1,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 3,
@@ -68,7 +68,7 @@
             "preco": 279.99,
             "imagem": "img/produtos/fritadeira_wap.webp",
             "categoria": 1,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 4,
@@ -78,7 +78,7 @@
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_britania.jpg",
             "categoria": 1,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 5,
@@ -158,7 +158,7 @@
             "preco": 50,
             "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
             "categoria": 2,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 13,
@@ -228,7 +228,7 @@
             "preco": 40,
             "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
             "categoria": 2,
-            "estoque": 3
+            "estoque": 5
         },
         {
             "id": 20,
@@ -388,7 +388,7 @@
             "preco": 69.99,
             "imagem": "img/produtos/smartwatch_t800_ultra.webp",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 2
         },
         {
             "id": 36,
@@ -408,7 +408,7 @@
             "preco": 87.99,
             "imagem": "img/produtos/som_automotivo_first_option.png",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 38,
@@ -438,7 +438,7 @@
             "preco": 39.99,
             "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
             "categoria": 4,
-            "estoque": 1
+            "estoque": 2
         },
         {
             "id": 41,
@@ -548,7 +548,7 @@
             "preco": 205,
             "imagem": "img/produtos/projetor_hy320.png",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 52,
@@ -558,7 +558,7 @@
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 53,
@@ -578,7 +578,7 @@
             "preco": 100,
             "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 55,
@@ -969,6 +969,56 @@
                     "idCompra": 17,
                     "quantidade": 1,
                     "precoUnitario": 88
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "nomeCliente": "Martins",
+            "telefoneCliente": "63992951972",
+            "localizacao": "Aureny 3",
+            "data": "12/09/2026",
+            "totalVenda": 165,
+            "formaPagamento": [
+                {
+                    "tipo": "Dinheiro",
+                    "valor": 165
+                }
+            ],
+            "produtos": [
+                {
+                    "id": 19,
+                    "ordem": 1,
+                    "codProduto": 31,
+                    "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+                    "idCompra": 4,
+                    "quantidade": 1,
+                    "precoUnitario": 165
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "nomeCliente": "Ezequiel Freitas",
+            "telefoneCliente": "91991018377",
+            "localizacao": "Taquari",
+            "data": "12/09/2026",
+            "totalVenda": 44,
+            "formaPagamento": [
+                {
+                    "tipo": "Pix",
+                    "valor": 44
+                }
+            ],
+            "produtos": [
+                {
+                    "id": 20,
+                    "ordem": 1,
+                    "codProduto": 15,
+                    "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+                    "idCompra": 29,
+                    "quantidade": 1,
+                    "precoUnitario": 44
                 }
             ]
         }
