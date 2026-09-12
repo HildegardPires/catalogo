@@ -11,6 +11,10 @@
         {
             "id": 3,
             "nome": "Shopee"
+        },
+        {
+            "id": 4,
+            "nome": "AliExpress"
         }
     ],
     "categorias": [
@@ -34,7 +38,7 @@
             "id": 5,
             "descricao": "Automotivo"
         }
-    ],    
+    ],
     "produtos": [
         {
             "id": 1,
@@ -128,12 +132,12 @@
         },
         {
             "id": 10,
-            "nome": "Chaleira Elétrica 2 litros",
+            "nome": "Chaleira Elétrica 2 litros Mokfa",
             "descricao": "",
-            "custo": 31.9,
-            "preco": 59.99,
+            "custo": 31.4,
+            "preco": 60,
             "imagem": "img/produtos/chaleira.webp",
-            "categoria": 1,
+            "categoria": "1",
             "estoque": 4
         },
         {
@@ -168,22 +172,22 @@
         },
         {
             "id": 14,
-            "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8'",
+            "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
             "descricao": "",
             "custo": 28,
             "preco": 48,
             "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
-            "categoria": 2,
+            "categoria": "2",
             "estoque": 1
         },
         {
             "id": 15,
-            "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças",
+            "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
             "descricao": "",
             "custo": 24.06,
             "preco": 45,
             "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
-            "categoria": 2,
+            "categoria": "2",
             "estoque": 1
         },
         {
@@ -208,12 +212,12 @@
         },
         {
             "id": 18,
-            "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8",
+            "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
             "descricao": "",
             "custo": 22.62,
             "preco": 42,
             "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
-            "categoria": 2,
+            "categoria": "2",
             "estoque": 1
         },
         {
@@ -1156,6 +1160,248 @@
             "quantidade": 1,
             "precoCusto": 48.5,
             "precoVenda": 88
+        },
+        {
+            "id": 18,
+            "codProduto": 4,
+            "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+            "datacompra": "31/08/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-9524205-1230649&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "fornecedor": 2,
+            "quantidade": 1,
+            "precoCusto": 89.9,
+            "precoVenda": 135
+        },
+        {
+            "id": 19,
+            "codProduto": 3,
+            "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+            "datacompra": "08/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821443668/status?packId=2000017821443668&orderId=2000017821443668",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 209,
+            "precoVenda": 280
+        },
+        {
+            "id": 20,
+            "codProduto": 7,
+            "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+            "datacompra": "08/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821575644/status?packId=2000017821575644&orderId=2000017821575644",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 90.02,
+            "precoVenda": 150
+        },
+        {
+            "id": 21,
+            "codProduto": 9,
+            "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+            "datacompra": "31/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014284555839/status?packId=2000014284555841&orderId=2000017679482080",
+            "fornecedor": 1,
+            "quantidade": 2,
+            "precoCusto": 49.49,
+            "precoVenda": 80
+        },
+        {
+            "id": 22,
+            "codProduto": 5,
+            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+            "datacompra": "07/09/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "fornecedor": 2,
+            "quantidade": 1,
+            "precoCusto": 93.68,
+            "precoVenda": 135
+        },
+        {
+            "id": 23,
+            "codProduto": 6,
+            "nomeProduto": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+            "datacompra": "28/08/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-4467175-8430653&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "fornecedor": 2,
+            "quantidade": 1,
+            "precoCusto": 129.9,
+            "precoVenda": 170
+        },
+        {
+            "id": 24,
+            "codProduto": 8,
+            "nomeProduto": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
+            "datacompra": "26/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014203786471/status?packId=2000014203786473&orderId=2000017599011558",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 59.21,
+            "precoVenda": 80
+        },
+        {
+            "id": 25,
+            "codProduto": 10,
+            "nomeProduto": "Chaleira Elétrica 2 litros Mokfa",
+            "datacompra": "03/08/2026",
+            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-6281014-7385005&ref=ppx_yo2ov_dt_b_fed_order_details",
+            "fornecedor": 2,
+            "quantidade": 4,
+            "precoCusto": 31.4,
+            "precoVenda": 60
+        },
+        {
+            "id": 26,
+            "codProduto": 11,
+            "nomeProduto": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
+            "datacompra": "16/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017455112272/status?packId=2000017455112272&orderId=2000017455112272",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 149,
+            "precoVenda": 190
+        },
+        {
+            "id": 27,
+            "codProduto": 13,
+            "nomeProduto": "Chave Tigre de Boca Multifuncional 360 Graus",
+            "datacompra": "02/06/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000016733739312/status?packId=2000016733739312&orderId=2000016733739312",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 24.7,
+            "precoVenda": 38
+        },
+        {
+            "id": 28,
+            "codProduto": 14,
+            "nomeProduto": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
+            "datacompra": "11/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017372081776/status?packId=2000017372081776&orderId=2000017372081776",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 28,
+            "precoVenda": 48
+        },
+        {
+            "id": 29,
+            "codProduto": 15,
+            "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+            "datacompra": "15/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128361&orderId=2000017439239190",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 24.06,
+            "precoVenda": 45
+        },
+        {
+            "id": 30,
+            "codProduto": 18,
+            "nomeProduto": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
+            "datacompra": "15/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042761423/status?packId=2000014042761425&orderId=2000017439820140",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 22.62,
+            "precoVenda": 42
+        },
+        {
+            "id": 31,
+            "codProduto": 16,
+            "nomeProduto": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
+            "datacompra": "06/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017786137828/status?packId=2000017786137828&orderId=2000017786137828",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 110.4,
+            "precoVenda": 170
+        },
+        {
+            "id": 32,
+            "codProduto": 17,
+            "nomeProduto": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
+            "datacompra": "31/05/2026",
+            "linkcompra": "https://shopee.com.br/user/purchase/order/233949686121936?type=6",
+            "fornecedor": 3,
+            "quantidade": 1,
+            "precoCusto": 19.8,
+            "precoVenda": 40
+        },
+        {
+            "id": 33,
+            "codProduto": 19,
+            "nomeProduto": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
+            "datacompra": "21/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017518816092/status?packId=2000017518816092&orderId=2000017518816092",
+            "fornecedor": 1,
+            "quantidade": 5,
+            "precoCusto": 20,
+            "precoVenda": 40
+        },
+        {
+            "id": 34,
+            "codProduto": 20,
+            "nomeProduto": "Furadeira De Impacto Mondial",
+            "datacompra": "07/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017293441288/status?packId=2000017293441288&orderId=2000017293441288",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 118,
+            "precoVenda": 150
+        },
+        {
+            "id": 35,
+            "codProduto": 21,
+            "nomeProduto": "Parafusadeira Furadeira 1 Bateria 12v",
+            "datacompra": "09/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017343822116/status?packId=2000017343822116&orderId=2000017343822116",
+            "fornecedor": 1,
+            "quantidade": 2,
+            "precoCusto": 67.8,
+            "precoVenda": 95
+        },
+        {
+            "id": 36,
+            "codProduto": 26,
+            "nomeProduto": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
+            "datacompra": "17/07/2026",
+            "linkcompra": "https://shopee.com.br/user/purchase/order/238041179134152?type=6",
+            "fornecedor": 3,
+            "quantidade": 1,
+            "precoCusto": 33,
+            "precoVenda": 60
+        },
+        {
+            "id": 37,
+            "codProduto": 27,
+            "nomeProduto": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
+            "datacompra": "22/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017537487928/status?packId=2000017537487928&orderId=2000017537487928",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 30,
+            "precoVenda": 55
+        },
+        {
+            "id": 38,
+            "codProduto": 28,
+            "nomeProduto": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
+            "datacompra": "20/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017500439670/status?packId=2000017500439670&orderId=2000017500439670",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 29.99,
+            "precoVenda": 48
+        },
+        {
+            "id": 39,
+            "codProduto": 29,
+            "nomeProduto": "Caixa de Som Bluetooth 20w Vermelha",
+            "datacompra": "22/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017540413358/status?packId=2000017540413358&orderId=2000017540413358",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 35.88,
+            "precoVenda": 55
         }
     ]
 }
