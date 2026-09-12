@@ -1,4 +1,4 @@
-{
+﻿{
     "fornecedores": [
         {
             "id": 1,
@@ -48,6 +48,7 @@
             "preco": 299.99,
             "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -58,6 +59,7 @@
             "preco": 299.99,
             "imagem": "img/produtos/fritadeira_midea.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -68,6 +70,7 @@
             "preco": 279.99,
             "imagem": "img/produtos/fritadeira_wap.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -78,6 +81,7 @@
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_britania.jpg",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -88,6 +92,7 @@
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_mondial.jpg",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -98,6 +103,7 @@
             "preco": 170,
             "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -108,6 +114,7 @@
             "preco": 149.99,
             "imagem": "img/produtos/panela_arroz_agratto.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -118,6 +125,7 @@
             "preco": 79.99,
             "imagem": "img/produtos/sanduicheira_multilaser.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -128,6 +136,7 @@
             "preco": 81.99,
             "imagem": "img/produtos/sanduicheira_sumay.webp",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -138,6 +147,7 @@
             "preco": 60,
             "imagem": "img/produtos/chaleira.webp",
             "categoria": "1",
+            "codBarras": "",
             "estoque": 4
         },
         {
@@ -148,6 +158,7 @@
             "preco": 189.99,
             "imagem": "img/produtos/jogo_soquete_17_pecas_tramontina.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -158,6 +169,7 @@
             "preco": 50,
             "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -168,6 +180,7 @@
             "preco": 38,
             "imagem": "img/produtos/chave_tigre_bomvink.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -178,6 +191,7 @@
             "preco": 48,
             "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
             "categoria": "2",
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -188,6 +202,7 @@
             "preco": 45,
             "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
             "categoria": "2",
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -198,6 +213,7 @@
             "preco": 169.99,
             "imagem": "img/produtos/jogo_soquete_22_pecas_black_tools.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -208,6 +224,7 @@
             "preco": 40,
             "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -218,6 +235,7 @@
             "preco": 42,
             "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
             "categoria": "2",
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -228,6 +246,7 @@
             "preco": 40,
             "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 5
         },
         {
@@ -238,6 +257,7 @@
             "preco": 149.99,
             "imagem": "img/produtos/furadeira_mondial.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -248,6 +268,7 @@
             "preco": 95,
             "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 2
         },
         {
@@ -258,6 +279,7 @@
             "preco": 135,
             "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -268,6 +290,7 @@
             "preco": 249.99,
             "imagem": "img/produtos/projetor_hy300_magcubic.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -278,6 +301,7 @@
             "preco": 204.99,
             "imagem": "img/produtos/projetor_hy300.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 2
         },
         {
@@ -288,6 +312,7 @@
             "preco": 94.99,
             "imagem": "img/produtos/camera_seguranca_jortan.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -298,6 +323,7 @@
             "preco": 59.99,
             "imagem": "img/produtos/caixa_som_altomex_al_8787.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -308,6 +334,7 @@
             "preco": 54.99,
             "imagem": "img/produtos/caixa_som_grasep_d_y03.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -318,6 +345,7 @@
             "preco": 48,
             "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -328,6 +356,7 @@
             "preco": 55,
             "imagem": "img/produtos/caixa_som_charce.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -338,6 +367,7 @@
             "preco": 134.99,
             "imagem": "img/produtos/caixa_som_altomex_al_3629.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -348,6 +378,7 @@
             "preco": 165,
             "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -358,6 +389,7 @@
             "preco": 39.99,
             "imagem": "img/produtos/fone_ouvido_redmi.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -368,6 +400,7 @@
             "preco": 34.99,
             "imagem": "img/produtos/fone_ouvido_x55.png",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -378,6 +411,7 @@
             "preco": 64.99,
             "imagem": "img/produtos/smartwatch_8_ultra.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -388,6 +422,7 @@
             "preco": 69.99,
             "imagem": "img/produtos/smartwatch_t800_ultra.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 2
         },
         {
@@ -398,6 +433,7 @@
             "preco": 74.99,
             "imagem": "img/produtos/carregador_powerbank_20000mah.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -408,6 +444,7 @@
             "preco": 87.99,
             "imagem": "img/produtos/som_automotivo_first_option.png",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -418,6 +455,7 @@
             "preco": 144.99,
             "imagem": "img/produtos/parafusadeira_soarfly_48v.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -428,6 +466,7 @@
             "preco": 34.99,
             "imagem": "img/produtos/brinquedo_arma_catapulta_aviao.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -438,6 +477,7 @@
             "preco": 39.99,
             "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 2
         },
         {
@@ -448,6 +488,7 @@
             "preco": 53,
             "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -458,6 +499,7 @@
             "preco": 34.99,
             "imagem": "img/produtos/brinquedo_quebra_cabeca_alfabeto.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -468,6 +510,7 @@
             "preco": 25,
             "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -478,6 +521,7 @@
             "preco": 29.99,
             "imagem": "img/produtos/brinquedo_tiro_alvo_jacare.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -488,6 +532,7 @@
             "preco": 39.99,
             "imagem": "img/produtos/brinquedo_tiro_alvo.png",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -498,6 +543,7 @@
             "preco": 49.99,
             "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
             "categoria": 4,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -508,6 +554,7 @@
             "preco": 20,
             "imagem": "img/produtos/relogio_digital_preto.avif",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -518,6 +565,7 @@
             "preco": 20,
             "imagem": "img/produtos/relogio_digital_rosa.png",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -528,6 +576,7 @@
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_mondial_branco.jpg",
             "categoria": 1,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -538,6 +587,7 @@
             "preco": 140,
             "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -548,6 +598,7 @@
             "preco": 205,
             "imagem": "img/produtos/projetor_hy320.png",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -558,6 +609,7 @@
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -568,6 +620,7 @@
             "preco": 140,
             "imagem": "img/produtos/camera_seguranca_scb57.jpg",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -578,6 +631,7 @@
             "preco": 100,
             "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 0
         },
         {
@@ -588,6 +642,7 @@
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
             "categoria": 3,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -598,6 +653,7 @@
             "preco": 140,
             "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
             "categoria": 2,
+            "codBarras": "",
             "estoque": 1
         },
         {
@@ -608,6 +664,18 @@
             "preco": 128,
             "imagem": "img/produtos/parafusadeira_btek_36v.webp",
             "categoria": 2,
+            "codBarras": "",
+            "estoque": 1
+        },
+        {
+            "id": 58,
+            "nome": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
+            "descricao": "",
+            "custo": 75.04,
+            "preco": 140,
+            "imagem": "img/produtos/camera_seguranca_a28.jpg",
+            "categoria": 3,
+            "codBarras": "6920260513598",
             "estoque": 1
         }
     ],
@@ -1617,6 +1685,17 @@
             "quantidade": 1,
             "precoCusto": 89,
             "precoVenda": 135
+        },
+        {
+            "id": 55,
+            "codProduto": 58,
+            "nomeProduto": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
+            "datacompra": "09/09/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018359871162/status?packId=2000018359871162&orderId=2000018359871162",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 75.04,
+            "precoVenda": 140
         }
     ]
 }
