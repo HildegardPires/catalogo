@@ -188,7 +188,7 @@
             "preco": 45,
             "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
             "categoria": "2",
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 16,
@@ -348,7 +348,7 @@
             "preco": 165,
             "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
             "categoria": 3,
-            "estoque": 1
+            "estoque": 0
         },
         {
             "id": 32,
