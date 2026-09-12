@@ -745,6 +745,7 @@
                             <div class="row g-3 align-items-end">
                                 <div class="col-md-6">
                                     <label for="produtoVenda" class="form-label">Produto</label>
+                                    <input id="pesquisaProdutoVenda" type="search" class="form-control mb-2" placeholder="Pesquisar produto..." aria-label="Pesquisar produto para venda">
                                     <select id="produtoVenda" class="form-select">
                                         <option value="">Selecione um produto</option>
                                     </select>
@@ -974,6 +975,7 @@ const campoImagem =
 
 const formVenda = document.getElementById("formVenda");
 const produtoVenda = document.getElementById("produtoVenda");
+const pesquisaProdutoVenda = document.getElementById("pesquisaProdutoVenda");
 const compraVenda = document.getElementById("compraVenda");
 const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
@@ -2413,9 +2415,14 @@ formCompra.addEventListener("submit", function(event) {
 function atualizarProdutosParaVenda() {
 
     const selecionado = produtoVenda.value;
+    const pesquisa = pesquisaProdutoVenda.value.trim().toLowerCase();
     produtoVenda.innerHTML = '<option value="">Selecione um produto</option>';
 
-    produtos.filter(produto => Number(produto.estoque) > 0).forEach(function(produto) {
+    produtos.filter(function(produto) {
+        const correspondeAoEstoque = Number(produto.estoque) > 0;
+        const textoProduto = `id: ${produto.id} ${produto.nome}`.toLowerCase();
+        return correspondeAoEstoque && textoProduto.includes(pesquisa);
+    }).forEach(function(produto) {
         const opcao = document.createElement("option");
         opcao.value = produto.id;
         opcao.textContent = `ID: ${produto.id} — ${produto.nome} (${produto.estoque} em estoque)`;
@@ -2425,6 +2432,9 @@ function atualizarProdutosParaVenda() {
     produtoVenda.value = selecionado;
 
 }
+
+
+pesquisaProdutoVenda.addEventListener("input", atualizarProdutosParaVenda);
 
 
 function atualizarItensDaVenda() {
