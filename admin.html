@@ -1407,7 +1407,7 @@ function atualizarFiltroCategoria() {
     const categoriaSelecionada =
         filtroCategoria.value;
 
-    const categorias = [
+    const descricoesCategorias = [
         ...new Set(
             produtos
                 .map(produto => obterDescricaoCategoria(produto.categoria))
@@ -1420,22 +1420,22 @@ function atualizarFiltroCategoria() {
         '<option value="">Todas as categorias</option>';
 
 
-    categorias.forEach(function(categoria) {
+    descricoesCategorias.forEach(function(descricao) {
 
         const opcao =
             document.createElement("option");
 
-        const categoriaEncontrada = categorias.find(item => item.descricao === categoria);
-        opcao.value = categoriaEncontrada ? categoriaEncontrada.id : categoria;
+        const categoriaEncontrada = categorias.find(item => item.descricao === descricao);
+        opcao.value = categoriaEncontrada ? categoriaEncontrada.id : descricao;
 
-        opcao.textContent = categoria;
+        opcao.textContent = descricao;
 
         filtroCategoria.appendChild(opcao);
 
     });
 
 
-    if (categorias.some(categoria => String(categoriaEncontradaId(categoria)) === String(categoriaSelecionada))) {
+    if (descricoesCategorias.some(descricao => String(categoriaEncontradaId(descricao)) === String(categoriaSelecionada))) {
         filtroCategoria.value = categoriaSelecionada;
     }
 
