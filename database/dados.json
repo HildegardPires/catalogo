@@ -1402,6 +1402,39 @@
             "quantidade": 1,
             "precoCusto": 35.88,
             "precoVenda": 55
+        },
+        {
+            "id": 40,
+            "codProduto": 32,
+            "nomeProduto": "Fone De Ouvido Sem Fio Bluetooth",
+            "datacompra": "07/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017289306886/status?packId=2000017289306886&orderId=2000017289306886",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 21.76,
+            "precoVenda": 40
+        },
+        {
+            "id": 41,
+            "codProduto": 34,
+            "nomeProduto": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
+            "datacompra": "22/07/2026",
+            "linkcompra": "https://shopee.com.br/user/purchase/order/238449432144073?type=6",
+            "fornecedor": 3,
+            "quantidade": 1,
+            "precoCusto": 28.54,
+            "precoVenda": 65
+        },
+        {
+            "id": 42,
+            "codProduto": 35,
+            "nomeProduto": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
+            "datacompra": "20/07/2026",
+            "linkcompra": "https://shopee.com.br/user/purchase/order/238238209118731?type=6",
+            "fornecedor": 3,
+            "quantidade": 2,
+            "precoCusto": 26,
+            "precoVenda": 70
         }
     ]
 }
