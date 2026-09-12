@@ -1137,7 +1137,9 @@ async function carregarProdutos() {
         const dadosCarregados = dadosLocais || dados;
 
         produtos = dadosCarregados.produtos;
-        fornecedores = Array.isArray(dadosCarregados.fornecedores) ? dadosCarregados.fornecedores : [];
+        fornecedores = Array.isArray(dadosCarregados.fornecedores)
+            ? dadosCarregados.fornecedores
+            : (Array.isArray(dados.fornecedores) ? dados.fornecedores : []);
         vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
         compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
         normalizarIdsRegistros();
@@ -1168,6 +1170,9 @@ async function carregarProdutos() {
 
         produtos = dadosLocais && Array.isArray(dadosLocais.produtos)
             ? dadosLocais.produtos
+            : [];
+        fornecedores = dadosLocais && Array.isArray(dadosLocais.fornecedores)
+            ? dadosLocais.fornecedores
             : [];
         vendas = dadosLocais && Array.isArray(dadosLocais.vendas)
             ? dadosLocais.vendas
@@ -1275,6 +1280,7 @@ function normalizarIdsRegistros() {
 function atualizarJson() {
 
     const dados = {
+        fornecedores: fornecedores,
         produtos: produtos,
         vendas: vendas,
         compras: compras
@@ -1291,6 +1297,7 @@ function atualizarJson() {
 function salvarDadosLocalmente() {
 
     const dados = {
+        fornecedores: fornecedores,
         produtos: produtos,
         vendas: vendas,
         compras: compras
