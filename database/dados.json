@@ -2,17 +2,39 @@
     "fornecedores": [
         {
             "id": 1,
-            "nome":"Mercado Livre"
+            "nome": "Mercado Livre"
         },
         {
             "id": 2,
-            "nome":"Amazon"
+            "nome": "Amazon"
         },
         {
             "id": 3,
-            "nome":"Shopee"
-        }                
+            "nome": "Shopee"
+        }
     ],
+    "categorias": [
+        {
+            "id": 1,
+            "descricao": "Eletrodomésticos"
+        },
+        {
+            "id": 2,
+            "descricao": "Ferramentas"
+        },
+        {
+            "id": 3,
+            "descricao": "Eletrônicos"
+        },
+        {
+            "id": 4,
+            "descricao": "Brinquedos"
+        },
+        {
+            "id": 5,
+            "descricao": "Automotivo"
+        }
+    ],    
     "produtos": [
         {
             "id": 1,
@@ -21,7 +43,7 @@
             "custo": 253.76,
             "preco": 299.99,
             "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -31,7 +53,7 @@
             "custo": 249,
             "preco": 299.99,
             "imagem": "img/produtos/fritadeira_midea.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -41,7 +63,7 @@
             "custo": 209,
             "preco": 279.99,
             "imagem": "img/produtos/fritadeira_wap.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -51,7 +73,7 @@
             "custo": 89.9,
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_britania.jpg",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -61,7 +83,7 @@
             "custo": 99.9,
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_mondial.jpg",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -71,7 +93,7 @@
             "custo": 129.9,
             "preco": 170,
             "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -81,7 +103,7 @@
             "custo": 90.02,
             "preco": 149.99,
             "imagem": "img/produtos/panela_arroz_agratto.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 0
         },
         {
@@ -91,7 +113,7 @@
             "custo": 59.21,
             "preco": 79.99,
             "imagem": "img/produtos/sanduicheira_multilaser.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -101,7 +123,7 @@
             "custo": 49.49,
             "preco": 81.99,
             "imagem": "img/produtos/sanduicheira_sumay.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -111,7 +133,7 @@
             "custo": 31.9,
             "preco": 59.99,
             "imagem": "img/produtos/chaleira.webp",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 4
         },
         {
@@ -121,7 +143,7 @@
             "custo": 149,
             "preco": 189.99,
             "imagem": "img/produtos/jogo_soquete_17_pecas_tramontina.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -131,7 +153,7 @@
             "custo": 31.04,
             "preco": 50,
             "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -141,7 +163,7 @@
             "custo": 24.7,
             "preco": 38,
             "imagem": "img/produtos/chave_tigre_bomvink.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -151,7 +173,7 @@
             "custo": 28,
             "preco": 48,
             "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -161,7 +183,7 @@
             "custo": 24.06,
             "preco": 45,
             "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -171,7 +193,7 @@
             "custo": 138.9,
             "preco": 169.99,
             "imagem": "img/produtos/jogo_soquete_22_pecas_black_tools.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -181,7 +203,7 @@
             "custo": 19.8,
             "preco": 40,
             "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -191,7 +213,7 @@
             "custo": 22.62,
             "preco": 42,
             "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -201,7 +223,7 @@
             "custo": 24.99,
             "preco": 40,
             "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 3
         },
         {
@@ -211,7 +233,7 @@
             "custo": 118,
             "preco": 149.99,
             "imagem": "img/produtos/furadeira_mondial.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -221,7 +243,7 @@
             "custo": 67.8,
             "preco": 95,
             "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 2
         },
         {
@@ -231,7 +253,7 @@
             "custo": 0,
             "preco": 135,
             "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 0
         },
         {
@@ -241,7 +263,7 @@
             "custo": 0,
             "preco": 249.99,
             "imagem": "img/produtos/projetor_hy300_magcubic.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 0
         },
         {
@@ -251,7 +273,7 @@
             "custo": 0,
             "preco": 204.99,
             "imagem": "img/produtos/projetor_hy300.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 2
         },
         {
@@ -261,7 +283,7 @@
             "custo": 0,
             "preco": 94.99,
             "imagem": "img/produtos/camera_seguranca_jortan.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 0
         },
         {
@@ -271,7 +293,7 @@
             "custo": 33,
             "preco": 59.99,
             "imagem": "img/produtos/caixa_som_altomex_al_8787.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -281,7 +303,7 @@
             "custo": 30,
             "preco": 54.99,
             "imagem": "img/produtos/caixa_som_grasep_d_y03.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -291,7 +313,7 @@
             "custo": 29.99,
             "preco": 48,
             "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -301,7 +323,7 @@
             "custo": 35.88,
             "preco": 55,
             "imagem": "img/produtos/caixa_som_charce.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -311,7 +333,7 @@
             "custo": 0,
             "preco": 134.99,
             "imagem": "img/produtos/caixa_som_altomex_al_3629.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 0
         },
         {
@@ -321,7 +343,7 @@
             "custo": 103.7,
             "preco": 165,
             "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -331,7 +353,7 @@
             "custo": 21.76,
             "preco": 39.99,
             "imagem": "img/produtos/fone_ouvido_redmi.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -341,7 +363,7 @@
             "custo": 0,
             "preco": 34.99,
             "imagem": "img/produtos/fone_ouvido_x55.png",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 0
         },
         {
@@ -351,7 +373,7 @@
             "custo": 28.54,
             "preco": 64.99,
             "imagem": "img/produtos/smartwatch_8_ultra.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -361,7 +383,7 @@
             "custo": 26,
             "preco": 69.99,
             "imagem": "img/produtos/smartwatch_t800_ultra.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -371,7 +393,7 @@
             "custo": 45.15,
             "preco": 74.99,
             "imagem": "img/produtos/carregador_powerbank_20000mah.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -381,7 +403,7 @@
             "custo": 48.5,
             "preco": 87.99,
             "imagem": "img/produtos/som_automotivo_first_option.png",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -391,7 +413,7 @@
             "custo": 0,
             "preco": 144.99,
             "imagem": "img/produtos/parafusadeira_soarfly_48v.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 0
         },
         {
@@ -401,7 +423,7 @@
             "custo": 21.6,
             "preco": 34.99,
             "imagem": "img/produtos/brinquedo_arma_catapulta_aviao.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -411,7 +433,7 @@
             "custo": 24,
             "preco": 39.99,
             "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -421,7 +443,7 @@
             "custo": 33.64,
             "preco": 53,
             "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -431,7 +453,7 @@
             "custo": 19.16,
             "preco": 34.99,
             "imagem": "img/produtos/brinquedo_quebra_cabeca_alfabeto.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -441,7 +463,7 @@
             "custo": 14.38,
             "preco": 25,
             "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -451,7 +473,7 @@
             "custo": 13.17,
             "preco": 29.99,
             "imagem": "img/produtos/brinquedo_tiro_alvo_jacare.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -461,7 +483,7 @@
             "custo": 28.82,
             "preco": 39.99,
             "imagem": "img/produtos/brinquedo_tiro_alvo.png",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -471,7 +493,7 @@
             "custo": 22.75,
             "preco": 49.99,
             "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
-            "categoria": "Brinquedos",
+            "categoria": 4,
             "estoque": 1
         },
         {
@@ -481,7 +503,7 @@
             "custo": 16.45,
             "preco": 20,
             "imagem": "img/produtos/relogio_digital_preto.avif",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -491,7 +513,7 @@
             "custo": 18.52,
             "preco": 20,
             "imagem": "img/produtos/relogio_digital_rosa.png",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -501,7 +523,7 @@
             "custo": 89,
             "preco": 134.99,
             "imagem": "img/produtos/liquidificador_mondial_branco.jpg",
-            "categoria": "Eletrodomésticos",
+            "categoria": 1,
             "estoque": 1
         },
         {
@@ -511,7 +533,7 @@
             "custo": 97.76,
             "preco": 140,
             "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -521,7 +543,7 @@
             "custo": 170,
             "preco": 205,
             "imagem": "img/produtos/projetor_hy320.png",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -531,7 +553,7 @@
             "custo": 84,
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -541,7 +563,7 @@
             "custo": 85,
             "preco": 140,
             "imagem": "img/produtos/camera_seguranca_scb57.jpg",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -551,7 +573,7 @@
             "custo": 59.49,
             "preco": 100,
             "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -561,7 +583,7 @@
             "custo": 99,
             "preco": 165,
             "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
-            "categoria": "Eletrônicos",
+            "categoria": 3,
             "estoque": 1
         },
         {
@@ -571,7 +593,7 @@
             "custo": 93.41,
             "preco": 140,
             "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         },
         {
@@ -581,7 +603,7 @@
             "custo": 77.52,
             "preco": 128,
             "imagem": "img/produtos/parafusadeira_btek_36v.webp",
-            "categoria": "Ferramentas",
+            "categoria": 2,
             "estoque": 1
         }
     ],
@@ -870,6 +892,81 @@
                     "precoUnitario": 135
                 }
             ]
+        },
+        {
+            "id": 11,
+            "nomeCliente": "Lucas",
+            "telefoneCliente": "6392502008",
+            "localizacao": "Retirada",
+            "data": "11/09/2026",
+            "totalVenda": 50,
+            "formaPagamento": [
+                {
+                    "tipo": "Pix",
+                    "valor": 50
+                }
+            ],
+            "produtos": [
+                {
+                    "id": 15,
+                    "ordem": 1,
+                    "codProduto": 12,
+                    "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+                    "idCompra": 15,
+                    "quantidade": 1,
+                    "precoUnitario": 50
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "nomeCliente": "Elielson",
+            "telefoneCliente": "6392304876",
+            "localizacao": "https://www.google.com/maps/place/10%C2%B019'09.2%22S+48%C2%B018'39.2%22W/@-10.3196301,-48.3124917,623m/data=!3m1!1e3!4m4!3m3!8m2!3d-10.3192275!4d-48.3108795?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+            "data": "11/09/2026",
+            "totalVenda": 300,
+            "formaPagamento": [
+                {
+                    "tipo": "Pix",
+                    "valor": 300
+                }
+            ],
+            "produtos": [
+                {
+                    "id": 16,
+                    "ordem": 1,
+                    "codProduto": 2,
+                    "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+                    "idCompra": 16,
+                    "quantidade": 1,
+                    "precoUnitario": 300
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "nomeCliente": "Joel Cardoso",
+            "telefoneCliente": "6392235295",
+            "localizacao": "https://www.google.com/maps?q=-10.3448776,-48.3311022&z=17&hl=pt-BR",
+            "data": "11/09/2026",
+            "totalVenda": 88,
+            "formaPagamento": [
+                {
+                    "tipo": "Pix",
+                    "valor": 88
+                }
+            ],
+            "produtos": [
+                {
+                    "id": 18,
+                    "ordem": 1,
+                    "codProduto": 37,
+                    "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+                    "idCompra": 17,
+                    "quantidade": 1,
+                    "precoUnitario": 88
+                }
+            ]
         }
     ],
     "compras": [
@@ -1026,6 +1123,39 @@
             "quantidade": 1,
             "precoCusto": 77.52,
             "precoVenda": 128
+        },
+        {
+            "id": 15,
+            "codProduto": 12,
+            "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+            "datacompra": "15/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128359&orderId=2000017439236004",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 31.04,
+            "precoVenda": 50
+        },
+        {
+            "id": 16,
+            "codProduto": 2,
+            "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+            "datacompra": "09/08/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017838792820/status?packId=2000017838792820&orderId=2000017838792820",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 249,
+            "precoVenda": 300
+        },
+        {
+            "id": 17,
+            "codProduto": 37,
+            "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+            "datacompra": "03/07/2026",
+            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017227992632/status?packId=2000017227992632&orderId=2000017227992632",
+            "fornecedor": 1,
+            "quantidade": 1,
+            "precoCusto": 48.5,
+            "precoVenda": 88
         }
     ]
 }

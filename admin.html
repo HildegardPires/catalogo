@@ -338,12 +338,12 @@
 
                             </label>
 
-                            <input
-                                type="text"
-                                class="form-control"
+                            <select
+                                class="form-select"
                                 id="categoria"
-                                placeholder="Ex.: Ferramentas"
                                 required>
+                                <option value="">Selecione uma categoria</option>
+                            </select>
 
                         </div>
 
@@ -902,6 +902,8 @@ let compras = [];
 
 let fornecedores = [];
 
+let categorias = [];
+
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
 let jsonBaseLocal = "";
@@ -1140,6 +1142,9 @@ async function carregarProdutos() {
         fornecedores = Array.isArray(dadosCarregados.fornecedores)
             ? dadosCarregados.fornecedores
             : (Array.isArray(dados.fornecedores) ? dados.fornecedores : []);
+        categorias = Array.isArray(dadosCarregados.categorias)
+            ? dadosCarregados.categorias
+            : (Array.isArray(dados.categorias) ? dados.categorias : []);
         vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
         compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
         normalizarIdsRegistros();
@@ -1173,6 +1178,9 @@ async function carregarProdutos() {
             : [];
         fornecedores = dadosLocais && Array.isArray(dadosLocais.fornecedores)
             ? dadosLocais.fornecedores
+            : [];
+        categorias = dadosLocais && Array.isArray(dadosLocais.categorias)
+            ? dadosLocais.categorias
             : [];
         vendas = dadosLocais && Array.isArray(dadosLocais.vendas)
             ? dadosLocais.vendas
@@ -1212,6 +1220,8 @@ function atualizarTudo() {
     atualizarJson();
 
     atualizarFiltroCategoria();
+
+    atualizarCategoriasParaProduto();
 
     atualizarTabela();
 
@@ -1281,6 +1291,7 @@ function atualizarJson() {
 
     const dados = {
         fornecedores: fornecedores,
+        categorias: categorias,
         produtos: produtos,
         vendas: vendas,
         compras: compras
@@ -1298,6 +1309,7 @@ function salvarDadosLocalmente() {
 
     const dados = {
         fornecedores: fornecedores,
+        categorias: categorias,
         produtos: produtos,
         vendas: vendas,
         compras: compras
@@ -1369,6 +1381,27 @@ function obterProximoId() {
 // ATUALIZAR TABELA
 // =============================================================
 
+function obterDescricaoCategoria(idCategoria) {
+    const categoria = categorias.find(item => Number(item.id) === Number(idCategoria));
+    return categoria ? categoria.descricao : String(idCategoria || "");
+}
+
+
+function atualizarCategoriasParaProduto() {
+    const selecionada = document.getElementById("categoria").value;
+    const campoCategoria = document.getElementById("categoria");
+    campoCategoria.innerHTML = '<option value="">Selecione uma categoria</option>';
+
+    categorias.forEach(function(categoria) {
+        const opcao = document.createElement("option");
+        opcao.value = categoria.id;
+        opcao.textContent = categoria.descricao;
+        campoCategoria.appendChild(opcao);
+    });
+
+    campoCategoria.value = selecionada;
+}
+
 function atualizarFiltroCategoria() {
 
     const categoriaSelecionada =
@@ -1377,7 +1410,7 @@ function atualizarFiltroCategoria() {
     const categorias = [
         ...new Set(
             produtos
-                .map(produto => produto.categoria)
+                .map(produto => obterDescricaoCategoria(produto.categoria))
                 .filter(categoria => categoria)
         )
     ].sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -1392,7 +1425,8 @@ function atualizarFiltroCategoria() {
         const opcao =
             document.createElement("option");
 
-        opcao.value = categoria;
+        const categoriaEncontrada = categorias.find(item => item.descricao === categoria);
+        opcao.value = categoriaEncontrada ? categoriaEncontrada.id : categoria;
 
         opcao.textContent = categoria;
 
@@ -1401,10 +1435,16 @@ function atualizarFiltroCategoria() {
     });
 
 
-    if (categorias.includes(categoriaSelecionada)) {
+    if (categorias.some(categoria => String(categoriaEncontradaId(categoria)) === String(categoriaSelecionada))) {
         filtroCategoria.value = categoriaSelecionada;
     }
 
+}
+
+
+function categoriaEncontradaId(descricao) {
+    const categoria = categorias.find(item => item.descricao === descricao);
+    return categoria ? categoria.id : descricao;
 }
 
 
@@ -1414,7 +1454,7 @@ function obterProdutosFiltrados() {
 
         const correspondeCategoria =
             !filtroCategoria.value ||
-            produto.categoria === filtroCategoria.value;
+            Number(produto.categoria) === Number(filtroCategoria.value);
 
         const correspondeEstoque =
             !filtroEstoque.checked ||
@@ -1539,7 +1579,7 @@ function atualizarTabela() {
 
                 <span class="badge text-bg-secondary">
 
-                    ${escaparHtml(produto.categoria)}
+                    ${escaparHtml(obterDescricaoCategoria(produto.categoria))}
 
                 </span>
 
