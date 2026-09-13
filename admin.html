@@ -56,6 +56,9 @@
             <button type="button" class="nav-link active" data-tela="produtos">
                 Cadastro de Produtos
             </button>
+            <button type="button" class="nav-link" data-tela="clientes">
+                Clientes
+            </button>
             <button type="button" class="nav-link" data-tela="compras">
                 Compras
             </button>
@@ -581,6 +584,81 @@
     </section>
 
 
+    <section id="telaClientes" class="d-none">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4"><span id="tituloCliente">👤 Novo cliente</span></h3>
+
+                        <form id="formCliente">
+                            <div class="mb-3">
+                                <label for="idClienteCadastro" class="form-label">ID</label>
+                                <input id="idClienteCadastro" type="number" class="form-control" min="1" readonly>
+                                <div class="form-text">O ID é preenchido automaticamente.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nomeClienteCadastro" class="form-label">Nome</label>
+                                <input id="nomeClienteCadastro" type="text" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefoneClienteCadastro" class="form-label">Telefone</label>
+                                <input id="telefoneClienteCadastro" type="tel" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="localizacaoClienteCadastro" class="form-label">Localização</label>
+                                <input id="localizacaoClienteCadastro" type="text" class="form-control">
+                            </div>
+
+                            <button type="submit" id="btnSalvarCliente" class="btn btn-success btn-lg">💾 Salvar cliente</button>
+                            <button type="button" id="btnCancelarCliente" class="btn btn-secondary btn-lg d-none">Cancelar</button>
+                        </form>
+
+                        <div id="mensagemCliente" class="alert d-none mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="mb-0">Clientes cadastrados</h3>
+                            <span id="contadorClientes" class="badge bg-success">0 clientes</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Telefone</th>
+                                        <th>Localização</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaClientes"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="semClientes" class="text-center text-muted py-4 d-none">
+                            Nenhum cliente cadastrado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
     <section id="telaCompras" class="d-none">
 
         <div class="row g-4">
@@ -702,12 +780,10 @@
                                     <input id="idVenda" type="number" class="form-control" min="1" readonly>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="nomeCliente" class="form-label">Nome do cliente</label>
-                                    <input id="nomeCliente" type="text" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="telefoneCliente" class="form-label">Telefone do cliente</label>
-                                    <input id="telefoneCliente" type="tel" class="form-control" required>
+                                    <label for="idClienteVenda" class="form-label">Cliente</label>
+                                    <select id="idClienteVenda" class="form-select" required>
+                                        <option value="">Selecione um cliente</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="localizacaoVenda" class="form-label">Localização</label>
@@ -924,6 +1000,10 @@ let produtos = [];
 
 let produtoEditando = null;
 
+let clientes = [];
+
+let clienteEditando = null;
+
 let vendas = [];
 
 let itensDaVenda = [];
@@ -947,6 +1027,19 @@ let jsonBaseLocal = "";
 
 const form =
     document.getElementById("formProduto");
+
+const formCliente = document.getElementById("formCliente");
+const idClienteCadastro = document.getElementById("idClienteCadastro");
+const nomeClienteCadastro = document.getElementById("nomeClienteCadastro");
+const telefoneClienteCadastro = document.getElementById("telefoneClienteCadastro");
+const localizacaoClienteCadastro = document.getElementById("localizacaoClienteCadastro");
+const tabelaClientes = document.getElementById("tabelaClientes");
+const semClientes = document.getElementById("semClientes");
+const contadorClientes = document.getElementById("contadorClientes");
+const mensagemCliente = document.getElementById("mensagemCliente");
+const tituloCliente = document.getElementById("tituloCliente");
+const btnSalvarCliente = document.getElementById("btnSalvarCliente");
+const btnCancelarCliente = document.getElementById("btnCancelarCliente");
 
 const textareaJson =
     document.getElementById("json");
@@ -1026,6 +1119,7 @@ const btnCancelarVenda = document.getElementById("btnCancelarVenda");
 const tabelaVendas = document.getElementById("tabelaVendas");
 const semVendas = document.getElementById("semVendas");
 const contadorVendas = document.getElementById("contadorVendas");
+const idClienteVenda = document.getElementById("idClienteVenda");
 const formCompra = document.getElementById("formCompra");
 const produtoCompra = document.getElementById("produtoCompra");
 const dataCompra = document.getElementById("dataCompra");
@@ -1181,6 +1275,9 @@ async function carregarProdutos() {
         const dadosCarregados = dadosLocais || dados;
 
         produtos = dadosCarregados.produtos;
+        clientes = Array.isArray(dadosCarregados.clientes)
+            ? dadosCarregados.clientes
+            : (Array.isArray(dados.clientes) ? dados.clientes : []);
         fornecedores = Array.isArray(dadosCarregados.fornecedores)
             ? dadosCarregados.fornecedores
             : (Array.isArray(dados.fornecedores) ? dados.fornecedores : []);
@@ -1217,6 +1314,9 @@ async function carregarProdutos() {
 
         produtos = dadosLocais && Array.isArray(dadosLocais.produtos)
             ? dadosLocais.produtos
+            : [];
+        clientes = dadosLocais && Array.isArray(dadosLocais.clientes)
+            ? dadosLocais.clientes
             : [];
         fornecedores = dadosLocais && Array.isArray(dadosLocais.fornecedores)
             ? dadosLocais.fornecedores
@@ -1267,8 +1367,11 @@ function atualizarTudo() {
 
     atualizarTabela();
 
+    atualizarTabelaClientes();
+
     atualizarContadores();
 
+    atualizarClientesParaVenda();
     atualizarProdutosParaVenda();
 
     atualizarProdutosParaCompra();
@@ -1283,6 +1386,7 @@ function atualizarTudo() {
 
     idCompra.value = obterProximoIdRegistro(compras);
     idVenda.value = obterProximoIdRegistro(vendas);
+    idClienteCadastro.value = obterProximoIdRegistro(clientes);
 
 
     if (produtoEditando === null) {
@@ -1337,6 +1441,7 @@ function atualizarJson() {
         fornecedores: fornecedores,
         categorias: categorias,
         produtos: produtos,
+        clientes: clientes,
         vendas: vendas,
         compras: compras
     };
@@ -1355,6 +1460,7 @@ function salvarDadosLocalmente() {
         fornecedores: fornecedores,
         categorias: categorias,
         produtos: produtos,
+        clientes: clientes,
         vendas: vendas,
         compras: compras
     };
@@ -2393,8 +2499,146 @@ ordenacaoProdutos.addEventListener(
 
 
 // =============================================================
+// CLIENTES
+// =============================================================
+
+function atualizarTabelaClientes() {
+    tabelaClientes.innerHTML = "";
+    semClientes.classList.toggle("d-none", clientes.length > 0);
+    contadorClientes.textContent = clientes.length === 1
+        ? "1 cliente"
+        : `${clientes.length} clientes`;
+
+    clientes.forEach(function(cliente) {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${escaparHtml(String(cliente.id || ""))}</td>
+            <td>${escaparHtml(cliente.nome || "")}</td>
+            <td>${escaparHtml(cliente.telefone || "")}</td>
+            <td>${escaparHtml(cliente.localizacao || "")}</td>
+            <td class="text-nowrap">
+                <button type="button" class="btn btn-sm btn-outline-primary me-1" data-acao="editar">Editar</button>
+                <button type="button" class="btn btn-sm btn-outline-danger" data-acao="excluir">Excluir</button>
+            </td>
+        `;
+
+        linha.querySelector('[data-acao="editar"]').addEventListener("click", function() {
+            editarCliente(cliente.id);
+        });
+
+        linha.querySelector('[data-acao="excluir"]').addEventListener("click", function() {
+            excluirCliente(cliente.id);
+        });
+
+        tabelaClientes.appendChild(linha);
+    });
+}
+
+
+function editarCliente(id) {
+    const cliente = clientes.find(item => Number(item.id) === Number(id));
+
+    if (!cliente) {
+        return;
+    }
+
+    clienteEditando = Number(cliente.id);
+    idClienteCadastro.value = cliente.id;
+    nomeClienteCadastro.value = cliente.nome || "";
+    telefoneClienteCadastro.value = cliente.telefone || "";
+    localizacaoClienteCadastro.value = cliente.localizacao || "";
+    tituloCliente.textContent = `✏️ Editar cliente #${cliente.id}`;
+    btnSalvarCliente.textContent = "💾 Salvar alterações";
+    btnSalvarCliente.classList.replace("btn-success", "btn-primary");
+    btnCancelarCliente.classList.remove("d-none");
+    mostrarMensagem(mensagemCliente, `Editando cliente #${cliente.id}.`, "info");
+    document.getElementById("telaClientes").scrollIntoView({ behavior: "smooth" });
+}
+
+
+function cancelarEdicaoCliente() {
+    clienteEditando = null;
+    formCliente.reset();
+    idClienteCadastro.value = obterProximoIdRegistro(clientes);
+    tituloCliente.textContent = "👤 Novo cliente";
+    btnSalvarCliente.textContent = "💾 Salvar cliente";
+    btnSalvarCliente.classList.replace("btn-primary", "btn-success");
+    btnCancelarCliente.classList.add("d-none");
+    mensagemCliente.classList.add("d-none");
+}
+
+
+function excluirCliente(id) {
+    const cliente = clientes.find(item => Number(item.id) === Number(id));
+
+    if (!cliente || !confirm(`Deseja realmente excluir o cliente "${cliente.nome}"?`)) {
+        return;
+    }
+
+    clientes = clientes.filter(item => Number(item.id) !== Number(id));
+
+    if (clienteEditando === Number(id)) {
+        cancelarEdicaoCliente();
+    }
+
+    atualizarJson();
+    atualizarTabelaClientes();
+    idClienteCadastro.value = obterProximoIdRegistro(clientes);
+    mostrarMensagem(mensagemCliente, `Cliente "${cliente.nome}" excluído.`, "warning");
+}
+
+
+formCliente.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const clienteAtualizado = {
+        id: Number(idClienteCadastro.value),
+        nome: nomeClienteCadastro.value.trim(),
+        telefone: telefoneClienteCadastro.value.trim(),
+        localizacao: localizacaoClienteCadastro.value.trim()
+    };
+
+    if (clienteEditando === null) {
+        clientes.push(clienteAtualizado);
+    } else {
+        const indiceCliente = clientes.findIndex(item => Number(item.id) === Number(clienteEditando));
+
+        if (indiceCliente !== -1) {
+            clientes[indiceCliente] = clienteAtualizado;
+        }
+    }
+
+    atualizarJson();
+    atualizarTabelaClientes();
+    const mensagem = clienteEditando === null
+        ? "Cliente adicionado ao JSON com sucesso!"
+        : "Cliente atualizado no JSON com sucesso!";
+    cancelarEdicaoCliente();
+    mostrarMensagem(mensagemCliente, mensagem, "success");
+});
+
+
+btnCancelarCliente.addEventListener("click", cancelarEdicaoCliente);
+
+
+// =============================================================
 // VENDAS
 // =============================================================
+
+function atualizarClientesParaVenda() {
+    const selecionado = idClienteVenda.value;
+    idClienteVenda.innerHTML = '<option value="">Selecione um cliente</option>';
+
+    clientes.forEach(function(cliente) {
+        const opcao = document.createElement("option");
+        opcao.value = cliente.id;
+        opcao.textContent = `${cliente.nome} — ${cliente.telefone || "Sem telefone"}`;
+        idClienteVenda.appendChild(opcao);
+    });
+
+    idClienteVenda.value = selecionado;
+}
+
 
 function atualizarProdutosParaCompra() {
 
@@ -2828,8 +3072,11 @@ function editarVenda(id) {
 
     vendaEditando = Number(venda.id);
     idVenda.value = venda.id;
-    document.getElementById("nomeCliente").value = venda.nomeCliente || "";
-    document.getElementById("telefoneCliente").value = venda.telefoneCliente || "";
+    const clienteDaVenda = clientes.find(function(cliente) {
+        return Number(cliente.id) === Number(venda.idCliente) ||
+            (cliente.nome === venda.nomeCliente && cliente.telefone === venda.telefoneCliente);
+    });
+    idClienteVenda.value = clienteDaVenda ? clienteDaVenda.id : "";
     document.getElementById("localizacaoVenda").value = venda.localizacao || "";
     pagamentosDaVenda = Array.isArray(venda.formaPagamento)
         ? venda.formaPagamento.map(pagamento => ({
@@ -2972,6 +3219,13 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
 formVenda.addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const cliente = clientes.find(item => Number(item.id) === Number(idClienteVenda.value));
+
+    if (!cliente) {
+        mostrarMensagem(mensagemVenda, "Selecione um cliente cadastrado.", "danger");
+        return;
+    }
+
     if (itensDaVenda.length === 0) {
         mostrarMensagem(mensagemVenda, "Adicione pelo menos um item à venda.", "danger");
         return;
@@ -3004,8 +3258,9 @@ formVenda.addEventListener("submit", function(event) {
 
     const novaVenda = {
         id: Number(idVenda.value),
-        nomeCliente: document.getElementById("nomeCliente").value.trim(),
-        telefoneCliente: document.getElementById("telefoneCliente").value.trim(),
+        idCliente: cliente.id,
+        nomeCliente: cliente.nome,
+        telefoneCliente: cliente.telefone || "",
         localizacao: document.getElementById("localizacaoVenda").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
         totalVenda: obterTotalDaVenda(),
@@ -3049,6 +3304,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
     botao.addEventListener("click", function() {
         const tela = this.dataset.tela;
         document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
+        document.getElementById("telaClientes").classList.toggle("d-none", tela !== "clientes");
         document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
         document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
         document.getElementById("telaEstoque").classList.toggle("d-none", tela !== "estoque");
@@ -3061,6 +3317,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
 
 document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
 dataCompra.value = new Date().toISOString().slice(0, 10);
+idClienteCadastro.value = obterProximoIdRegistro(clientes);
 
 carregarProdutos();
 
