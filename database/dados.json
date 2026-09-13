@@ -1,4 +1,4 @@
-﻿{
+{
     "fornecedores": [
         {
             "id": 1,
@@ -769,6 +769,18 @@
             "nome": "Ezequiel Freitas",
             "telefone": "91991018377",
             "localizacao": ""
+        },
+        {
+            "id": 16,
+            "nome": "Doglas",
+            "telefone": "63981044370",
+            "localizacao": "Morada do Sol"
+        },
+        {
+            "id": 17,
+            "nome": "Cielle",
+            "telefone": "63984607558",
+            "localizacao": "403 Sul"
         }
     ],
     "vendas": [
