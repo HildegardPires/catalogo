@@ -4,6 +4,8 @@
 // =============================================================
 
 const numeroWhatsApp = "5563984896172";
+const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6aa80134ffd5d16053055183";
+const JSONBIN_ACCESS_KEY = "$2a$10$00E69ZL50jkWf0/BkvFD/.9iRF2HBAMw8VaZ7JgJglTbSv6hDbzau";
 
 
 // =============================================================
@@ -52,7 +54,12 @@ async function carregarProdutos() {
     try {
 
         const resposta =
-            await fetch("database/dados.json");
+            await fetch(JSONBIN_URL, {
+                cache: "no-store",
+                headers: {
+                    "X-Access-Key": JSONBIN_ACCESS_KEY
+                }
+            });
 
 
         if (!resposta.ok) {
@@ -64,10 +71,11 @@ async function carregarProdutos() {
         }
 
 
-        const dados = await resposta.json();
+        const respostaJson = await resposta.json();
+        const dados = respostaJson.record || respostaJson;
 
         if (!dados || !Array.isArray(dados.produtos)) {
-            throw new Error("O arquivo database/dados.json precisa conter a propriedade produtos como array.");
+            throw new Error("O JSONBin.io precisa conter a propriedade produtos como array.");
         }
 
         produtos = dados.produtos;
