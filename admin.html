@@ -745,6 +745,7 @@
                                         <th>Qtd.</th>
                                         <th>Custo</th>
                                         <th>Venda</th>
+                                        <th>Lucro</th>
                                         <th>Link</th>
                                         <th></th>
                                     </tr>
@@ -2691,6 +2692,7 @@ function atualizarTabelaCompras() {
             <td>${escaparHtml(String(compra.quantidade || 0))}</td>
             <td>R$ ${formatarPreco(compra.precoCusto)}</td>
             <td>R$ ${formatarPreco(compra.precoVenda)}</td>
+            <td>R$ ${formatarPreco(compra.lucro)}</td>
             <td>${link}</td>
             <td class="text-nowrap">
                 <button type="button" class="btn btn-sm btn-outline-primary me-1" data-acao="editar">Editar</button>
@@ -2854,7 +2856,8 @@ formCompra.addEventListener("submit", function(event) {
         fornecedor: fornecedor.id,
         quantidade: quantidade,
         precoCusto: precoCusto,
-        precoVenda: precoVenda
+        precoVenda: precoVenda,
+        lucro: Number((precoVenda - precoCusto).toFixed(2))
     };
 
     if (compraEditando === null) {
