@@ -200,6 +200,27 @@
                         </div>
 
 
+                        <!-- COMPLEMENTO -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="complemento"
+                                class="form-label">
+
+                                Complemento
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="complemento"
+                                placeholder="Ex.: 127V, cor preta, modelo X">
+
+                        </div>
+
+
                         <!-- PREÇO -->
 
                         <div class="mb-3">
@@ -425,7 +446,7 @@
         <!-- LISTA DE PRODUTOS -->
         <!-- ===================================================== -->
 
-        <div class="col-lg-7 order-2">
+        <div class="col-12 order-2">
 
         <div class="card shadow-sm border-0">
 
@@ -1877,6 +1898,10 @@ function editarProduto(id) {
         produto.descricao;
 
 
+    document.getElementById("complemento").value =
+        produto.complemento || "";
+
+
     document.getElementById("preco").value =
         produto.preco;
 
@@ -1985,7 +2010,11 @@ form.addEventListener(
                     .value
                     .trim(),
 
-            complemento: "",
+            complemento:
+                document
+                    .getElementById("complemento")
+                    .value
+                    .trim(),
 
             custo:
                 parseFloat(
