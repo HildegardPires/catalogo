@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
 </head>
 
 
@@ -1584,35 +1586,30 @@ function atualizarFiltroCategoria() {
     const categoriaSelecionada =
         filtroCategoria.value;
 
-    const descricoesCategorias = [
-        ...new Set(
-            produtos
-                .map(produto => obterDescricaoCategoria(produto.categoria))
-                .filter(categoria => categoria)
-        )
-    ].sort((a, b) => a.localeCompare(b, "pt-BR"));
+    const categoriasDisponiveis = categorias
+        .filter(categoria => categoria && categoria.descricao)
+        .sort((a, b) => a.descricao.localeCompare(b.descricao, "pt-BR"));
 
 
     filtroCategoria.innerHTML =
         '<option value="">Todas as categorias</option>';
 
 
-    descricoesCategorias.forEach(function(descricao) {
+    categoriasDisponiveis.forEach(function(categoria) {
 
         const opcao =
             document.createElement("option");
 
-        const categoriaEncontrada = categorias.find(item => item.descricao === descricao);
-        opcao.value = categoriaEncontrada ? categoriaEncontrada.id : descricao;
+        opcao.value = categoria.id;
 
-        opcao.textContent = descricao;
+        opcao.textContent = categoria.descricao;
 
         filtroCategoria.appendChild(opcao);
 
     });
 
 
-    if (descricoesCategorias.some(descricao => String(categoriaEncontradaId(descricao)) === String(categoriaSelecionada))) {
+    if (categoriasDisponiveis.some(categoria => String(categoria.id) === String(categoriaSelecionada))) {
         filtroCategoria.value = categoriaSelecionada;
     }
 
