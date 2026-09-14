@@ -954,7 +954,7 @@
         <div class="card-body p-4">
 
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3 class="mb-0">database/dados.json</h3>
+                <h3 class="mb-0">Dados do JSONBin.io</h3>
                 <span class="badge bg-secondary">Dados completos</span>
             </div>
 
@@ -1024,6 +1024,9 @@ let categorias = [];
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
 let jsonBaseLocal = "";
+
+const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6aa80134ffd5d16053055183";
+const JSONBIN_ACCESS_KEY = "$2a$10$00E69ZL50jkWf0/BkvFD/.9iRF2HBAMw8VaZ7JgJglTbSv6hDbzau";
 
 
 const form =
@@ -1227,14 +1230,17 @@ arquivoImagem.addEventListener(
 
 
 // =============================================================
-// CARREGAR DADOS.JSON
+// CARREGAR DADOS DO JSONBIN.IO
 // =============================================================
 
 async function carregarProdutos() {
 
     try {
         const resposta =
-            await fetch("database/dados.json", { cache: "no-store" });
+            await fetch(JSONBIN_URL, {
+                cache: "no-store",
+                headers: { "X-Access-Key": JSONBIN_ACCESS_KEY }
+            });
 
 
         if (!resposta.ok) {
@@ -1246,14 +1252,14 @@ async function carregarProdutos() {
         }
 
 
-        const dados =
-            await resposta.json();
+        const respostaJson = await resposta.json();
+        const dados = respostaJson.record || respostaJson;
 
 
         if (!dados || !Array.isArray(dados.produtos)) {
 
             throw new Error(
-                "O arquivo database/dados.json precisa conter a propriedade produtos como array."
+                "O JSON do JSONBin.io precisa conter a propriedade produtos como array."
             );
 
         }
@@ -1299,7 +1305,7 @@ async function carregarProdutos() {
 
         status.textContent = dadosLocais
             ? "✓ Dados locais carregados; nenhuma alteração externa foi detectada."
-            : "✓ database/dados.json atualizado e carregado com sucesso.";
+            : "✓ Dados carregados do JSONBin.io com sucesso.";
 
 
     } catch (erro) {
@@ -1340,13 +1346,12 @@ async function carregarProdutos() {
             "alert alert-danger";
 
         status.innerHTML = `
-            Não foi possível carregar o
-            <strong>database/dados.json</strong>.
+            Não foi possível carregar os dados do
+            <strong>JSONBin.io</strong>.
 
             <br><br>
 
-            Verifique se o arquivo existe na mesma
-            pasta do admin.html.
+            Verifique sua conexão e as credenciais do JSONBin.io.
         `;
 
     }
@@ -2231,7 +2236,7 @@ function excluirProduto(id) {
 
 
 // =============================================================
-// SALVAR JSON
+// SALVAR JSON NO JSONBIN.IO
 // =============================================================
 
 document
@@ -2240,42 +2245,31 @@ document
         "click",
         async function() {
 
-            const conteudo = textareaJson.value;
-            const arquivo = new Blob(
-                [conteudo],
-                { type: "application/json;charset=utf-8" }
-            );
-
             try {
-
-                if ("showSaveFilePicker" in window) {
-                    const manipulador = await window.showSaveFilePicker({
-                        suggestedName: "dados.json",
-                        types: [
-                            {
-                                description: "Arquivo JSON",
-                                accept: { "application/json": [".json"] }
-                            }
-                        ]
-                    });
-
-                    const gravador = await manipulador.createWritable();
-                    await gravador.write(conteudo);
-                    await gravador.close();
-
-                } else {
-
-                    const link = document.createElement("a");
-                    link.href = URL.createObjectURL(arquivo);
-                    link.download = "dados.json";
-                    link.click();
-                    URL.revokeObjectURL(link.href);
-
+                const dados = JSON.parse(textareaJson.value);
+                if (!dados || !Array.isArray(dados.produtos)) {
+                    throw new Error("O JSON precisa conter a propriedade produtos como array.");
                 }
+
+                const resposta = await fetch(JSONBIN_URL, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Access-Key": JSONBIN_ACCESS_KEY
+                    },
+                    body: JSON.stringify(dados)
+                });
+
+                if (!resposta.ok) {
+                    throw new Error(`Erro HTTP: ${resposta.status}`);
+                }
+
+                jsonBaseLocal = JSON.stringify(dados);
+                salvarDadosLocalmente();
 
                 mostrarMensagem(
                     mensagemJson,
-                    "JSON salvo com sucesso.",
+                    "JSON salvo no JSONBin.io com sucesso.",
                     "success"
                 );
 
@@ -2288,7 +2282,7 @@ document
                 console.error(erro);
                 mostrarMensagem(
                     mensagemJson,
-                    "Não foi possível salvar o JSON.",
+                    "Não foi possível salvar o JSON no JSONBin.io.",
                     "danger"
                 );
 
