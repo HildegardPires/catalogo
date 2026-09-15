@@ -223,6 +223,28 @@
                         </div>
 
 
+                        <!-- CÓDIGO DE BARRAS -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="codBarras"
+                                class="form-label">
+
+                                Código de barras
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="codBarras"
+                                inputmode="numeric"
+                                placeholder="Ex.: 7891234567890">
+
+                        </div>
+
+
                         <!-- PREÇO -->
 
                         <div class="mb-3">
@@ -2070,6 +2092,10 @@ function editarProduto(id) {
         produto.complemento || "";
 
 
+    document.getElementById("codBarras").value =
+        produto.codBarras || "";
+
+
     document.getElementById("preco").value =
         produto.preco;
 
@@ -2181,6 +2207,12 @@ form.addEventListener(
             complemento:
                 document
                     .getElementById("complemento")
+                    .value
+                    .trim(),
+
+            codBarras:
+                document
+                    .getElementById("codBarras")
                     .value
                     .trim(),
 
@@ -2945,7 +2977,7 @@ function cancelarEdicaoCompra() {
     formCompra.reset();
     idCompra.value = obterProximoIdRegistro(compras);
     dataCompra.value = new Date().toISOString().slice(0, 10);
-    dataEntrega.value = "";
+    dataEntrega.value = new Date().toISOString().slice(0, 10);
     quantidadeCompra.value = 1;
     tituloCompra.textContent = "📦 Nova compra";
     btnSalvarCompra.textContent = "💾 Salvar compra";
@@ -3528,6 +3560,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
 
 document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
 dataCompra.value = new Date().toISOString().slice(0, 10);
+dataEntrega.value = new Date().toISOString().slice(0, 10);
 idClienteCadastro.value = obterProximoIdRegistro(clientes);
 
 carregarProdutos();
