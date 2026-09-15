@@ -480,6 +480,20 @@
 
             <div class="row g-3 align-items-end mb-4">
 
+                <div class="col-12">
+
+                    <label for="filtroDescricao" class="form-label">
+                        Descrição
+                    </label>
+
+                    <input
+                        id="filtroDescricao"
+                        class="form-control"
+                        type="search"
+                        placeholder="Filtrar pela descrição do produto">
+
+                </div>
+
                 <div class="col-md-5">
 
                     <label for="filtroCategoria" class="form-label">
@@ -1086,6 +1100,9 @@ const semProdutos =
 const filtroCategoria =
     document.getElementById("filtroCategoria");
 
+const filtroDescricao =
+    document.getElementById("filtroDescricao");
+
 const filtroEstoque =
     document.getElementById("filtroEstoque");
 
@@ -1626,6 +1643,15 @@ function obterProdutosFiltrados() {
 
     return produtos.filter(function(produto) {
 
+        const descricaoFiltro =
+            filtroDescricao.value.trim().toLowerCase();
+
+        const correspondeDescricao =
+            !descricaoFiltro ||
+            String(produto.descricao || "")
+                .toLowerCase()
+                .includes(descricaoFiltro);
+
         const correspondeCategoria =
             !filtroCategoria.value ||
             Number(produto.categoria) === Number(filtroCategoria.value);
@@ -1634,7 +1660,7 @@ function obterProdutosFiltrados() {
             !filtroEstoque.checked ||
             Number(produto.estoque) > 0;
 
-        return correspondeCategoria && correspondeEstoque;
+        return correspondeDescricao && correspondeCategoria && correspondeEstoque;
 
     });
 
@@ -2489,6 +2515,18 @@ function mostrarMensagem(
 
 filtroCategoria.addEventListener(
     "change",
+    function() {
+
+        atualizarTabela();
+
+        atualizarContadores();
+
+    }
+);
+
+
+filtroDescricao.addEventListener(
+    "input",
     function() {
 
         atualizarTabela();
