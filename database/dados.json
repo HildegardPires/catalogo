@@ -1,2011 +1,2126 @@
 ﻿{
-    "fornecedores": [
+  "fornecedores": [
+    {
+      "id": 1,
+      "nome": "Mercado Livre"
+    },
+    {
+      "id": 2,
+      "nome": "Amazon"
+    },
+    {
+      "id": 3,
+      "nome": "Shopee"
+    },
+    {
+      "id": 4,
+      "nome": "AliExpress"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "descricao": "Eletrodomésticos"
+    },
+    {
+      "id": 2,
+      "descricao": "Ferramentas"
+    },
+    {
+      "id": 3,
+      "descricao": "Eletrônicos"
+    },
+    {
+      "id": 4,
+      "descricao": "Brinquedos"
+    },
+    {
+      "id": 5,
+      "descricao": "Automotivo"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+      "descricao": "",
+      "complemento": "",
+      "custo": 253.76,
+      "preco": 299.99,
+      "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 2,
+      "nome": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+      "descricao": "",
+      "complemento": "",
+      "custo": 249,
+      "preco": 299.99,
+      "imagem": "img/produtos/fritadeira_midea.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 3,
+      "nome": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+      "descricao": "",
+      "complemento": "",
+      "custo": 209,
+      "preco": 279.99,
+      "imagem": "img/produtos/fritadeira_wap.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 4,
+      "nome": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+      "descricao": "",
+      "complemento": "",
+      "custo": 89.9,
+      "preco": 134.99,
+      "imagem": "img/produtos/liquidificador_britania.jpg",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 2
+    },
+    {
+      "id": 5,
+      "nome": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+      "descricao": "L-98-B",
+      "complemento": "",
+      "custo": 99.9,
+      "preco": 134.99,
+      "imagem": "img/produtos/liquidificador_mondial.jpg",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 6,
+      "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+      "descricao": "",
+      "complemento": "",
+      "custo": 129.9,
+      "preco": 170,
+      "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 7,
+      "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+      "descricao": "",
+      "complemento": "",
+      "custo": 90.02,
+      "preco": 149.99,
+      "imagem": "img/produtos/panela_arroz_agratto.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 8,
+      "nome": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
+      "descricao": "",
+      "complemento": "",
+      "custo": 59.21,
+      "preco": 79.99,
+      "imagem": "img/produtos/sanduicheira_multilaser.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 9,
+      "nome": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+      "descricao": "",
+      "complemento": "",
+      "custo": 49.49,
+      "preco": 81.99,
+      "imagem": "img/produtos/sanduicheira_sumay.webp",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 10,
+      "nome": "Chaleira Elétrica 2 litros Mokfa",
+      "descricao": "",
+      "complemento": "",
+      "custo": 31.4,
+      "preco": 60,
+      "imagem": "img/produtos/chaleira.webp",
+      "categoria": "1",
+      "codBarras": "",
+      "estoque": 4
+    },
+    {
+      "id": 11,
+      "nome": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
+      "descricao": "",
+      "complemento": "",
+      "custo": 149,
+      "preco": 189.99,
+      "imagem": "img/produtos/jogo_soquete_17_pecas_tramontina.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 12,
+      "nome": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+      "descricao": "",
+      "complemento": "",
+      "custo": 31.04,
+      "preco": 50,
+      "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 13,
+      "nome": "Chave Tigre de Boca Multifuncional 360 Graus",
+      "descricao": "",
+      "complemento": "",
+      "custo": 24.7,
+      "preco": 38,
+      "imagem": "img/produtos/chave_tigre_bomvink.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 14,
+      "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
+      "descricao": "",
+      "complemento": "",
+      "custo": 28,
+      "preco": 48,
+      "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
+      "categoria": "2",
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 15,
+      "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+      "descricao": "",
+      "complemento": "",
+      "custo": 24.06,
+      "preco": 45,
+      "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
+      "categoria": "2",
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 16,
+      "nome": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
+      "descricao": "",
+      "complemento": "",
+      "custo": 138.9,
+      "preco": 169.99,
+      "imagem": "img/produtos/jogo_soquete_22_pecas_black_tools.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 17,
+      "nome": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
+      "descricao": "",
+      "complemento": "",
+      "custo": 19.8,
+      "preco": 40,
+      "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 18,
+      "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
+      "descricao": "",
+      "complemento": "",
+      "custo": 22.62,
+      "preco": 42,
+      "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
+      "categoria": "2",
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 19,
+      "nome": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
+      "descricao": "",
+      "complemento": "",
+      "custo": 24.99,
+      "preco": 40,
+      "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 5
+    },
+    {
+      "id": 20,
+      "nome": "Furadeira De Impacto Mondial",
+      "descricao": "",
+      "complemento": "",
+      "custo": 118,
+      "preco": 149.99,
+      "imagem": "img/produtos/furadeira_mondial.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 21,
+      "nome": "Parafusadeira Furadeira 1 Bateria 12v",
+      "descricao": "",
+      "complemento": "",
+      "custo": 67.8,
+      "preco": 95,
+      "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 2
+    },
+    {
+      "id": 22,
+      "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 135,
+      "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 23,
+      "nome": "Projetor MAGCUBIC HY300 PRO Android 11 Wifi 5g Espelhamento",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 249.99,
+      "imagem": "img/produtos/projetor_hy300_magcubic.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 24,
+      "nome": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 204.99,
+      "imagem": "img/produtos/projetor_hy300.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 25,
+      "nome": "Câmera De Segurança Wifi Externa Full Hd Infravermelho Prova D'água",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 94.99,
+      "imagem": "img/produtos/camera_seguranca_jortan.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 26,
+      "nome": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
+      "descricao": "",
+      "complemento": "",
+      "custo": 33,
+      "preco": 59.99,
+      "imagem": "img/produtos/caixa_som_altomex_al_8787.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 27,
+      "nome": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
+      "descricao": "",
+      "complemento": "",
+      "custo": 30,
+      "preco": 54.99,
+      "imagem": "img/produtos/caixa_som_grasep_d_y03.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 28,
+      "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
+      "descricao": "",
+      "complemento": "",
+      "custo": 29.99,
+      "preco": 48,
+      "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 29,
+      "nome": "Caixa de Som Bluetooth 20w Vermelha",
+      "descricao": "",
+      "complemento": "",
+      "custo": 35.88,
+      "preco": 55,
+      "imagem": "img/produtos/caixa_som_charce.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 30,
+      "nome": "Caixa De Som Bluetooth 50w Led USB, SD e rádio FM",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 134.99,
+      "imagem": "img/produtos/caixa_som_altomex_al_3629.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 31,
+      "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+      "descricao": "",
+      "complemento": "",
+      "custo": 103.7,
+      "preco": 165,
+      "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 32,
+      "nome": "Fone De Ouvido Sem Fio Bluetooth",
+      "descricao": "",
+      "complemento": "Redmi",
+      "custo": 21.76,
+      "preco": 39.99,
+      "imagem": "img/produtos/fone_ouvido_redmi.jpg",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 33,
+      "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
+      "descricao": "",
+      "complemento": "X55",
+      "custo": 0,
+      "preco": 34.99,
+      "imagem": "img/produtos/fone_ouvido_x55.png",
+      "categoria": "3",
+      "estoque": 0
+    },
+    {
+      "id": 34,
+      "nome": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
+      "descricao": "",
+      "complemento": "",
+      "custo": 28.54,
+      "preco": 64.99,
+      "imagem": "img/produtos/smartwatch_8_ultra.jpg",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 35,
+      "nome": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
+      "descricao": "",
+      "complemento": "",
+      "custo": 26,
+      "preco": 69.99,
+      "imagem": "img/produtos/smartwatch_t800_ultra.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 2
+    },
+    {
+      "id": 36,
+      "nome": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
+      "descricao": "",
+      "complemento": "",
+      "custo": 45.15,
+      "preco": 74.99,
+      "imagem": "img/produtos/carregador_powerbank_20000mah.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 37,
+      "nome": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+      "descricao": "",
+      "complemento": "",
+      "custo": 48.5,
+      "preco": 87.99,
+      "imagem": "img/produtos/som_automotivo_first_option.png",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 38,
+      "nome": "Parafusadeira Furadeira 2 Baterias 48v + Acessórios + Maleta",
+      "descricao": "",
+      "complemento": "",
+      "custo": 0,
+      "preco": 144.99,
+      "imagem": "img/produtos/parafusadeira_soarfly_48v.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 39,
+      "nome": "Brinquedo Arminha Catapulta Avião",
+      "descricao": "",
+      "complemento": "",
+      "custo": 21.6,
+      "preco": 34.99,
+      "imagem": "img/produtos/brinquedo_arma_catapulta_aviao.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 40,
+      "nome": "Brinquedo Lançador de Foguete Com Pé",
+      "descricao": "",
+      "complemento": "",
+      "custo": 24,
+      "preco": 39.99,
+      "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 2
+    },
+    {
+      "id": 41,
+      "nome": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
+      "descricao": "",
+      "complemento": "",
+      "custo": 33.64,
+      "preco": 53,
+      "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 42,
+      "nome": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
+      "descricao": "",
+      "complemento": "",
+      "custo": 19.16,
+      "preco": 34.99,
+      "imagem": "img/produtos/brinquedo_quebra_cabeca_alfabeto.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 43,
+      "nome": "Brinquedo Arminha Lançador de Discos",
+      "descricao": "",
+      "complemento": "",
+      "custo": 14.38,
+      "preco": 25,
+      "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 44,
+      "nome": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
+      "descricao": "",
+      "complemento": "",
+      "custo": 13.17,
+      "preco": 29.99,
+      "imagem": "img/produtos/brinquedo_tiro_alvo_jacare.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 45,
+      "nome": "Brinquedo Arco e Flecha com Alvo",
+      "descricao": "",
+      "complemento": "",
+      "custo": 28.82,
+      "preco": 39.99,
+      "imagem": "img/produtos/brinquedo_tiro_alvo.png",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 46,
+      "nome": "Piscina Inflável Redonda 100 Litros 3 Aneis",
+      "descricao": "",
+      "complemento": "",
+      "custo": 22.75,
+      "preco": 49.99,
+      "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
+      "categoria": 4,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 47,
+      "nome": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
+      "descricao": "",
+      "complemento": "",
+      "custo": 16.45,
+      "preco": 20,
+      "imagem": "img/produtos/relogio_digital_preto.avif",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 48,
+      "nome": "Relógio Digital Feminino Rosa Adulto/Infantil",
+      "descricao": "",
+      "complemento": "",
+      "custo": 18.52,
+      "preco": 20,
+      "imagem": "img/produtos/relogio_digital_rosa.png",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 49,
+      "nome": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Branco",
+      "descricao": "L-97-W",
+      "complemento": "",
+      "custo": 89,
+      "preco": 134.99,
+      "imagem": "img/produtos/liquidificador_mondial_branco.jpg",
+      "categoria": 1,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 50,
+      "nome": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
+      "descricao": "",
+      "complemento": "",
+      "custo": 97.76,
+      "preco": 140,
+      "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 51,
+      "nome": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "descricao": "",
+      "complemento": "",
+      "custo": 170,
+      "preco": 205,
+      "imagem": "img/produtos/projetor_hy320.png",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 52,
+      "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+      "descricao": "",
+      "complemento": "",
+      "custo": 84,
+      "preco": 165,
+      "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 53,
+      "nome": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
+      "descricao": "App: Icsee",
+      "complemento": "SC-B57",
+      "custo": 85,
+      "preco": 140,
+      "imagem": "img/produtos/camera_seguranca_scb57.jpg",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 54,
+      "nome": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
+      "descricao": "App: Yoosee",
+      "complemento": "",
+      "custo": 59.49,
+      "preco": 100,
+      "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 0
+    },
+    {
+      "id": 55,
+      "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
+      "descricao": "",
+      "complemento": "",
+      "custo": 99,
+      "preco": 165,
+      "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
+      "categoria": 3,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 56,
+      "nome": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
+      "descricao": "",
+      "complemento": "",
+      "custo": 93.41,
+      "preco": 140,
+      "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 57,
+      "nome": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
+      "descricao": "",
+      "complemento": "",
+      "custo": 77.52,
+      "preco": 128,
+      "imagem": "img/produtos/parafusadeira_btek_36v.webp",
+      "categoria": 2,
+      "codBarras": "",
+      "estoque": 1
+    },
+    {
+      "id": 58,
+      "nome": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
+      "descricao": "",
+      "complemento": "",
+      "custo": 75.04,
+      "preco": 140,
+      "imagem": "img/produtos/camera_seguranca_a28.jpg",
+      "categoria": 3,
+      "codBarras": "6920260513598",
+      "estoque": 1
+    },
+    {
+      "id": 59,
+      "nome": "Fone De Ouvido Sem Fio Bluetooth Preto",
+      "descricao": "",
+      "complemento": "X55",
+      "custo": 16.15,
+      "preco": 40,
+      "imagem": "img/produtos/fone_ouvido_x55_preto.png",
+      "categoria": "3",
+      "estoque": 2
+    },
+    {
+      "id": 60,
+      "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
+      "descricao": "",
+      "complemento": "Pro 4",
+      "custo": 12.9,
+      "preco": 40,
+      "imagem": "img/produtos/fone_ouvido_pro4_branco.png",
+      "categoria": "3",
+      "estoque": 2
+    },
+    {
+      "id": 61,
+      "nome": "Câmera Externa Wifi Prova D'água ItBlue",
+      "descricao": "",
+      "complemento": "SC-B28",
+      "custo": 59.33,
+      "preco": 100,
+      "imagem": "img/produtos/camera_seguranca_scb28.png",
+      "categoria": "3",
+      "estoque": 2
+    },
+    {
+      "id": 62,
+      "nome": "Sanduicheira Elétrica e Grill Elétrico 2 em 1 Antiaderente Multiuso 750W Preta",
+      "descricao": "",
+      "complemento": "Unitermi",
+      "custo": 56,
+      "preco": 80,
+      "imagem": "img/produtos/sanduicheira_unitermi.webp",
+      "categoria": "1",
+      "estoque": 1
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Aninha Cardoso",
+      "telefone": "63992972999",
+      "localizacao": ""
+    },
+    {
+      "id": 2,
+      "nome": "Jose Alves",
+      "telefone": "63991103810",
+      "localizacao": ""
+    },
+    {
+      "id": 3,
+      "nome": "Luciano",
+      "telefone": "63992964293",
+      "localizacao": ""
+    },
+    {
+      "id": 4,
+      "nome": "Laura",
+      "telefone": "63992690357",
+      "localizacao": ""
+    },
+    {
+      "id": 5,
+      "nome": "Wellington",
+      "telefone": "63981458977",
+      "localizacao": ""
+    },
+    {
+      "id": 6,
+      "nome": "Jakeline",
+      "telefone": "63991257224",
+      "localizacao": ""
+    },
+    {
+      "id": 7,
+      "nome": "Felipe",
+      "telefone": "63991115047",
+      "localizacao": ""
+    },
+    {
+      "id": 8,
+      "nome": "Gleysse",
+      "telefone": "63992701094",
+      "localizacao": ""
+    },
+    {
+      "id": 9,
+      "nome": "Poliana",
+      "telefone": "63991309444",
+      "localizacao": ""
+    },
+    {
+      "id": 10,
+      "nome": "Amanda Vieira",
+      "telefone": "63991332183",
+      "localizacao": ""
+    },
+    {
+      "id": 11,
+      "nome": "Lucas",
+      "telefone": "6392502008",
+      "localizacao": ""
+    },
+    {
+      "id": 12,
+      "nome": "Elielson",
+      "telefone": "6392304876",
+      "localizacao": ""
+    },
+    {
+      "id": 13,
+      "nome": "Joel Cardoso",
+      "telefone": "6392235295",
+      "localizacao": ""
+    },
+    {
+      "id": 14,
+      "nome": "Martins",
+      "telefone": "63992951972",
+      "localizacao": ""
+    },
+    {
+      "id": 15,
+      "nome": "Ezequiel Freitas",
+      "telefone": "91991018377",
+      "localizacao": ""
+    },
+    {
+      "id": 16,
+      "nome": "Doglas",
+      "telefone": "63981044370",
+      "localizacao": "Morada do Sol"
+    },
+    {
+      "id": 17,
+      "nome": "Cielle",
+      "telefone": "63984607558",
+      "localizacao": "403 Sul"
+    }
+  ],
+  "vendas": [
+    {
+      "id": 1,
+      "idCliente": 1,
+      "nomeCliente": "Aninha Cardoso",
+      "telefoneCliente": "63992972999",
+      "localizacao": "",
+      "data": "04/09/2026",
+      "totalVenda": 200,
+      "formaPagamento": [
         {
-            "id": 1,
-            "nome": "Mercado Livre"
+          "tipo": "Pix",
+          "valor": 100
         },
         {
-            "id": 2,
-            "nome": "Amazon"
-        },
-        {
-            "id": 3,
-            "nome": "Shopee"
-        },
-        {
-            "id": 4,
-            "nome": "AliExpress"
+          "tipo": "Dinheiro",
+          "valor": 100
         }
-    ],
-    "categorias": [
+      ],
+      "produtos": [
         {
-            "id": 1,
-            "descricao": "Eletrodomésticos"
+          "id": 1,
+          "ordem": 1,
+          "codProduto": 4,
+          "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+          "quantidade": 1,
+          "precoUnitario": 127.5,
+          "idCompra": null
         },
         {
-            "id": 2,
-            "descricao": "Ferramentas"
-        },
-        {
-            "id": 3,
-            "descricao": "Eletrônicos"
-        },
-        {
-            "id": 4,
-            "descricao": "Brinquedos"
-        },
-        {
-            "id": 5,
-            "descricao": "Automotivo"
+          "id": 2,
+          "ordem": 2,
+          "codProduto": 9,
+          "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+          "quantidade": 1,
+          "precoUnitario": 72.5,
+          "idCompra": null
         }
-    ],
-    "produtos": [
+      ]
+    },
+    {
+      "id": 2,
+      "idCliente": 2,
+      "nomeCliente": "Jose Alves",
+      "telefoneCliente": "63991103810",
+      "localizacao": "",
+      "data": "04/09/2026",
+      "totalVenda": 140,
+      "formaPagamento": [
         {
-            "id": 1,
-            "nome": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
-            "descricao": "",
-            "complemento": "",
-            "custo": 253.76,
-            "preco": 299.99,
-            "imagem": "img/produtos/panela_eletrica_itatiaia.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 2,
-            "nome": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
-            "descricao": "",
-            "complemento": "",
-            "custo": 249,
-            "preco": 299.99,
-            "imagem": "img/produtos/fritadeira_midea.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 3,
-            "nome": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
-            "descricao": "",
-            "complemento": "",
-            "custo": 209,
-            "preco": 279.99,
-            "imagem": "img/produtos/fritadeira_wap.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 4,
-            "nome": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
-            "descricao": "",
-            "complemento": "",
-            "custo": 89.9,
-            "preco": 134.99,
-            "imagem": "img/produtos/liquidificador_britania.jpg",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 5,
-            "nome": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
-            "descricao": "L-98-B",
-            "complemento": "",
-            "custo": 99.9,
-            "preco": 134.99,
-            "imagem": "img/produtos/liquidificador_mondial.jpg",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 6,
-            "nome": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
-            "descricao": "",
-            "complemento": "",
-            "custo": 129.9,
-            "preco": 170,
-            "imagem": "img/produtos/panela_arroz_elgin_inox.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 7,
-            "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
-            "descricao": "",
-            "complemento": "",
-            "custo": 90.02,
-            "preco": 149.99,
-            "imagem": "img/produtos/panela_arroz_agratto.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 8,
-            "nome": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
-            "descricao": "",
-            "complemento": "",
-            "custo": 59.21,
-            "preco": 79.99,
-            "imagem": "img/produtos/sanduicheira_multilaser.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 9,
-            "nome": "Sanduicheira Grill Elétrica Antiaderente Sumay",
-            "descricao": "",
-            "complemento": "",
-            "custo": 49.49,
-            "preco": 81.99,
-            "imagem": "img/produtos/sanduicheira_sumay.webp",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 10,
-            "nome": "Chaleira Elétrica 2 litros Mokfa",
-            "descricao": "",
-            "complemento": "",
-            "custo": 31.4,
-            "preco": 60,
-            "imagem": "img/produtos/chaleira.webp",
-            "categoria": "1",
-            "codBarras": "",
-            "estoque": 4
-        },
-        {
-            "id": 11,
-            "nome": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
-            "descricao": "",
-            "complemento": "",
-            "custo": 149,
-            "preco": 189.99,
-            "imagem": "img/produtos/jogo_soquete_17_pecas_tramontina.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 12,
-            "nome": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
-            "descricao": "",
-            "complemento": "",
-            "custo": 31.04,
-            "preco": 50,
-            "imagem": "img/produtos/jogo_soquete_27_pecas.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 13,
-            "nome": "Chave Tigre de Boca Multifuncional 360 Graus",
-            "descricao": "",
-            "complemento": "",
-            "custo": 24.7,
-            "preco": 38,
-            "imagem": "img/produtos/chave_tigre_bomvink.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 14,
-            "nome": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
-            "descricao": "",
-            "complemento": "",
-            "custo": 28,
-            "preco": 48,
-            "imagem": "img/produtos/jogo_soquete_40_pecas_black_tools.webp",
-            "categoria": "2",
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 15,
-            "nome": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
-            "descricao": "",
-            "complemento": "",
-            "custo": 24.06,
-            "preco": 45,
-            "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
-            "categoria": "2",
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 16,
-            "nome": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
-            "descricao": "",
-            "complemento": "",
-            "custo": 138.9,
-            "preco": 169.99,
-            "imagem": "img/produtos/jogo_soquete_22_pecas_black_tools.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 17,
-            "nome": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
-            "descricao": "",
-            "complemento": "",
-            "custo": 19.8,
-            "preco": 40,
-            "imagem": "img/produtos/jogo_soquete_12_pecas.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 18,
-            "nome": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
-            "descricao": "",
-            "complemento": "",
-            "custo": 22.62,
-            "preco": 42,
-            "imagem": "img/produtos/jogo_soquete_40_pecas_faster_tools.webp",
-            "categoria": "2",
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 19,
-            "nome": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
-            "descricao": "",
-            "complemento": "",
-            "custo": 24.99,
-            "preco": 40,
-            "imagem": "img/produtos/jogo_catraca_46_pecas.jpg",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 5
-        },
-        {
-            "id": 20,
-            "nome": "Furadeira De Impacto Mondial",
-            "descricao": "",
-            "complemento": "",
-            "custo": 118,
-            "preco": 149.99,
-            "imagem": "img/produtos/furadeira_mondial.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 21,
-            "nome": "Parafusadeira Furadeira 1 Bateria 12v",
-            "descricao": "",
-            "complemento": "",
-            "custo": 67.8,
-            "preco": 95,
-            "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 2
-        },
-        {
-            "id": 22,
-            "nome": "Parafusadeira Furadeira 2 Baterias 21v + Acessórios",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 135,
-            "imagem": "img/produtos/parafusadeira_arstheco_21v.jpg",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 23,
-            "nome": "Projetor MAGCUBIC HY300 PRO Android 11 Wifi 5g Espelhamento",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 249.99,
-            "imagem": "img/produtos/projetor_hy300_magcubic.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 24,
-            "nome": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 204.99,
-            "imagem": "img/produtos/projetor_hy300.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 2
-        },
-        {
-            "id": 25,
-            "nome": "Câmera De Segurança Wifi Externa Full Hd Infravermelho Prova D'água",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 94.99,
-            "imagem": "img/produtos/camera_seguranca_jortan.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 26,
-            "nome": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
-            "descricao": "",
-            "complemento": "",
-            "custo": 33,
-            "preco": 59.99,
-            "imagem": "img/produtos/caixa_som_altomex_al_8787.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 27,
-            "nome": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
-            "descricao": "",
-            "complemento": "",
-            "custo": 30,
-            "preco": 54.99,
-            "imagem": "img/produtos/caixa_som_grasep_d_y03.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 28,
-            "nome": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
-            "descricao": "",
-            "complemento": "",
-            "custo": 29.99,
-            "preco": 48,
-            "imagem": "img/produtos/caixa_som_grasep_d_y05.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 29,
-            "nome": "Caixa de Som Bluetooth 20w Vermelha",
-            "descricao": "",
-            "complemento": "",
-            "custo": 35.88,
-            "preco": 55,
-            "imagem": "img/produtos/caixa_som_charce.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 30,
-            "nome": "Caixa De Som Bluetooth 50w Led USB, SD e rádio FM",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 134.99,
-            "imagem": "img/produtos/caixa_som_altomex_al_3629.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 31,
-            "nome": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
-            "descricao": "",
-            "complemento": "",
-            "custo": 103.7,
-            "preco": 165,
-            "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 32,
-            "nome": "Fone De Ouvido Sem Fio Bluetooth",
-            "descricao": "",
-            "complemento": "",
-            "custo": 21.76,
-            "preco": 39.99,
-            "imagem": "img/produtos/fone_ouvido_redmi.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 33,
-            "nome": "Fone De Ouvido Sem Fio Bluetooth Branco",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 34.99,
-            "imagem": "img/produtos/fone_ouvido_x55.png",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 34,
-            "nome": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
-            "descricao": "",
-            "complemento": "",
-            "custo": 28.54,
-            "preco": 64.99,
-            "imagem": "img/produtos/smartwatch_8_ultra.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 35,
-            "nome": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
-            "descricao": "",
-            "complemento": "",
-            "custo": 26,
-            "preco": 69.99,
-            "imagem": "img/produtos/smartwatch_t800_ultra.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 2
-        },
-        {
-            "id": 36,
-            "nome": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
-            "descricao": "",
-            "complemento": "",
-            "custo": 45.15,
-            "preco": 74.99,
-            "imagem": "img/produtos/carregador_powerbank_20000mah.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 37,
-            "nome": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
-            "descricao": "",
-            "complemento": "",
-            "custo": 48.5,
-            "preco": 87.99,
-            "imagem": "img/produtos/som_automotivo_first_option.png",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 38,
-            "nome": "Parafusadeira Furadeira 2 Baterias 48v + Acessórios + Maleta",
-            "descricao": "",
-            "complemento": "",
-            "custo": 0,
-            "preco": 144.99,
-            "imagem": "img/produtos/parafusadeira_soarfly_48v.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 39,
-            "nome": "Brinquedo Arminha Catapulta Avião",
-            "descricao": "",
-            "complemento": "",
-            "custo": 21.6,
-            "preco": 34.99,
-            "imagem": "img/produtos/brinquedo_arma_catapulta_aviao.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 40,
-            "nome": "Brinquedo Lançador de Foguete Com Pé",
-            "descricao": "",
-            "complemento": "",
-            "custo": 24,
-            "preco": 39.99,
-            "imagem": "img/produtos/brinquedo_lancador_foguete.webp",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 2
-        },
-        {
-            "id": 41,
-            "nome": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
-            "descricao": "",
-            "complemento": "",
-            "custo": 33.64,
-            "preco": 53,
-            "imagem": "img/produtos/brinquedo_arco_flecha_alvo_dinossauro.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 42,
-            "nome": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
-            "descricao": "",
-            "complemento": "",
-            "custo": 19.16,
-            "preco": 34.99,
-            "imagem": "img/produtos/brinquedo_quebra_cabeca_alfabeto.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 43,
-            "nome": "Brinquedo Arminha Lançador de Discos",
-            "descricao": "",
-            "complemento": "",
-            "custo": 14.38,
-            "preco": 25,
-            "imagem": "img/produtos/brinquedo_arminha_lancador_disco.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 44,
-            "nome": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
-            "descricao": "",
-            "complemento": "",
-            "custo": 13.17,
-            "preco": 29.99,
-            "imagem": "img/produtos/brinquedo_tiro_alvo_jacare.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 45,
-            "nome": "Brinquedo Arco e Flecha com Alvo",
-            "descricao": "",
-            "complemento": "",
-            "custo": 28.82,
-            "preco": 39.99,
-            "imagem": "img/produtos/brinquedo_tiro_alvo.png",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 46,
-            "nome": "Piscina Inflável Redonda 100 Litros 3 Aneis",
-            "descricao": "",
-            "complemento": "",
-            "custo": 22.75,
-            "preco": 49.99,
-            "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
-            "categoria": 4,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 47,
-            "nome": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
-            "descricao": "",
-            "complemento": "",
-            "custo": 16.45,
-            "preco": 20,
-            "imagem": "img/produtos/relogio_digital_preto.avif",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 48,
-            "nome": "Relógio Digital Feminino Rosa Adulto/Infantil",
-            "descricao": "",
-            "complemento": "",
-            "custo": 18.52,
-            "preco": 20,
-            "imagem": "img/produtos/relogio_digital_rosa.png",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 49,
-            "nome": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Branco",
-            "descricao": "L-97-W",
-            "complemento": "",
-            "custo": 89,
-            "preco": 134.99,
-            "imagem": "img/produtos/liquidificador_mondial_branco.jpg",
-            "categoria": 1,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 50,
-            "nome": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
-            "descricao": "",
-            "complemento": "",
-            "custo": 97.76,
-            "preco": 140,
-            "imagem": "img/produtos/parafusadeira_indorbest_48v.jpg",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 51,
-            "nome": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-            "descricao": "",
-            "complemento": "",
-            "custo": 170,
-            "preco": 205,
-            "imagem": "img/produtos/projetor_hy320.png",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 52,
-            "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
-            "descricao": "",
-            "complemento": "",
-            "custo": 84,
-            "preco": 165,
-            "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 53,
-            "nome": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
-            "descricao": "App: Icsee",
-            "complemento": "",
-            "custo": 85,
-            "preco": 140,
-            "imagem": "img/produtos/camera_seguranca_scb57.jpg",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 54,
-            "nome": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
-            "descricao": "App: Yoosee",
-            "complemento": "",
-            "custo": 59.49,
-            "preco": 100,
-            "imagem": "img/produtos/camera_seguranca_jortan_jt8160.png",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 0
-        },
-        {
-            "id": 55,
-            "nome": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
-            "descricao": "",
-            "complemento": "",
-            "custo": 99,
-            "preco": 165,
-            "imagem": "img/produtos/caixa_som_heruz_hz712a.webp",
-            "categoria": 3,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 56,
-            "nome": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
-            "descricao": "",
-            "complemento": "",
-            "custo": 93.41,
-            "preco": 140,
-            "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 57,
-            "nome": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
-            "descricao": "",
-            "complemento": "",
-            "custo": 77.52,
-            "preco": 128,
-            "imagem": "img/produtos/parafusadeira_btek_36v.webp",
-            "categoria": 2,
-            "codBarras": "",
-            "estoque": 1
-        },
-        {
-            "id": 58,
-            "nome": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
-            "descricao": "",
-            "complemento": "",
-            "custo": 75.04,
-            "preco": 140,
-            "imagem": "img/produtos/camera_seguranca_a28.jpg",
-            "categoria": 3,
-            "codBarras": "6920260513598",
-            "estoque": 1
+          "tipo": "Pix",
+          "valor": 140
         }
-    ],
-    "clientes": [
+      ],
+      "produtos": [
         {
-            "id": 1,
-            "nome": "Aninha Cardoso",
-            "telefone": "63992972999",
-            "localizacao": ""
-        },
-        {
-            "id": 2,
-            "nome": "Jose Alves",
-            "telefone": "63991103810",
-            "localizacao": ""
-        },
-        {
-            "id": 3,
-            "nome": "Luciano",
-            "telefone": "63992964293",
-            "localizacao": ""
-        },
-        {
-            "id": 4,
-            "nome": "Laura",
-            "telefone": "63992690357",
-            "localizacao": ""
-        },
-        {
-            "id": 5,
-            "nome": "Wellington",
-            "telefone": "63981458977",
-            "localizacao": ""
-        },
-        {
-            "id": 6,
-            "nome": "Jakeline",
-            "telefone": "63991257224",
-            "localizacao": ""
-        },
-        {
-            "id": 7,
-            "nome": "Felipe",
-            "telefone": "63991115047",
-            "localizacao": ""
-        },
-        {
-            "id": 8,
-            "nome": "Gleysse",
-            "telefone": "63992701094",
-            "localizacao": ""
-        },
-        {
-            "id": 9,
-            "nome": "Poliana",
-            "telefone": "63991309444",
-            "localizacao": ""
-        },
-        {
-            "id": 10,
-            "nome": "Amanda Vieira",
-            "telefone": "63991332183",
-            "localizacao": ""
-        },
-        {
-            "id": 11,
-            "nome": "Lucas",
-            "telefone": "6392502008",
-            "localizacao": ""
-        },
-        {
-            "id": 12,
-            "nome": "Elielson",
-            "telefone": "6392304876",
-            "localizacao": ""
-        },
-        {
-            "id": 13,
-            "nome": "Joel Cardoso",
-            "telefone": "6392235295",
-            "localizacao": ""
-        },
-        {
-            "id": 14,
-            "nome": "Martins",
-            "telefone": "63992951972",
-            "localizacao": ""
-        },
-        {
-            "id": 15,
-            "nome": "Ezequiel Freitas",
-            "telefone": "91991018377",
-            "localizacao": ""
-        },
-        {
-            "id": 16,
-            "nome": "Doglas",
-            "telefone": "63981044370",
-            "localizacao": "Morada do Sol"
-        },
-        {
-            "id": 17,
-            "nome": "Cielle",
-            "telefone": "63984607558",
-            "localizacao": "403 Sul"
+          "id": 3,
+          "ordem": 1,
+          "codProduto": 50,
+          "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
+          "quantidade": 1,
+          "precoUnitario": 140,
+          "idCompra": null
         }
-    ],
-    "vendas": [
+      ]
+    },
+    {
+      "id": 3,
+      "idCliente": 3,
+      "nomeCliente": "Luciano",
+      "telefoneCliente": "63992964293",
+      "localizacao": "",
+      "data": "05/09/2026",
+      "totalVenda": 400,
+      "formaPagamento": [
         {
-            "id": 1,
-            "idCliente": 1,
-            "nomeCliente": "Aninha Cardoso",
-            "telefoneCliente": "63992972999",
-            "localizacao": "",
-            "data": "04/09/2026",
-            "totalVenda": 200,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 100
-                },
-                {
-                    "tipo": "Dinheiro",
-                    "valor": 100
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 1,
-                    "ordem": 1,
-                    "codProduto": 4,
-                    "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
-                    "quantidade": 1,
-                    "precoUnitario": 127.5,
-                    "idCompra": null
-                },
-                {
-                    "id": 2,
-                    "ordem": 2,
-                    "codProduto": 9,
-                    "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
-                    "quantidade": 1,
-                    "precoUnitario": 72.5,
-                    "idCompra": null
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "idCliente": 2,
-            "nomeCliente": "Jose Alves",
-            "telefoneCliente": "63991103810",
-            "localizacao": "",
-            "data": "04/09/2026",
-            "totalVenda": 140,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 140
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 3,
-                    "ordem": 1,
-                    "codProduto": 50,
-                    "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
-                    "quantidade": 1,
-                    "precoUnitario": 140,
-                    "idCompra": null
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "idCliente": 3,
-            "nomeCliente": "Luciano",
-            "telefoneCliente": "63992964293",
-            "localizacao": "",
-            "data": "05/09/2026",
-            "totalVenda": 400,
-            "formaPagamento": [
-                {
-                    "tipo": "Dinheiro",
-                    "valor": 400
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 4,
-                    "ordem": 1,
-                    "codProduto": 3,
-                    "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
-                    "quantidade": 1,
-                    "precoUnitario": 270,
-                    "idCompra": null
-                },
-                {
-                    "id": 5,
-                    "ordem": 2,
-                    "codProduto": 7,
-                    "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
-                    "quantidade": 1,
-                    "precoUnitario": 130,
-                    "idCompra": null
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "idCliente": 4,
-            "nomeCliente": "Laura",
-            "telefoneCliente": "63992690357",
-            "localizacao": "",
-            "data": "07/09/2026",
-            "totalVenda": 260,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 260
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 6,
-                    "ordem": 1,
-                    "codProduto": 50,
-                    "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
-                    "quantidade": 1,
-                    "precoUnitario": 132.5,
-                    "idCompra": null
-                },
-                {
-                    "id": 7,
-                    "ordem": 2,
-                    "codProduto": 5,
-                    "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
-                    "quantidade": 1,
-                    "precoUnitario": 127.5,
-                    "idCompra": null
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "idCliente": 5,
-            "nomeCliente": "Wellington",
-            "telefoneCliente": "63981458977",
-            "localizacao": "",
-            "data": "08/09/2026",
-            "totalVenda": 170,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 170
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 8,
-                    "ordem": 1,
-                    "codProduto": 24,
-                    "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-                    "quantidade": 1,
-                    "precoUnitario": 170,
-                    "idCompra": 1
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "idCliente": 6,
-            "nomeCliente": "Jakeline",
-            "telefoneCliente": "63991257224",
-            "localizacao": "",
-            "data": "09/09/2026",
-            "totalVenda": 140,
-            "formaPagamento": [
-                {
-                    "tipo": "Dinheiro",
-                    "valor": 100
-                },
-                {
-                    "tipo": "Pix",
-                    "valor": 40
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 10,
-                    "ordem": 1,
-                    "codProduto": 52,
-                    "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
-                    "idCompra": 5,
-                    "quantidade": 1,
-                    "precoUnitario": 140
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "idCliente": 7,
-            "nomeCliente": "Felipe",
-            "telefoneCliente": "63991115047",
-            "localizacao": "",
-            "data": "09/09/2026",
-            "totalVenda": 100,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 100
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 11,
-                    "ordem": 1,
-                    "codProduto": 54,
-                    "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
-                    "idCompra": 7,
-                    "quantidade": 1,
-                    "precoUnitario": 100
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "idCliente": 8,
-            "nomeCliente": "Gleysse",
-            "telefoneCliente": "63992701094",
-            "localizacao": "",
-            "data": "10/09/2026",
-            "totalVenda": 250,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 250
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 12,
-                    "ordem": 1,
-                    "codProduto": 51,
-                    "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-                    "idCompra": 3,
-                    "quantidade": 1,
-                    "precoUnitario": 250
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "idCliente": 9,
-            "nomeCliente": "Poliana",
-            "telefoneCliente": "63991309444",
-            "localizacao": "Setor Universitário",
-            "data": "11/09/2026",
-            "totalVenda": 273,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 273
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 13,
-                    "ordem": 1,
-                    "codProduto": 1,
-                    "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
-                    "idCompra": 13,
-                    "quantidade": 1,
-                    "precoUnitario": 273
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "idCliente": 10,
-            "nomeCliente": "Amanda Vieira",
-            "telefoneCliente": "63991332183",
-            "localizacao": "Taquari",
-            "data": "11/09/2026",
-            "totalVenda": 135,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 135
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 14,
-                    "ordem": 1,
-                    "codProduto": 4,
-                    "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
-                    "idCompra": 12,
-                    "quantidade": 1,
-                    "precoUnitario": 135
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "idCliente": 11,
-            "nomeCliente": "Lucas",
-            "telefoneCliente": "6392502008",
-            "localizacao": "Retirada",
-            "data": "11/09/2026",
-            "totalVenda": 50,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 50
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 15,
-                    "ordem": 1,
-                    "codProduto": 12,
-                    "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
-                    "idCompra": 15,
-                    "quantidade": 1,
-                    "precoUnitario": 50
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "idCliente": 12,
-            "nomeCliente": "Elielson",
-            "telefoneCliente": "6392304876",
-            "localizacao": "https://www.google.com/maps/place/10%C2%B019'09.2%22S+48%C2%B018'39.2%22W/@-10.3196301,-48.3124917,623m/data=!3m1!1e3!4m4!3m3!8m2!3d-10.3192275!4d-48.3108795?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
-            "data": "11/09/2026",
-            "totalVenda": 300,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 300
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 16,
-                    "ordem": 1,
-                    "codProduto": 2,
-                    "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
-                    "idCompra": 16,
-                    "quantidade": 1,
-                    "precoUnitario": 300
-                }
-            ]
-        },
-        {
-            "id": 13,
-            "idCliente": 13,
-            "nomeCliente": "Joel Cardoso",
-            "telefoneCliente": "6392235295",
-            "localizacao": "https://www.google.com/maps?q=-10.3448776,-48.3311022&z=17&hl=pt-BR",
-            "data": "11/09/2026",
-            "totalVenda": 88,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 88
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 18,
-                    "ordem": 1,
-                    "codProduto": 37,
-                    "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
-                    "idCompra": 17,
-                    "quantidade": 1,
-                    "precoUnitario": 88
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "idCliente": 14,
-            "nomeCliente": "Martins",
-            "telefoneCliente": "63992951972",
-            "localizacao": "Aureny 3",
-            "data": "12/09/2026",
-            "totalVenda": 165,
-            "formaPagamento": [
-                {
-                    "tipo": "Dinheiro",
-                    "valor": 165
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 19,
-                    "ordem": 1,
-                    "codProduto": 31,
-                    "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
-                    "idCompra": 4,
-                    "quantidade": 1,
-                    "precoUnitario": 165
-                }
-            ]
-        },
-        {
-            "id": 15,
-            "idCliente": 15,
-            "nomeCliente": "Ezequiel Freitas",
-            "telefoneCliente": "91991018377",
-            "localizacao": "Taquari",
-            "data": "12/09/2026",
-            "totalVenda": 44,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 44
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 20,
-                    "ordem": 1,
-                    "codProduto": 15,
-                    "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
-                    "idCompra": 29,
-                    "quantidade": 1,
-                    "precoUnitario": 44
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "idCliente": 16,
-            "nomeCliente": "Doglas",
-            "telefoneCliente": "63981044370",
-            "localizacao": "",
-            "data": "12/09/2026",
-            "totalVenda": 220,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 220
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 21,
-                    "ordem": 1,
-                    "codProduto": 24,
-                    "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-                    "idCompra": 2,
-                    "quantidade": 1,
-                    "precoUnitario": 220
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "idCliente": 17,
-            "nomeCliente": "Cielle",
-            "telefoneCliente": "63984607558",
-            "localizacao": "",
-            "data": "12/09/2026",
-            "totalVenda": 205,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 204.98
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 22,
-                    "ordem": 1,
-                    "codProduto": 24,
-                    "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-                    "idCompra": 2,
-                    "quantidade": 1,
-                    "precoUnitario": 205
-                }
-            ]
-        },
-        {
-            "id": 18,
-            "idCliente": 12,
-            "nomeCliente": "Elielson",
-            "telefoneCliente": "6392304876",
-            "localizacao": "",
-            "data": "13/09/2026",
-            "totalVenda": 80,
-            "formaPagamento": [
-                {
-                    "tipo": "Pix",
-                    "valor": 80
-                }
-            ],
-            "produtos": [
-                {
-                    "id": 23,
-                    "ordem": 1,
-                    "codProduto": 8,
-                    "nomeProduto": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
-                    "idCompra": 24,
-                    "quantidade": 1,
-                    "precoUnitario": 80
-                }
-            ]
+          "tipo": "Dinheiro",
+          "valor": 400
         }
-    ],
-    "compras": [
+      ],
+      "produtos": [
         {
-            "id": 1,
-            "codProduto": 24,
-            "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-            "datacompra": "31/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014804787671/status?packId=2000014804787673&orderId=2000018218667352",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 170,
-            "precoVenda": 170,
-            "lucro": 0
+          "id": 4,
+          "ordem": 1,
+          "codProduto": 3,
+          "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+          "quantidade": 1,
+          "precoUnitario": 270,
+          "idCompra": null
         },
         {
-            "id": 2,
-            "codProduto": 24,
-            "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-            "datacompra": "04/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018278711242/status?packId=2000018278711242&orderId=2000018278711242",
-            "fornecedor": 1,
-            "quantidade": 2,
-            "precoCusto": 167.04,
-            "precoVenda": 205,
-            "lucro": 37.96
-        },
-        {
-            "id": 3,
-            "codProduto": 51,
-            "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
-            "datacompra": "06/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018308097568/status?packId=2000018308097568&orderId=2000018308097568",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 182,
-            "precoVenda": 250,
-            "lucro": 68
-        },
-        {
-            "id": 4,
-            "codProduto": 31,
-            "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
-            "datacompra": "31/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018206809932/status?packId=2000018206809932&orderId=2000018206809932",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 103.7,
-            "precoVenda": 165,
-            "lucro": 61.3
-        },
-        {
-            "id": 5,
-            "codProduto": 52,
-            "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
-            "datacompra": "01/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018222241440/status?packId=2000018222241440&orderId=2000018222241440",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 84,
-            "precoVenda": 165,
-            "lucro": 81
-        },
-        {
-            "id": 6,
-            "codProduto": 53,
-            "nomeProduto": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
-            "datacompra": "05/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018304775146/status?packId=2000018304775146&orderId=2000018304775146",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 85,
-            "precoVenda": 140,
-            "lucro": 55
-        },
-        {
-            "id": 7,
-            "codProduto": 54,
-            "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
-            "datacompra": "06/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018314475504/status?packId=2000018314475504&orderId=2000018314475504",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 59.49,
-            "precoVenda": 100,
-            "lucro": 40.51
-        },
-        {
-            "id": 8,
-            "codProduto": 55,
-            "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
-            "datacompra": "31/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018207740048/status?packId=2000018207740048&orderId=2000018207740048",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 99,
-            "precoVenda": 165,
-            "lucro": 66
-        },
-        {
-            "id": 9,
-            "codProduto": 50,
-            "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
-            "datacompra": "03/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
-            "fornecedor": 1,
-            "quantidade": 3,
-            "precoCusto": 85.6,
-            "precoVenda": 140,
-            "lucro": 54.4
-        },
-        {
-            "id": 10,
-            "codProduto": 56,
-            "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
-            "datacompra": "02/09/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7363760-3623461&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 93.41,
-            "precoVenda": 140,
-            "lucro": 46.59
-        },
-        {
-            "id": 11,
-            "codProduto": 5,
-            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
-            "datacompra": "07/09/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 93.68,
-            "precoVenda": 135,
-            "lucro": 41.32
-        },
-        {
-            "id": 12,
-            "codProduto": 4,
-            "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
-            "datacompra": "07/09/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 97.07,
-            "precoVenda": 135,
-            "lucro": 37.93
-        },
-        {
-            "id": 13,
-            "codProduto": 1,
-            "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
-            "datacompra": "08/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017833252596/status?packId=2000017833252596&orderId=2000017833252596",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 253.76,
-            "precoVenda": 273,
-            "lucro": 19.24
-        },
-        {
-            "id": 14,
-            "codProduto": 57,
-            "nomeProduto": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
-            "datacompra": "04/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018289521378/status?packId=2000018289521378&orderId=2000018289521378",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 77.52,
-            "precoVenda": 128,
-            "lucro": 50.48
-        },
-        {
-            "id": 15,
-            "codProduto": 12,
-            "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
-            "datacompra": "15/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128359&orderId=2000017439236004",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 31.04,
-            "precoVenda": 50,
-            "lucro": 18.96
-        },
-        {
-            "id": 16,
-            "codProduto": 2,
-            "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
-            "datacompra": "09/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017838792820/status?packId=2000017838792820&orderId=2000017838792820",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 249,
-            "precoVenda": 300,
-            "lucro": 51
-        },
-        {
-            "id": 17,
-            "codProduto": 37,
-            "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
-            "datacompra": "03/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017227992632/status?packId=2000017227992632&orderId=2000017227992632",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 48.5,
-            "precoVenda": 88,
-            "lucro": 39.5
-        },
-        {
-            "id": 18,
-            "codProduto": 4,
-            "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
-            "datacompra": "31/08/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-9524205-1230649&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 89.9,
-            "precoVenda": 135,
-            "lucro": 45.1
-        },
-        {
-            "id": 19,
-            "codProduto": 3,
-            "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
-            "datacompra": "08/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821443668/status?packId=2000017821443668&orderId=2000017821443668",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 209,
-            "precoVenda": 280,
-            "lucro": 71
-        },
-        {
-            "id": 20,
-            "codProduto": 7,
-            "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
-            "datacompra": "08/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821575644/status?packId=2000017821575644&orderId=2000017821575644",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 90.02,
-            "precoVenda": 150,
-            "lucro": 59.98
-        },
-        {
-            "id": 21,
-            "codProduto": 9,
-            "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
-            "datacompra": "31/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014284555839/status?packId=2000014284555841&orderId=2000017679482080",
-            "fornecedor": 1,
-            "quantidade": 2,
-            "precoCusto": 49.49,
-            "precoVenda": 80,
-            "lucro": 30.51
-        },
-        {
-            "id": 22,
-            "codProduto": 5,
-            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
-            "datacompra": "07/09/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 93.68,
-            "precoVenda": 135,
-            "lucro": 41.32
-        },
-        {
-            "id": 23,
-            "codProduto": 6,
-            "nomeProduto": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
-            "datacompra": "28/08/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-4467175-8430653&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 129.9,
-            "precoVenda": 170,
-            "lucro": 40.1
-        },
-        {
-            "id": 24,
-            "codProduto": 8,
-            "nomeProduto": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
-            "datacompra": "26/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014203786471/status?packId=2000014203786473&orderId=2000017599011558",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 59.21,
-            "precoVenda": 80,
-            "lucro": 20.79
-        },
-        {
-            "id": 25,
-            "codProduto": 10,
-            "nomeProduto": "Chaleira Elétrica 2 litros Mokfa",
-            "datacompra": "03/08/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-6281014-7385005&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 4,
-            "precoCusto": 31.4,
-            "precoVenda": 60,
-            "lucro": 28.6
-        },
-        {
-            "id": 26,
-            "codProduto": 11,
-            "nomeProduto": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
-            "datacompra": "16/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017455112272/status?packId=2000017455112272&orderId=2000017455112272",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 149,
-            "precoVenda": 190,
-            "lucro": 41
-        },
-        {
-            "id": 27,
-            "codProduto": 13,
-            "nomeProduto": "Chave Tigre de Boca Multifuncional 360 Graus",
-            "datacompra": "02/06/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000016733739312/status?packId=2000016733739312&orderId=2000016733739312",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 24.7,
-            "precoVenda": 38,
-            "lucro": 13.3
-        },
-        {
-            "id": 28,
-            "codProduto": 14,
-            "nomeProduto": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
-            "datacompra": "11/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017372081776/status?packId=2000017372081776&orderId=2000017372081776",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 28,
-            "precoVenda": 48,
-            "lucro": 20
-        },
-        {
-            "id": 29,
-            "codProduto": 15,
-            "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
-            "datacompra": "15/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128361&orderId=2000017439239190",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 24.06,
-            "precoVenda": 45,
-            "lucro": 20.94
-        },
-        {
-            "id": 30,
-            "codProduto": 18,
-            "nomeProduto": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
-            "datacompra": "15/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042761423/status?packId=2000014042761425&orderId=2000017439820140",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 22.62,
-            "precoVenda": 42,
-            "lucro": 19.38
-        },
-        {
-            "id": 31,
-            "codProduto": 16,
-            "nomeProduto": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
-            "datacompra": "06/08/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017786137828/status?packId=2000017786137828&orderId=2000017786137828",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 110.4,
-            "precoVenda": 170,
-            "lucro": 59.6
-        },
-        {
-            "id": 32,
-            "codProduto": 17,
-            "nomeProduto": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
-            "datacompra": "31/05/2026",
-            "linkcompra": "https://shopee.com.br/user/purchase/order/233949686121936?type=6",
-            "fornecedor": 3,
-            "quantidade": 1,
-            "precoCusto": 19.8,
-            "precoVenda": 40,
-            "lucro": 20.2
-        },
-        {
-            "id": 33,
-            "codProduto": 19,
-            "nomeProduto": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
-            "datacompra": "21/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017518816092/status?packId=2000017518816092&orderId=2000017518816092",
-            "fornecedor": 1,
-            "quantidade": 5,
-            "precoCusto": 20,
-            "precoVenda": 40,
-            "lucro": 20
-        },
-        {
-            "id": 34,
-            "codProduto": 20,
-            "nomeProduto": "Furadeira De Impacto Mondial",
-            "datacompra": "07/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017293441288/status?packId=2000017293441288&orderId=2000017293441288",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 118,
-            "precoVenda": 150,
-            "lucro": 32
-        },
-        {
-            "id": 35,
-            "codProduto": 21,
-            "nomeProduto": "Parafusadeira Furadeira 1 Bateria 12v",
-            "datacompra": "09/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017343822116/status?packId=2000017343822116&orderId=2000017343822116",
-            "fornecedor": 1,
-            "quantidade": 2,
-            "precoCusto": 67.8,
-            "precoVenda": 95,
-            "lucro": 27.2
-        },
-        {
-            "id": 36,
-            "codProduto": 26,
-            "nomeProduto": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
-            "datacompra": "17/07/2026",
-            "linkcompra": "https://shopee.com.br/user/purchase/order/238041179134152?type=6",
-            "fornecedor": 3,
-            "quantidade": 1,
-            "precoCusto": 33,
-            "precoVenda": 60,
-            "lucro": 27
-        },
-        {
-            "id": 37,
-            "codProduto": 27,
-            "nomeProduto": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
-            "datacompra": "22/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017537487928/status?packId=2000017537487928&orderId=2000017537487928",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 30,
-            "precoVenda": 55,
-            "lucro": 25
-        },
-        {
-            "id": 38,
-            "codProduto": 28,
-            "nomeProduto": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
-            "datacompra": "20/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017500439670/status?packId=2000017500439670&orderId=2000017500439670",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 29.99,
-            "precoVenda": 48,
-            "lucro": 18.01
-        },
-        {
-            "id": 39,
-            "codProduto": 29,
-            "nomeProduto": "Caixa de Som Bluetooth 20w Vermelha",
-            "datacompra": "22/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017540413358/status?packId=2000017540413358&orderId=2000017540413358",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 35.88,
-            "precoVenda": 55,
-            "lucro": 19.12
-        },
-        {
-            "id": 40,
-            "codProduto": 32,
-            "nomeProduto": "Fone De Ouvido Sem Fio Bluetooth",
-            "datacompra": "07/07/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017289306886/status?packId=2000017289306886&orderId=2000017289306886",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 21.76,
-            "precoVenda": 40,
-            "lucro": 18.24
-        },
-        {
-            "id": 41,
-            "codProduto": 34,
-            "nomeProduto": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
-            "datacompra": "22/07/2026",
-            "linkcompra": "https://shopee.com.br/user/purchase/order/238449432144073?type=6",
-            "fornecedor": 3,
-            "quantidade": 1,
-            "precoCusto": 28.54,
-            "precoVenda": 65,
-            "lucro": 36.46
-        },
-        {
-            "id": 42,
-            "codProduto": 35,
-            "nomeProduto": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
-            "datacompra": "20/07/2026",
-            "linkcompra": "https://shopee.com.br/user/purchase/order/238238209118731?type=6",
-            "fornecedor": 3,
-            "quantidade": 2,
-            "precoCusto": 26,
-            "precoVenda": 70,
-            "lucro": 44
-        },
-        {
-            "id": 43,
-            "codProduto": 36,
-            "nomeProduto": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
-            "datacompra": "21/06/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013629468081/status?packId=2000013629468085&orderId=2000017043217622",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 45.15,
-            "precoVenda": 75,
-            "lucro": 29.85
-        },
-        {
-            "id": 44,
-            "codProduto": 48,
-            "nomeProduto": "Relógio Digital Feminino Rosa Adulto/Infantil",
-            "datacompra": "22/05/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.6b1bcaa4bu6BxK&orderId=8210300326264088",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 18.52,
-            "precoVenda": 20,
-            "lucro": 1.48
-        },
-        {
-            "id": 45,
-            "codProduto": 39,
-            "nomeProduto": "Brinquedo Arminha Catapulta Avião",
-            "datacompra": "18/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.1.1c10caa4vhaNqQ&orderId=8212523503034132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 21.6,
-            "precoVenda": 35,
-            "lucro": 13.4
-        },
-        {
-            "id": 46,
-            "codProduto": 40,
-            "nomeProduto": "Brinquedo Lançador de Foguete Com Pé",
-            "datacompra": "18/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.21.1c10caa4vhaNqQ&orderId=8211733456054132",
-            "fornecedor": 4,
-            "quantidade": 2,
-            "precoCusto": 24,
-            "precoVenda": 40,
-            "lucro": 16
-        },
-        {
-            "id": 47,
-            "codProduto": 41,
-            "nomeProduto": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
-            "datacompra": "18/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.11.1c10caa4vhaNqQ&orderId=8212523503014132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 33.64,
-            "precoVenda": 53,
-            "lucro": 19.36
-        },
-        {
-            "id": 48,
-            "codProduto": 42,
-            "nomeProduto": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
-            "datacompra": "18/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.16.1c10caa4vhaNqQ&orderId=8211733456034132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 19.16,
-            "precoVenda": 35,
-            "lucro": 15.84
-        },
-        {
-            "id": 49,
-            "codProduto": 43,
-            "nomeProduto": "Brinquedo Arminha Lançador de Discos",
-            "datacompra": "18/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.1c10caa4vhaNqQ&orderId=8212523503054132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 14.38,
-            "precoVenda": 25,
-            "lucro": 10.62
-        },
-        {
-            "id": 50,
-            "codProduto": 44,
-            "nomeProduto": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
-            "datacompra": "01/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.31.1c10caa4vhaNqQ&orderId=8211490592744132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 13.17,
-            "precoVenda": 30,
-            "lucro": 16.83
-        },
-        {
-            "id": 51,
-            "codProduto": 45,
-            "nomeProduto": "Brinquedo Arco e Flecha com Alvo",
-            "datacompra": "01/06/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.36.1c10caa4vhaNqQ&orderId=8211490592764132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 28.82,
-            "precoVenda": 40,
-            "lucro": 11.18
-        },
-        {
-            "id": 52,
-            "codProduto": 46,
-            "nomeProduto": "Piscina Inflável Redonda 100 Litros 3 Aneis",
-            "datacompra": "17/06/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013567638233/status?packId=2000013567638235&orderId=2000016984981716",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 22.75,
-            "precoVenda": 50,
-            "lucro": 27.25
-        },
-        {
-            "id": 53,
-            "codProduto": 47,
-            "nomeProduto": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
-            "datacompra": "10/04/2026",
-            "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.46.401ecaa4c09oot&orderId=8210889095314132",
-            "fornecedor": 4,
-            "quantidade": 1,
-            "precoCusto": 16.45,
-            "precoVenda": 20,
-            "lucro": 3.55
-        },
-        {
-            "id": 54,
-            "codProduto": 49,
-            "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Branco",
-            "datacompra": "30/08/2026",
-            "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-8864569-4753058&ref=ppx_yo2ov_dt_b_fed_order_details",
-            "fornecedor": 2,
-            "quantidade": 1,
-            "precoCusto": 89,
-            "precoVenda": 135,
-            "lucro": 46
-        },
-        {
-            "id": 55,
-            "codProduto": 58,
-            "nomeProduto": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
-            "datacompra": "09/09/2026",
-            "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018359871162/status?packId=2000018359871162&orderId=2000018359871162",
-            "fornecedor": 1,
-            "quantidade": 1,
-            "precoCusto": 75.04,
-            "precoVenda": 140,
-            "lucro": 64.96
+          "id": 5,
+          "ordem": 2,
+          "codProduto": 7,
+          "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+          "quantidade": 1,
+          "precoUnitario": 130,
+          "idCompra": null
         }
-    ]
+      ]
+    },
+    {
+      "id": 4,
+      "idCliente": 4,
+      "nomeCliente": "Laura",
+      "telefoneCliente": "63992690357",
+      "localizacao": "",
+      "data": "07/09/2026",
+      "totalVenda": 260,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 260
+        }
+      ],
+      "produtos": [
+        {
+          "id": 6,
+          "ordem": 1,
+          "codProduto": 50,
+          "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas",
+          "quantidade": 1,
+          "precoUnitario": 132.5,
+          "idCompra": null
+        },
+        {
+          "id": 7,
+          "ordem": 2,
+          "codProduto": 5,
+          "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+          "quantidade": 1,
+          "precoUnitario": 127.5,
+          "idCompra": null
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "idCliente": 5,
+      "nomeCliente": "Wellington",
+      "telefoneCliente": "63981458977",
+      "localizacao": "",
+      "data": "08/09/2026",
+      "totalVenda": 170,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 170
+        }
+      ],
+      "produtos": [
+        {
+          "id": 8,
+          "ordem": 1,
+          "codProduto": 24,
+          "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+          "quantidade": 1,
+          "precoUnitario": 170,
+          "idCompra": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "idCliente": 6,
+      "nomeCliente": "Jakeline",
+      "telefoneCliente": "63991257224",
+      "localizacao": "",
+      "data": "09/09/2026",
+      "totalVenda": 140,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 100
+        },
+        {
+          "tipo": "Pix",
+          "valor": 40
+        }
+      ],
+      "produtos": [
+        {
+          "id": 10,
+          "ordem": 1,
+          "codProduto": 52,
+          "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+          "idCompra": 5,
+          "quantidade": 1,
+          "precoUnitario": 140
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "idCliente": 7,
+      "nomeCliente": "Felipe",
+      "telefoneCliente": "63991115047",
+      "localizacao": "",
+      "data": "09/09/2026",
+      "totalVenda": 100,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 100
+        }
+      ],
+      "produtos": [
+        {
+          "id": 11,
+          "ordem": 1,
+          "codProduto": 54,
+          "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
+          "idCompra": 7,
+          "quantidade": 1,
+          "precoUnitario": 100
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "idCliente": 8,
+      "nomeCliente": "Gleysse",
+      "telefoneCliente": "63992701094",
+      "localizacao": "",
+      "data": "10/09/2026",
+      "totalVenda": 250,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 250
+        }
+      ],
+      "produtos": [
+        {
+          "id": 12,
+          "ordem": 1,
+          "codProduto": 51,
+          "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+          "idCompra": 3,
+          "quantidade": 1,
+          "precoUnitario": 250
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "idCliente": 9,
+      "nomeCliente": "Poliana",
+      "telefoneCliente": "63991309444",
+      "localizacao": "Setor Universitário",
+      "data": "11/09/2026",
+      "totalVenda": 273,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 273
+        }
+      ],
+      "produtos": [
+        {
+          "id": 13,
+          "ordem": 1,
+          "codProduto": 1,
+          "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+          "idCompra": 13,
+          "quantidade": 1,
+          "precoUnitario": 273
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "idCliente": 10,
+      "nomeCliente": "Amanda Vieira",
+      "telefoneCliente": "63991332183",
+      "localizacao": "Taquari",
+      "data": "11/09/2026",
+      "totalVenda": 135,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 135
+        }
+      ],
+      "produtos": [
+        {
+          "id": 14,
+          "ordem": 1,
+          "codProduto": 4,
+          "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+          "idCompra": 12,
+          "quantidade": 1,
+          "precoUnitario": 135
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "idCliente": 11,
+      "nomeCliente": "Lucas",
+      "telefoneCliente": "6392502008",
+      "localizacao": "Retirada",
+      "data": "11/09/2026",
+      "totalVenda": 50,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 50
+        }
+      ],
+      "produtos": [
+        {
+          "id": 15,
+          "ordem": 1,
+          "codProduto": 12,
+          "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+          "idCompra": 15,
+          "quantidade": 1,
+          "precoUnitario": 50
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "idCliente": 12,
+      "nomeCliente": "Elielson",
+      "telefoneCliente": "6392304876",
+      "localizacao": "https://www.google.com/maps/place/10%C2%B019'09.2%22S+48%C2%B018'39.2%22W/@-10.3196301,-48.3124917,623m/data=!3m1!1e3!4m4!3m3!8m2!3d-10.3192275!4d-48.3108795?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+      "data": "11/09/2026",
+      "totalVenda": 300,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 300
+        }
+      ],
+      "produtos": [
+        {
+          "id": 16,
+          "ordem": 1,
+          "codProduto": 2,
+          "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+          "idCompra": 16,
+          "quantidade": 1,
+          "precoUnitario": 300
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "idCliente": 13,
+      "nomeCliente": "Joel Cardoso",
+      "telefoneCliente": "6392235295",
+      "localizacao": "https://www.google.com/maps?q=-10.3448776,-48.3311022&z=17&hl=pt-BR",
+      "data": "11/09/2026",
+      "totalVenda": 88,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 88
+        }
+      ],
+      "produtos": [
+        {
+          "id": 18,
+          "ordem": 1,
+          "codProduto": 37,
+          "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+          "idCompra": 17,
+          "quantidade": 1,
+          "precoUnitario": 88
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "idCliente": 14,
+      "nomeCliente": "Martins",
+      "telefoneCliente": "63992951972",
+      "localizacao": "Aureny 3",
+      "data": "12/09/2026",
+      "totalVenda": 165,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 165
+        }
+      ],
+      "produtos": [
+        {
+          "id": 19,
+          "ordem": 1,
+          "codProduto": 31,
+          "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+          "idCompra": 4,
+          "quantidade": 1,
+          "precoUnitario": 165
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "idCliente": 15,
+      "nomeCliente": "Ezequiel Freitas",
+      "telefoneCliente": "91991018377",
+      "localizacao": "Taquari",
+      "data": "12/09/2026",
+      "totalVenda": 44,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 44
+        }
+      ],
+      "produtos": [
+        {
+          "id": 20,
+          "ordem": 1,
+          "codProduto": 15,
+          "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+          "idCompra": 29,
+          "quantidade": 1,
+          "precoUnitario": 44
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "idCliente": 16,
+      "nomeCliente": "Doglas",
+      "telefoneCliente": "63981044370",
+      "localizacao": "",
+      "data": "12/09/2026",
+      "totalVenda": 220,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 220
+        }
+      ],
+      "produtos": [
+        {
+          "id": 21,
+          "ordem": 1,
+          "codProduto": 24,
+          "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+          "idCompra": 2,
+          "quantidade": 1,
+          "precoUnitario": 220
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "idCliente": 17,
+      "nomeCliente": "Cielle",
+      "telefoneCliente": "63984607558",
+      "localizacao": "",
+      "data": "12/09/2026",
+      "totalVenda": 205,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 204.98
+        }
+      ],
+      "produtos": [
+        {
+          "id": 22,
+          "ordem": 1,
+          "codProduto": 24,
+          "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+          "idCompra": 2,
+          "quantidade": 1,
+          "precoUnitario": 205
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "idCliente": 12,
+      "nomeCliente": "Elielson",
+      "telefoneCliente": "6392304876",
+      "localizacao": "",
+      "data": "13/09/2026",
+      "totalVenda": 80,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 80
+        }
+      ],
+      "produtos": [
+        {
+          "id": 23,
+          "ordem": 1,
+          "codProduto": 8,
+          "nomeProduto": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
+          "idCompra": 24,
+          "quantidade": 1,
+          "precoUnitario": 80
+        }
+      ]
+    }
+  ],
+  "compras": [
+    {
+      "id": 1,
+      "codProduto": 24,
+      "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014804787671/status?packId=2000014804787673&orderId=2000018218667352",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 170,
+      "precoVenda": 170,
+      "lucro": 0
+    },
+    {
+      "id": 2,
+      "codProduto": 24,
+      "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "04/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018278711242/status?packId=2000018278711242&orderId=2000018278711242",
+      "fornecedor": 1,
+      "quantidade": 2,
+      "precoCusto": 167.04,
+      "precoVenda": 205,
+      "lucro": 37.96
+    },
+    {
+      "id": 3,
+      "codProduto": 51,
+      "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "06/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018308097568/status?packId=2000018308097568&orderId=2000018308097568",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 182,
+      "precoVenda": 250,
+      "lucro": 68
+    },
+    {
+      "id": 4,
+      "codProduto": 31,
+      "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018206809932/status?packId=2000018206809932&orderId=2000018206809932",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 103.7,
+      "precoVenda": 165,
+      "lucro": 61.3
+    },
+    {
+      "id": 5,
+      "codProduto": 52,
+      "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+      "datacompra": "01/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018222241440/status?packId=2000018222241440&orderId=2000018222241440",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 84,
+      "precoVenda": 165,
+      "lucro": 81
+    },
+    {
+      "id": 6,
+      "codProduto": 53,
+      "nomeProduto": "Câmera Externa Ip A Prova D'água Wifi Dupla Visão Noturna ItBlue",
+      "datacompra": "05/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018304775146/status?packId=2000018304775146&orderId=2000018304775146",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 85,
+      "precoVenda": 140,
+      "lucro": 55
+    },
+    {
+      "id": 7,
+      "codProduto": 54,
+      "nomeProduto": "Câmera De Segurança Wifi Externa Hd Infravermelho Prova D'água Preta Jortan",
+      "datacompra": "06/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018314475504/status?packId=2000018314475504&orderId=2000018314475504",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 59.49,
+      "precoVenda": 100,
+      "lucro": 40.51
+    },
+    {
+      "id": 8,
+      "codProduto": 55,
+      "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 712A",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018207740048/status?packId=2000018207740048&orderId=2000018207740048",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 99,
+      "precoVenda": 165,
+      "lucro": 66
+    },
+    {
+      "id": 9,
+      "codProduto": 50,
+      "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
+      "datacompra": "03/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018263012732/status?packId=2000018263012732&orderId=2000018263012732",
+      "fornecedor": 1,
+      "quantidade": 3,
+      "precoCusto": 85.6,
+      "precoVenda": 140,
+      "lucro": 54.4
+    },
+    {
+      "id": 10,
+      "codProduto": 56,
+      "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
+      "datacompra": "02/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7363760-3623461&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 93.41,
+      "precoVenda": 140,
+      "lucro": 46.59
+    },
+    {
+      "id": 11,
+      "codProduto": 5,
+      "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+      "datacompra": "07/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 93.68,
+      "precoVenda": 135,
+      "lucro": 41.32
+    },
+    {
+      "id": 12,
+      "codProduto": 4,
+      "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+      "datacompra": "07/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 97.07,
+      "precoVenda": 135,
+      "lucro": 37.93
+    },
+    {
+      "id": 13,
+      "codProduto": 1,
+      "nomeProduto": "Panela De Pressão Elétrica 5 Litros Painel Digital Itatiaia",
+      "datacompra": "08/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017833252596/status?packId=2000017833252596&orderId=2000017833252596",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 253.76,
+      "precoVenda": 273,
+      "lucro": 19.24
+    },
+    {
+      "id": 14,
+      "codProduto": 57,
+      "nomeProduto": "Parafusadeira Furadeira 2 Baterias 36v Com Maleta e Acessórios B-Tek",
+      "datacompra": "04/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018289521378/status?packId=2000018289521378&orderId=2000018289521378",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 77.52,
+      "precoVenda": 128,
+      "lucro": 50.48
+    },
+    {
+      "id": 15,
+      "codProduto": 12,
+      "nomeProduto": "Kit Ferramentas Chave 27 Peças L 1/2' Soquete",
+      "datacompra": "15/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128359&orderId=2000017439236004",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 31.04,
+      "precoVenda": 50,
+      "lucro": 18.96
+    },
+    {
+      "id": 16,
+      "codProduto": 2,
+      "nomeProduto": "Fritadeira Air Fryer 4,5 Litros Widemax Com Interior De Alumínio 1500w Midea",
+      "datacompra": "09/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017838792820/status?packId=2000017838792820&orderId=2000017838792820",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 249,
+      "precoVenda": 300,
+      "lucro": 51
+    },
+    {
+      "id": 17,
+      "codProduto": 37,
+      "nomeProduto": "Som Automotivo Carro Mp3 Bluetooth Rádio Fm Com Controle",
+      "datacompra": "03/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017227992632/status?packId=2000017227992632&orderId=2000017227992632",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 48.5,
+      "precoVenda": 88,
+      "lucro": 39.5
+    },
+    {
+      "id": 18,
+      "codProduto": 4,
+      "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-9524205-1230649&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 89.9,
+      "precoVenda": 135,
+      "lucro": 45.1
+    },
+    {
+      "id": 19,
+      "codProduto": 3,
+      "nomeProduto": "Fritadeira Elétrica Air Fryer Wap 5,2 Litros Com Revestimento Antiaderente",
+      "datacompra": "08/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821443668/status?packId=2000017821443668&orderId=2000017821443668",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 209,
+      "precoVenda": 280,
+      "lucro": 71
+    },
+    {
+      "id": 20,
+      "codProduto": 7,
+      "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+      "datacompra": "08/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017821575644/status?packId=2000017821575644&orderId=2000017821575644",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 90.02,
+      "precoVenda": 150,
+      "lucro": 59.98
+    },
+    {
+      "id": 21,
+      "codProduto": 9,
+      "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+      "datacompra": "31/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014284555839/status?packId=2000014284555841&orderId=2000017679482080",
+      "fornecedor": 1,
+      "quantidade": 2,
+      "precoCusto": 49.49,
+      "precoVenda": 80,
+      "lucro": 30.51
+    },
+    {
+      "id": 22,
+      "codProduto": 5,
+      "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Preto",
+      "datacompra": "07/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7364780-0497818&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 93.68,
+      "precoVenda": 135,
+      "lucro": 41.32
+    },
+    {
+      "id": 23,
+      "codProduto": 6,
+      "nomeProduto": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+      "datacompra": "28/08/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-4467175-8430653&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 129.9,
+      "precoVenda": 170,
+      "lucro": 40.1
+    },
+    {
+      "id": 24,
+      "codProduto": 8,
+      "nomeProduto": "Sanduicheira Misteira Tostequeira Mini Grill Multilaser",
+      "datacompra": "26/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014203786471/status?packId=2000014203786473&orderId=2000017599011558",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 59.21,
+      "precoVenda": 80,
+      "lucro": 20.79
+    },
+    {
+      "id": 25,
+      "codProduto": 10,
+      "nomeProduto": "Chaleira Elétrica 2 litros Mokfa",
+      "datacompra": "03/08/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-6281014-7385005&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 4,
+      "precoCusto": 31.4,
+      "precoVenda": 60,
+      "lucro": 28.6
+    },
+    {
+      "id": 26,
+      "codProduto": 11,
+      "nomeProduto": "Kit Chave Ferramentas Jogo De Soquetes 1/2'' 17 Peças Tramontina",
+      "datacompra": "16/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017455112272/status?packId=2000017455112272&orderId=2000017455112272",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 149,
+      "precoVenda": 190,
+      "lucro": 41
+    },
+    {
+      "id": 27,
+      "codProduto": 13,
+      "nomeProduto": "Chave Tigre de Boca Multifuncional 360 Graus",
+      "datacompra": "02/06/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000016733739312/status?packId=2000016733739312&orderId=2000016733739312",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 24.7,
+      "precoVenda": 38,
+      "lucro": 13.3
+    },
+    {
+      "id": 28,
+      "codProduto": 14,
+      "nomeProduto": "Kit Ferramentas 40 Peças Com Soquetes e Chave Com Catraca 3/8' Black Tools",
+      "datacompra": "11/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017372081776/status?packId=2000017372081776&orderId=2000017372081776",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 28,
+      "precoVenda": 48,
+      "lucro": 20
+    },
+    {
+      "id": 29,
+      "codProduto": 15,
+      "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+      "datacompra": "15/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042128357/status?packId=2000014042128361&orderId=2000017439239190",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 24.06,
+      "precoVenda": 45,
+      "lucro": 20.94
+    },
+    {
+      "id": 30,
+      "codProduto": 18,
+      "nomeProduto": "Ferramentas Jogo 40 Peças Chave Catraca Soquete 3/8 Fasterr Tools",
+      "datacompra": "15/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014042761423/status?packId=2000014042761425&orderId=2000017439820140",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 22.62,
+      "precoVenda": 42,
+      "lucro": 19.38
+    },
+    {
+      "id": 31,
+      "codProduto": 16,
+      "nomeProduto": "Kit de Ferramentas Jogo Chave Catraca 1/2 do 8 ao 32mm",
+      "datacompra": "06/08/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017786137828/status?packId=2000017786137828&orderId=2000017786137828",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 110.4,
+      "precoVenda": 170,
+      "lucro": 59.6
+    },
+    {
+      "id": 32,
+      "codProduto": 17,
+      "nomeProduto": "Kit Ferramentas Jogo Chave 12 Peças 4mm a 13mm Catraca Soquete 1/4",
+      "datacompra": "31/05/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/233949686121936?type=6",
+      "fornecedor": 3,
+      "quantidade": 1,
+      "precoCusto": 19.8,
+      "precoVenda": 40,
+      "lucro": 20.2
+    },
+    {
+      "id": 33,
+      "codProduto": 19,
+      "nomeProduto": "Ferramenta Kit Chaves Catraca Reversivel Soquetes 46 Pecas Maleta",
+      "datacompra": "21/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017518816092/status?packId=2000017518816092&orderId=2000017518816092",
+      "fornecedor": 1,
+      "quantidade": 5,
+      "precoCusto": 20,
+      "precoVenda": 40,
+      "lucro": 20
+    },
+    {
+      "id": 34,
+      "codProduto": 20,
+      "nomeProduto": "Furadeira De Impacto Mondial",
+      "datacompra": "07/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017293441288/status?packId=2000017293441288&orderId=2000017293441288",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 118,
+      "precoVenda": 150,
+      "lucro": 32
+    },
+    {
+      "id": 35,
+      "codProduto": 21,
+      "nomeProduto": "Parafusadeira Furadeira 1 Bateria 12v",
+      "datacompra": "09/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017343822116/status?packId=2000017343822116&orderId=2000017343822116",
+      "fornecedor": 1,
+      "quantidade": 2,
+      "precoCusto": 67.8,
+      "precoVenda": 95,
+      "lucro": 27.2
+    },
+    {
+      "id": 36,
+      "codProduto": 26,
+      "nomeProduto": "Caixa de Som Bluetooth USB/SD Card 20W Vermelha",
+      "datacompra": "17/07/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/238041179134152?type=6",
+      "fornecedor": 3,
+      "quantidade": 1,
+      "precoCusto": 33,
+      "precoVenda": 60,
+      "lucro": 27
+    },
+    {
+      "id": 37,
+      "codProduto": 27,
+      "nomeProduto": "Caixa de Som Bluetooth Portátil TWS USB SD 10W Preta",
+      "datacompra": "22/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017537487928/status?packId=2000017537487928&orderId=2000017537487928",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 30,
+      "precoVenda": 55,
+      "lucro": 25
+    },
+    {
+      "id": 38,
+      "codProduto": 28,
+      "nomeProduto": "Caixa De Som Bluetooth Rádio Fm/USB/SD Card e Iluminação Led",
+      "datacompra": "20/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017500439670/status?packId=2000017500439670&orderId=2000017500439670",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 29.99,
+      "precoVenda": 48,
+      "lucro": 18.01
+    },
+    {
+      "id": 39,
+      "codProduto": 29,
+      "nomeProduto": "Caixa de Som Bluetooth 20w Vermelha",
+      "datacompra": "22/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017540413358/status?packId=2000017540413358&orderId=2000017540413358",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 35.88,
+      "precoVenda": 55,
+      "lucro": 19.12
+    },
+    {
+      "id": 40,
+      "codProduto": 32,
+      "nomeProduto": "Fone De Ouvido Sem Fio Bluetooth",
+      "datacompra": "07/07/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000017289306886/status?packId=2000017289306886&orderId=2000017289306886",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 21.76,
+      "precoVenda": 40,
+      "lucro": 18.24
+    },
+    {
+      "id": 41,
+      "codProduto": 34,
+      "nomeProduto": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
+      "datacompra": "22/07/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/238449432144073?type=6",
+      "fornecedor": 3,
+      "quantidade": 1,
+      "precoCusto": 28.54,
+      "precoVenda": 65,
+      "lucro": 36.46
+    },
+    {
+      "id": 42,
+      "codProduto": 35,
+      "nomeProduto": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
+      "datacompra": "20/07/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/238238209118731?type=6",
+      "fornecedor": 3,
+      "quantidade": 2,
+      "precoCusto": 26,
+      "precoVenda": 70,
+      "lucro": 44
+    },
+    {
+      "id": 43,
+      "codProduto": 36,
+      "nomeProduto": "Carregador Bateria Portátil Powerbank 20000 mAh adaptador iPhone/Micro USB V8",
+      "datacompra": "21/06/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013629468081/status?packId=2000013629468085&orderId=2000017043217622",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 45.15,
+      "precoVenda": 75,
+      "lucro": 29.85
+    },
+    {
+      "id": 44,
+      "codProduto": 48,
+      "nomeProduto": "Relógio Digital Feminino Rosa Adulto/Infantil",
+      "datacompra": "22/05/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.6b1bcaa4bu6BxK&orderId=8210300326264088",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 18.52,
+      "precoVenda": 20,
+      "lucro": 1.48
+    },
+    {
+      "id": 45,
+      "codProduto": 39,
+      "nomeProduto": "Brinquedo Arminha Catapulta Avião",
+      "datacompra": "18/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.1.1c10caa4vhaNqQ&orderId=8212523503034132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 21.6,
+      "precoVenda": 35,
+      "lucro": 13.4
+    },
+    {
+      "id": 46,
+      "codProduto": 40,
+      "nomeProduto": "Brinquedo Lançador de Foguete Com Pé",
+      "datacompra": "18/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.21.1c10caa4vhaNqQ&orderId=8211733456054132",
+      "fornecedor": 4,
+      "quantidade": 2,
+      "precoCusto": 24,
+      "precoVenda": 40,
+      "lucro": 16
+    },
+    {
+      "id": 47,
+      "codProduto": 41,
+      "nomeProduto": "Brinquedo Arco e Flecha Atirador de Bolinhas Que Grudam Alvo Dinossauro",
+      "datacompra": "18/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.11.1c10caa4vhaNqQ&orderId=8212523503014132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 33.64,
+      "precoVenda": 53,
+      "lucro": 19.36
+    },
+    {
+      "id": 48,
+      "codProduto": 42,
+      "nomeProduto": "Brinquedo Educativo Quebra-Cabeça Alfabeto",
+      "datacompra": "18/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.16.1c10caa4vhaNqQ&orderId=8211733456034132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 19.16,
+      "precoVenda": 35,
+      "lucro": 15.84
+    },
+    {
+      "id": 49,
+      "codProduto": 43,
+      "nomeProduto": "Brinquedo Arminha Lançador de Discos",
+      "datacompra": "18/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.6.1c10caa4vhaNqQ&orderId=8212523503054132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 14.38,
+      "precoVenda": 25,
+      "lucro": 10.62
+    },
+    {
+      "id": 50,
+      "codProduto": 44,
+      "nomeProduto": "Brinquedo Jogo Educativo Tiro Ao Alvo Jacaré",
+      "datacompra": "01/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.31.1c10caa4vhaNqQ&orderId=8211490592744132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 13.17,
+      "precoVenda": 30,
+      "lucro": 16.83
+    },
+    {
+      "id": 51,
+      "codProduto": 45,
+      "nomeProduto": "Brinquedo Arco e Flecha com Alvo",
+      "datacompra": "01/06/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.36.1c10caa4vhaNqQ&orderId=8211490592764132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 28.82,
+      "precoVenda": 40,
+      "lucro": 11.18
+    },
+    {
+      "id": 52,
+      "codProduto": 46,
+      "nomeProduto": "Piscina Inflável Redonda 100 Litros 3 Aneis",
+      "datacompra": "17/06/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000013567638233/status?packId=2000013567638235&orderId=2000016984981716",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 22.75,
+      "precoVenda": 50,
+      "lucro": 27.25
+    },
+    {
+      "id": 53,
+      "codProduto": 47,
+      "nomeProduto": "Relógio Digital Com Pulseira Silicone Preto Adulto/Infantil",
+      "datacompra": "10/04/2026",
+      "linkcompra": "https://www.aliexpress.com/p/order/detail.html?spm=a2g0o.order_list.order_list_main.46.401ecaa4c09oot&orderId=8210889095314132",
+      "fornecedor": 4,
+      "quantidade": 1,
+      "precoCusto": 16.45,
+      "precoVenda": 20,
+      "lucro": 3.55
+    },
+    {
+      "id": 54,
+      "codProduto": 49,
+      "nomeProduto": "Liquidificador Mondial 2,2 Litros 3 Velocidades Turbo Branco",
+      "datacompra": "30/08/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-8864569-4753058&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 1,
+      "precoCusto": 89,
+      "precoVenda": 135,
+      "lucro": 46
+    },
+    {
+      "id": 55,
+      "codProduto": 58,
+      "nomeProduto": "Câmera Segurança Ip Externa Wifi A28 À Prova Dágua App Icsee",
+      "datacompra": "09/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018359871162/status?packId=2000018359871162&orderId=2000018359871162",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 75.04,
+      "precoVenda": 140,
+      "lucro": 64.96
+    },
+    {
+      "id": 56,
+      "codProduto": 4,
+      "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+      "datacompra": "11/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7728305-8041020&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "quantidade": 2,
+      "precoCusto": 97.07,
+      "precoVenda": 135,
+      "lucro": 37.93
+    },
+    {
+      "id": 57,
+      "codProduto": 51,
+      "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "10/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018392567340/status?packId=2000018392567340&orderId=2000018392567340",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 212,
+      "precoVenda": 260,
+      "lucro": 48
+    },
+    {
+      "id": 58,
+      "codProduto": 59,
+      "nomeProduto": "Fone De Ouvido Sem Fio Bluetooth Preto",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/241855301152179?type=6",
+      "fornecedor": 3,
+      "quantidade": 2,
+      "precoCusto": 16.15,
+      "precoVenda": 40,
+      "lucro": 23.85
+    },
+    {
+      "id": 59,
+      "codProduto": 60,
+      "nomeProduto": "Fone De Ouvido Sem Fio Bluetooth Branco",
+      "datacompra": "31/08/2026",
+      "linkcompra": "https://shopee.com.br/user/purchase/order/241855443165573?type=6",
+      "fornecedor": 3,
+      "quantidade": 2,
+      "precoCusto": 12.9,
+      "precoVenda": 40,
+      "lucro": 27.1
+    },
+    {
+      "id": 60,
+      "codProduto": 61,
+      "nomeProduto": "Câmera Externa Wifi Prova D'água ItBlue",
+      "datacompra": "09/09/2026",
+      "dataentrega": "13/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018371028784/status?packId=2000018371028784&orderId=2000018371028784",
+      "fornecedor": 1,
+      "quantidade": 2,
+      "precoCusto": 59.33,
+      "precoVenda": 100,
+      "lucro": 40.67
+    },
+    {
+      "id": 61,
+      "codProduto": 62,
+      "nomeProduto": "Sanduicheira Elétrica Preta Luxe Grill 2 em 1 Antiaderente Multiuso 750W Inox Preto Compacta para Sanduíches e Grill Elétrico",
+      "datacompra": "12/09/2026",
+      "dataentrega": "15/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018419311554/status?packId=2000018419311554&orderId=2000018419311554",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 56,
+      "precoVenda": 80,
+      "lucro": 24
+    }
+  ]
 }
