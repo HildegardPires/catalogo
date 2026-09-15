@@ -149,19 +149,11 @@ function aplicarCategoriaDaUrl() {
 function criarCategorias() {
 
 
-    // Pegar categorias
-
-    const categorias =
-        [
-            ...new Set(
-
-                produtos
-                    .map(produto => obterDescricaoCategoria(produto.categoria))
-                    .filter(categoria => categoria)
-
-            )
-        ]
-        .sort();
+    // Usar todas as categorias do JSON, mesmo sem produtos em estoque.
+    const categoriasDoMenu = categorias
+        .map(categoria => categoria.descricao)
+        .filter(descricao => descricao)
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
 
 
     // Limpar menus
@@ -191,7 +183,7 @@ function criarCategorias() {
     // CATEGORIAS
     // =========================================================
 
-    categorias.forEach(
+    categoriasDoMenu.forEach(
         categoria => {
 
             adicionarCategoria(
