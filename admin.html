@@ -714,6 +714,10 @@
                                     <input id="dataCompra" type="date" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
+                                    <label for="dataEntrega" class="form-label">Data Entrega</label>
+                                    <input id="dataEntrega" type="date" class="form-control">
+                                </div>
+                                <div class="col-md-6">
                                     <label for="quantidadeCompra" class="form-label">Quantidade</label>
                                     <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
                                 </div>
@@ -955,14 +959,14 @@
 
         <div class="row g-4">
 
-            <div class="col-lg-7">
+            <div class="col-lg-12">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h3 class="mb-4"><span id="tituloVenda">🧾 Nova venda</span></h3>
 
                         <form id="formVenda">
                             <div class="row g-4">
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <h5 class="border-bottom pb-2">Dados da venda</h5>
                                     <label for="idVenda" class="form-label">ID</label>
                                     <input id="idVenda" type="number" class="form-control" min="1" readonly>
@@ -976,7 +980,7 @@
                                     <input id="dataVenda" type="date" class="form-control" required>
                                 </div>
 
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <h5 class="border-bottom pb-2">Formas de pagamento</h5>
                                     <label for="formaPagamentoVenda" class="form-label">Forma de pagamento</label>
                                     <select id="formaPagamentoVenda" class="form-select">
@@ -995,7 +999,7 @@
                                     <div id="listaPagamentosVenda" class="list-group mt-3"></div>
                                 </div>
 
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <h5 class="border-bottom pb-2">Itens da venda</h5>
                                     <label for="produtoVenda" class="form-label">Produto</label>
                                     <input id="pesquisaProdutoVenda" type="search" class="form-control mb-2" placeholder="Pesquisar produto..." aria-label="Pesquisar produto para venda">
@@ -1295,6 +1299,7 @@ const idClienteVenda = document.getElementById("idClienteVenda");
 const formCompra = document.getElementById("formCompra");
 const produtoCompra = document.getElementById("produtoCompra");
 const dataCompra = document.getElementById("dataCompra");
+const dataEntrega = document.getElementById("dataEntrega");
 const linkCompra = document.getElementById("linkCompra");
 const fornecedorCompra = document.getElementById("fornecedorCompra");
 const quantidadeCompra = document.getElementById("quantidadeCompra");
@@ -2920,6 +2925,7 @@ function editarCompra(id) {
     idCompra.value = compra.id;
     produtoCompra.value = compra.codProduto;
     dataCompra.value = converterDataParaInput(compra.datacompra);
+    dataEntrega.value = converterDataParaInput(compra.dataentrega);
     quantidadeCompra.value = compra.quantidade;
     linkCompra.value = compra.linkcompra || "";
     fornecedorCompra.value = compra.fornecedor || "";
@@ -2939,6 +2945,7 @@ function cancelarEdicaoCompra() {
     formCompra.reset();
     idCompra.value = obterProximoIdRegistro(compras);
     dataCompra.value = new Date().toISOString().slice(0, 10);
+    dataEntrega.value = "";
     quantidadeCompra.value = 1;
     tituloCompra.textContent = "📦 Nova compra";
     btnSalvarCompra.textContent = "💾 Salvar compra";
@@ -3052,6 +3059,7 @@ formCompra.addEventListener("submit", function(event) {
         codProduto: produto.id,
         nomeProduto: produto.nome,
         datacompra: converterDataParaJson(dataCompra.value),
+        dataentrega: converterDataParaJson(dataEntrega.value),
         linkcompra: linkCompra.value.trim(),
         fornecedor: fornecedor.id,
         quantidade: quantidade,
