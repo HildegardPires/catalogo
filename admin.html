@@ -490,7 +490,7 @@
                         id="filtroDescricao"
                         class="form-control"
                         type="search"
-                        placeholder="Filtrar pela descrição do produto">
+                        placeholder="Filtrar por nome, descrição ou complemento">
 
                 </div>
 
@@ -1648,7 +1648,13 @@ function obterProdutosFiltrados() {
 
         const correspondeDescricao =
             !descricaoFiltro ||
+            String(produto.nome || "")
+                .toLowerCase()
+                .includes(descricaoFiltro) ||
             String(produto.descricao || "")
+                .toLowerCase()
+                .includes(descricaoFiltro) ||
+            String(produto.complemento || "")
                 .toLowerCase()
                 .includes(descricaoFiltro);
 
@@ -1771,6 +1777,12 @@ function atualizarTabela() {
                     ${escaparHtml(produto.descricao)}
 
                 </small>
+
+                ${produto.complemento
+                    ? `<small class="text-muted d-block">
+                        Complemento: ${escaparHtml(produto.complemento)}
+                       </small>`
+                    : ""}
 
             </td>
 
