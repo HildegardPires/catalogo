@@ -629,6 +629,165 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h3 class="mb-4"><span id="tituloCliente">👤 Novo cliente</span></h3>
+                        <form id="formCliente">
+                            <div class="mb-3">
+                                <label for="idClienteCadastro" class="form-label">ID</label>
+                                <input id="idClienteCadastro" type="number" class="form-control" min="1" readonly>
+                                <div class="form-text">O ID é preenchido automaticamente.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomeClienteCadastro" class="form-label">Nome</label>
+                                <input id="nomeClienteCadastro" type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefoneClienteCadastro" class="form-label">Telefone</label>
+                                <input id="telefoneClienteCadastro" type="tel" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="localizacaoClienteCadastro" class="form-label">Localização</label>
+                                <input id="localizacaoClienteCadastro" type="text" class="form-control">
+                            </div>
+                            <button type="submit" id="btnSalvarCliente" class="btn btn-success btn-lg">💾 Salvar cliente</button>
+                            <button type="button" id="btnCancelarCliente" class="btn btn-secondary btn-lg d-none">Cancelar</button>
+                        </form>
+                        <div id="mensagemCliente" class="alert d-none mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="mb-0">Clientes cadastrados</h3>
+                            <span id="contadorClientes" class="badge bg-success">0 clientes</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Telefone</th>
+                                        <th>Localização</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaClientes"></tbody>
+                            </table>
+                        </div>
+                        <div id="semClientes" class="text-center text-muted py-4 d-none">
+                            Nenhum cliente cadastrado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="telaCompras" class="d-none">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4"><span id="tituloCompra">📦 Nova compra</span></h3>
+                        <form id="formCompra">
+                            <div class="mb-3">
+                                <label for="idCompra" class="form-label">ID</label>
+                                <input id="idCompra" type="number" class="form-control" min="1" readonly>
+                                <div class="form-text">O ID é preenchido automaticamente.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="produtoCompra" class="form-label">Produto</label>
+                                <select id="produtoCompra" class="form-select" required>
+                                    <option value="">Selecione um produto</option>
+                                </select>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="dataCompra" class="form-label">Data da compra</label>
+                                    <input id="dataCompra" type="date" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="quantidadeCompra" class="form-label">Quantidade</label>
+                                    <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label for="linkCompra" class="form-label">Link da compra</label>
+                                <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fornecedorCompra" class="form-label">Fornecedor</label>
+                                <select id="fornecedorCompra" class="form-select" required>
+                                    <option value="">Selecione um fornecedor</option>
+                                </select>
+                            </div>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="precoCustoCompra" class="form-label">Preço de custo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="precoCustoCompra" type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="precoVendaCompra" class="form-label">Preço de venda</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="precoVendaCompra" type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" id="btnSalvarCompra" class="btn btn-success btn-lg">💾 Salvar compra</button>
+                            <button type="button" id="btnCancelarCompra" class="btn btn-secondary btn-lg d-none">Cancelar</button>
+                        </form>
+                        <div id="mensagemCompra" class="alert d-none mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">Compras cadastradas</h3>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>ID</th><th>Produto</th><th>Data</th><th>Qtd.</th>
+                                        <th>Custo</th><th>Venda</th><th>Lucro</th><th>Link</th><th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaCompras"></tbody>
+                            </table>
+                        </div>
+                        <div id="semCompras" class="text-center text-muted py-4 d-none">
+                            Nenhuma compra cadastrada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bloco antigo isolado durante a reorganização das telas. -->
+    <!--
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4"><span id="tituloCliente">👤 Novo cliente</span></h3>
 
                         <form id="formCliente">
                             <div class="mb-3">
@@ -665,102 +824,88 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="mb-0">Clientes cadastrados</h3>
+                            <div class="col-12">
                             <span id="contadorClientes" class="badge bg-success">0 clientes</span>
                         </div>
 
                         <div class="table-responsive">
                             <table class="table table-hover align-middle">
-                                <thead class="table-success">
-                                    <tr>
+                                            <div class="row g-4">
+                                                <div class="col-lg-4">
                                         <th>ID</th>
                                         <th>Nome</th>
-                                        <th>Telefone</th>
-                                        <th>Localização</th>
+
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tabelaClientes"></tbody>
-                            </table>
-                        </div>
+
 
                         <div id="semClientes" class="text-center text-muted py-4 d-none">
-                            Nenhum cliente cadastrado.
-                        </div>
+
                     </div>
                 </div>
             </div>
-
         </div>
+                                                <div class="col-lg-4">
+                                                    <h5 class="border-bottom pb-2">Formas de pagamento</h5>
+                                                    <label for="formaPagamentoVenda" class="form-label">Forma de pagamento</label>
+                                                    <select id="formaPagamentoVenda" class="form-select">
+                                                        <option value="">Selecione uma forma de pagamento</option>
+                                                        <option value="Dinheiro">Dinheiro</option>
+                                                        <option value="Pix">Pix</option>
+                                                        <option value="Cartão Débito">Cartão Débito</option>
+                                                        <option value="Cartão Crédito">Cartão Crédito</option>
+                                                    </select>
 
-    </section>
-
-
-    <section id="telaCompras" class="d-none">
-
-        <div class="row g-4">
-
-            <div class="col-lg-5">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4">
-                        <h3 class="mb-4"><span id="tituloCompra">📦 Nova compra</span></h3>
-
-                        <form id="formCompra">
-                            <div class="mb-3">
-                                <label for="idCompra" class="form-label">ID</label>
-                                <input id="idCompra" type="number" class="form-control" min="1" readonly>
+                                                    <label for="valorPagamentoVenda" class="form-label mt-3">Valor pago</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">R$</span>
+                                                        <input id="valorPagamentoVenda" type="number" class="form-control" min="0" step="0.01">
                                 <div class="form-text">O ID é preenchido automaticamente.</div>
-                            </div>
 
-                            <div class="mb-3">
-                                <label for="produtoCompra" class="form-label">Produto</label>
-                                <select id="produtoCompra" class="form-select" required>
-                                    <option value="">Selecione um produto</option>
-                                </select>
-                            </div>
+                                                    <button id="btnAdicionarPagamento" type="button" class="btn btn-outline-success mt-3">Adicionar pagamento</button>
+                                                    <div id="listaPagamentosVenda" class="list-group mt-3"></div>
+                                                </div>
 
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="dataCompra" class="form-label">Data da compra</label>
+                                                <div class="col-lg-4">
+                                                    <h5 class="border-bottom pb-2">Itens da venda</h5>
                                     <input id="dataCompra" type="date" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="quantidadeCompra" class="form-label">Quantidade</label>
                                     <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
-                                </div>
-                            </div>
+
 
                             <div class="mb-3 mt-3">
                                 <label for="linkCompra" class="form-label">Link da compra</label>
                                 <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
-                            </div>
 
                             <div class="mb-3">
                                 <label for="fornecedorCompra" class="form-label">Fornecedor</label>
-                                <select id="fornecedorCompra" class="form-select" required>
-                                    <option value="">Selecione um fornecedor</option>
+
                                 </select>
                             </div>
+                                                    <button id="btnAdicionarItem" type="button" class="btn btn-outline-success mt-3">Adicionar</button>
 
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-6">
-                                    <label for="precoCustoCompra" class="form-label">Preço de custo</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">R$</span>
-                                        <input id="precoCustoCompra" type="number" class="form-control" min="0" step="0.01" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="precoVendaCompra" class="form-label">Preço de venda</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">R$</span>
-                                        <input id="precoVendaCompra" type="number" class="form-control" min="0" step="0.01" required>
-                                    </div>
-                                </div>
-                            </div>
+                                                    <div class="table-responsive mt-4">
+                                                        <table class="table align-middle">
+                                                            <thead class="table-success">
+                                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Subtotal</th><th></th></tr>
+                                                            </thead>
+                                                            <tbody id="itensVenda"></tbody>
+                                                            <tfoot class="table-light">
+                                                                <tr><th colspan="3" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                            <button type="submit" id="btnSalvarCompra" class="btn btn-success btn-lg">💾 Salvar compra</button>
-                            <button type="button" id="btnCancelarCompra" class="btn btn-secondary btn-lg d-none">Cancelar</button>
+                                            <div class="d-flex gap-2 mt-4">
+                                                <button type="submit" id="btnSalvarVenda" class="btn btn-success btn-lg">💾 Salvar venda</button>
+                                                <button type="button" id="btnCancelarVenda" class="btn btn-secondary btn-lg d-none">Cancelar</button>
+                                            </div>
                         </form>
 
                         <div id="mensagemCompra" class="alert d-none mt-3"></div>
@@ -802,6 +947,10 @@
     </section>
 
 
+        -->
+    </section>
+
+
     <section id="telaVendas" class="d-none">
 
         <div class="row g-4">
@@ -812,30 +961,23 @@
                         <h3 class="mb-4"><span id="tituloVenda">🧾 Nova venda</span></h3>
 
                         <form id="formVenda">
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-6">
+                            <div class="row g-4">
+                                <div class="col-lg-4">
+                                    <h5 class="border-bottom pb-2">Dados da venda</h5>
                                     <label for="idVenda" class="form-label">ID</label>
                                     <input id="idVenda" type="number" class="form-control" min="1" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="idClienteVenda" class="form-label">Cliente</label>
+                                    <label for="idClienteVenda" class="form-label mt-3">Cliente</label>
                                     <select id="idClienteVenda" class="form-select" required>
                                         <option value="">Selecione um cliente</option>
                                     </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="localizacaoVenda" class="form-label">Localização</label>
+                                    <label for="localizacaoVenda" class="form-label mt-3">Localização</label>
                                     <input id="localizacaoVenda" type="text" class="form-control">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="dataVenda" class="form-label">Data da compra</label>
+                                    <label for="dataVenda" class="form-label mt-3">Data da compra</label>
                                     <input id="dataVenda" type="date" class="form-control" required>
                                 </div>
-                            </div>
 
-                            <h5 class="border-top pt-4">Formas de pagamento</h5>
-                            <div class="row g-3 align-items-end">
-                                <div class="col-md-5">
+                                <div class="col-lg-4">
+                                    <h5 class="border-bottom pb-2">Formas de pagamento</h5>
                                     <label for="formaPagamentoVenda" class="form-label">Forma de pagamento</label>
                                     <select id="formaPagamentoVenda" class="form-select">
                                         <option value="">Selecione uma forma de pagamento</option>
@@ -844,64 +986,50 @@
                                         <option value="Cartão Débito">Cartão Débito</option>
                                         <option value="Cartão Crédito">Cartão Crédito</option>
                                     </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="valorPagamentoVenda" class="form-label">Valor pago</label>
+                                    <label for="valorPagamentoVenda" class="form-label mt-3">Valor pago</label>
                                     <div class="input-group">
                                         <span class="input-group-text">R$</span>
                                         <input id="valorPagamentoVenda" type="number" class="form-control" min="0" step="0.01">
                                     </div>
+                                    <button id="btnAdicionarPagamento" type="button" class="btn btn-outline-success mt-3">Adicionar pagamento</button>
+                                    <div id="listaPagamentosVenda" class="list-group mt-3"></div>
                                 </div>
-                                <div class="col-md-3 d-grid">
-                                    <button id="btnAdicionarPagamento" type="button" class="btn btn-outline-success">Adicionar pagamento</button>
-                                </div>
-                                <div class="col-12">
-                                    <div id="listaPagamentosVenda" class="list-group"></div>
-                                </div>
-                            </div>
 
-                            <h5 class="border-top pt-4">Itens da venda</h5>
-                            <div class="row g-3 align-items-end">
-                                <div class="col-md-6">
+                                <div class="col-lg-4">
+                                    <h5 class="border-bottom pb-2">Itens da venda</h5>
                                     <label for="produtoVenda" class="form-label">Produto</label>
                                     <input id="pesquisaProdutoVenda" type="search" class="form-control mb-2" placeholder="Pesquisar produto..." aria-label="Pesquisar produto para venda">
                                     <select id="produtoVenda" class="form-select">
                                         <option value="">Selecione um produto</option>
                                     </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="compraVenda" class="form-label">Compra do produto</label>
+                                    <label for="compraVenda" class="form-label mt-3">Compra do produto</label>
                                     <select id="compraVenda" class="form-select" disabled>
                                         <option value="">Selecione primeiro o produto</option>
                                     </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="quantidadeVenda" class="form-label">Qtd.</label>
+                                    <label for="quantidadeVenda" class="form-label mt-3">Qtd.</label>
                                     <input id="quantidadeVenda" type="number" class="form-control" min="1" value="1">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="precoVenda" class="form-label">Preço</label>
+                                    <label for="precoVenda" class="form-label mt-3">Preço</label>
                                     <input id="precoVenda" type="number" class="form-control" min="0" step="0.01">
-                                </div>
-                                <div class="col-md-2 d-grid">
-                                    <button id="btnAdicionarItem" type="button" class="btn btn-outline-success">Adicionar</button>
+                                    <button id="btnAdicionarItem" type="button" class="btn btn-outline-success mt-3">Adicionar</button>
+
+                                    <div class="table-responsive mt-4">
+                                        <table class="table align-middle">
+                                            <thead class="table-success">
+                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Subtotal</th><th></th></tr>
+                                            </thead>
+                                            <tbody id="itensVenda"></tbody>
+                                            <tfoot class="table-light">
+                                                <tr><th colspan="3" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="table-responsive mt-4">
-                                <table class="table align-middle">
-                                    <thead class="table-success">
-                                        <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Subtotal</th><th></th></tr>
-                                    </thead>
-                                    <tbody id="itensVenda"></tbody>
-                                    <tfoot class="table-light">
-                                        <tr><th colspan="3" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
-                                    </tfoot>
-                                </table>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="submit" id="btnSalvarVenda" class="btn btn-success btn-lg">💾 Salvar venda</button>
+                                <button type="button" id="btnCancelarVenda" class="btn btn-secondary btn-lg d-none">Cancelar</button>
                             </div>
-
-                            <button type="submit" id="btnSalvarVenda" class="btn btn-success btn-lg">💾 Salvar venda</button>
-                            <button type="button" id="btnCancelarVenda" class="btn btn-secondary btn-lg d-none">Cancelar</button>
                         </form>
 
                         <div id="mensagemVenda" class="alert d-none mt-3"></div>
@@ -909,7 +1037,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-12">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
