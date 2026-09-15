@@ -1084,6 +1084,13 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tabelaVendas"></tbody>
+                                <tfoot class="table-light">
+                                    <tr>
+                                        <th colspan="4" class="text-end">Total das vendas</th>
+                                        <th id="totalVendasCadastradas">R$ 0,00</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
 
@@ -3226,6 +3233,13 @@ function atualizarTabelaVendas() {
 
     tabelaVendas.innerHTML = "";
     semVendas.classList.toggle("d-none", vendas.length > 0);
+
+    const totalVendas = vendas.reduce(function(total, venda) {
+        return total + (Number(venda.totalVenda) || 0);
+    }, 0);
+
+    document.getElementById("totalVendasCadastradas").textContent =
+        `R$ ${formatarPreco(totalVendas)}`;
 
     contadorVendas.textContent =
         vendas.length === 1 ? "1 venda" : `${vendas.length} vendas`;
