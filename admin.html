@@ -3445,8 +3445,7 @@ produtoVenda.addEventListener("change", function() {
         .empty()
         .append(new Option(textoInicial, ""))
         .val("")
-        .prop("disabled", !produto)
-        .trigger("change");
+        .prop("disabled", !produto);
 
     precoVenda.value = "";
 
@@ -3459,15 +3458,15 @@ produtoVenda.addEventListener("change", function() {
             return;
         }
 
-        const opcao = document.createElement("option");
-        opcao.value = indice;
         const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
         const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
-        opcao.textContent = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
-        $(compraVenda).append(opcao);
+        const textoCompra = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
+        $(compraVenda).append(new Option(textoCompra, indice));
     });
 
-    $(compraVenda).trigger("change.select2");
+    $(compraVenda)
+        .prop("disabled", !produto)
+        .trigger("change");
 });
 
 
