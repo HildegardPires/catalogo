@@ -1036,7 +1036,6 @@
                                 <div class="col-lg-12">
                                     <h5 class="border-bottom pb-2">Itens da venda</h5>
                                     <label for="produtoVenda" class="form-label">Produto</label>
-                                    <input id="pesquisaProdutoVenda" type="search" class="form-control mb-2" placeholder="Pesquisar produto..." aria-label="Pesquisar produto para venda">
                                     <select id="produtoVenda" class="form-select">
                                         <option value="">Selecione um produto</option>
                                     </select>
@@ -1338,7 +1337,6 @@ const campoImagem =
 
 const formVenda = document.getElementById("formVenda");
 const produtoVenda = document.getElementById("produtoVenda");
-const pesquisaProdutoVenda = document.getElementById("pesquisaProdutoVenda");
 const compraVenda = document.getElementById("compraVenda");
 const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
@@ -3171,14 +3169,9 @@ btnCancelarCompra.addEventListener("click", cancelarEdicaoCompra);
 function atualizarProdutosParaVenda() {
 
     const selecionado = produtoVenda.value;
-    const pesquisa = pesquisaProdutoVenda.value.trim().toLowerCase();
     produtoVenda.innerHTML = '<option value="">Selecione um produto</option>';
 
-    produtos.filter(function(produto) {
-        const correspondeAoEstoque = Number(produto.estoque) > 0;
-        const textoProduto = `id: ${produto.id} ${produto.nome}`.toLowerCase();
-        return correspondeAoEstoque && textoProduto.includes(pesquisa);
-    }).forEach(function(produto) {
+    produtos.forEach(function(produto) {
         const opcao = document.createElement("option");
         opcao.value = produto.id;
         opcao.textContent = `ID: ${produto.id} — ${produto.nome} (${produto.estoque} em estoque)`;
@@ -3189,9 +3182,6 @@ function atualizarProdutosParaVenda() {
     $(produtoVenda).trigger("change");
 
 }
-
-
-pesquisaProdutoVenda.addEventListener("input", atualizarProdutosParaVenda);
 
 
 function atualizarItensDaVenda() {
@@ -3466,7 +3456,7 @@ produtoVenda.addEventListener("change", function() {
         opcao.value = indice;
         const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
         const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
-        opcao.textContent = `${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
+        opcao.textContent = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
         compraVenda.appendChild(opcao);
     });
 
