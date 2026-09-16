@@ -13,6 +13,14 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
+    <link
+        href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css"
+        rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -754,6 +762,10 @@
                                     <option value="">Selecione um fornecedor</option>
                                 </select>
                             </div>
+                            <div class="mb-3">
+                                <label for="numPedidoCompra" class="form-label">Número do pedido</label>
+                                <input id="numPedidoCompra" type="text" class="form-control" pattern="[A-Za-z0-9]+" title="Informe apenas letras e números" required>
+                            </div>
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="precoCustoCompra" class="form-label">Preço de custo</label>
@@ -786,7 +798,7 @@
                             <table class="table align-middle">
                                 <thead class="table-success">
                                     <tr>
-                                        <th>ID</th><th>Produto</th><th>Data</th><th>Qtd.</th>
+                                        <th>ID</th><th>Produto</th><th>Número do pedido</th><th>Data</th><th>Qtd.</th>
                                         <th>Custo</th><th>Venda</th><th>Lucro</th><th>Link</th><th></th>
                                     </tr>
                                 </thead>
@@ -1188,6 +1200,14 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
 </script>
 
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js">
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js">
+</script>
+
 <script>
 
 
@@ -1222,6 +1242,13 @@ let categorias = [];
 const CHAVE_DADOS_LOCAL = "catalogo_dados";
 
 let jsonBaseLocal = "";
+
+$(function() {
+    $("select").select2({
+        theme: "bootstrap-5",
+        width: "100%"
+    });
+});
 
 const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6aa80134ffd5d16053055183";
 const JSONBIN_ACCESS_KEY = "$2a$10$00E69ZL50jkWf0/BkvFD/.9iRF2HBAMw8VaZ7JgJglTbSv6hDbzau";
@@ -1331,6 +1358,7 @@ const dataCompra = document.getElementById("dataCompra");
 const dataEntrega = document.getElementById("dataEntrega");
 const linkCompra = document.getElementById("linkCompra");
 const fornecedorCompra = document.getElementById("fornecedorCompra");
+const numPedidoCompra = document.getElementById("numPedidoCompra");
 const quantidadeCompra = document.getElementById("quantidadeCompra");
 const precoCustoCompra = document.getElementById("precoCustoCompra");
 const precoVendaCompra = document.getElementById("precoVendaCompra");
@@ -1758,6 +1786,7 @@ function atualizarCategoriasParaProduto() {
     });
 
     campoCategoria.value = selecionada;
+    $(campoCategoria).trigger("change");
 }
 
 function atualizarFiltroCategoria() {
@@ -1791,6 +1820,8 @@ function atualizarFiltroCategoria() {
     if (categoriasDisponiveis.some(categoria => String(categoria.id) === String(categoriaSelecionada))) {
         filtroCategoria.value = categoriaSelecionada;
     }
+
+    $(filtroCategoria).trigger("change");
 
 }
 
@@ -2882,6 +2913,7 @@ function atualizarClientesParaVenda() {
     });
 
     idClienteVenda.value = selecionado;
+    $(idClienteVenda).trigger("change");
 }
 
 
@@ -2898,6 +2930,7 @@ function atualizarProdutosParaCompra() {
     });
 
     produtoCompra.value = selecionado;
+    $(produtoCompra).trigger("change");
 
 }
 
@@ -2914,6 +2947,7 @@ function atualizarFornecedoresParaCompra() {
     });
 
     fornecedorCompra.value = selecionado;
+    $(fornecedorCompra).trigger("change");
 }
 
 
@@ -2932,6 +2966,7 @@ function atualizarTabelaCompras() {
         linha.innerHTML = `
             <td>${escaparHtml(String(compra.id || ""))}</td>
             <td>${escaparHtml(String(compra.nomeProduto || ""))}</td>
+            <td>${escaparHtml(String(compra.numPedido || ""))}</td>
             <td>${escaparHtml(String(compra.datacompra || ""))}</td>
             <td>${escaparHtml(String(compra.quantidade || 0))}</td>
             <td>R$ ${formatarPreco(compra.precoCusto)}</td>
@@ -2968,6 +3003,7 @@ function editarCompra(id) {
     quantidadeCompra.value = compra.quantidade;
     linkCompra.value = compra.linkcompra || "";
     fornecedorCompra.value = compra.fornecedor || "";
+    numPedidoCompra.value = compra.numPedido || "";
     precoCustoCompra.value = Number(compra.precoCusto).toFixed(2);
     precoVendaCompra.value = Number(compra.precoVenda).toFixed(2);
     tituloCompra.textContent = `✏️ Editar compra #${compra.id}`;
@@ -3082,11 +3118,12 @@ formCompra.addEventListener("submit", function(event) {
 
     const produto = produtos.find(item => Number(item.id) === Number(produtoCompra.value));
     const fornecedor = fornecedores.find(item => Number(item.id) === Number(fornecedorCompra.value));
+    const numPedido = numPedidoCompra.value.trim();
     const quantidade = parseInt(quantidadeCompra.value);
     const precoCusto = parseFloat(precoCustoCompra.value);
     const precoVenda = parseFloat(precoVendaCompra.value);
 
-    if (!produto || !fornecedor || !Number.isInteger(quantidade) || quantidade < 1 ||
+    if (!produto || !fornecedor || !/^[A-Za-z0-9]+$/.test(numPedido) || !Number.isInteger(quantidade) || quantidade < 1 ||
         !Number.isFinite(precoCusto) || precoCusto < 0 ||
         !Number.isFinite(precoVenda) || precoVenda < 0) {
         mostrarMensagem(mensagemCompra, "Informe produto, fornecedor, quantidade e preços válidos.", "danger");
@@ -3101,6 +3138,7 @@ formCompra.addEventListener("submit", function(event) {
         dataentrega: converterDataParaJson(dataEntrega.value),
         linkcompra: linkCompra.value.trim(),
         fornecedor: fornecedor.id,
+        numPedido: numPedido,
         quantidade: quantidade,
         precoCusto: precoCusto,
         precoVenda: precoVenda,
@@ -3148,6 +3186,7 @@ function atualizarProdutosParaVenda() {
     });
 
     produtoVenda.value = selecionado;
+    $(produtoVenda).trigger("change");
 
 }
 
@@ -3430,6 +3469,8 @@ produtoVenda.addEventListener("change", function() {
         opcao.textContent = `${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
         compraVenda.appendChild(opcao);
     });
+
+    $(compraVenda).trigger("change");
 });
 
 
@@ -3466,6 +3507,8 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     produtoVenda.value = "";
     compraVenda.innerHTML = '<option value="">Selecione primeiro o produto</option>';
     compraVenda.disabled = true;
+    $(produtoVenda).trigger("change");
+    $(compraVenda).trigger("change");
     quantidadeVenda.value = 1;
     precoVenda.value = "";
     atualizarItensDaVenda();
