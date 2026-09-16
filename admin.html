@@ -3437,10 +3437,17 @@ function excluirVenda(id) {
 
 produtoVenda.addEventListener("change", function() {
     const produto = produtos.find(item => Number(item.id) === Number(this.value));
-    compraVenda.innerHTML = produto
-        ? '<option value="">Selecione uma compra</option>'
-        : '<option value="">Selecione primeiro o produto</option>';
-    compraVenda.disabled = !produto;
+    const textoInicial = produto
+        ? "Selecione uma compra"
+        : "Selecione primeiro o produto";
+
+    $(compraVenda)
+        .empty()
+        .append(new Option(textoInicial, ""))
+        .val("")
+        .prop("disabled", !produto)
+        .trigger("change");
+
     precoVenda.value = "";
 
     if (!produto) {
@@ -3457,10 +3464,10 @@ produtoVenda.addEventListener("change", function() {
         const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
         const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
         opcao.textContent = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
-        compraVenda.appendChild(opcao);
+        $(compraVenda).append(opcao);
     });
 
-    $(compraVenda).trigger("change");
+    $(compraVenda).trigger("change.select2");
 });
 
 
