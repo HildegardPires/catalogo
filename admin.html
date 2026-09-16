@@ -764,7 +764,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="numPedidoCompra" class="form-label">Número do pedido</label>
-                                <input id="numPedidoCompra" type="text" class="form-control" pattern="[A-Za-z0-9]+" title="Informe apenas letras e números" required>
+                                <input id="numPedidoCompra" type="text" class="form-control" required>
                             </div>
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
@@ -3121,7 +3121,7 @@ formCompra.addEventListener("submit", function(event) {
     const precoCusto = parseFloat(precoCustoCompra.value);
     const precoVenda = parseFloat(precoVendaCompra.value);
 
-    if (!produto || !fornecedor || !/^[A-Za-z0-9]+$/.test(numPedido) || !Number.isInteger(quantidade) || quantidade < 1 ||
+    if (!produto || !fornecedor || !numPedido || !Number.isInteger(quantidade) || quantidade < 1 ||
         !Number.isFinite(precoCusto) || precoCusto < 0 ||
         !Number.isFinite(precoVenda) || precoVenda < 0) {
         mostrarMensagem(mensagemCompra, "Informe produto, fornecedor, quantidade e preços válidos.", "danger");
