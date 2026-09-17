@@ -106,7 +106,7 @@
         id="status"
         class="alert alert-info">
 
-        Carregando database/dados.json...
+        Carregando dados do JSONBin.io...
 
     </div>
 
@@ -1238,10 +1238,6 @@ let fornecedores = [];
 
 let categorias = [];
 
-const CHAVE_DADOS_LOCAL = "catalogo_dados";
-
-let jsonBaseLocal = "";
-
 $(function() {
     $("select").select2({
         theme: "bootstrap-5",
@@ -1483,20 +1479,6 @@ async function carregarProdutos() {
         const respostaJson = await resposta.json();
         const dados = respostaJson.record || respostaJson;
 
-        if (!Array.isArray(dados.compras) || dados.compras.length === 0) {
-            const respostaRepositorio = await fetch("database/dados.json", {
-                cache: "no-store"
-            });
-
-            if (respostaRepositorio.ok) {
-                const dadosRepositorio = await respostaRepositorio.json();
-                dados.compras = Array.isArray(dadosRepositorio.compras)
-                    ? dadosRepositorio.compras
-                    : [];
-            }
-        }
-
-
         if (!dados || !Array.isArray(dados.produtos)) {
 
             throw new Error(
@@ -1506,37 +1488,13 @@ async function carregarProdutos() {
         }
 
 
-        const jsonBaseAtual = JSON.stringify(dados);
-        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
-        let dadosLocais = null;
-
-        if (dadosSalvos) {
-            const armazenamento = JSON.parse(dadosSalvos);
-
-            if (armazenamento && armazenamento.dados && armazenamento.baseJson) {
-                dadosLocais = armazenamento.baseJson === jsonBaseAtual
-                    ? armazenamento.dados
-                    : null;
-            }
-        }
-
-        const dadosCarregados = dadosLocais || dados;
-
-        produtos = dadosCarregados.produtos;
-        clientes = Array.isArray(dadosCarregados.clientes)
-            ? dadosCarregados.clientes
-            : (Array.isArray(dados.clientes) ? dados.clientes : []);
-        fornecedores = Array.isArray(dadosCarregados.fornecedores)
-            ? dadosCarregados.fornecedores
-            : (Array.isArray(dados.fornecedores) ? dados.fornecedores : []);
-        categorias = Array.isArray(dadosCarregados.categorias)
-            ? dadosCarregados.categorias
-            : (Array.isArray(dados.categorias) ? dados.categorias : []);
-        vendas = Array.isArray(dadosCarregados.vendas) ? dadosCarregados.vendas : [];
-        compras = Array.isArray(dadosCarregados.compras) ? dadosCarregados.compras : [];
+        produtos = dados.produtos;
+        clientes = Array.isArray(dados.clientes) ? dados.clientes : [];
+        fornecedores = Array.isArray(dados.fornecedores) ? dados.fornecedores : [];
+        categorias = Array.isArray(dados.categorias) ? dados.categorias : [];
+        vendas = Array.isArray(dados.vendas) ? dados.vendas : [];
+        compras = Array.isArray(dados.compras) ? dados.compras : [];
         normalizarIdsRegistros();
-        jsonBaseLocal = jsonBaseAtual;
-        salvarDadosLocalmente();
 
         atualizarTudo();
 
@@ -1544,9 +1502,7 @@ async function carregarProdutos() {
         status.className =
             "alert alert-success";
 
-        status.textContent = dadosLocais
-            ? "✓ Dados locais carregados; nenhuma alteração externa foi detectada."
-            : "✓ Dados carregados do JSONBin.io com sucesso.";
+        status.textContent = "✓ Dados carregados do JSONBin.io com sucesso.";
 
 
     } catch (erro) {
@@ -1554,30 +1510,12 @@ async function carregarProdutos() {
         console.error(erro);
 
 
-        const dadosSalvos = localStorage.getItem(CHAVE_DADOS_LOCAL);
-        const armazenamento = dadosSalvos ? JSON.parse(dadosSalvos) : null;
-        const dadosLocais = armazenamento && armazenamento.dados
-            ? armazenamento.dados
-            : null;
-
-        produtos = dadosLocais && Array.isArray(dadosLocais.produtos)
-            ? dadosLocais.produtos
-            : [];
-        clientes = dadosLocais && Array.isArray(dadosLocais.clientes)
-            ? dadosLocais.clientes
-            : [];
-        fornecedores = dadosLocais && Array.isArray(dadosLocais.fornecedores)
-            ? dadosLocais.fornecedores
-            : [];
-        categorias = dadosLocais && Array.isArray(dadosLocais.categorias)
-            ? dadosLocais.categorias
-            : [];
-        vendas = dadosLocais && Array.isArray(dadosLocais.vendas)
-            ? dadosLocais.vendas
-            : [];
-        compras = dadosLocais && Array.isArray(dadosLocais.compras)
-            ? dadosLocais.compras
-            : [];
+        produtos = [];
+        clientes = [];
+        fornecedores = [];
+        categorias = [];
+        vendas = [];
+        compras = [];
 
 
         atualizarTudo();
@@ -1696,30 +1634,6 @@ function atualizarJson() {
     const json = JSON.stringify(dados, null, 4);
 
     textareaJson.value = json;
-    salvarDadosLocalmente();
-
-}
-
-
-function salvarDadosLocalmente() {
-
-    const dados = {
-        fornecedores: fornecedores,
-        categorias: categorias,
-        produtos: produtos,
-        clientes: clientes,
-        vendas: vendas,
-        compras: compras
-    };
-
-    localStorage.setItem(
-        CHAVE_DADOS_LOCAL,
-        JSON.stringify({
-            dados: dados,
-            baseJson: jsonBaseLocal
-        })
-    );
-
 }
 
 
@@ -2543,9 +2457,6 @@ document
                 if (!resposta.ok) {
                     throw new Error(`Erro HTTP: ${resposta.status}`);
                 }
-
-                jsonBaseLocal = JSON.stringify(dados);
-                salvarDadosLocalmente();
 
                 mostrarMensagem(
                     mensagemJson,
