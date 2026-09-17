@@ -1239,7 +1239,7 @@ let fornecedores = [];
 let categorias = [];
 
 $(function() {
-    $("select").select2({
+    $("select").not("#compraVenda").select2({
         theme: "bootstrap-5",
         width: "100%"
     });
@@ -3370,11 +3370,10 @@ $(produtoVenda).on("change", function() {
         ? "Selecione uma compra"
         : "Selecione primeiro o produto";
 
-    $(compraVenda)
-        .empty()
-        .append(new Option(textoInicial, ""))
-        .val("")
-        .prop("disabled", !produto);
+    compraVenda.innerHTML = "";
+    compraVenda.appendChild(new Option(textoInicial, ""));
+    compraVenda.value = "";
+    compraVenda.disabled = !produto;
 
     precoVenda.value = "";
 
@@ -3390,12 +3389,11 @@ $(produtoVenda).on("change", function() {
         const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
         const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
         const textoCompra = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
-        $(compraVenda).append(new Option(textoCompra, compra.id));
+        compraVenda.appendChild(new Option(textoCompra, compra.id));
     });
 
-    $(compraVenda)
-        .prop("disabled", !produto)
-        .trigger("change");
+    compraVenda.disabled = !produto;
+    compraVenda.dispatchEvent(new Event("change"));
 });
 
 
@@ -3433,7 +3431,7 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     compraVenda.innerHTML = '<option value="">Selecione primeiro o produto</option>';
     compraVenda.disabled = true;
     $(produtoVenda).trigger("change");
-    $(compraVenda).trigger("change");
+    compraVenda.dispatchEvent(new Event("change"));
     quantidadeVenda.value = 1;
     precoVenda.value = "";
     atualizarItensDaVenda();
