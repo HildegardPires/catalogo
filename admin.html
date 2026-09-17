@@ -3184,6 +3184,11 @@ function atualizarProdutosParaVenda() {
 }
 
 
+function obterCodigoProdutoCompra(compra) {
+    return Number(compra.codProduto ?? compra.idProduto ?? compra.produtoId);
+}
+
+
 function atualizarItensDaVenda() {
 
     itensVenda.innerHTML = "";
@@ -3453,15 +3458,15 @@ produtoVenda.addEventListener("change", function() {
         return;
     }
 
-    compras.forEach(function(compra, indice) {
-        if (Number(compra.codProduto) !== Number(produto.id)) {
+    compras.forEach(function(compra) {
+        if (obterCodigoProdutoCompra(compra) !== Number(produto.id)) {
             return;
         }
 
         const fornecedor = fornecedores.find(item => Number(item.id) === Number(compra.fornecedor));
         const nomeFornecedor = fornecedor ? fornecedor.nome : "Sem fornecedor";
         const textoCompra = `Pedido ${compra.numPedido || "Sem número"} — ${compra.datacompra || "Sem data"} — ${nomeFornecedor} — custo R$ ${formatarPreco(compra.precoCusto)} — venda R$ ${formatarPreco(compra.precoVenda)}`;
-        $(compraVenda).append(new Option(textoCompra, indice));
+        $(compraVenda).append(new Option(textoCompra, compra.id));
     });
 
     $(compraVenda)
@@ -3471,18 +3476,18 @@ produtoVenda.addEventListener("change", function() {
 
 
 compraVenda.addEventListener("change", function() {
-    const compra = compras[Number(this.value)];
+    const compra = compras.find(item => Number(item.id) === Number(this.value));
     precoVenda.value = compra ? Number(compra.precoVenda).toFixed(2) : "";
 });
 
 
 document.getElementById("btnAdicionarItem").addEventListener("click", function() {
     const produto = produtos.find(item => Number(item.id) === Number(produtoVenda.value));
-    const compra = compras[Number(compraVenda.value)];
+    const compra = compras.find(item => Number(item.id) === Number(compraVenda.value));
     const quantidade = parseInt(quantidadeVenda.value);
     const precoUnitario = parseFloat(precoVenda.value);
 
-    if (!produto || !compra || Number(compra.codProduto) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
+    if (!produto || !compra || obterCodigoProdutoCompra(compra) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
         mostrarMensagem(mensagemVenda, "Informe produto, compra, quantidade e preço válidos.", "danger");
         return;
     }
