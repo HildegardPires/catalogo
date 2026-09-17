@@ -1483,6 +1483,19 @@ async function carregarProdutos() {
         const respostaJson = await resposta.json();
         const dados = respostaJson.record || respostaJson;
 
+        if (!Array.isArray(dados.compras) || dados.compras.length === 0) {
+            const respostaRepositorio = await fetch("database/dados.json", {
+                cache: "no-store"
+            });
+
+            if (respostaRepositorio.ok) {
+                const dadosRepositorio = await respostaRepositorio.json();
+                dados.compras = Array.isArray(dadosRepositorio.compras)
+                    ? dadosRepositorio.compras
+                    : [];
+            }
+        }
+
 
         if (!dados || !Array.isArray(dados.produtos)) {
 
