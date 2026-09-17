@@ -3364,7 +3364,7 @@ function excluirVenda(id) {
 }
 
 
-produtoVenda.addEventListener("change", function() {
+$(produtoVenda).on("change", function() {
     const produto = produtos.find(item => Number(item.id) === Number(this.value));
     const textoInicial = produto
         ? "Selecione uma compra"
