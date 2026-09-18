@@ -822,7 +822,7 @@
 
         <div class="row g-4">
 
-            <div class="col-lg-5">
+            <div class="col-12">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h3 class="mb-4"><span id="tituloCompra">📦 Nova compra</span></h3>
@@ -890,7 +890,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-7">
+            <div class="col-12">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h3 class="mb-3">Compras cadastradas</h3>
@@ -898,7 +898,7 @@
                             <table class="table align-middle">
                                 <thead class="table-success">
                                     <tr>
-                                        <th>ID</th><th>Produto</th><th>Número do pedido</th><th>Data</th><th>Qtd.</th>
+                                        <th>ID</th><th>Produto</th><th>Número do pedido</th><th>Data</th><th>Data entrega</th><th>Qtd.</th>
                                         <th>Custo</th><th>Venda</th><th>Lucro</th><th>Link</th><th></th>
                                     </tr>
                                 </thead>
@@ -3049,6 +3049,7 @@ function atualizarTabelaCompras() {
             <td>${escaparHtml(String(compra.nomeProduto || ""))}</td>
             <td>${escaparHtml(String(compra.numPedido || ""))}</td>
             <td>${escaparHtml(String(compra.datacompra || ""))}</td>
+            <td>${escaparHtml(String(compra.dataentrega || "-"))}</td>
             <td>${escaparHtml(String(compra.quantidade || 0))}</td>
             <td>R$ ${formatarPreco(compra.precoCusto)}</td>
             <td>R$ ${formatarPreco(compra.precoVenda)}</td>
