@@ -1738,6 +1738,53 @@ function atualizarJson() {
 
 
 // =============================================================
+// SALVAR JSON NO JSONBIN.IO (AUTOMÁTICO)
+// =============================================================
+
+async function salvarNoJsonBin(elementoMensagem) {
+
+    try {
+        const dados = JSON.parse(textareaJson.value);
+
+        const resposta = await fetch(JSONBIN_URL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Access-Key": JSONBIN_ACCESS_KEY
+            },
+            body: JSON.stringify(dados)
+        });
+
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        if (elementoMensagem) {
+            mostrarMensagem(
+                elementoMensagem,
+                "Dados salvos no JSONBin.io com sucesso.",
+                "success"
+            );
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        if (elementoMensagem) {
+            mostrarMensagem(
+                elementoMensagem,
+                "Não foi possível salvar os dados no JSONBin.io.",
+                "danger"
+            );
+        }
+
+    }
+
+}
+
+
+// =============================================================
 // CONTADORES
 // =============================================================
 
@@ -2241,7 +2288,7 @@ function editarProduto(id) {
 
 form.addEventListener(
     "submit",
-    function(event) {
+    async function(event) {
 
         event.preventDefault();
 
@@ -2406,6 +2453,8 @@ form.addEventListener(
 
         atualizarTudo();
 
+        await salvarNoJsonBin(mensagem);
+
     }
 );
 
@@ -2529,6 +2578,8 @@ function excluirProduto(id) {
         "warning"
     );
 
+    salvarNoJsonBin(mensagemJson);
+
 }
 
 
@@ -2547,40 +2598,17 @@ document
                 if (!dados || !Array.isArray(dados.produtos)) {
                     throw new Error("O JSON precisa conter a propriedade produtos como array.");
                 }
-
-                const resposta = await fetch(JSONBIN_URL, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Access-Key": JSONBIN_ACCESS_KEY
-                    },
-                    body: JSON.stringify(dados)
-                });
-
-                if (!resposta.ok) {
-                    throw new Error(`Erro HTTP: ${resposta.status}`);
-                }
-
-                mostrarMensagem(
-                    mensagemJson,
-                    "JSON salvo no JSONBin.io com sucesso.",
-                    "success"
-                );
-
             } catch (erro) {
-
-                if (erro.name === "AbortError") {
-                    return;
-                }
-
                 console.error(erro);
                 mostrarMensagem(
                     mensagemJson,
-                    "Não foi possível salvar o JSON no JSONBin.io.",
+                    "JSON inválido. Verifique o conteúdo antes de salvar.",
                     "danger"
                 );
-
+                return;
             }
+
+            await salvarNoJsonBin(mensagemJson);
 
         }
     );
@@ -2886,10 +2914,11 @@ function excluirCliente(id) {
     atualizarTabelaClientes();
     idClienteCadastro.value = obterProximoIdRegistro(clientes);
     mostrarMensagem(mensagemCliente, `Cliente "${cliente.nome}" excluído.`, "warning");
+    salvarNoJsonBin(mensagemCliente);
 }
 
 
-formCliente.addEventListener("submit", function(event) {
+formCliente.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const clienteAtualizado = {
@@ -2911,11 +2940,8 @@ formCliente.addEventListener("submit", function(event) {
 
     atualizarJson();
     atualizarTabelaClientes();
-    const mensagem = clienteEditando === null
-        ? "Cliente adicionado ao JSON com sucesso!"
-        : "Cliente atualizado no JSON com sucesso!";
     cancelarEdicaoCliente();
-    mostrarMensagem(mensagemCliente, mensagem, "success");
+    await salvarNoJsonBin(mensagemCliente);
 });
 
 
@@ -2943,7 +2969,7 @@ modalNovaCategoria.addEventListener("show.bs.modal", function() {
     mensagemNovaCategoria.innerHTML = "";
 });
 
-formNovaCategoria.addEventListener("submit", function(event) {
+formNovaCategoria.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const descricao = descricaoNovaCategoria.value.trim();
@@ -2974,7 +3000,7 @@ formNovaCategoria.addEventListener("submit", function(event) {
 
     bootstrap.Modal.getInstance(modalNovaCategoria).hide();
 
-    mostrarMensagem(mensagem, `Categoria "${novaCategoria.descricao}" adicionada ao JSON com sucesso!`, "success");
+    await salvarNoJsonBin(mensagem);
 });
 
 
@@ -3172,7 +3198,7 @@ function atualizarTabelaEstoque() {
 }
 
 
-btnAtualizarEstoque.addEventListener("click", function() {
+btnAtualizarEstoque.addEventListener("click", async function() {
     obterResumoEstoque().forEach(function(item) {
         item.produto.estoque = item.saldo;
     });
@@ -3181,7 +3207,7 @@ btnAtualizarEstoque.addEventListener("click", function() {
     atualizarTabela();
     atualizarProdutosParaVenda();
     atualizarTabelaEstoque();
-    mostrarMensagem(mensagemEstoque, "Estoque atualizado com sucesso!", "success");
+    await salvarNoJsonBin(mensagemEstoque);
 });
 
 
@@ -3195,7 +3221,7 @@ produtoCompra.addEventListener("change", function() {
 });
 
 
-formCompra.addEventListener("submit", function(event) {
+formCompra.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const produto = produtos.find(item => Number(item.id) === Number(produtoCompra.value));
@@ -3240,11 +3266,8 @@ formCompra.addEventListener("submit", function(event) {
     atualizarJson();
     atualizarTabelaCompras();
     atualizarTabelaEstoque();
-    const mensagem = compraEditando === null
-        ? "Compra adicionada ao JSON com sucesso!"
-        : "Compra atualizada no JSON com sucesso!";
     cancelarEdicaoCompra();
-    mostrarMensagem(mensagemCompra, mensagem, "success");
+    await salvarNoJsonBin(mensagemCompra);
 });
 
 
@@ -3520,6 +3543,7 @@ function excluirVenda(id) {
     atualizarTabelaEstoque();
     idVenda.value = obterProximoIdRegistro(vendas);
     mostrarMensagem(mensagemVenda, `Venda #${id} excluída.`, "warning");
+    salvarNoJsonBin(mensagemVenda);
 
 }
 
@@ -3599,7 +3623,7 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
 });
 
 
-formVenda.addEventListener("submit", function(event) {
+formVenda.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const cliente = clientes.find(item => Number(item.id) === Number(idClienteVenda.value));
@@ -3676,7 +3700,7 @@ formVenda.addEventListener("submit", function(event) {
     btnSalvarVenda.textContent = "💾 Salvar venda";
     btnSalvarVenda.classList.replace("btn-primary", "btn-success");
     btnCancelarVenda.classList.add("d-none");
-    mostrarMensagem(mensagemVenda, "Venda adicionada ao JSON com sucesso!", "success");
+    await salvarNoJsonBin(mensagemVenda);
 });
 
 
