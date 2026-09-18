@@ -397,12 +397,30 @@
 
                             </label>
 
-                            <select
-                                class="form-select"
-                                id="categoria"
-                                required>
-                                <option value="">Selecione uma categoria</option>
-                            </select>
+                            <div class="input-group">
+
+                                <div class="flex-grow-1">
+
+                                    <select
+                                        class="form-select"
+                                        id="categoria"
+                                        required>
+                                        <option value="">Selecione uma categoria</option>
+                                    </select>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-success"
+                                    id="btnNovaCategoria"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalNovaCategoria"
+                                    title="Cadastrar nova categoria">
+                                    +
+                                </button>
+
+                            </div>
 
                         </div>
 
@@ -644,6 +662,88 @@
 
     </div>
 
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MODAL NOVA CATEGORIA -->
+    <!-- ================================================= -->
+
+    <div
+        class="modal fade"
+        id="modalNovaCategoria"
+        tabindex="-1"
+        aria-labelledby="modalNovaCategoriaLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <form id="formNovaCategoria">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="modalNovaCategoriaLabel">
+                            Nova categoria
+                        </h5>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Fechar">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        <label
+                            for="descricaoNovaCategoria"
+                            class="form-label">
+
+                            Descrição
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="descricaoNovaCategoria"
+                            placeholder="Ex.: Informática"
+                            required>
+
+                        <div
+                            id="mensagemNovaCategoria"
+                            class="mt-3">
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn btn-success">
+                            💾 Salvar categoria
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1698,9 +1798,12 @@ function obterDescricaoCategoria(idCategoria) {
 }
 
 
-function atualizarCategoriasParaProduto() {
-    const selecionada = document.getElementById("categoria").value;
+function atualizarCategoriasParaProduto(idParaSelecionar) {
     const campoCategoria = document.getElementById("categoria");
+    const selecionada = idParaSelecionar !== undefined
+        ? idParaSelecionar
+        : campoCategoria.value;
+
     campoCategoria.innerHTML = '<option value="">Selecione uma categoria</option>';
 
     categorias.forEach(function(categoria) {
@@ -2817,6 +2920,62 @@ formCliente.addEventListener("submit", function(event) {
 
 
 btnCancelarCliente.addEventListener("click", cancelarEdicaoCliente);
+
+
+// =============================================================
+// NOVA CATEGORIA
+// =============================================================
+
+const modalNovaCategoria =
+    document.getElementById("modalNovaCategoria");
+
+const formNovaCategoria =
+    document.getElementById("formNovaCategoria");
+
+const descricaoNovaCategoria =
+    document.getElementById("descricaoNovaCategoria");
+
+const mensagemNovaCategoria =
+    document.getElementById("mensagemNovaCategoria");
+
+modalNovaCategoria.addEventListener("show.bs.modal", function() {
+    formNovaCategoria.reset();
+    mensagemNovaCategoria.innerHTML = "";
+});
+
+formNovaCategoria.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const descricao = descricaoNovaCategoria.value.trim();
+
+    if (!descricao) {
+        return;
+    }
+
+    const jaExiste = categorias.some(
+        categoria => categoria.descricao.toLowerCase() === descricao.toLowerCase()
+    );
+
+    if (jaExiste) {
+        mostrarMensagem(mensagemNovaCategoria, "Já existe uma categoria com essa descrição.", "danger");
+        return;
+    }
+
+    const novaCategoria = {
+        id: obterProximoIdRegistro(categorias),
+        descricao: descricao
+    };
+
+    categorias.push(novaCategoria);
+
+    atualizarJson();
+    atualizarFiltroCategoria();
+    atualizarCategoriasParaProduto(novaCategoria.id);
+
+    bootstrap.Modal.getInstance(modalNovaCategoria).hide();
+
+    mostrarMensagem(mensagem, `Categoria "${novaCategoria.descricao}" adicionada ao JSON com sucesso!`, "success");
+});
 
 
 // =============================================================
