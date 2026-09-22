@@ -37,6 +37,10 @@
     {
       "id": 5,
       "descricao": "Automotivo"
+    },
+    {
+      "id": 6,
+      "descricao": "Variedades"
     }
   ],
   "produtos": [
@@ -146,7 +150,7 @@
       "imagem": "img/produtos/sanduicheira_sumay.webp",
       "categoria": 1,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 10,
@@ -326,7 +330,7 @@
       "imagem": "img/produtos/projetor_hy300.jpg",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 0
+      "estoque": 3
     },
     {
       "id": 25,
@@ -456,7 +460,7 @@
       "imagem": "img/produtos/smartwatch_t800_ultra.webp",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 2
+      "estoque": 1
     },
     {
       "id": 36,
@@ -588,7 +592,7 @@
       "imagem": "img/produtos/brinquedo_piscina_100lt.webp",
       "categoria": 4,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 47,
@@ -648,7 +652,7 @@
       "imagem": "img/produtos/projetor_hy320.png",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 2
     },
     {
       "id": 52,
@@ -660,7 +664,7 @@
       "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 0
+      "estoque": 1
     },
     {
       "id": 53,
@@ -707,7 +711,7 @@
       "imagem": "img/produtos/parafusadeira_alobrax_48v.webp",
       "categoria": 2,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 57,
@@ -776,6 +780,114 @@
       "imagem": "img/produtos/sanduicheira_unitermi.webp",
       "categoria": "1",
       "estoque": 1
+    },
+    {
+      "id": 63,
+      "nome": "Panela De Pressão Elétrica 5 Litros Essencial Inox Itatiaia",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "7892946456316",
+      "custo": 237,
+      "preco": 300,
+      "imagem": "img/produtos/panela_pressao_eletrica_essencial_itatiaia.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 64,
+      "nome": "Ventilador de Coluna Silencioso Design Slim Preto",
+      "descricao": "",
+      "complemento": "FS101",
+      "codBarras": "",
+      "custo": 107.99,
+      "preco": 168,
+      "imagem": "img/produtos/ventilador_hepta.avif",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 65,
+      "nome": "Fritadeira Air fryer Redstone Philco 4 Litros 1500w Preta",
+      "descricao": "",
+      "complemento": "paf40a",
+      "codBarras": "",
+      "custo": 249,
+      "preco": 310,
+      "imagem": "img/produtos/fritadeira_philco_redstone.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 66,
+      "nome": "Câmera de Segurança Interna/Externa Wi-Fi Preta Jortan",
+      "descricao": "App: Yoosee",
+      "complemento": "JT-8698",
+      "codBarras": "",
+      "custo": 104.48,
+      "preco": 145,
+      "imagem": "img/produtos/camera_seguranca_jortan_jt8698.webp",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 67,
+      "nome": "Ventilador 30cm 6 pás 3 velocidades Turbo 6 Ventisol",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 117.6,
+      "preco": 158,
+      "imagem": "img/produtos/ventilador_ventisol_30cm.png",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 68,
+      "nome": "Som Automotivo Bluetooth Com Suporte Para Celular",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 63.99,
+      "preco": 100,
+      "imagem": "img/produtos/som_automotivo_soundfy.webp",
+      "categoria": "5",
+      "estoque": 1
+    },
+    {
+      "id": 69,
+      "nome": "Panela De Pressão Elétrica 4 Litros Inox Midea",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 215.92,
+      "preco": 295,
+      "imagem": "img/produtos/panela_pressao_eletrica_midea.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 70,
+      "nome": "Extensão Elétrica 3 Metros Com 3 Tomadas 3 Pinos Branca",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 8.8,
+      "preco": 28,
+      "imagem": "img/produtos/extensao_eletrica_3mt.webp",
+      "categoria": "6",
+      "estoque": 1
+    },
+    {
+      "id": 71,
+      "nome": "Som Automotivo Mp3 Rádio USB Bluetooth SD Card",
+      "descricao": "",
+      "complemento": "First Option 8850B",
+      "codBarras": "",
+      "custo": 44.93,
+      "preco": 85,
+      "imagem": "img/produtos/som_automotivo_first_option_8850b.webp",
+      "categoria": "5",
+      "estoque": 1
     }
   ],
   "clientes": [
@@ -783,103 +895,162 @@
       "id": 1,
       "nome": "Aninha Cardoso",
       "telefone": "63992972999",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 2,
       "nome": "Jose Alves",
       "telefone": "63991103810",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 3,
       "nome": "Luciano",
       "telefone": "63992964293",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 4,
       "nome": "Laura",
       "telefone": "63992690357",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 5,
       "nome": "Wellington",
       "telefone": "63981458977",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 6,
       "nome": "Jakeline",
       "telefone": "63991257224",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 7,
       "nome": "Felipe",
       "telefone": "63991115047",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 8,
       "nome": "Gleysse",
       "telefone": "63992701094",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 9,
       "nome": "Poliana",
       "telefone": "63991309444",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 10,
       "nome": "Amanda Vieira",
       "telefone": "63991332183",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 11,
       "nome": "Lucas",
       "telefone": "6392502008",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 12,
       "nome": "Elielson",
       "telefone": "6392304876",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 13,
       "nome": "Joel Cardoso",
       "telefone": "6392235295",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 14,
       "nome": "Martins",
       "telefone": "63992951972",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 15,
       "nome": "Ezequiel Freitas",
       "telefone": "91991018377",
-      "localizacao": ""
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 16,
       "nome": "Doglas",
       "telefone": "63981044370",
-      "localizacao": "Morada do Sol"
+      "localizacao": "Morada do Sol",
+      "dataCadastro": "22/09/2026"
     },
     {
       "id": 17,
       "nome": "Cielle",
       "telefone": "63984607558",
-      "localizacao": "403 Sul"
+      "localizacao": "403 Sul",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 18,
+      "nome": "Klecio Dias",
+      "telefone": "92994588285",
+      "localizacao": "Gurupi",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 19,
+      "nome": "Valderi (Macarrão)",
+      "telefone": "63984555597",
+      "localizacao": "Sonia Regina",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 20,
+      "nome": "Wallison Ferreira",
+      "telefone": "63984550205",
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 21,
+      "nome": "Ingrid",
+      "telefone": "63981304915",
+      "localizacao": "1305 Sul",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 22,
+      "nome": "Kayque Lino",
+      "telefone": "63992154703",
+      "localizacao": "",
+      "dataCadastro": "22/09/2026"
+    },
+    {
+      "id": 23,
+      "nome": "Talyson Lima",
+      "telefone": "63981167006",
+      "localizacao": "Aureny III",
+      "dataCadastro": "22/09/2026"
     }
   ],
   "vendas": [
@@ -1383,6 +1554,162 @@
           "idCompra": 24,
           "quantidade": 1,
           "precoUnitario": 80
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "idCliente": 18,
+      "nomeCliente": "Klecio Dias",
+      "telefoneCliente": "92994588285",
+      "localizacao": "",
+      "data": "15/09/2026",
+      "totalVenda": 50,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 50
+        }
+      ],
+      "produtos": [
+        {
+          "id": 24,
+          "ordem": 1,
+          "codProduto": 46,
+          "nomeProduto": "Piscina Inflável Redonda 100 Litros 3 Aneis",
+          "idCompra": 52,
+          "quantidade": 1,
+          "precoUnitario": 50
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "idCliente": 19,
+      "nomeCliente": "Valderi (Macarrão)",
+      "telefoneCliente": "63984555597",
+      "localizacao": "",
+      "data": "15/09/2026",
+      "totalVenda": 140,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 140
+        }
+      ],
+      "produtos": [
+        {
+          "id": 25,
+          "ordem": 1,
+          "codProduto": 56,
+          "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Kit Completo com Bits, Brocas, Soquetes e Maleta Alobrax",
+          "idCompra": 10,
+          "quantidade": 1,
+          "precoUnitario": 140
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "idCliente": 20,
+      "nomeCliente": "Wallison Ferreira",
+      "telefoneCliente": "63984550205",
+      "localizacao": "",
+      "data": "15/09/2026",
+      "totalVenda": 85,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 85
+        }
+      ],
+      "produtos": [
+        {
+          "id": 26,
+          "ordem": 1,
+          "codProduto": 9,
+          "nomeProduto": "Sanduicheira Grill Elétrica Antiaderente Sumay",
+          "idCompra": 21,
+          "quantidade": 1,
+          "precoUnitario": 85
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "idCliente": 19,
+      "nomeCliente": "Valderi (Macarrão)",
+      "telefoneCliente": "63984555597",
+      "localizacao": "",
+      "data": "16/09/2026",
+      "totalVenda": 140,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 140
+        }
+      ],
+      "produtos": [
+        {
+          "id": 27,
+          "ordem": 1,
+          "codProduto": 50,
+          "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
+          "idCompra": 9,
+          "quantidade": 1,
+          "precoUnitario": 140
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "idCliente": 22,
+      "nomeCliente": "Kayque Lino",
+      "telefoneCliente": "63992154703",
+      "localizacao": "",
+      "data": "18/09/2026",
+      "totalVenda": 64,
+      "formaPagamento": [
+        {
+          "tipo": "Cartão Crédito",
+          "valor": 64
+        }
+      ],
+      "produtos": [
+        {
+          "id": 28,
+          "ordem": 1,
+          "codProduto": 35,
+          "nomeProduto": "Relógio Smartwatch T800 Ultra 2 Big 7 Pulseiras Tela 2.19 polegadas",
+          "idCompra": 42,
+          "quantidade": 1,
+          "precoUnitario": 64
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "idCliente": 23,
+      "nomeCliente": "Talyson Lima",
+      "telefoneCliente": "63981167006",
+      "localizacao": "",
+      "data": "18/09/2026",
+      "totalVenda": 85,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 88
+        }
+      ],
+      "produtos": [
+        {
+          "id": 29,
+          "ordem": 1,
+          "codProduto": 71,
+          "nomeProduto": "Som Automotivo Mp3 Rádio USB Bluetooth SD Card",
+          "idCompra": 74,
+          "quantidade": 1,
+          "precoUnitario": 85
         }
       ]
     }
@@ -2065,8 +2392,10 @@
       "codProduto": 51,
       "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
       "datacompra": "10/09/2026",
+      "dataentrega": "14/09/2026",
       "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018392567340/status?packId=2000018392567340&orderId=2000018392567340",
       "fornecedor": 1,
+      "numPedido": "2000018392567340",
       "quantidade": 1,
       "precoCusto": 212,
       "precoVenda": 260,
@@ -2121,6 +2450,214 @@
       "precoCusto": 56,
       "precoVenda": 80,
       "lucro": 24
+    },
+    {
+      "id": 62,
+      "codProduto": 52,
+      "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+      "datacompra": "08/09/2026",
+      "dataentrega": "15/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018356957116/status?packId=2000018356957116&orderId=2000018356957116",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 88.2,
+      "precoVenda": 165,
+      "lucro": 76.8
+    },
+    {
+      "id": 63,
+      "codProduto": 63,
+      "nomeProduto": "Panela De Pressão Elétrica 5 Litros Essencial Inox Itatiaia",
+      "datacompra": "12/09/2026",
+      "dataentrega": "15/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018418454238/status?packId=2000018418454238&orderId=2000018418454238",
+      "fornecedor": 1,
+      "quantidade": 1,
+      "precoCusto": 237,
+      "precoVenda": 300,
+      "lucro": 63
+    },
+    {
+      "id": 64,
+      "codProduto": 24,
+      "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "13/09/2026",
+      "dataentrega": "16/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018439027476/status?packId=2000018439027476&orderId=2000018439027476",
+      "fornecedor": 1,
+      "numPedido": "2000018439027476",
+      "quantidade": 1,
+      "precoCusto": 173.9,
+      "precoVenda": 210,
+      "lucro": 36.1
+    },
+    {
+      "id": 65,
+      "codProduto": 24,
+      "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "13/09/2026",
+      "dataentrega": "16/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018433164472/status?packId=2000018433164472&orderId=2000018433164472",
+      "fornecedor": 1,
+      "numPedido": "2000018433164472",
+      "quantidade": 1,
+      "precoCusto": 144.91,
+      "precoVenda": 210,
+      "lucro": 65.09
+    },
+    {
+      "id": 66,
+      "codProduto": 64,
+      "nomeProduto": "Ventilador de Coluna Silencioso Design Slim Preto",
+      "datacompra": "13/09/2026",
+      "dataentrega": "16/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-5583977-8150668&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "702-5583977-8150668",
+      "quantidade": 1,
+      "precoCusto": 107.99,
+      "precoVenda": 168,
+      "lucro": 60.01
+    },
+    {
+      "id": 67,
+      "codProduto": 65,
+      "nomeProduto": "Fritadeira Air fryer Redstone Philco 4 Litros 1500w Preta",
+      "datacompra": "13/09/2026",
+      "dataentrega": "16/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018434952932/status?packId=2000018434952932&orderId=2000018434952932",
+      "fornecedor": 1,
+      "numPedido": "2000018434952932",
+      "quantidade": 1,
+      "precoCusto": 249,
+      "precoVenda": 310,
+      "lucro": 61
+    },
+    {
+      "id": 68,
+      "codProduto": 66,
+      "nomeProduto": "Câmera de Segurança Interna/Externa Wi-Fi Preta Jortan",
+      "datacompra": "03/09/2026",
+      "dataentrega": "16/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7683517-3190648&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "701-7683517-3190648",
+      "quantidade": 1,
+      "precoCusto": 104.48,
+      "precoVenda": 145,
+      "lucro": 40.52
+    },
+    {
+      "id": 69,
+      "codProduto": 67,
+      "nomeProduto": "Ventilador 30cm 6 pás 3 velocidades Turbo 6 Ventisol",
+      "datacompra": "13/09/2026",
+      "dataentrega": "17/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018438702978/status?packId=2000018438702978&orderId=2000018438702978",
+      "fornecedor": 1,
+      "numPedido": "2000018438702978",
+      "quantidade": 1,
+      "precoCusto": 117.6,
+      "precoVenda": 158,
+      "lucro": 40.4
+    },
+    {
+      "id": 70,
+      "codProduto": 24,
+      "nomeProduto": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "12/09/2026",
+      "dataentrega": "17/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018427640356/status?packId=2000018427640356&orderId=2000018427640356",
+      "fornecedor": 1,
+      "numPedido": "2000018427640356",
+      "quantidade": 1,
+      "precoCusto": 139.37,
+      "precoVenda": 180,
+      "lucro": 40.63
+    },
+    {
+      "id": 71,
+      "codProduto": 68,
+      "nomeProduto": "Som Automotivo Bluetooth Com Suporte Para Celular",
+      "datacompra": "11/09/2026",
+      "dataentrega": "17/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014992677293/status?packId=2000014992677297&orderId=2000018417440754",
+      "fornecedor": 1,
+      "numPedido": "2000014992677293",
+      "quantidade": 1,
+      "precoCusto": 63.99,
+      "precoVenda": 100,
+      "lucro": 36.01
+    },
+    {
+      "id": 72,
+      "codProduto": 69,
+      "nomeProduto": "Panela De Pressão Elétrica 4 Litros Inox Midea",
+      "datacompra": "14/09/2026",
+      "dataentrega": "17/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018448322104/status?packId=2000018448322104&orderId=2000018448322104",
+      "fornecedor": 1,
+      "numPedido": "2000018448322104",
+      "quantidade": 1,
+      "precoCusto": 215.92,
+      "precoVenda": 295,
+      "lucro": 79.08
+    },
+    {
+      "id": 73,
+      "codProduto": 50,
+      "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
+      "datacompra": "10/09/2026",
+      "dataentrega": "17/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018392973360/status?packId=2000018392973360&orderId=2000018392973360",
+      "fornecedor": 1,
+      "numPedido": "2000018392973360",
+      "quantidade": 1,
+      "precoCusto": 93.52,
+      "precoVenda": 140,
+      "lucro": 46.48
+    },
+    {
+      "id": 74,
+      "codProduto": 71,
+      "nomeProduto": "Som Automotivo Mp3 Rádio USB Bluetooth SD Card",
+      "datacompra": "11/09/2026",
+      "dataentrega": "18/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014992677293/status?packId=2000014992677295&orderId=2000018417444302",
+      "fornecedor": 1,
+      "numPedido": "2000014992677293",
+      "quantidade": 1,
+      "precoCusto": 44.93,
+      "precoVenda": 85,
+      "lucro": 40.07
+    },
+    {
+      "id": 75,
+      "codProduto": 70,
+      "nomeProduto": "Extensão Elétrica 3 Metros Com 3 Tomadas 3 Pinos Branca",
+      "datacompra": "11/09/2026",
+      "dataentrega": "18/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000014985810187/status?packId=2000014985810191&orderId=2000018410143474",
+      "fornecedor": 1,
+      "numPedido": "2000014985810187",
+      "quantidade": 1,
+      "precoCusto": 8.8,
+      "precoVenda": 28,
+      "lucro": 19.2
+    },
+    {
+      "id": 76,
+      "codProduto": 51,
+      "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+      "datacompra": "15/09/2026",
+      "dataentrega": "18/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018467299152/status?packId=2000018467299152&orderId=2000018467299152",
+      "fornecedor": 1,
+      "numPedido": "2000018467299152",
+      "quantidade": 1,
+      "precoCusto": 178.51,
+      "precoVenda": 260,
+      "lucro": 81.49
     }
   ]
 }
