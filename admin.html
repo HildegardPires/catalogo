@@ -1249,8 +1249,60 @@
     <section id="telaRelatorios" class="d-none">
         <div class="card shadow-sm border-0">
             <div class="card-body p-4">
-                <h3>📊 Relatórios</h3>
-                <p class="text-muted mb-0">Use o menu Vendas para registrar e consultar os dados que serão usados nos relatórios.</p>
+                <h3 class="mb-4">📊 Relatórios</h3>
+
+                <ul class="nav nav-tabs mb-4" id="abasRelatorios" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" type="button" data-relatorio="produtosVendidos">
+                            Produtos Vendidos
+                        </button>
+                    </li>
+                </ul>
+
+                <div id="relatorioProdutosVendidos">
+                    <form id="formRelatorioProdutosVendidos" class="row g-3 align-items-end">
+                        <div class="col-md-4">
+                            <label for="dataInicialProdutosVendidos" class="form-label">Data inicial</label>
+                            <input id="dataInicialProdutosVendidos" type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="dataFinalProdutosVendidos" class="form-label">Data final</label>
+                            <input id="dataFinalProdutosVendidos" type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-success w-100">Pesquisar</button>
+                        </div>
+                    </form>
+
+                    <div id="mensagemRelatorioProdutosVendidos" class="alert d-none mt-3"></div>
+
+                    <div class="table-responsive mt-4">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Nome do produto</th>
+                                    <th>Data da venda</th>
+                                    <th>Preço de Custo</th>
+                                    <th>Preço de Venda</th>
+                                    <th>Lucro</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaProdutosVendidos"></tbody>
+                            <tfoot class="table-light">
+                                <tr>
+                                    <th colspan="2" class="text-end">Totais</th>
+                                    <th id="totalCustoProdutosVendidos">R$ 0,00</th>
+                                    <th id="totalVendaProdutosVendidos">R$ 0,00</th>
+                                    <th id="totalLucroProdutosVendidos">R$ 0,00</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div id="semProdutosVendidos" class="text-center text-muted py-4">
+                        Informe o período e clique em pesquisar.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1467,6 +1519,15 @@ const btnCancelarCompra = document.getElementById("btnCancelarCompra");
 const tabelaEstoque = document.getElementById("tabelaEstoque");
 const mensagemEstoque = document.getElementById("mensagemEstoque");
 const btnAtualizarEstoque = document.getElementById("btnAtualizarEstoque");
+const formRelatorioProdutosVendidos = document.getElementById("formRelatorioProdutosVendidos");
+const dataInicialProdutosVendidos = document.getElementById("dataInicialProdutosVendidos");
+const dataFinalProdutosVendidos = document.getElementById("dataFinalProdutosVendidos");
+const tabelaProdutosVendidos = document.getElementById("tabelaProdutosVendidos");
+const semProdutosVendidos = document.getElementById("semProdutosVendidos");
+const mensagemRelatorioProdutosVendidos = document.getElementById("mensagemRelatorioProdutosVendidos");
+const totalCustoProdutosVendidos = document.getElementById("totalCustoProdutosVendidos");
+const totalVendaProdutosVendidos = document.getElementById("totalVendaProdutosVendidos");
+const totalLucroProdutosVendidos = document.getElementById("totalLucroProdutosVendidos");
 
 
 // =============================================================
@@ -3719,6 +3780,111 @@ formVenda.addEventListener("submit", async function(event) {
 
 
 btnCancelarVenda.addEventListener("click", cancelarEdicaoVenda);
+
+
+function obterCustoDoItemVendido(item) {
+    const compra = compras.find(compraAtual =>
+        Number(compraAtual.id) === Number(item.idCompra)
+    );
+
+    if (compra) {
+        return converterPreco(compra.precoCusto);
+    }
+
+    const produto = produtos.find(produtoAtual =>
+        Number(produtoAtual.id) === Number(item.codProduto)
+    );
+
+    return produto ? converterPreco(produto.custo) : 0;
+}
+
+
+function limparRelatorioProdutosVendidos() {
+    tabelaProdutosVendidos.innerHTML = "";
+    totalCustoProdutosVendidos.textContent = "R$ 0,00";
+    totalVendaProdutosVendidos.textContent = "R$ 0,00";
+    totalLucroProdutosVendidos.textContent = "R$ 0,00";
+    semProdutosVendidos.classList.remove("d-none");
+}
+
+
+function atualizarRelatorioProdutosVendidos() {
+    const dataInicial = dataInicialProdutosVendidos.value;
+    const dataFinal = dataFinalProdutosVendidos.value;
+
+    limparRelatorioProdutosVendidos();
+
+    if (!dataInicial || !dataFinal || dataInicial > dataFinal) {
+        mostrarMensagem(
+            mensagemRelatorioProdutosVendidos,
+            "Informe um período válido: a data inicial deve ser anterior ou igual à data final.",
+            "danger"
+        );
+        return;
+    }
+
+    const itensVendidos = [];
+
+    vendas.forEach(function(venda) {
+        const dataVenda = converterDataParaInput(venda.data);
+
+        if (dataVenda < dataInicial || dataVenda > dataFinal) {
+            return;
+        }
+
+        (Array.isArray(venda.produtos) ? venda.produtos : []).forEach(function(item) {
+            const quantidade = Number(item.quantidade) || 0;
+            const precoCusto = obterCustoDoItemVendido(item) * quantidade;
+            const precoVenda = converterPreco(item.precoUnitario) * quantidade;
+
+            itensVendidos.push({
+                nomeProduto: item.nomeProduto || "",
+                dataVenda: venda.data || "",
+                precoCusto: precoCusto,
+                precoVenda: precoVenda,
+                lucro: precoVenda - precoCusto
+            });
+        });
+    });
+
+    mensagemRelatorioProdutosVendidos.classList.add("d-none");
+
+    if (!itensVendidos.length) {
+        semProdutosVendidos.textContent = "Nenhum produto vendido no período informado.";
+        return;
+    }
+
+    semProdutosVendidos.classList.add("d-none");
+
+    const totais = itensVendidos.reduce(function(acumulado, item) {
+        acumulado.precoCusto += item.precoCusto;
+        acumulado.precoVenda += item.precoVenda;
+        acumulado.lucro += item.lucro;
+        return acumulado;
+    }, { precoCusto: 0, precoVenda: 0, lucro: 0 });
+
+    itensVendidos.forEach(function(item) {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${escaparHtml(item.nomeProduto)}</td>
+            <td>${escaparHtml(item.dataVenda)}</td>
+            <td>R$ ${formatarPreco(item.precoCusto)}</td>
+            <td>R$ ${formatarPreco(item.precoVenda)}</td>
+            <td>R$ ${formatarPreco(item.lucro)}</td>
+        `;
+        tabelaProdutosVendidos.appendChild(linha);
+    });
+
+    totalCustoProdutosVendidos.textContent = `R$ ${formatarPreco(totais.precoCusto)}`;
+    totalVendaProdutosVendidos.textContent = `R$ ${formatarPreco(totais.precoVenda)}`;
+    totalLucroProdutosVendidos.textContent = `R$ ${formatarPreco(totais.lucro)}`;
+}
+
+
+formRelatorioProdutosVendidos.addEventListener("submit", function(event) {
+    event.preventDefault();
+    atualizarRelatorioProdutosVendidos();
+});
 
 
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
