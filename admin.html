@@ -3638,7 +3638,8 @@ function editarVenda(id) {
             quantidade: Number(item.quantidade) || 0,
             precoUnitario: precoUnitario,
             valorDesconto: valorDesconto,
-            precoBaseUnitario: precoCadastro
+            precoBaseUnitario: precoCadastro,
+            precoCadastro: precoCadastro
         };
     });
 
@@ -3757,7 +3758,8 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         quantidade: quantidade,
         precoUnitario: precoUnitario,
         valorDesconto: 0,
-        precoBaseUnitario: precoUnitario
+        precoBaseUnitario: precoUnitario,
+        precoCadastro: precoUnitario
     });
 
     produtoVenda.value = "";
@@ -3817,9 +3819,11 @@ formVenda.addEventListener("submit", async function(event) {
             idCompra: item.idCompra,
             quantidade: item.quantidade,
             precoUnitario: item.precoUnitario,
-            precoCadastro: Number.isFinite(item.precoBaseUnitario)
-                ? item.precoBaseUnitario
-                : item.precoUnitario + (Number(item.valorDesconto) || 0),
+            precoCadastro: Number.isFinite(item.precoCadastro)
+                ? item.precoCadastro
+                : Number.isFinite(item.precoBaseUnitario)
+                    ? item.precoBaseUnitario
+                    : item.precoUnitario + (Number(item.valorDesconto) || 0),
             valorDesconto: item.valorDesconto || 0
         };
     });
