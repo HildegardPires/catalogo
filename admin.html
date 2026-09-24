@@ -1147,6 +1147,11 @@
                                     <input id="quantidadeVenda" type="number" class="form-control" min="1" value="1">
                                     <label for="precoVenda" class="form-label mt-3">Preço</label>
                                     <input id="precoVenda" type="number" class="form-control" min="0" step="0.01">
+                                    <label for="descontoRealVenda" class="form-label mt-3">Desconto em reais</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="descontoRealVenda" type="number" class="form-control" min="0" step="0.01" value="0">
+                                    </div>
                                     <button id="btnAdicionarItem" type="button" class="btn btn-outline-success mt-3">Adicionar</button>
 
                                     <div class="table-responsive mt-4">
@@ -1488,6 +1493,7 @@ const produtoVenda = document.getElementById("produtoVenda");
 const compraVenda = document.getElementById("compraVenda");
 const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
+const descontoRealVenda = document.getElementById("descontoRealVenda");
 const itensVenda = document.getElementById("itensVenda");
 const totalPedido = document.getElementById("totalPedido");
 const mensagemVenda = document.getElementById("mensagemVenda");
@@ -3402,6 +3408,57 @@ function atualizarItensDaVenda() {
 }
 
 
+function obterQuantidadeTotalDaVenda() {
+    return itensDaVenda.reduce(function(total, item) {
+        return total + (Number(item.quantidade) || 0);
+    }, 0);
+}
+
+
+function aplicarDescontoRealDaVenda() {
+    const descontoReal = Number(descontoRealVenda.value);
+    const quantidadeTotal = obterQuantidadeTotalDaVenda();
+
+    if (!Number.isFinite(descontoReal) || descontoReal < 0) {
+        mostrarMensagem(mensagemVenda, "Informe um desconto válido.", "danger");
+        return;
+    }
+
+    if (quantidadeTotal === 0) {
+        mostrarMensagem(mensagemVenda, "Adicione pelo menos um item antes de aplicar o desconto.", "danger");
+        return;
+    }
+
+    const descontoPorItem = descontoReal / quantidadeTotal;
+
+    const possuiPrecoNegativo = itensDaVenda.some(function(item) {
+        const precoBase = Number.isFinite(item.precoBaseUnitario)
+            ? item.precoBaseUnitario
+            : item.precoUnitario + (Number(item.valorDesconto) || 0);
+
+        return precoBase - descontoPorItem < 0;
+    });
+
+    if (possuiPrecoNegativo) {
+        mostrarMensagem(mensagemVenda, "O desconto não pode ser maior que o preço de um item.", "danger");
+        return;
+    }
+
+    itensDaVenda.forEach(function(item) {
+        const precoBase = Number.isFinite(item.precoBaseUnitario)
+            ? item.precoBaseUnitario
+            : item.precoUnitario + (Number(item.valorDesconto) || 0);
+
+        item.precoBaseUnitario = precoBase;
+        item.valorDesconto = descontoPorItem;
+        item.precoUnitario = precoBase - descontoPorItem;
+    });
+
+    atualizarItensDaVenda();
+    mensagemVenda.classList.add("d-none");
+}
+
+
 function obterTotalDaVenda() {
     return itensDaVenda.reduce(function(total, item) {
         return total + item.quantidade * item.precoUnitario;
@@ -3559,14 +3616,19 @@ function editarVenda(id) {
         : [];
     atualizarListaPagamentos();
     document.getElementById("dataVenda").value = converterDataParaInput(venda.data);
+    descontoRealVenda.value = Number(venda.descontoReal) || 0;
 
     itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
+        const precoUnitario = Number(item.precoUnitario) || 0;
+        const valorDesconto = Number(item.valorDesconto) || 0;
         return {
             codProduto: item.codProduto,
             nomeProduto: item.nomeProduto,
             idCompra: item.idCompra ?? null,
             quantidade: Number(item.quantidade) || 0,
-            precoUnitario: Number(item.precoUnitario) || 0
+            precoUnitario: precoUnitario,
+            valorDesconto: valorDesconto,
+            precoBaseUnitario: precoUnitario + valorDesconto
         };
     });
 
@@ -3683,7 +3745,9 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         nomeProduto: produto.nome,
         idCompra: compra.id,
         quantidade: quantidade,
-        precoUnitario: precoUnitario
+        precoUnitario: precoUnitario,
+        valorDesconto: 0,
+        precoBaseUnitario: precoUnitario
     });
 
     produtoVenda.value = "";
@@ -3695,6 +3759,14 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     precoVenda.value = "";
     atualizarItensDaVenda();
     mensagemVenda.classList.add("d-none");
+});
+
+
+descontoRealVenda.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        aplicarDescontoRealDaVenda();
+    }
 });
 
 
@@ -3734,7 +3806,8 @@ formVenda.addEventListener("submit", async function(event) {
             nomeProduto: item.nomeProduto,
             idCompra: item.idCompra,
             quantidade: item.quantidade,
-            precoUnitario: item.precoUnitario
+            precoUnitario: item.precoUnitario,
+            valorDesconto: item.valorDesconto || 0
         };
     });
 
@@ -3745,6 +3818,7 @@ formVenda.addEventListener("submit", async function(event) {
         telefoneCliente: cliente.telefone || "",
         localizacao: document.getElementById("localizacaoVenda").value.trim(),
         data: converterDataParaJson(document.getElementById("dataVenda").value),
+        descontoReal: Number(descontoRealVenda.value) || 0,
         totalVenda: obterTotalDaVenda(),
         formaPagamento: pagamentosDaVenda,
         produtos: produtosDaVenda
