@@ -1379,6 +1379,41 @@
     </section>
 
 
+    <div class="modal fade" id="modalEditarItemVenda" tabindex="-1" aria-labelledby="modalEditarItemVendaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarItemVendaLabel">Editar item da venda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <form id="formEditarItemVenda">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="precoUnitarioEditarItem" class="form-label">Preço unitário</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input id="precoUnitarioEditarItem" type="number" class="form-control" min="0" step="0.01" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="descontoEditarItem" class="form-label">Desconto</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input id="descontoEditarItem" type="number" class="form-control" min="0" step="0.01" value="0" required>
+                            </div>
+                        </div>
+                        <div id="mensagemEditarItemVenda" class="alert alert-danger d-none mt-3 mb-0"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Salvar item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <section id="telaJson" class="d-none">
 
     <div id="painelJson" class="card shadow-sm border-0 mt-4">
@@ -1452,6 +1487,8 @@ let itensDaVenda = [];
 let pagamentosDaVenda = [];
 
 let vendaEditando = null;
+
+let itemVendaEditando = null;
 
 let compras = [];
 
@@ -1562,6 +1599,11 @@ const precoVenda = document.getElementById("precoVenda");
 const descontoRealVenda = document.getElementById("descontoRealVenda");
 const itensVenda = document.getElementById("itensVenda");
 const totalPedido = document.getElementById("totalPedido");
+const modalEditarItemVenda = document.getElementById("modalEditarItemVenda");
+const formEditarItemVenda = document.getElementById("formEditarItemVenda");
+const precoUnitarioEditarItem = document.getElementById("precoUnitarioEditarItem");
+const descontoEditarItem = document.getElementById("descontoEditarItem");
+const mensagemEditarItemVenda = document.getElementById("mensagemEditarItemVenda");
 const mensagemVenda = document.getElementById("mensagemVenda");
 const tituloVenda = document.getElementById("tituloVenda");
 const btnSalvarVenda = document.getElementById("btnSalvarVenda");
@@ -3450,6 +3492,44 @@ function obterCodigoProdutoCompra(compra) {
 }
 
 
+function abrirModalEditarItemVenda(indice) {
+    const item = itensDaVenda[indice];
+
+    if (!item) {
+        return;
+    }
+
+    itemVendaEditando = indice;
+    precoUnitarioEditarItem.value = Number(item.precoUnitario) || 0;
+    descontoEditarItem.value = Number(item.valorDesconto) || 0;
+    mensagemEditarItemVenda.classList.add("d-none");
+    bootstrap.Modal.getOrCreateInstance(modalEditarItemVenda).show();
+}
+
+
+formEditarItemVenda.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const item = itensDaVenda[itemVendaEditando];
+    const precoUnitario = Number(precoUnitarioEditarItem.value);
+    const valorDesconto = Number(descontoEditarItem.value);
+
+    if (!item || !Number.isFinite(precoUnitario) || precoUnitario < 0 || !Number.isFinite(valorDesconto) || valorDesconto < 0 || valorDesconto > precoUnitario) {
+        mensagemEditarItemVenda.textContent = "Informe valores válidos. O desconto não pode ser maior que o preço unitário.";
+        mensagemEditarItemVenda.classList.remove("d-none");
+        return;
+    }
+
+    item.precoUnitario = precoUnitario;
+    item.precoBaseUnitario = precoUnitario;
+    item.valorDesconto = valorDesconto;
+    item.precoUnitarioComDesc = precoUnitario - valorDesconto;
+    itemVendaEditando = null;
+    atualizarItensDaVenda();
+    bootstrap.Modal.getOrCreateInstance(modalEditarItemVenda).hide();
+});
+
+
 function atualizarItensDaVenda() {
 
     itensVenda.innerHTML = "";
@@ -3472,10 +3552,19 @@ function atualizarItensDaVenda() {
             <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
             <td>R$ ${formatarPreco(precoUnitarioComDesc)}</td>
             <td>R$ ${formatarPreco(subtotal)}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover item">×</button></td>
+            <td>
+                <div class="d-flex gap-1">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-acao="editar" aria-label="Editar item">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" data-acao="remover" aria-label="Remover item">×</button>
+                </div>
+            </td>
         `;
 
-        linha.querySelector("button").addEventListener("click", function() {
+        linha.querySelector('[data-acao="editar"]').addEventListener("click", function() {
+            abrirModalEditarItemVenda(indice);
+        });
+
+        linha.querySelector('[data-acao="remover"]').addEventListener("click", function() {
             itensDaVenda.splice(indice, 1);
             atualizarItensDaVenda();
         });
