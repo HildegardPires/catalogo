@@ -1163,22 +1163,27 @@
 
                                 <div class="col-lg-12">
                                     <h5 class="border-bottom pb-2">Itens da venda</h5>
-                                    <label for="produtoVenda" class="form-label">Produto</label>
-                                    <select id="produtoVenda" class="form-select">
-                                        <option value="">Selecione um produto</option>
-                                    </select>
-                                    <label for="compraVenda" class="form-label mt-3">Compra do produto</label>
-                                    <select id="compraVenda" class="form-select" disabled>
-                                        <option value="">Selecione primeiro o produto</option>
-                                    </select>
-                                    <label for="quantidadeVenda" class="form-label mt-3">Qtd.</label>
-                                    <input id="quantidadeVenda" type="number" class="form-control" min="1" value="1">
-                                    <label for="precoVenda" class="form-label mt-3">Preço</label>
-                                    <input id="precoVenda" type="number" class="form-control" min="0" step="0.01">
-                                    <label for="descontoRealVenda" class="form-label mt-3">Desconto em reais</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">R$</span>
-                                        <input id="descontoRealVenda" type="number" class="form-control" min="0" step="0.01" value="0">
+                                    <div class="row g-3 align-items-end">
+                                        <div class="col-lg-5 col-md-6">
+                                            <label for="produtoVenda" class="form-label">Produto</label>
+                                            <select id="produtoVenda" class="form-select">
+                                                <option value="">Selecione um produto</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <label for="compraVenda" class="form-label">Compra do produto</label>
+                                            <select id="compraVenda" class="form-select" disabled>
+                                                <option value="">Selecione primeiro o produto</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <label for="quantidadeVenda" class="form-label">Qtd.</label>
+                                            <input id="quantidadeVenda" type="number" class="form-control" min="1" value="1">
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <label for="precoVenda" class="form-label">Preço</label>
+                                            <input id="precoVenda" type="number" class="form-control" min="0" step="0.01">
+                                        </div>
                                     </div>
                                     <button id="btnAdicionarItem" type="button" class="btn btn-outline-success mt-3">Adicionar</button>
 
@@ -1192,6 +1197,14 @@
                                                 <tr><th colspan="4" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
                                             </tfoot>
                                         </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <label for="descontoRealVenda" class="form-label">Desconto em reais</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input id="descontoRealVenda" type="number" class="form-control" min="0" step="0.01" value="0">
                                     </div>
                                 </div>
 
