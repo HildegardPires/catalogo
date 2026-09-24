@@ -3700,9 +3700,13 @@ function editarVenda(id) {
         const precoUnitario = Number(item.precoUnitario) || 0;
         const valorDesconto = Number(item.valorDesconto) || 0;
         const precoCadastroInformado = Number(item.precoCadastro);
+        const compraDoItem = compras.find(compra => Number(compra.id) === Number(item.idCompra));
+        const precoVendaDaCompra = compraDoItem ? Number(compraDoItem.precoVenda) : NaN;
         const precoCadastro = Number.isFinite(precoCadastroInformado)
             ? precoCadastroInformado
-            : precoUnitario + valorDesconto;
+            : Number.isFinite(precoVendaDaCompra)
+                ? precoVendaDaCompra
+                : precoUnitario + valorDesconto;
         return {
             codProduto: item.codProduto,
             nomeProduto: item.nomeProduto,
@@ -3813,8 +3817,9 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     const compra = compras.find(item => Number(item.id) === Number(compraVenda.value));
     const quantidade = parseInt(quantidadeVenda.value);
     const precoUnitario = parseFloat(precoVenda.value);
+    const precoCadastro = compra ? Number(compra.precoVenda) : NaN;
 
-    if (!produto || !compra || obterCodigoProdutoCompra(compra) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0) {
+    if (!produto || !compra || obterCodigoProdutoCompra(compra) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0 || !Number.isFinite(precoCadastro) || precoCadastro < 0) {
         mostrarMensagem(mensagemVenda, "Informe produto, compra, quantidade e preço válidos.", "danger");
         return;
     }
@@ -3831,8 +3836,8 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         quantidade: quantidade,
         precoUnitario: precoUnitario,
         valorDesconto: 0,
-        precoBaseUnitario: precoUnitario,
-        precoCadastro: precoUnitario
+        precoBaseUnitario: precoCadastro,
+        precoCadastro: precoCadastro
     });
 
     produtoVenda.value = "";
