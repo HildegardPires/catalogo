@@ -3627,6 +3627,10 @@ function editarVenda(id) {
     itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
         const precoUnitario = Number(item.precoUnitario) || 0;
         const valorDesconto = Number(item.valorDesconto) || 0;
+        const precoCadastroInformado = Number(item.precoCadastro);
+        const precoCadastro = Number.isFinite(precoCadastroInformado)
+            ? precoCadastroInformado
+            : precoUnitario + valorDesconto;
         return {
             codProduto: item.codProduto,
             nomeProduto: item.nomeProduto,
@@ -3634,7 +3638,7 @@ function editarVenda(id) {
             quantidade: Number(item.quantidade) || 0,
             precoUnitario: precoUnitario,
             valorDesconto: valorDesconto,
-            precoBaseUnitario: precoUnitario + valorDesconto
+            precoBaseUnitario: precoCadastro
         };
     });
 
@@ -3813,6 +3817,9 @@ formVenda.addEventListener("submit", async function(event) {
             idCompra: item.idCompra,
             quantidade: item.quantidade,
             precoUnitario: item.precoUnitario,
+            precoCadastro: Number.isFinite(item.precoBaseUnitario)
+                ? item.precoBaseUnitario
+                : item.precoUnitario + (Number(item.valorDesconto) || 0),
             valorDesconto: item.valorDesconto || 0
         };
     });
