@@ -63,7 +63,10 @@
     <div class="container">
 
         <div class="nav nav-pills py-3 gap-2" id="menuAdmin">
-            <button type="button" class="nav-link active" data-tela="produtos">
+            <button type="button" class="nav-link active" data-tela="dashboard">
+                Dashboard
+            </button>
+            <button type="button" class="nav-link" data-tela="produtos">
                 Cadastro de Produtos
             </button>
             <button type="button" class="nav-link" data-tela="clientes">
@@ -98,7 +101,47 @@
 <main class="container my-5">
 
 
-    <section id="telaProdutos">
+    <section id="telaDashboard">
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+            <div>
+                <h2 class="mb-1">Dashboard</h2>
+                <p id="periodoDashboard" class="text-muted mb-0"></p>
+            </div>
+            <span id="quantidadeVendasDashboard" class="badge bg-success">0 vendas</span>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <p class="text-muted mb-2">Vendas do mês</p>
+                        <h3 id="totalVendasDashboard" class="mb-0">R$ 0,00</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <p class="text-muted mb-2">Custo dos produtos</p>
+                        <h3 id="totalCustoDashboard" class="mb-0">R$ 0,00</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <p class="text-muted mb-2">Lucro do mês</p>
+                        <h3 id="totalLucroDashboard" class="mb-0 text-success">R$ 0,00</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="telaProdutos" class="d-none">
 
     <!-- STATUS -->
 
@@ -1534,6 +1577,11 @@ const mensagemRelatorioProdutosVendidos = document.getElementById("mensagemRelat
 const totalCustoProdutosVendidos = document.getElementById("totalCustoProdutosVendidos");
 const totalVendaProdutosVendidos = document.getElementById("totalVendaProdutosVendidos");
 const totalLucroProdutosVendidos = document.getElementById("totalLucroProdutosVendidos");
+const periodoDashboard = document.getElementById("periodoDashboard");
+const quantidadeVendasDashboard = document.getElementById("quantidadeVendasDashboard");
+const totalVendasDashboard = document.getElementById("totalVendasDashboard");
+const totalCustoDashboard = document.getElementById("totalCustoDashboard");
+const totalLucroDashboard = document.getElementById("totalLucroDashboard");
 
 
 // =============================================================
@@ -1733,6 +1781,8 @@ function atualizarTudo() {
     atualizarTabelaCompras();
 
     atualizarTabelaVendas();
+
+    atualizarDashboard();
 
     atualizarTabelaEstoque();
 
@@ -3688,6 +3738,7 @@ function excluirVenda(id) {
 
     atualizarJson();
     atualizarTabelaVendas();
+    atualizarDashboard();
     atualizarTabelaEstoque();
     idVenda.value = obterProximoIdRegistro(vendas);
     mostrarMensagem(mensagemVenda, `Venda #${id} excluída.`, "warning");
@@ -3854,6 +3905,7 @@ formVenda.addEventListener("submit", async function(event) {
     vendaEditando = null;
     atualizarJson();
     atualizarTabelaVendas();
+    atualizarDashboard();
     atualizarTabelaEstoque();
     formVenda.reset();
     idVenda.value = obterProximoIdRegistro(vendas);
@@ -3887,6 +3939,41 @@ function obterCustoDoItemVendido(item) {
     );
 
     return produto ? converterPreco(produto.custo) : 0;
+}
+
+
+function atualizarDashboard() {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = hoje.getMonth();
+    const mesAtual = `${ano}-${String(mes + 1).padStart(2, "0")}`;
+    let totalVenda = 0;
+    let totalCusto = 0;
+    let quantidadeVendas = 0;
+
+    vendas.forEach(function(venda) {
+        if (!converterDataParaInput(venda.data).startsWith(mesAtual)) {
+            return;
+        }
+
+        quantidadeVendas += 1;
+        (Array.isArray(venda.produtos) ? venda.produtos : []).forEach(function(item) {
+            const quantidade = Number(item.quantidade) || 0;
+            totalVenda += converterPreco(item.precoUnitario) * quantidade;
+            totalCusto += obterCustoDoItemVendido(item) * quantidade;
+        });
+    });
+
+    periodoDashboard.textContent = hoje.toLocaleDateString("pt-BR", {
+        month: "long",
+        year: "numeric"
+    });
+    quantidadeVendasDashboard.textContent = quantidadeVendas === 1
+        ? "1 venda"
+        : `${quantidadeVendas} vendas`;
+    totalVendasDashboard.textContent = `R$ ${formatarPreco(totalVenda)}`;
+    totalCustoDashboard.textContent = `R$ ${formatarPreco(totalCusto)}`;
+    totalLucroDashboard.textContent = `R$ ${formatarPreco(totalVenda - totalCusto)}`;
 }
 
 
@@ -3992,6 +4079,7 @@ function carregarPeriodoAtualNoRelatorio() {
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
     botao.addEventListener("click", function() {
         const tela = this.dataset.tela;
+        document.getElementById("telaDashboard").classList.toggle("d-none", tela !== "dashboard");
         document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
         document.getElementById("telaClientes").classList.toggle("d-none", tela !== "clientes");
         document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
