@@ -1157,11 +1157,11 @@
                                     <div class="table-responsive mt-4">
                                         <table class="table align-middle">
                                             <thead class="table-success">
-                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Subtotal</th><th></th></tr>
+                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Preço com desconto</th><th>Subtotal</th><th></th></tr>
                                             </thead>
                                             <tbody id="itensVenda"></tbody>
                                             <tfoot class="table-light">
-                                                <tr><th colspan="3" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
+                                                <tr><th colspan="4" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
                                             </tfoot>
                                         </table>
                                     </div>
@@ -3383,6 +3383,9 @@ function atualizarItensDaVenda() {
     let total = 0;
 
     itensDaVenda.forEach(function(item, indice) {
+        const precoBaseUnitario = Number.isFinite(item.precoBaseUnitario)
+            ? item.precoBaseUnitario
+            : item.precoUnitario + (Number(item.valorDesconto) || 0);
         const subtotal = item.quantidade * item.precoUnitario;
         total += subtotal;
 
@@ -3390,6 +3393,7 @@ function atualizarItensDaVenda() {
         linha.innerHTML = `
             <td><span class="text-muted">ID: ${escaparHtml(String(item.codProduto))}</span> — ${escaparHtml(item.nomeProduto)}</td>
             <td>${item.quantidade}</td>
+            <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
             <td>R$ ${formatarPreco(item.precoUnitario)}</td>
             <td>R$ ${formatarPreco(subtotal)}</td>
             <td><button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover item">×</button></td>
@@ -3547,15 +3551,17 @@ function atualizarTabelaVendas() {
                 <div class="table-responsive mt-2">
                     <table class="table table-sm mb-0">
                         <thead>
-                            <tr><th>Produto</th><th>Qtd.</th><th>Preço unitário</th><th>Subtotal</th></tr>
+                            <tr><th>Produto</th><th>Qtd.</th><th>Preço unitário</th><th>Preço com desconto</th><th>Subtotal</th></tr>
                         </thead>
                         <tbody>
                             ${itens.length ? itens.map(function(item) {
+                                const precoBaseUnitario = (Number(item.precoUnitario) || 0) + (Number(item.valorDesconto) || 0);
                                 const subtotal = (Number(item.quantidade) || 0) * (Number(item.precoUnitario) || 0);
                                 return `
                                     <tr>
                                         <td>${escaparHtml(String(item.nomeProduto || ""))}</td>
                                         <td>${Number(item.quantidade) || 0}</td>
+                                        <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
                                         <td>R$ ${formatarPreco(item.precoUnitario)}</td>
                                         <td>R$ ${formatarPreco(subtotal)}</td>
                                     </tr>
