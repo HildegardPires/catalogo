@@ -3715,7 +3715,8 @@ function editarVenda(id) {
             precoUnitario: precoUnitario,
             valorDesconto: valorDesconto,
             precoBaseUnitario: precoCadastro,
-            precoCadastro: precoCadastro
+            precoCadastro: precoCadastro,
+            precoUnitarioComDesc: precoUnitario - valorDesconto
         };
     });
 
@@ -3837,7 +3838,8 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         precoUnitario: precoUnitario,
         valorDesconto: 0,
         precoBaseUnitario: precoCadastro,
-        precoCadastro: precoCadastro
+        precoCadastro: precoCadastro,
+        precoUnitarioComDesc: precoUnitario
     });
 
     produtoVenda.value = "";
@@ -3902,7 +3904,8 @@ formVenda.addEventListener("submit", async function(event) {
                 : Number.isFinite(item.precoBaseUnitario)
                     ? item.precoBaseUnitario
                     : item.precoUnitario + (Number(item.valorDesconto) || 0),
-            valorDesconto: item.valorDesconto || 0
+            valorDesconto: item.valorDesconto || 0,
+            precoUnitarioComDesc: item.precoUnitario - (Number(item.valorDesconto) || 0)
         };
     });
 
