@@ -3978,6 +3978,17 @@ formRelatorioProdutosVendidos.addEventListener("submit", function(event) {
 });
 
 
+function carregarPeriodoAtualNoRelatorio() {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const ultimoDia = new Date(ano, hoje.getMonth() + 1, 0).getDate();
+
+    dataInicialProdutosVendidos.value = `${ano}-${mes}-01`;
+    dataFinalProdutosVendidos.value = `${ano}-${mes}-${String(ultimoDia).padStart(2, "0")}`;
+}
+
+
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
     botao.addEventListener("click", function() {
         const tela = this.dataset.tela;
@@ -3996,6 +4007,7 @@ document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
 document.getElementById("dataVenda").value = new Date().toISOString().slice(0, 10);
 dataCompra.value = new Date().toISOString().slice(0, 10);
 dataEntrega.value = new Date().toISOString().slice(0, 10);
+carregarPeriodoAtualNoRelatorio();
 idClienteCadastro.value = obterProximoIdRegistro(clientes);
 
 carregarProdutos();
