@@ -1778,7 +1778,6 @@
       "idCliente": 19,
       "nomeCliente": "Valderi (Macarrão)",
       "telefoneCliente": "63984555597",
-      "localizacao": "",
       "data": "16/09/2026",
       "descontoReal": 140,
       "totalVenda": 140,
@@ -1790,7 +1789,7 @@
       ],
       "produtos": [
         {
-          "id": 49,
+          "id": 51,
           "ordem": 1,
           "codProduto": 50,
           "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
@@ -1801,14 +1800,14 @@
           "valorDesconto": 70
         },
         {
-          "id": 50,
+          "id": 52,
           "ordem": 2,
           "codProduto": 21,
           "nomeProduto": "Parafusadeira Furadeira 1 Bateria 12v",
           "idCompra": 35,
           "quantidade": 1,
-          "precoUnitario": 70,
-          "precoCadastro": 140,
+          "precoUnitario": 140,
+          "precoCadastro": 95,
           "valorDesconto": 70
         }
       ]
