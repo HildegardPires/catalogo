@@ -3412,26 +3412,28 @@ function atualizarItensDaVenda() {
 }
 
 
-function obterTotalItensDaVenda() {
-    return itensDaVenda.length;
+function obterQuantidadeTotalDaVenda() {
+    return itensDaVenda.reduce(function(total, item) {
+        return total + (Number(item.quantidade) || 0);
+    }, 0);
 }
 
 
 function aplicarDescontoRealDaVenda() {
     const descontoReal = Number(descontoRealVenda.value);
-    const totalItens = obterTotalItensDaVenda();
+    const quantidadeTotal = obterQuantidadeTotalDaVenda();
 
     if (!Number.isFinite(descontoReal) || descontoReal < 0) {
         mostrarMensagem(mensagemVenda, "Informe um desconto válido.", "danger");
         return;
     }
 
-    if (totalItens === 0) {
+    if (quantidadeTotal === 0) {
         mostrarMensagem(mensagemVenda, "Adicione pelo menos um item antes de aplicar o desconto.", "danger");
         return;
     }
 
-    const descontoPorItem = descontoReal / totalItens;
+    const descontoPorItem = descontoReal / quantidadeTotal;
 
     const possuiPrecoNegativo = itensDaVenda.some(function(item) {
         const precoBase = Number.isFinite(item.precoBaseUnitario)
