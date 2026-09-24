@@ -1808,7 +1808,8 @@
           "quantidade": 1,
           "precoUnitario": 140,
           "precoCadastro": 95,
-          "valorDesconto": 70
+          "valorDesconto": 70,
+          "precoUnitarioComDesc": 70.00
         }
       ]
     },
