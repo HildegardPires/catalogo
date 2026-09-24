@@ -3458,8 +3458,11 @@ function atualizarItensDaVenda() {
     itensDaVenda.forEach(function(item, indice) {
         const precoBaseUnitario = Number.isFinite(item.precoBaseUnitario)
             ? item.precoBaseUnitario
-            : item.precoUnitario + (Number(item.valorDesconto) || 0);
-        const subtotal = item.quantidade * item.precoUnitario;
+            : item.precoUnitario;
+        const precoUnitarioComDesc = Number.isFinite(item.precoUnitarioComDesc)
+            ? item.precoUnitarioComDesc
+            : item.precoUnitario - (Number(item.valorDesconto) || 0);
+        const subtotal = item.quantidade * precoUnitarioComDesc;
         total += subtotal;
 
         const linha = document.createElement("tr");
@@ -3467,7 +3470,7 @@ function atualizarItensDaVenda() {
             <td><span class="text-muted">ID: ${escaparHtml(String(item.codProduto))}</span> — ${escaparHtml(item.nomeProduto)}</td>
             <td>${item.quantidade}</td>
             <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
-            <td>R$ ${formatarPreco(item.precoUnitario)}</td>
+            <td>R$ ${formatarPreco(precoUnitarioComDesc)}</td>
             <td>R$ ${formatarPreco(subtotal)}</td>
             <td><button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover item">×</button></td>
         `;
@@ -3511,7 +3514,7 @@ function aplicarDescontoRealDaVenda() {
     const possuiPrecoNegativo = itensDaVenda.some(function(item) {
         const precoBase = Number.isFinite(item.precoBaseUnitario)
             ? item.precoBaseUnitario
-            : item.precoUnitario + (Number(item.valorDesconto) || 0);
+            : item.precoUnitario;
 
         return precoBase - descontoPorItem < 0;
     });
@@ -3524,11 +3527,11 @@ function aplicarDescontoRealDaVenda() {
     itensDaVenda.forEach(function(item) {
         const precoBase = Number.isFinite(item.precoBaseUnitario)
             ? item.precoBaseUnitario
-            : item.precoUnitario + (Number(item.valorDesconto) || 0);
+            : item.precoUnitario;
 
         item.precoBaseUnitario = precoBase;
         item.valorDesconto = descontoPorItem;
-        item.precoUnitario = precoBase - descontoPorItem;
+        item.precoUnitarioComDesc = precoBase - descontoPorItem;
     });
 
     atualizarItensDaVenda();
@@ -3538,7 +3541,7 @@ function aplicarDescontoRealDaVenda() {
 
 function obterTotalDaVenda() {
     return itensDaVenda.reduce(function(total, item) {
-        return total + item.quantidade * item.precoUnitario;
+        return total + item.quantidade * obterPrecoUnitarioComDesconto(item);
     }, 0);
 }
 
@@ -3628,14 +3631,15 @@ function atualizarTabelaVendas() {
                         </thead>
                         <tbody>
                             ${itens.length ? itens.map(function(item) {
-                                const precoBaseUnitario = (Number(item.precoUnitario) || 0) + (Number(item.valorDesconto) || 0);
-                                const subtotal = (Number(item.quantidade) || 0) * (Number(item.precoUnitario) || 0);
+                                const precoBaseUnitario = Number(item.precoUnitario) || 0;
+                                const precoUnitarioComDesc = obterPrecoUnitarioComDesconto(item);
+                                const subtotal = (Number(item.quantidade) || 0) * precoUnitarioComDesc;
                                 return `
                                     <tr>
                                         <td>${escaparHtml(String(item.nomeProduto || ""))}</td>
                                         <td>${Number(item.quantidade) || 0}</td>
                                         <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
-                                        <td>R$ ${formatarPreco(item.precoUnitario)}</td>
+                                        <td>R$ ${formatarPreco(precoUnitarioComDesc)}</td>
                                         <td>R$ ${formatarPreco(subtotal)}</td>
                                     </tr>
                                 `;
@@ -3699,6 +3703,8 @@ function editarVenda(id) {
     itensDaVenda = (Array.isArray(venda.produtos) ? venda.produtos : []).map(function(item) {
         const precoUnitario = Number(item.precoUnitario) || 0;
         const valorDesconto = Number(item.valorDesconto) || 0;
+        const precoUnitarioComDescInformado = Number(item.precoUnitarioComDesc);
+        const possuiPrecoUnitarioComDesc = Number.isFinite(precoUnitarioComDescInformado);
         const precoCadastroInformado = Number(item.precoCadastro);
         const compraDoItem = compras.find(compra => Number(compra.id) === Number(item.idCompra));
         const precoVendaDaCompra = compraDoItem ? Number(compraDoItem.precoVenda) : NaN;
@@ -3714,9 +3720,13 @@ function editarVenda(id) {
             quantidade: Number(item.quantidade) || 0,
             precoUnitario: precoUnitario,
             valorDesconto: valorDesconto,
-            precoBaseUnitario: precoCadastro,
+            precoBaseUnitario: possuiPrecoUnitarioComDesc
+                ? precoUnitario
+                : precoUnitario + valorDesconto,
             precoCadastro: precoCadastro,
-            precoUnitarioComDesc: precoUnitario - valorDesconto
+            precoUnitarioComDesc: possuiPrecoUnitarioComDesc
+                ? precoUnitarioComDescInformado
+                : precoUnitario
         };
     });
 
@@ -3837,7 +3847,7 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         quantidade: quantidade,
         precoUnitario: precoUnitario,
         valorDesconto: 0,
-        precoBaseUnitario: precoCadastro,
+        precoBaseUnitario: precoUnitario,
         precoCadastro: precoCadastro,
         precoUnitarioComDesc: precoUnitario
     });
@@ -3905,7 +3915,7 @@ formVenda.addEventListener("submit", async function(event) {
                     ? item.precoBaseUnitario
                     : item.precoUnitario + (Number(item.valorDesconto) || 0),
             valorDesconto: item.valorDesconto || 0,
-            precoUnitarioComDesc: item.precoUnitario - (Number(item.valorDesconto) || 0)
+            precoUnitarioComDesc: obterPrecoUnitarioComDesconto(item)
         };
     });
 
@@ -3971,6 +3981,15 @@ function obterCustoDoItemVendido(item) {
 }
 
 
+function obterPrecoUnitarioComDesconto(item) {
+    const precoUnitarioComDesc = Number(item.precoUnitarioComDesc);
+
+    return Number.isFinite(precoUnitarioComDesc)
+        ? precoUnitarioComDesc
+        : Number(item.precoUnitario) || 0;
+}
+
+
 function atualizarDashboard() {
     const hoje = new Date();
     const ano = hoje.getFullYear();
@@ -3988,7 +4007,7 @@ function atualizarDashboard() {
         quantidadeVendas += 1;
         (Array.isArray(venda.produtos) ? venda.produtos : []).forEach(function(item) {
             const quantidade = Number(item.quantidade) || 0;
-            totalVenda += converterPreco(item.precoUnitario) * quantidade;
+            totalVenda += obterPrecoUnitarioComDesconto(item) * quantidade;
             totalCusto += obterCustoDoItemVendido(item) * quantidade;
         });
     });
@@ -4042,7 +4061,7 @@ function atualizarRelatorioProdutosVendidos() {
         (Array.isArray(venda.produtos) ? venda.produtos : []).forEach(function(item) {
             const quantidade = Number(item.quantidade) || 0;
             const precoCusto = obterCustoDoItemVendido(item) * quantidade;
-            const precoVenda = converterPreco(item.precoUnitario) * quantidade;
+            const precoVenda = obterPrecoUnitarioComDesconto(item) * quantidade;
 
             itensVendidos.push({
                 nomeProduto: item.nomeProduto || "",
