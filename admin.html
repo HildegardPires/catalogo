@@ -882,10 +882,17 @@
                     <div class="card-body p-4">
                         <h3 class="mb-4"><span id="tituloCompra">📦 Nova compra</span></h3>
                         <form id="formCompra">
-                            <div class="mb-3">
-                                <label for="idCompra" class="form-label">ID</label>
-                                <input id="idCompra" type="number" class="form-control" min="1" readonly>
-                                <div class="form-text">O ID é preenchido automaticamente.</div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="idCompra" class="form-label">ID</label>
+                                    <input id="idCompra" type="number" class="form-control" min="1" readonly>
+                                    <div class="form-text">O ID é preenchido automaticamente.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dataCadastroCompra" class="form-label">Data cadastro</label>
+                                    <input id="dataCadastroCompra" type="date" class="form-control" disabled>
+                                    <div class="form-text">Preenchida automaticamente.</div>
+                                </div>
                             </div>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -1653,6 +1660,7 @@ const tabelaCompras = document.getElementById("tabelaCompras");
 const semCompras = document.getElementById("semCompras");
 const mensagemCompra = document.getElementById("mensagemCompra");
 const idCompra = document.getElementById("idCompra");
+const dataCadastroCompra = document.getElementById("dataCadastroCompra");
 const idVenda = document.getElementById("idVenda");
 const tituloCompra = document.getElementById("tituloCompra");
 const btnSalvarCompra = document.getElementById("btnSalvarCompra");
@@ -1879,6 +1887,7 @@ function atualizarTudo() {
     atualizarTabelaEstoque();
 
     idCompra.value = obterProximoIdRegistro(compras);
+    dataCadastroCompra.value = obterDataAtualInput();
     idVenda.value = obterProximoIdRegistro(vendas);
     idClienteCadastro.value = obterProximoIdRegistro(clientes);
 
@@ -3349,6 +3358,7 @@ function editarCompra(id) {
 
     compraEditando = Number(compra.id);
     idCompra.value = compra.id;
+    dataCadastroCompra.value = converterDataParaInput(compra.dataCadastro) || obterDataAtualInput();
     produtoCompra.value = compra.codProduto;
     dataCompra.value = converterDataParaInput(compra.datacompra);
     dataEntrega.value = converterDataParaInput(compra.dataentrega);
@@ -3373,6 +3383,7 @@ function cancelarEdicaoCompra() {
     compraEditando = null;
     formCompra.reset();
     idCompra.value = obterProximoIdRegistro(compras);
+    dataCadastroCompra.value = obterDataAtualInput();
     dataCompra.value = new Date().toISOString().slice(0, 10);
     dataEntrega.value = new Date().toISOString().slice(0, 10);
     quantidadeCompra.value = 1;
@@ -3486,6 +3497,7 @@ formCompra.addEventListener("submit", async function(event) {
 
     const compraAtualizada = {
         id: Number(idCompra.value),
+        dataCadastro: converterDataParaJson(dataCadastroCompra.value || obterDataAtualInput()),
         codProduto: produto.id,
         nomeProduto: produto.nome,
         datacompra: converterDataParaJson(dataCompra.value),
