@@ -911,15 +911,26 @@
                                 <label for="linkCompra" class="form-label">Link da compra</label>
                                 <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
                             </div>
-                            <div class="mb-3">
-                                <label for="fornecedorCompra" class="form-label">Fornecedor</label>
-                                <select id="fornecedorCompra" class="form-select" required>
-                                    <option value="">Selecione um fornecedor</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="numPedidoCompra" class="form-label">Número do pedido</label>
-                                <input id="numPedidoCompra" type="text" class="form-control" required>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-4">
+                                    <label for="fornecedorCompra" class="form-label">Fornecedor</label>
+                                    <select id="fornecedorCompra" class="form-select" required>
+                                        <option value="">Selecione um fornecedor</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="numPedidoCompra" class="form-label">Número do pedido</label>
+                                    <input id="numPedidoCompra" type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="formaPagamentoCompra" class="form-label">Forma de pagamento</label>
+                                    <select id="formaPagamentoCompra" class="form-select">
+                                        <option value="">Selecione uma forma de pagamento</option>
+                                        <option value="PIX">PIX</option>
+                                        <option value="Cartão de crédito">Cartão de crédito</option>
+                                        <option value="Saldo Mercado Pago">Saldo Mercado Pago</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
@@ -1634,6 +1645,7 @@ const dataEntrega = document.getElementById("dataEntrega");
 const linkCompra = document.getElementById("linkCompra");
 const fornecedorCompra = document.getElementById("fornecedorCompra");
 const numPedidoCompra = document.getElementById("numPedidoCompra");
+const formaPagamentoCompra = document.getElementById("formaPagamentoCompra");
 const quantidadeCompra = document.getElementById("quantidadeCompra");
 const precoCustoCompra = document.getElementById("precoCustoCompra");
 const precoVendaCompra = document.getElementById("precoVendaCompra");
@@ -3344,6 +3356,8 @@ function editarCompra(id) {
     linkCompra.value = compra.linkcompra || "";
     fornecedorCompra.value = compra.fornecedor || "";
     numPedidoCompra.value = compra.numPedido || "";
+    const pagamentoCompra = Array.isArray(compra.formaPagamento) ? compra.formaPagamento[0] : null;
+    formaPagamentoCompra.value = pagamentoCompra ? pagamentoCompra.tipo : "";
     precoCustoCompra.value = Number(compra.precoCusto).toFixed(2);
     precoVendaCompra.value = Number(compra.precoVenda).toFixed(2);
     tituloCompra.textContent = `✏️ Editar compra #${compra.id}`;
@@ -3479,6 +3493,9 @@ formCompra.addEventListener("submit", async function(event) {
         linkcompra: linkCompra.value.trim(),
         fornecedor: fornecedor.id,
         numPedido: numPedido,
+        formaPagamento: formaPagamentoCompra.value
+            ? [{ tipo: formaPagamentoCompra.value, valor: Number((precoCusto * quantidade).toFixed(2)) }]
+            : [],
         quantidade: quantidade,
         precoCusto: precoCusto,
         precoVenda: precoVenda,
