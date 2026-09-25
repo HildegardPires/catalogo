@@ -887,12 +887,6 @@
                                 <input id="idCompra" type="number" class="form-control" min="1" readonly>
                                 <div class="form-text">O ID é preenchido automaticamente.</div>
                             </div>
-                            <div class="mb-3">
-                                <label for="produtoCompra" class="form-label">Produto</label>
-                                <select id="produtoCompra" class="form-select" required>
-                                    <option value="">Selecione um produto</option>
-                                </select>
-                            </div>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="dataCompra" class="form-label">Data da compra</label>
@@ -902,14 +896,6 @@
                                     <label for="dataEntrega" class="form-label">Data Entrega</label>
                                     <input id="dataEntrega" type="date" class="form-control">
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="quantidadeCompra" class="form-label">Quantidade</label>
-                                    <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
-                                </div>
-                            </div>
-                            <div class="mb-3 mt-3">
-                                <label for="linkCompra" class="form-label">Link da compra</label>
-                                <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
                             </div>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-4">
@@ -932,15 +918,29 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="mb-3 mt-3">
+                                <label for="linkCompra" class="form-label">Link da compra</label>
+                                <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
+                            </div>
                             <div class="row g-3 mb-4">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label for="produtoCompra" class="form-label">Produto</label>
+                                    <select id="produtoCompra" class="form-select" required>
+                                        <option value="">Selecione um produto</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="quantidadeCompra" class="form-label">Quantidade</label>
+                                    <input id="quantidadeCompra" type="number" class="form-control" min="1" step="1" value="1" required>
+                                </div>
+                                <div class="col-md-3">
                                     <label for="precoCustoCompra" class="form-label">Preço de custo</label>
                                     <div class="input-group">
                                         <span class="input-group-text">R$</span>
                                         <input id="precoCustoCompra" type="number" class="form-control" min="0" step="0.01" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <label for="precoVendaCompra" class="form-label">Preço de venda</label>
                                     <div class="input-group">
                                         <span class="input-group-text">R$</span>
