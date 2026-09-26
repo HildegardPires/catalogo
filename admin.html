@@ -916,18 +916,34 @@
                                     <input id="numPedidoCompra" type="text" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="formaPagamentoCompra" class="form-label">Forma de pagamento</label>
-                                    <select id="formaPagamentoCompra" class="form-select">
-                                        <option value="">Selecione uma forma de pagamento</option>
-                                        <option value="PIX">PIX</option>
-                                        <option value="Cartão de crédito">Cartão de crédito</option>
-                                        <option value="Saldo Mercado Pago">Saldo Mercado Pago</option>
-                                    </select>
+                                    <label for="linkCompra" class="form-label">Link da compra</label>
+                                    <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
                                 </div>
                             </div>
                             <div class="mb-3 mt-3">
-                                <label for="linkCompra" class="form-label">Link da compra</label>
-                                <input id="linkCompra" type="url" class="form-control" placeholder="https://...">
+                                <h5 class="border-bottom pb-2">Formas de pagamento</h5>
+                                <div class="row g-3 align-items-end">
+                                    <div class="col-md-6">
+                                        <label for="formaPagamentoCompra" class="form-label">Forma de pagamento</label>
+                                        <select id="formaPagamentoCompra" class="form-select">
+                                            <option value="">Selecione uma forma de pagamento</option>
+                                            <option value="PIX">PIX</option>
+                                            <option value="Cartão de crédito">Cartão de crédito</option>
+                                            <option value="Saldo Mercado Pago">Saldo Mercado Pago</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="valorPagamentoCompra" class="form-label">Valor pago</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">R$</span>
+                                            <input id="valorPagamentoCompra" type="number" class="form-control" min="0" step="0.01">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnAdicionarPagamentoCompra" type="button" class="btn btn-outline-success w-100">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div id="listaPagamentosCompra" class="list-group mt-3"></div>
                             </div>
                             <div class="row g-3 mb-4">
                                 <div class="col-md-4">
@@ -1523,6 +1539,8 @@ let itemVendaEditando = null;
 let compras = [];
 
 let compraEditando = null;
+
+let pagamentosDaCompra = [];
 
 let fornecedores = [];
 
@@ -3366,8 +3384,10 @@ function editarCompra(id) {
     linkCompra.value = compra.linkcompra || "";
     fornecedorCompra.value = compra.fornecedor || "";
     numPedidoCompra.value = compra.numPedido || "";
-    const pagamentoCompra = Array.isArray(compra.formaPagamento) ? compra.formaPagamento[0] : null;
-    formaPagamentoCompra.value = pagamentoCompra ? pagamentoCompra.tipo : "";
+    pagamentosDaCompra = Array.isArray(compra.formaPagamento)
+        ? compra.formaPagamento.map(pagamento => ({ tipo: pagamento.tipo, valor: pagamento.valor }))
+        : [];
+    atualizarListaPagamentosCompra();
     precoCustoCompra.value = Number(compra.precoCusto).toFixed(2);
     precoVendaCompra.value = Number(compra.precoVenda).toFixed(2);
     tituloCompra.textContent = `✏️ Editar compra #${compra.id}`;
@@ -3387,12 +3407,50 @@ function cancelarEdicaoCompra() {
     dataCompra.value = new Date().toISOString().slice(0, 10);
     dataEntrega.value = new Date().toISOString().slice(0, 10);
     quantidadeCompra.value = 1;
+    pagamentosDaCompra = [];
+    atualizarListaPagamentosCompra();
     tituloCompra.textContent = "📦 Nova compra";
     btnSalvarCompra.textContent = "💾 Salvar compra";
     btnSalvarCompra.classList.replace("btn-primary", "btn-success");
     btnCancelarCompra.classList.add("d-none");
     mensagemCompra.classList.add("d-none");
 }
+
+
+function atualizarListaPagamentosCompra() {
+    const lista = document.getElementById("listaPagamentosCompra");
+    lista.innerHTML = "";
+
+    pagamentosDaCompra.forEach(function(pagamento, indice) {
+        const item = document.createElement("div");
+        item.className = "list-group-item d-flex justify-content-between align-items-center";
+        item.innerHTML = `
+            <span>${escaparHtml(pagamento.tipo)} — R$ ${formatarPreco(pagamento.valor)}</span>
+            <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remover pagamento">Remover</button>
+        `;
+        item.querySelector("button").addEventListener("click", function() {
+            pagamentosDaCompra.splice(indice, 1);
+            atualizarListaPagamentosCompra();
+        });
+        lista.appendChild(item);
+    });
+}
+
+
+document.getElementById("btnAdicionarPagamentoCompra").addEventListener("click", function() {
+    const tipo = formaPagamentoCompra.value;
+    const valor = Number(document.getElementById("valorPagamentoCompra").value);
+
+    if (!tipo || !Number.isFinite(valor) || valor < 0) {
+        mostrarMensagem(mensagemCompra, "Informe uma forma de pagamento e um valor válido.", "danger");
+        return;
+    }
+
+    pagamentosDaCompra.push({ tipo: tipo, valor: valor });
+    atualizarListaPagamentosCompra();
+    formaPagamentoCompra.value = "";
+    document.getElementById("valorPagamentoCompra").value = "";
+});
 
 
 function obterResumoEstoque() {
@@ -3505,9 +3563,7 @@ formCompra.addEventListener("submit", async function(event) {
         linkcompra: linkCompra.value.trim(),
         fornecedor: fornecedor.id,
         numPedido: numPedido,
-        formaPagamento: formaPagamentoCompra.value
-            ? [{ tipo: formaPagamentoCompra.value, valor: Number((precoCusto * quantidade).toFixed(2)) }]
-            : [],
+        formaPagamento: pagamentosDaCompra,
         quantidade: quantidade,
         precoCusto: precoCusto,
         precoVenda: precoVenda,
