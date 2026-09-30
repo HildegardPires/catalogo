@@ -615,13 +615,14 @@ function criarCardProduto(
 
                         :
 
-                        `<button
-                            class="btn btn-secondary w-100"
-                            disabled>
+                        `<a
+                            href="https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(`Olá! Gostaria de ser avisado quando o produto ${produto.nome} estiver disponível novamente.`)}"
+                            target="_blank"
+                            class="btn btn-success w-100">
 
-                            Produto indisponível
+                            💬 Avise-me quando chegar
 
-                        </button>`
+                        </a>`
 
                     }
 
