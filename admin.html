@@ -1236,11 +1236,11 @@
                                     <div class="table-responsive mt-4">
                                         <table class="table align-middle">
                                             <thead class="table-success">
-                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço</th><th>Preço com desconto</th><th>Subtotal</th><th></th></tr>
+                                                <tr><th>Produto</th><th>Qtd.</th><th>Preço de custo</th><th>Preço</th><th>Preço com desconto</th><th>Subtotal</th><th></th></tr>
                                             </thead>
                                             <tbody id="itensVenda"></tbody>
                                             <tfoot class="table-light">
-                                                <tr><th colspan="4" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
+                                                <tr><th colspan="2" class="text-end">Total de custo</th><th id="totalCustoPedido">R$ 0,00</th><th colspan="2" class="text-end">Total da venda</th><th id="totalPedido">R$ 0,00</th><th></th></tr>
                                             </tfoot>
                                         </table>
                                     </div>
@@ -1649,6 +1649,7 @@ const quantidadeVenda = document.getElementById("quantidadeVenda");
 const precoVenda = document.getElementById("precoVenda");
 const descontoRealVenda = document.getElementById("descontoRealVenda");
 const itensVenda = document.getElementById("itensVenda");
+const totalCustoPedido = document.getElementById("totalCustoPedido");
 const totalPedido = document.getElementById("totalPedido");
 const modalEditarItemVenda = document.getElementById("modalEditarItemVenda");
 const formEditarItemVenda = document.getElementById("formEditarItemVenda");
@@ -3655,6 +3656,7 @@ function atualizarItensDaVenda() {
 
     itensVenda.innerHTML = "";
     let total = 0;
+    let totalCusto = 0;
 
     itensDaVenda.forEach(function(item, indice) {
         const precoBaseUnitario = Number.isFinite(item.precoBaseUnitario)
@@ -3663,13 +3665,17 @@ function atualizarItensDaVenda() {
         const precoUnitarioComDesc = Number.isFinite(item.precoUnitarioComDesc)
             ? item.precoUnitarioComDesc
             : item.precoUnitario - (Number(item.valorDesconto) || 0);
+        const precoCustoUnitario = obterCustoDoItemVendido(item);
+        const custoTotalItem = item.quantidade * precoCustoUnitario;
         const subtotal = item.quantidade * precoUnitarioComDesc;
+        totalCusto += custoTotalItem;
         total += subtotal;
 
         const linha = document.createElement("tr");
         linha.innerHTML = `
             <td><span class="text-muted">ID: ${escaparHtml(String(item.codProduto))}</span> — ${escaparHtml(item.nomeProduto)}</td>
             <td>${item.quantidade}</td>
+            <td>R$ ${formatarPreco(precoCustoUnitario)}</td>
             <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
             <td>R$ ${formatarPreco(precoUnitarioComDesc)}</td>
             <td>R$ ${formatarPreco(subtotal)}</td>
@@ -3693,6 +3699,7 @@ function atualizarItensDaVenda() {
         itensVenda.appendChild(linha);
     });
 
+    totalCustoPedido.textContent = `R$ ${formatarPreco(totalCusto)}`;
     totalPedido.textContent = `R$ ${formatarPreco(total)}`;
 
 }
@@ -3837,24 +3844,35 @@ function atualizarTabelaVendas() {
                 <div class="table-responsive mt-2">
                     <table class="table table-sm mb-0">
                         <thead>
-                            <tr><th>Produto</th><th>Qtd.</th><th>Preço unitário</th><th>Preço com desconto</th><th>Subtotal</th></tr>
+                            <tr><th>Produto</th><th>Qtd.</th><th>Preço de custo</th><th>Preço unitário</th><th>Preço com desconto</th><th>Subtotal</th></tr>
                         </thead>
                         <tbody>
                             ${itens.length ? itens.map(function(item) {
+                                const quantidade = Number(item.quantidade) || 0;
+                                const precoCustoUnitario = obterCustoDoItemVendido(item);
                                 const precoBaseUnitario = Number(item.precoUnitario) || 0;
                                 const precoUnitarioComDesc = obterPrecoUnitarioComDesconto(item);
-                                const subtotal = (Number(item.quantidade) || 0) * precoUnitarioComDesc;
+                                const subtotal = quantidade * precoUnitarioComDesc;
                                 return `
                                     <tr>
                                         <td>${escaparHtml(String(item.nomeProduto || ""))}</td>
-                                        <td>${Number(item.quantidade) || 0}</td>
+                                        <td>${quantidade}</td>
+                                        <td>R$ ${formatarPreco(precoCustoUnitario)}</td>
                                         <td>R$ ${formatarPreco(precoBaseUnitario)}</td>
                                         <td>R$ ${formatarPreco(precoUnitarioComDesc)}</td>
                                         <td>R$ ${formatarPreco(subtotal)}</td>
                                     </tr>
                                 `;
-                            }).join("") : '<tr><td colspan="4" class="text-muted">Nenhum item registrado.</td></tr>'}
+                            }).join("") : '<tr><td colspan="6" class="text-muted">Nenhum item registrado.</td></tr>'}
                         </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <th colspan="2" class="text-end">Total de custo</th>
+                                <th>R$ ${formatarPreco(itens.reduce((total, item) => total + obterCustoDoItemVendido(item) * (Number(item.quantidade) || 0), 0))}</th>
+                                <th colspan="2" class="text-end">Total da venda</th>
+                                <th>R$ ${formatarPreco(itens.reduce((total, item) => total + obterPrecoUnitarioComDesconto(item) * (Number(item.quantidade) || 0), 0))}</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </td>
@@ -3928,6 +3946,7 @@ function editarVenda(id) {
             nomeProduto: item.nomeProduto,
             idCompra: item.idCompra ?? null,
             quantidade: Number(item.quantidade) || 0,
+            precoCustoUnitario: obterCustoDoItemVendido(item),
             precoUnitario: precoUnitario,
             valorDesconto: valorDesconto,
             precoBaseUnitario: possuiPrecoUnitarioComDesc
@@ -4038,9 +4057,10 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
     const compra = compras.find(item => Number(item.id) === Number(compraVenda.value));
     const quantidade = parseInt(quantidadeVenda.value);
     const precoUnitario = parseFloat(precoVenda.value);
+    const precoCustoUnitario = compra ? Number(compra.precoCusto) : NaN;
     const precoCadastro = compra ? Number(compra.precoVenda) : NaN;
 
-    if (!produto || !compra || obterCodigoProdutoCompra(compra) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0 || !Number.isFinite(precoCadastro) || precoCadastro < 0) {
+    if (!produto || !compra || obterCodigoProdutoCompra(compra) !== Number(produto.id) || !Number.isInteger(quantidade) || quantidade < 1 || !Number.isFinite(precoUnitario) || precoUnitario < 0 || !Number.isFinite(precoCustoUnitario) || precoCustoUnitario < 0 || !Number.isFinite(precoCadastro) || precoCadastro < 0) {
         mostrarMensagem(mensagemVenda, "Informe produto, compra, quantidade e preço válidos.", "danger");
         return;
     }
@@ -4055,6 +4075,7 @@ document.getElementById("btnAdicionarItem").addEventListener("click", function()
         nomeProduto: produto.nome,
         idCompra: compra.id,
         quantidade: quantidade,
+        precoCustoUnitario: precoCustoUnitario,
         precoUnitario: precoUnitario,
         valorDesconto: 0,
         precoBaseUnitario: precoUnitario,
@@ -4118,6 +4139,7 @@ formVenda.addEventListener("submit", async function(event) {
             nomeProduto: item.nomeProduto,
             idCompra: item.idCompra,
             quantidade: item.quantidade,
+            precoCustoUnitario: obterCustoDoItemVendido(item),
             precoUnitario: item.precoUnitario,
             precoCadastro: Number.isFinite(item.precoCadastro)
                 ? item.precoCadastro
@@ -4175,6 +4197,12 @@ btnCancelarVenda.addEventListener("click", cancelarEdicaoVenda);
 
 
 function obterCustoDoItemVendido(item) {
+    const custoUnitarioSalvo = Number(item.precoCustoUnitario);
+
+    if (Number.isFinite(custoUnitarioSalvo)) {
+        return custoUnitarioSalvo;
+    }
+
     const compra = compras.find(compraAtual =>
         Number(compraAtual.id) === Number(item.idCompra)
     );
