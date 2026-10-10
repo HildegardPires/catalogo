@@ -98,7 +98,7 @@
       "imagem": "img/produtos/liquidificador_britania.jpg",
       "categoria": 1,
       "codBarras": "",
-      "estoque": 2
+      "estoque": 1
     },
     {
       "id": 5,
@@ -126,15 +126,16 @@
     },
     {
       "id": 7,
+      "dataCadastro": "06/10/2026",
       "nome": "Panela Elétrica De Arroz 6 Xícaras Agratto",
       "descricao": "",
       "complemento": "",
-      "custo": 90.02,
-      "preco": 149.99,
-      "imagem": "img/produtos/panela_arroz_agratto.webp",
-      "categoria": 1,
       "codBarras": "",
-      "estoque": 0
+      "custo": 90.02,
+      "preco": 150,
+      "imagem": "img/produtos/panela_arroz_agratto.webp",
+      "categoria": "1",
+      "estoque": 2
     },
     {
       "id": 8,
@@ -206,7 +207,7 @@
       "imagem": "img/produtos/chave_tigre_bomvink.webp",
       "categoria": 2,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 14,
@@ -230,7 +231,7 @@
       "imagem": "img/produtos/jogo_soquete_40_pecas_sparta.webp",
       "categoria": "2",
       "codBarras": "",
-      "estoque": 0
+      "estoque": 1
     },
     {
       "id": 16,
@@ -282,14 +283,15 @@
     },
     {
       "id": 20,
+      "dataCadastro": "24/09/2026",
       "nome": "Furadeira De Impacto Mondial",
       "descricao": "",
       "complemento": "",
-      "custo": 118,
-      "preco": 149.99,
-      "imagem": "img/produtos/furadeira_mondial.webp",
-      "categoria": 2,
       "codBarras": "",
+      "custo": 118,
+      "preco": 150,
+      "imagem": "img/produtos/furadeira_mondial.webp",
+      "categoria": "2",
       "estoque": 1
     },
     {
@@ -302,7 +304,7 @@
       "imagem": "img/produtos/parafusadeira_black_tools_12v.webp",
       "categoria": 2,
       "codBarras": "",
-      "estoque": 2
+      "estoque": 1
     },
     {
       "id": 22,
@@ -330,14 +332,15 @@
     },
     {
       "id": 24,
+      "dataCadastro": "30/09/2026",
       "nome": "Projetor HY300 Android 11 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
       "descricao": "",
       "complemento": "",
-      "custo": 0,
-      "preco": 204.99,
-      "imagem": "img/produtos/projetor_hy300.jpg",
-      "categoria": 3,
       "codBarras": "",
+      "custo": 0,
+      "preco": 220,
+      "imagem": "img/produtos/projetor_hy300.jpg",
+      "categoria": "3",
       "estoque": 2
     },
     {
@@ -398,7 +401,7 @@
       "imagem": "img/produtos/caixa_som_charce.webp",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 30,
@@ -422,7 +425,7 @@
       "imagem": "img/produtos/caixa_som_first_option_ds14.webp",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 2
+      "estoque": 1
     },
     {
       "id": 32,
@@ -456,7 +459,7 @@
       "imagem": "img/produtos/smartwatch_8_ultra.jpg",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 35,
@@ -660,7 +663,7 @@
       "imagem": "img/produtos/projetor_hy320.png",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 52,
@@ -672,7 +675,7 @@
       "imagem": "img/produtos/caixa_som_heruz_hz711a.webp",
       "categoria": 3,
       "codBarras": "",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 53,
@@ -907,7 +910,7 @@
       "preco": 68,
       "imagem": "img/produtos/brinquedo_piscina_100lt_varitudo.png",
       "categoria": "4",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 73,
@@ -919,7 +922,7 @@
       "preco": 150,
       "imagem": "img/produtos/liquidificador_philco.jpg",
       "categoria": "1",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 74,
@@ -931,7 +934,7 @@
       "preco": 185,
       "imagem": "img/produtos/multimidia_mp5.webp",
       "categoria": "5",
-      "estoque": 1
+      "estoque": 0
     },
     {
       "id": 75,
@@ -955,6 +958,383 @@
       "preco": 210,
       "imagem": "img/produtos/fritadeira_multi.webp",
       "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 77,
+      "dataCadastro": "24/09/2026",
+      "nome": "Panela de Pressão Elétrica Eletrozon 1100W de 6 Litros com Revestimento Antiaderente e Desligamento Automático",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 215,
+      "preco": 285,
+      "imagem": "img/produtos/panela_pressao_eletrica_eletrozon.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 78,
+      "dataCadastro": "24/09/2026",
+      "nome": "Churrasqueira Elétrica Elgin",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 87.9,
+      "preco": 140,
+      "imagem": "img/produtos/churrasqueira_eletrica_elgin.avif",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 79,
+      "dataCadastro": "25/09/2026",
+      "nome": "Extensão Elétrica De 10 M Com 3 Tomadas Bivolt Preta",
+      "descricao": "",
+      "complemento": "Parosflux",
+      "codBarras": "",
+      "custo": 18.75,
+      "preco": 40,
+      "imagem": "img/produtos/extensao_eletrica_10mt.webp",
+      "categoria": "6",
+      "estoque": 3
+    },
+    {
+      "id": 80,
+      "dataCadastro": "25/09/2026",
+      "nome": "Extensão Elétrica 5 Metros Preto 3 Tomada Preta",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 15.95,
+      "preco": 35,
+      "imagem": "img/produtos/extensao_eletrica_5mt.webp",
+      "categoria": "6",
+      "estoque": 1
+    },
+    {
+      "id": 81,
+      "dataCadastro": "25/09/2026",
+      "nome": "Compressor De Ar Automotivo 12v Vonder",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 114.79,
+      "preco": 160,
+      "imagem": "img/produtos/compressor_de_ar_vonder.avif",
+      "categoria": "5",
+      "estoque": 1
+    },
+    {
+      "id": 82,
+      "dataCadastro": "26/09/2026",
+      "nome": "Ventilador de Coluna Turbo 6 Pás 50cm Ventisol",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 168.64,
+      "preco": 218,
+      "imagem": "img/produtos/ventilador_ventisol_50cm.webp",
+      "categoria": "1",
+      "estoque": 0
+    },
+    {
+      "id": 83,
+      "dataCadastro": "26/09/2026",
+      "nome": "Sanduicheira Brunch Time 2 em 1 Grill Antiaderente Elgin",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 52.47,
+      "preco": 80,
+      "imagem": "img/produtos/sanduicheira_elgin.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 84,
+      "dataCadastro": "26/09/2026",
+      "nome": "Parafusadeira Furadeira 2 Baterias 48v Com Maleta Lithium Drill",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 75,
+      "preco": 130,
+      "imagem": "img/produtos/parafusadeira_lithium_drill.webp",
+      "categoria": "2",
+      "estoque": 0
+    },
+    {
+      "id": 85,
+      "dataCadastro": "27/09/2026",
+      "nome": "Tenda Gazebo Branco Polietileno 3x3 Metros Desmontável Camping Praia Pesca",
+      "descricao": "",
+      "complemento": "Usd",
+      "codBarras": "",
+      "custo": 137.6,
+      "preco": 187,
+      "imagem": "img/produtos/tenda_3x3_usd.webp",
+      "categoria": "6",
+      "estoque": 1
+    },
+    {
+      "id": 86,
+      "dataCadastro": "29/09/2026",
+      "nome": "Refletor Super Led 400w Ip67 Holofote Bivolt Prova D'água",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 22,
+      "preco": 62,
+      "imagem": "img/produtos/refletor_400w.webp",
+      "categoria": "6",
+      "estoque": 2
+    },
+    {
+      "id": 87,
+      "dataCadastro": "29/09/2026",
+      "nome": "Ventilador de Coluna Turbo 6 Pás 40cm Ventisol",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 167.33,
+      "preco": 218,
+      "imagem": "img/produtos/ventilador_ventisol_40cm.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 88,
+      "dataCadastro": "29/09/2026",
+      "nome": "Cadeira de Descanso e Balanço Funtime 18kgs Coruja Maxi Baby",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 158.35,
+      "preco": 208,
+      "imagem": "img/produtos/cadeira_balanco.webp",
+      "categoria": "6",
+      "estoque": 1
+    },
+    {
+      "id": 89,
+      "dataCadastro": "29/09/2026",
+      "nome": "Macaco Hidraulico Jacare 2 Toneladas Jacarezinho Com Maleta Elevi",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 143.38,
+      "preco": 195,
+      "imagem": "img/produtos/macaco_hidraulico_elevi.webp",
+      "categoria": "2",
+      "estoque": 1
+    },
+    {
+      "id": 90,
+      "dataCadastro": "29/09/2026",
+      "nome": "Panela De Arroz Elétrica 10 Xicaras Inox Antiaderente Unitermi",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 133.83,
+      "preco": 175,
+      "imagem": "img/produtos/panela_arroz_unitermi_10x.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 91,
+      "dataCadastro": "29/09/2026",
+      "nome": "Panela De Arroz Elétrica 5 Xicaras Preta Itatiaia",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 112,
+      "preco": 162,
+      "imagem": "img/produtos/panela_arroz_eletrica_itatiaia.jpg",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 92,
+      "dataCadastro": "30/09/2026",
+      "nome": "Parafusadeira e Furadeira com Impacto 1 Bateria 12v Led de Iluminação e Maleta WAP",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 111.2,
+      "preco": 163,
+      "imagem": "img/produtos/parafusadeira_wap_12v.webp",
+      "categoria": "2",
+      "estoque": 1
+    },
+    {
+      "id": 93,
+      "dataCadastro": "30/09/2026",
+      "nome": "Ventilador Turbo Fresh 40cm 6 Pás 3 Velocidades Mallory",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 118.24,
+      "preco": 178,
+      "imagem": "img/produtos/ventilador_malory_40cm.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 94,
+      "dataCadastro": "30/09/2026",
+      "nome": "Camera Segurança A28 Yoosee Prova D'agua Lente Dupla",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 88.7,
+      "preco": 140,
+      "imagem": "img/produtos/camera_seguranca_a28_branca.png",
+      "categoria": "3",
+      "estoque": 2
+    },
+    {
+      "id": 95,
+      "dataCadastro": "30/09/2026",
+      "nome": "Mini Projetor HY320 Android 14 Wi-Fi Bluetooth HDMI USB Preto",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 184.41,
+      "preco": 250,
+      "imagem": "img/produtos/projetor_hy320_vlx.webp",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 96,
+      "dataCadastro": "30/09/2026",
+      "nome": "kit 2 Câmeras De Segurança Com Resolução De 2mp Visão Noturna Prova d'água",
+      "descricao": "",
+      "complemento": "App Yoosee",
+      "codBarras": "",
+      "custo": 128.82,
+      "preco": 178,
+      "imagem": "img/produtos/camera_seguranca_kit.png",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 97,
+      "dataCadastro": "30/09/2026",
+      "nome": "Espremedor Premium Preto Mondial",
+      "descricao": "",
+      "complemento": "E-02",
+      "codBarras": "",
+      "custo": 61.53,
+      "preco": 92,
+      "imagem": "img/produtos/espremedor_mondial.jpg",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 98,
+      "dataCadastro": "01/10/2026",
+      "nome": "Ventilador de Mesa 30cm Super Power Mondial",
+      "descricao": "",
+      "complemento": "VSP-30-B",
+      "codBarras": "",
+      "custo": 106.03,
+      "preco": 150,
+      "imagem": "img/produtos/ventilador_mondial_30cm.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 99,
+      "dataCadastro": "05/10/2026",
+      "nome": "Ventilador De Coluna Mallory Éolo 40cm 6 Pás",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 189.9,
+      "preco": 240,
+      "imagem": "img/produtos/ventilador_mallory_eolo_40cm.webp",
+      "categoria": "1",
+      "estoque": 1
+    },
+    {
+      "id": 100,
+      "dataCadastro": "05/10/2026",
+      "nome": "Mini compressor de ar portátil a bateria",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 57.95,
+      "preco": 90,
+      "imagem": "img/produtos/mini_compressor.jpg",
+      "categoria": "5",
+      "estoque": 1
+    },
+    {
+      "id": 101,
+      "dataCadastro": "06/10/2026",
+      "nome": "Patinete Infantil 3 Rodas Led Dobrável Maxi Toys",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 42.9,
+      "preco": 93,
+      "imagem": "img/produtos/patinete_azul_maxitoys.webp",
+      "categoria": "4",
+      "estoque": 1
+    },
+    {
+      "id": 102,
+      "dataCadastro": "06/10/2026",
+      "nome": "Panela Pressao Rochedo Clipso 4,5 Litros Fechamento Externo Seguro Preta",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 180.82,
+      "preco": 232,
+      "imagem": "img/produtos/panela_rochedo_clipso.webp",
+      "categoria": "6",
+      "estoque": 1
+    },
+    {
+      "id": 103,
+      "dataCadastro": "06/10/2026",
+      "nome": "Kit 2 Câmera De Segurança Externa Wi-fi Hd App Icsee Visão Noturna Alarme Luminoso",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 138.59,
+      "preco": 188,
+      "imagem": "img/produtos/kit_2_cameras.webp",
+      "categoria": "3",
+      "estoque": 1
+    },
+    {
+      "id": 104,
+      "dataCadastro": "06/10/2026",
+      "nome": "Parafusadeira e Furadeira Com 2 Baterias 48v e Maleta Maximus",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 84.79,
+      "preco": 140,
+      "imagem": "img/produtos/parafusadeira_maximus_48v.png",
+      "categoria": "2",
+      "estoque": 1
+    },
+    {
+      "id": 105,
+      "dataCadastro": "09/10/2026",
+      "nome": "Patinete Infantil Musical 3 Rodas Kiddy Rosa",
+      "descricao": "",
+      "complemento": "",
+      "codBarras": "",
+      "custo": 86.1,
+      "preco": 137,
+      "imagem": "img/produtos/patinete_rosa_maxitoys.webp",
+      "categoria": "4",
       "estoque": 1
     }
   ],
@@ -1189,6 +1569,139 @@
       "telefone": "63991105439",
       "localizacao": "Jardim Laila",
       "dataCadastro": "23/09/2026"
+    },
+    {
+      "id": 34,
+      "nome": "Aelso",
+      "telefone": "63984120306",
+      "localizacao": "Santa Fé 2",
+      "dataCadastro": "25/09/2026"
+    },
+    {
+      "id": 35,
+      "nome": "Maikom Douglas",
+      "telefone": "63991297866",
+      "localizacao": "103 Norte",
+      "dataCadastro": "25/09/2026"
+    },
+    {
+      "id": 36,
+      "nome": "Jonatas",
+      "telefone": "63981186833",
+      "localizacao": "",
+      "dataCadastro": "26/09/2026"
+    },
+    {
+      "id": 37,
+      "nome": "Iago Silva",
+      "telefone": "6384049904",
+      "localizacao": "1503 Sul",
+      "dataCadastro": "26/09/2026"
+    },
+    {
+      "id": 38,
+      "nome": "Nurielle Morais",
+      "telefone": "6399691394",
+      "localizacao": "",
+      "dataCadastro": "26/09/2026"
+    },
+    {
+      "id": 39,
+      "nome": "Jerre Lucio",
+      "telefone": "63991342476",
+      "localizacao": "1035 Sul",
+      "dataCadastro": "26/09/2026"
+    },
+    {
+      "id": 40,
+      "nome": "Pedro",
+      "telefone": "6393029988",
+      "localizacao": "Porto Nacional",
+      "dataCadastro": "27/09/2026"
+    },
+    {
+      "id": 41,
+      "nome": "Consumidor",
+      "telefone": "63984172482",
+      "localizacao": "Aureny III",
+      "dataCadastro": "29/09/2026"
+    },
+    {
+      "id": 42,
+      "nome": "Jaime",
+      "telefone": "63999463311",
+      "localizacao": "Centro",
+      "dataCadastro": "30/09/2026"
+    },
+    {
+      "id": 43,
+      "nome": "Rogerio",
+      "telefone": "63984529991",
+      "localizacao": "",
+      "dataCadastro": "30/09/2026"
+    },
+    {
+      "id": 44,
+      "nome": "Arlle Sandro",
+      "telefone": "63992568578",
+      "localizacao": "Aureny III",
+      "dataCadastro": "30/09/2026"
+    },
+    {
+      "id": 45,
+      "nome": "Lucas",
+      "telefone": "63985127001",
+      "localizacao": "",
+      "dataCadastro": "05/10/2026"
+    },
+    {
+      "id": 46,
+      "nome": "Leandro",
+      "telefone": "63981121529",
+      "localizacao": "Taquari",
+      "dataCadastro": "05/10/2026"
+    },
+    {
+      "id": 47,
+      "nome": "Luciano Dias",
+      "telefone": "63991044703",
+      "localizacao": "Bertaville",
+      "dataCadastro": "06/10/2026"
+    },
+    {
+      "id": 48,
+      "nome": "Regirom",
+      "telefone": "63991076911",
+      "localizacao": "Taquari",
+      "dataCadastro": "06/10/2026"
+    },
+    {
+      "id": 49,
+      "nome": "Luciano",
+      "telefone": "63999575987",
+      "localizacao": "Aureny III",
+      "dataCadastro": "07/10/2026"
+    },
+    {
+      "id": 50,
+      "nome": "Val",
+      "telefone": "63992669874",
+      "localizacao": "Sol Nascente",
+      "dataCadastro": "07/10/2026"
+    },
+    {
+      "id": 51,
+      "nome": "Valdemir",
+      "telefone": "63992479705",
+      "localizacao": "Lago Sul",
+      "dataCadastro": "07/10/2026"
+    },
+    {
+      "id": 52,
+      "nome": "Eduardo",
+      "telefone": "86988572401",
+      "localizacao": "Santa Fé",
+      "dataCadastro": "07/10/2026"
     }
   ],
   "vendas": [
@@ -1789,27 +2302,28 @@
       ],
       "produtos": [
         {
-          "id": 51,
+          "id": 57,
           "ordem": 1,
           "codProduto": 50,
           "nomeProduto": "Parafusadeira Furadeira Sem Fio 48 2 Baterias 340w C/brocas IndoBest",
           "idCompra": 9,
           "quantidade": 1,
-          "precoUnitario": 70,
+          "precoUnitario": 45,
           "precoCadastro": 140,
-          "valorDesconto": 70
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 45
         },
         {
-          "id": 52,
+          "id": 58,
           "ordem": 2,
           "codProduto": 21,
           "nomeProduto": "Parafusadeira Furadeira 1 Bateria 12v",
           "idCompra": 35,
           "quantidade": 1,
-          "precoUnitario": 140,
+          "precoUnitario": 95,
           "precoCadastro": 95,
-          "valorDesconto": 70,
-          "precoUnitarioComDesc": 70.00
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 95
         }
       ]
     },
@@ -2209,6 +2723,563 @@
           "precoUnitario": 145,
           "precoCadastro": 145,
           "valorDesconto": 0
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "idCliente": 34,
+      "nomeCliente": "Aelso",
+      "telefoneCliente": "63984120306",
+      "data": "24/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 140,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 140
+        }
+      ],
+      "produtos": [
+        {
+          "id": 59,
+          "ordem": 1,
+          "codProduto": 73,
+          "nomeProduto": "Liquidificador Philco 12 Velocidades 3 Litros 1200w",
+          "idCompra": 80,
+          "quantidade": 1,
+          "precoUnitario": 140,
+          "precoCadastro": 150,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 140
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "idCliente": 35,
+      "nomeCliente": "Maikom Douglas",
+      "telefoneCliente": "63991297866",
+      "data": "24/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 150,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 150
+        }
+      ],
+      "produtos": [
+        {
+          "id": 60,
+          "ordem": 1,
+          "codProduto": 6,
+          "nomeProduto": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+          "idCompra": 78,
+          "quantidade": 1,
+          "precoUnitario": 150,
+          "precoCadastro": 175,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 150
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "idCliente": 36,
+      "nomeCliente": "Jonatas",
+      "telefoneCliente": "63981186833",
+      "data": "25/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 180,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 180
+        }
+      ],
+      "produtos": [
+        {
+          "id": 61,
+          "ordem": 1,
+          "codProduto": 74,
+          "nomeProduto": "Multimidia 7 Polegadas Mp5 Espelhamento Bluetooth Usb Sd com Controle Remoto",
+          "idCompra": 81,
+          "quantidade": 1,
+          "precoUnitario": 180,
+          "precoCadastro": 185,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 180
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "idCliente": 37,
+      "nomeCliente": "Iago Silva",
+      "telefoneCliente": "6384049904",
+      "data": "26/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 165,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 165
+        }
+      ],
+      "produtos": [
+        {
+          "id": 62,
+          "ordem": 1,
+          "codProduto": 52,
+          "nomeProduto": "Caixa De Som Bluetooth Grande Alto Falante 8 1000w Pmpo Saida 10w Heruz 711A",
+          "idCompra": 62,
+          "quantidade": 1,
+          "precoUnitario": 165,
+          "precoCadastro": 165,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 165
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "idCliente": 38,
+      "nomeCliente": "Nurielle Morais",
+      "telefoneCliente": "6399691394",
+      "data": "27/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 55,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 55
+        }
+      ],
+      "produtos": [
+        {
+          "id": 63,
+          "ordem": 1,
+          "codProduto": 29,
+          "nomeProduto": "Caixa de Som Bluetooth 20w Vermelha",
+          "idCompra": 39,
+          "quantidade": 1,
+          "precoUnitario": 55,
+          "precoCadastro": 55,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 55
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "idCliente": 39,
+      "nomeCliente": "Jerre Lucio",
+      "telefoneCliente": "63991342476",
+      "data": "27/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 218,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 218
+        }
+      ],
+      "produtos": [
+        {
+          "id": 64,
+          "ordem": 1,
+          "codProduto": 82,
+          "nomeProduto": "Ventilador de Coluna Turbo 6 Pás 50cm Ventisol",
+          "idCompra": 92,
+          "quantidade": 1,
+          "precoUnitario": 218,
+          "precoCadastro": 218,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 218
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "idCliente": 40,
+      "nomeCliente": "Pedro",
+      "telefoneCliente": "6393029988",
+      "data": "27/09/2026",
+      "descontoReal": 25,
+      "totalVenda": 300,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 300
+        }
+      ],
+      "produtos": [
+        {
+          "id": 65,
+          "ordem": 1,
+          "codProduto": 51,
+          "nomeProduto": "Projetor HY320 Android 12 4KUltra HD HDMI Wifi Bluetooth Alto Falante",
+          "idCompra": 76,
+          "quantidade": 1,
+          "precoUnitario": 260,
+          "precoCadastro": 260,
+          "valorDesconto": 12.5,
+          "precoUnitarioComDesc": 247.5
+        },
+        {
+          "id": 66,
+          "ordem": 2,
+          "codProduto": 34,
+          "nomeProduto": "Relógio Smartwatch 1 Pulseira Tela 2.2 polegadas",
+          "idCompra": 41,
+          "quantidade": 1,
+          "precoUnitario": 65,
+          "precoCadastro": 65,
+          "valorDesconto": 12.5,
+          "precoUnitarioComDesc": 52.5
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "idCliente": 41,
+      "nomeCliente": "Consumidor",
+      "telefoneCliente": "63984172482",
+      "data": "29/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 130,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 130
+        }
+      ],
+      "produtos": [
+        {
+          "id": 67,
+          "ordem": 1,
+          "codProduto": 84,
+          "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Com Maleta Lithium Drill",
+          "idCompra": 94,
+          "quantidade": 1,
+          "precoUnitario": 130,
+          "precoCadastro": 130,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 130
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "idCliente": 42,
+      "nomeCliente": "Jaime",
+      "telefoneCliente": "63999463311",
+      "data": "30/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 198,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 198
+        }
+      ],
+      "produtos": [
+        {
+          "id": 68,
+          "ordem": 1,
+          "codProduto": 84,
+          "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Com Maleta Lithium Drill",
+          "idCompra": 94,
+          "quantidade": 1,
+          "precoCustoUnitario": 75,
+          "precoUnitario": 130,
+          "precoCadastro": 130,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 130
+        },
+        {
+          "id": 69,
+          "ordem": 2,
+          "codProduto": 72,
+          "nomeProduto": "Piscina Inflável Redonda 100 Litros 3 Aneis Fundo Do Mar VariTudo",
+          "idCompra": 79,
+          "quantidade": 1,
+          "precoCustoUnitario": 38.51,
+          "precoUnitario": 68,
+          "precoCadastro": 68,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 68
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "idCliente": 43,
+      "nomeCliente": "Rogerio",
+      "telefoneCliente": "63984529991",
+      "data": "30/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 178,
+      "formaPagamento": [
+        {
+          "tipo": "Cartão Débito",
+          "valor": 178
+        }
+      ],
+      "produtos": [
+        {
+          "id": 70,
+          "ordem": 1,
+          "codProduto": 96,
+          "nomeProduto": "kit 2 Câmeras De Segurança Com Resolução De 2mp Visão Noturna Prova d'água",
+          "idCompra": 107,
+          "quantidade": 1,
+          "precoCustoUnitario": 128.82,
+          "precoUnitario": 178,
+          "precoCadastro": 178,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 178
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "idCliente": 44,
+      "nomeCliente": "Arlle Sandro",
+      "telefoneCliente": "63992568578",
+      "data": "30/09/2026",
+      "descontoReal": 0,
+      "totalVenda": 135,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 135
+        }
+      ],
+      "produtos": [
+        {
+          "id": 72,
+          "ordem": 1,
+          "codProduto": 4,
+          "nomeProduto": "Liquidificador Britânia 2,7 Litros 4 Velocidades Turbo",
+          "idCompra": 56,
+          "quantidade": 1,
+          "precoCustoUnitario": 97.07,
+          "precoUnitario": 135,
+          "precoCadastro": 135,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 135
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "idCliente": 45,
+      "nomeCliente": "Lucas",
+      "telefoneCliente": "63985127001",
+      "data": "05/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 245,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 245
+        }
+      ],
+      "produtos": [
+        {
+          "id": 73,
+          "ordem": 1,
+          "codProduto": 95,
+          "nomeProduto": "Mini Projetor HY320 Android 14 Wi-Fi Bluetooth HDMI USB Preto",
+          "idCompra": 110,
+          "quantidade": 1,
+          "precoCustoUnitario": 195,
+          "precoUnitario": 245,
+          "precoCadastro": 250,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 245
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "idCliente": 46,
+      "nomeCliente": "Leandro",
+      "telefoneCliente": "63981121529",
+      "data": "05/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 150,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 150
+        }
+      ],
+      "produtos": [
+        {
+          "id": 74,
+          "ordem": 1,
+          "codProduto": 31,
+          "nomeProduto": "Caixa de Som Bluetooth com Controle Remoto/Microfone/RádioFM/USB/SD First Option DS14",
+          "idCompra": 82,
+          "quantidade": 1,
+          "precoCustoUnitario": 85.01,
+          "precoUnitario": 165,
+          "precoCadastro": 165,
+          "valorDesconto": 15,
+          "precoUnitarioComDesc": 150
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "idCliente": 47,
+      "nomeCliente": "Luciano Dias",
+      "telefoneCliente": "63991044703",
+      "data": "06/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 38,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 38
+        }
+      ],
+      "produtos": [
+        {
+          "id": 75,
+          "ordem": 1,
+          "codProduto": 13,
+          "nomeProduto": "Chave Tigre de Boca Multifuncional 360 Graus",
+          "idCompra": 27,
+          "quantidade": 1,
+          "precoCustoUnitario": 24.7,
+          "precoUnitario": 38,
+          "precoCadastro": 38,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 38
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "idCliente": 48,
+      "nomeCliente": "Regirom",
+      "telefoneCliente": "63991076911",
+      "data": "06/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 130,
+      "formaPagamento": [
+        {
+          "tipo": "Dinheiro",
+          "valor": 130
+        }
+      ],
+      "produtos": [
+        {
+          "id": 76,
+          "ordem": 1,
+          "codProduto": 104,
+          "nomeProduto": "Parafusadeira e Furadeira Com 2 Baterias 48v e Maleta Maximus",
+          "idCompra": 118,
+          "quantidade": 1,
+          "precoCustoUnitario": 84.79,
+          "precoUnitario": 130,
+          "precoCadastro": 130,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 130
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "idCliente": 49,
+      "nomeCliente": "Luciano",
+      "telefoneCliente": "63999575987",
+      "data": "07/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 163,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 163
+        }
+      ],
+      "produtos": [
+        {
+          "id": 77,
+          "ordem": 1,
+          "codProduto": 92,
+          "nomeProduto": "Parafusadeira e Furadeira com Impacto 1 Bateria 12v Led de Iluminação e Maleta WAP",
+          "idCompra": 103,
+          "quantidade": 1,
+          "precoCustoUnitario": 111.2,
+          "precoUnitario": 163,
+          "precoCadastro": 163,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 163
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "idCliente": 50,
+      "nomeCliente": "Val",
+      "telefoneCliente": "63992669874",
+      "data": "07/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 40,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 40
+        }
+      ],
+      "produtos": [
+        {
+          "id": 78,
+          "ordem": 1,
+          "codProduto": 79,
+          "nomeProduto": "Extensão Elétrica De 10 M Com 3 Tomadas Bivolt Preta",
+          "idCompra": 86,
+          "quantidade": 1,
+          "precoCustoUnitario": 18.75,
+          "precoUnitario": 40,
+          "precoCadastro": 40,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 40
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "idCliente": 51,
+      "nomeCliente": "Valdemir",
+      "telefoneCliente": "63992479705",
+      "data": "07/10/2026",
+      "descontoReal": 0,
+      "totalVenda": 260,
+      "formaPagamento": [
+        {
+          "tipo": "Pix",
+          "valor": 260
+        }
+      ],
+      "produtos": [
+        {
+          "id": 79,
+          "ordem": 1,
+          "codProduto": 95,
+          "nomeProduto": "Mini Projetor HY320 Android 14 Wi-Fi Bluetooth HDMI USB Preto",
+          "idCompra": 110,
+          "quantidade": 1,
+          "precoCustoUnitario": 195,
+          "precoUnitario": 260,
+          "precoCadastro": 250,
+          "valorDesconto": 0,
+          "precoUnitarioComDesc": 260
         }
       ]
     }
@@ -3283,6 +4354,646 @@
       "precoCusto": 159.9,
       "precoVenda": 210,
       "lucro": 50.1
+    },
+    {
+      "id": 86,
+      "codProduto": 79,
+      "nomeProduto": "Extensão Elétrica De 10 M Com 3 Tomadas Bivolt Preta",
+      "datacompra": "20/09/2026",
+      "dataentrega": "25/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018556378026/status?packId=2000018556378026&orderId=2000018556378026",
+      "fornecedor": 1,
+      "numPedido": "2000018556378026",
+      "quantidade": 3,
+      "precoCusto": 18.75,
+      "precoVenda": 40,
+      "lucro": 21.25
+    },
+    {
+      "id": 87,
+      "codProduto": 80,
+      "nomeProduto": "Extensão Elétrica 5 Metros Preto 3 Tomada Preta",
+      "datacompra": "20/09/2026",
+      "dataentrega": "25/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018556407858/status?packId=2000018556407858&orderId=2000018556407858",
+      "fornecedor": 1,
+      "numPedido": "2000018556407858",
+      "quantidade": 1,
+      "precoCusto": 15.95,
+      "precoVenda": 35,
+      "lucro": 19.05
+    },
+    {
+      "id": 88,
+      "codProduto": 77,
+      "nomeProduto": "Panela de Pressão Elétrica Eletrozon 1100W de 6 Litros com Revestimento Antiaderente e Desligamento Automático",
+      "datacompra": "20/09/2026",
+      "dataentrega": "25/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018552691312/status?packId=2000018552691312&orderId=2000018552691312",
+      "fornecedor": 1,
+      "numPedido": "2000018552691312",
+      "quantidade": 1,
+      "precoCusto": 215,
+      "precoVenda": 285,
+      "lucro": 70
+    },
+    {
+      "id": 89,
+      "codProduto": 78,
+      "nomeProduto": "Churrasqueira Elétrica Elgin",
+      "datacompra": "22/09/2026",
+      "dataentrega": "25/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-7362331-5873830&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "701-7362331-5873830",
+      "quantidade": 1,
+      "precoCusto": 89.7,
+      "precoVenda": 140,
+      "lucro": 50.3
+    },
+    {
+      "id": 90,
+      "codProduto": 81,
+      "nomeProduto": "Compressor De Ar Automotivo 12v Vonder",
+      "datacompra": "22/09/2026",
+      "dataentrega": "25/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-5027536-3550621&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "702-5027536-3550621",
+      "quantidade": 1,
+      "precoCusto": 114.79,
+      "precoVenda": 160,
+      "lucro": 45.21
+    },
+    {
+      "id": 91,
+      "codProduto": 15,
+      "nomeProduto": "Jogo Kit Ferramentas Chave Catraca Soquete 3,8' 40 Peças Sparta",
+      "datacompra": "16/09/2026",
+      "dataentrega": "24/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018486190718/status?packId=2000018486190718&orderId=2000018486190718",
+      "fornecedor": 1,
+      "numPedido": "2000018486190718",
+      "quantidade": 1,
+      "precoCusto": 35.94,
+      "precoVenda": 60,
+      "lucro": 24.06
+    },
+    {
+      "id": 92,
+      "dataCadastro": "26/09/2026",
+      "codProduto": 82,
+      "nomeProduto": "Ventilador de Coluna Turbo 6 Pás 50cm Ventisol",
+      "datacompra": "23/09/2026",
+      "dataentrega": "26/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018603370110/status?packId=2000018603370110&orderId=2000018603370110",
+      "fornecedor": 1,
+      "numPedido": "2000018603370110",
+      "formaPagamento": [
+        {
+          "tipo": "Saldo Mercado Pago",
+          "valor": 68.64
+        },
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 100
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 168.64,
+      "precoVenda": 218,
+      "lucro": 49.36
+    },
+    {
+      "id": 93,
+      "dataCadastro": "26/09/2026",
+      "codProduto": 83,
+      "nomeProduto": "Sanduicheira Brunch Time 2 em 1 Grill Antiaderente Elgin",
+      "datacompra": "17/09/2026",
+      "dataentrega": "26/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018504161596/status?packId=2000018504161596&orderId=2000018504161596",
+      "fornecedor": 1,
+      "numPedido": "2000018504161596",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 52.47
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 52.47,
+      "precoVenda": 80,
+      "lucro": 27.53
+    },
+    {
+      "id": 94,
+      "dataCadastro": "26/09/2026",
+      "codProduto": 84,
+      "nomeProduto": "Parafusadeira Furadeira 2 Baterias 48v Com Maleta Lithium Drill",
+      "datacompra": "22/09/2026",
+      "dataentrega": "26/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000015160562565/status?packId=2000015160562567&orderId=2000018594254052",
+      "fornecedor": 1,
+      "numPedido": "2000015160562565",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 148.51
+        }
+      ],
+      "quantidade": 2,
+      "precoCusto": 75,
+      "precoVenda": 130,
+      "lucro": 55
+    },
+    {
+      "id": 95,
+      "dataCadastro": "27/09/2026",
+      "codProduto": 85,
+      "nomeProduto": "Tenda Gazebo Branco Polietileno 3x3 Metros Desmontável Camping Praia Pesca",
+      "datacompra": "20/09/2026",
+      "dataentrega": "27/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018552652790/status?packId=2000018552652790&orderId=2000018552652790",
+      "fornecedor": 1,
+      "numPedido": "2000018552652790",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 137.6
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 137.6,
+      "precoVenda": 187,
+      "lucro": 49.4
+    },
+    {
+      "id": 96,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 86,
+      "nomeProduto": "Refletor Super Led 400w Ip67 Holofote Bivolt Prova D'água",
+      "datacompra": "24/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018628158434/status?packId=2000018628158434&orderId=2000018628158434",
+      "fornecedor": 1,
+      "numPedido": "2000018628158434",
+      "formaPagamento": [],
+      "quantidade": 2,
+      "precoCusto": 22,
+      "precoVenda": 62,
+      "lucro": 40
+    },
+    {
+      "id": 97,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 87,
+      "nomeProduto": "Ventilador de Coluna Turbo 6 Pás 40cm Ventisol",
+      "datacompra": "26/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018660353760/status?packId=2000018660353760&orderId=2000018660353760",
+      "fornecedor": 1,
+      "numPedido": "2000018660353760",
+      "formaPagamento": [],
+      "quantidade": 1,
+      "precoCusto": 167.33,
+      "precoVenda": 218,
+      "lucro": 50.67
+    },
+    {
+      "id": 98,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 88,
+      "nomeProduto": "Cadeira de Descanso e Balanço Funtime 18kgs Coruja Maxi Baby",
+      "datacompra": "24/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018634673774/status?packId=2000018634673774&orderId=2000018634673774",
+      "fornecedor": 1,
+      "numPedido": "2000018634673774",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 158.35
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 158.35,
+      "precoVenda": 208,
+      "lucro": 49.65
+    },
+    {
+      "id": 99,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 89,
+      "nomeProduto": "Macaco Hidraulico Jacare 2 Toneladas Jacarezinho Com Maleta Elevi",
+      "datacompra": "24/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018628259442/status?packId=2000018628259442&orderId=2000018628259442",
+      "fornecedor": 1,
+      "numPedido": "2000018628259442",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 143.38
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 143.38,
+      "precoVenda": 195,
+      "lucro": 51.62
+    },
+    {
+      "id": 100,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 90,
+      "nomeProduto": "Panela De Arroz Elétrica 10 Xicaras Inox Antiaderente Unitermi",
+      "datacompra": "25/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018638848898/status?packId=2000018638848898&orderId=2000018638848898",
+      "fornecedor": 1,
+      "numPedido": "2000018638848898",
+      "formaPagamento": [],
+      "quantidade": 1,
+      "precoCusto": 133.83,
+      "precoVenda": 175,
+      "lucro": 41.17
+    },
+    {
+      "id": 101,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 6,
+      "nomeProduto": "Panela De Arroz Elétrica 10 Xícaras Inox Elgin",
+      "datacompra": "18/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-9354669-8380250&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "702-9354669-8380250",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 125
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 125,
+      "precoVenda": 175,
+      "lucro": 50
+    },
+    {
+      "id": 102,
+      "dataCadastro": "29/09/2026",
+      "codProduto": 91,
+      "nomeProduto": "Panela De Arroz Elétrica 5 Xicaras Preta Itatiaia",
+      "datacompra": "22/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-9611282-5280258&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "702-9611282-5280258",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 112
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 112,
+      "precoVenda": 162,
+      "lucro": 50
+    },
+    {
+      "id": 103,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 92,
+      "nomeProduto": "Parafusadeira e Furadeira com Impacto 1 Bateria 12v Led de Iluminação e Maleta WAP",
+      "datacompra": "24/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018618224466/status?packId=2000018618224466&orderId=2000018618224466",
+      "fornecedor": 1,
+      "numPedido": "2000018618224466",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 111.2
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 111.2,
+      "precoVenda": 163,
+      "lucro": 51.8
+    },
+    {
+      "id": 104,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 93,
+      "nomeProduto": "Ventilador Turbo Fresh 40cm 6 Pás 3 Velocidades Mallory",
+      "datacompra": "13/09/2026",
+      "dataentrega": "30/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018438629532/status?packId=2000018438629532&orderId=2000018438629532",
+      "fornecedor": 1,
+      "numPedido": "2000018438629532",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 118.24
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 118.24,
+      "precoVenda": 178,
+      "lucro": 59.76
+    },
+    {
+      "id": 105,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 94,
+      "nomeProduto": "Camera Segurança A28 Yoosee Prova D'agua Lente Dupla",
+      "datacompra": "23/09/2026",
+      "dataentrega": "27/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018612227860/status?packId=2000018612227860&orderId=2000018612227860",
+      "fornecedor": 1,
+      "numPedido": "2000018612227860",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 88.7
+        }
+      ],
+      "quantidade": 2,
+      "precoCusto": 88.7,
+      "precoVenda": 140,
+      "lucro": 51.3
+    },
+    {
+      "id": 106,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 95,
+      "nomeProduto": "Mini Projetor HY320 Android 14 Wi-Fi Bluetooth HDMI USB Preto",
+      "datacompra": "25/09/2026",
+      "dataentrega": "29/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018637006900/status?packId=2000018637006900&orderId=2000018637006900",
+      "fornecedor": 1,
+      "numPedido": "2000018637006900",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 184.41
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 184.41,
+      "precoVenda": 250,
+      "lucro": 65.59
+    },
+    {
+      "id": 107,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 96,
+      "nomeProduto": "kit 2 Câmeras De Segurança Com Resolução De 2mp Visão Noturna Prova d'água",
+      "datacompra": "26/09/2026",
+      "dataentrega": "30/09/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000015224407333/status?packId=2000015224407335&orderId=2000018661421042",
+      "fornecedor": 1,
+      "numPedido": "2000015224407333",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 128.82
+        }
+      ],
+      "quantidade": 2,
+      "precoCusto": 128.82,
+      "precoVenda": 178,
+      "lucro": 49.18
+    },
+    {
+      "id": 108,
+      "dataCadastro": "30/09/2026",
+      "codProduto": 97,
+      "nomeProduto": "Espremedor Premium Preto Mondial",
+      "datacompra": "25/09/2026",
+      "dataentrega": "30/09/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=702-7606816-0058621&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "702-7606816-0058621",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 61.53
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 61.53,
+      "precoVenda": 92,
+      "lucro": 30.47
+    },
+    {
+      "id": 109,
+      "dataCadastro": "01/10/2026",
+      "codProduto": 98,
+      "nomeProduto": "Ventilador de Mesa 30cm Super Power Mondial",
+      "datacompra": "27/10/2026",
+      "dataentrega": "01/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018667034068/status?packId=2000018667034068&orderId=2000018667034068",
+      "fornecedor": 1,
+      "numPedido": "2000018667034068",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 106.03
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 106.03,
+      "precoVenda": 145,
+      "lucro": 38.97
+    },
+    {
+      "id": 110,
+      "dataCadastro": "01/10/2026",
+      "codProduto": 95,
+      "nomeProduto": "Mini Projetor HY320 Android 14 Wi-Fi Bluetooth HDMI USB Preto",
+      "datacompra": "27/09/2026",
+      "dataentrega": "01/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018667866862/status?packId=2000018667866862&orderId=2000018667866862",
+      "fornecedor": 1,
+      "numPedido": "2000018667866862",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 195
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 195,
+      "precoVenda": 250,
+      "lucro": 55
+    },
+    {
+      "id": 111,
+      "dataCadastro": "05/10/2026",
+      "codProduto": 99,
+      "nomeProduto": "Ventilador De Coluna Mallory Éolo 40cm 6 Pás",
+      "datacompra": "26/09/2026",
+      "dataentrega": "05/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018660562374/status?packId=2000018660562374&orderId=2000018660562374",
+      "fornecedor": 1,
+      "numPedido": "2000018660562374",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 189.9
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 189.9,
+      "precoVenda": 240,
+      "lucro": 50.1
+    },
+    {
+      "id": 112,
+      "dataCadastro": "05/10/2026",
+      "codProduto": 100,
+      "nomeProduto": "Mini compressor de ar portátil a bateria",
+      "datacompra": "22/09/2026",
+      "dataentrega": "02/10/2026",
+      "linkcompra": "https://www.amazon.com.br/your-orders/order-details?orderID=701-4228485-8972220&ref=ppx_yo2ov_dt_b_fed_order_details",
+      "fornecedor": 2,
+      "numPedido": "701-4228485-8972220",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 57.95
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 57.95,
+      "precoVenda": 90,
+      "lucro": 32.05
+    },
+    {
+      "id": 113,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 7,
+      "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+      "datacompra": "27/09/2026",
+      "dataentrega": "05/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018663845230/status?packId=2000018663845230&orderId=2000018663845230",
+      "fornecedor": 1,
+      "numPedido": "2000018663845230",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 89.79
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 89.79,
+      "precoVenda": 150,
+      "lucro": 60.21
+    },
+    {
+      "id": 114,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 7,
+      "nomeProduto": "Panela Elétrica De Arroz 6 Xícaras Agratto",
+      "datacompra": "27/09/2026",
+      "dataentrega": "05/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018663849818/status?packId=2000018663849818&orderId=2000018663849818",
+      "fornecedor": 1,
+      "numPedido": "2000018663849818",
+      "formaPagamento": [
+        {
+          "tipo": "PIX",
+          "valor": 89.79
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 89.79,
+      "precoVenda": 150,
+      "lucro": 60.21
+    },
+    {
+      "id": 115,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 101,
+      "nomeProduto": "Patinete Infantil 3 Rodas Led Dobrável Maxi Toys",
+      "datacompra": "02/10/2026",
+      "dataentrega": "06/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000015311132743/status?packId=2000015311132745&orderId=2000018752295798",
+      "fornecedor": 1,
+      "numPedido": "2000015311132743",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 42.9
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 42.9,
+      "precoVenda": 93,
+      "lucro": 50.1
+    },
+    {
+      "id": 116,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 102,
+      "nomeProduto": "Panela Pressao Rochedo Clipso 4,5 Litros Fechamento Externo Seguro Preta",
+      "datacompra": "24/09/2026",
+      "dataentrega": "06/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018628671814/status?packId=2000018628671814&orderId=2000018628671814",
+      "fornecedor": 1,
+      "numPedido": "2000018628671814",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 180.82
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 180.82,
+      "precoVenda": 232,
+      "lucro": 51.18
+    },
+    {
+      "id": 117,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 103,
+      "nomeProduto": "Kit 2 Câmera De Segurança Externa Wi-fi Hd App Icsee Visão Noturna Alarme Luminoso",
+      "datacompra": "30/09/2026",
+      "dataentrega": "05/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018726196214/status?packId=2000018726196214&orderId=2000018726196214",
+      "fornecedor": 1,
+      "numPedido": "2000018726196214",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 138.59
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 138.59,
+      "precoVenda": 188,
+      "lucro": 49.41
+    },
+    {
+      "id": 118,
+      "dataCadastro": "06/10/2026",
+      "codProduto": 104,
+      "nomeProduto": "Parafusadeira e Furadeira Com 2 Baterias 48v e Maleta Maximus",
+      "datacompra": "01/10/2026",
+      "dataentrega": "05/10/2026",
+      "linkcompra": "https://myaccount.mercadolivre.com.br/my_purchases/2000018742137250/status?packId=2000018742137250&orderId=2000018742137250",
+      "fornecedor": 1,
+      "numPedido": "2000018742137250",
+      "formaPagamento": [
+        {
+          "tipo": "Cartão de crédito",
+          "valor": 84.79
+        }
+      ],
+      "quantidade": 1,
+      "precoCusto": 84.79,
+      "precoVenda": 130,
+      "lucro": 45.21
     }
   ]
 }
