@@ -835,7 +835,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefoneClienteCadastro" class="form-label">Telefone</label>
-                                <input id="telefoneClienteCadastro" type="tel" class="form-control" required>
+                                <input id="telefoneClienteCadastro" type="tel" class="form-control" inputmode="tel" autocomplete="tel" aria-describedby="ajudaTelefoneCliente" required>
+                                <div id="ajudaTelefoneCliente" class="form-text">Informe exatamente 11 números, incluindo o DDD.</div>
                             </div>
                             <div class="mb-4">
                                 <label for="localizacaoClienteCadastro" class="form-label">Localização</label>
@@ -1039,7 +1040,8 @@
 
                             <div class="mb-3">
                                 <label for="telefoneClienteCadastro" class="form-label">Telefone</label>
-                                <input id="telefoneClienteCadastro" type="tel" class="form-control" required>
+                                <input id="telefoneClienteCadastro" type="tel" class="form-control" inputmode="tel" autocomplete="tel" aria-describedby="ajudaTelefoneCliente" required>
+                                <div id="ajudaTelefoneCliente" class="form-text">Informe exatamente 11 números, incluindo o DDD.</div>
                             </div>
 
                             <div class="mb-4">
@@ -3233,6 +3235,21 @@ function excluirCliente(id) {
 formCliente.addEventListener("submit", async function(event) {
     event.preventDefault();
 
+    const quantidadeDigitosTelefone =
+        telefoneClienteCadastro.value.replace(/\D/g, "").length;
+    const telefoneFormatadoCorretamente =
+        /^[\d\s()+.-]+$/.test(telefoneClienteCadastro.value.trim());
+
+    telefoneClienteCadastro.setCustomValidity(
+        quantidadeDigitosTelefone === 11 && telefoneFormatadoCorretamente
+            ? ""
+            : "Informe exatamente 11 números no telefone, incluindo o DDD."
+    );
+
+    if (!telefoneClienteCadastro.reportValidity()) {
+        return;
+    }
+
     const clienteExistente = clientes.find(
         item => Number(item.id) === Number(clienteEditando)
     );
@@ -3259,6 +3276,10 @@ formCliente.addEventListener("submit", async function(event) {
     atualizarTabelaClientes();
     cancelarEdicaoCliente();
     await salvarNoBanco(mensagemCliente);
+});
+
+telefoneClienteCadastro.addEventListener("input", function() {
+    telefoneClienteCadastro.setCustomValidity("");
 });
 
 
@@ -3864,6 +3885,17 @@ function atualizarTabelaVendas() {
         const quantidadeItens = itens.reduce(function(total, item) {
             return total + (Number(item.quantidade) || 0);
         }, 0);
+        const clienteDaVenda = clientes.find(function(cliente) {
+            return Number(cliente.id) === Number(venda.idCliente) ||
+                (cliente.nome === venda.nomeCliente && cliente.telefone === venda.telefoneCliente);
+        });
+        const digitosTelefoneCliente =
+            String(clienteDaVenda?.telefone || "").replace(/\D/g, "");
+        const telefoneWhatsApp = digitosTelefoneCliente.length === 11
+            ? `55${digitosTelefoneCliente}`
+            : "";
+        const mensagemWhatsApp =
+            "Olá! Agradecemos pela sua compra! \nAproveite para conhecer mais produtos em nosso site: https://www.pmwvariedades.com.br";
 
         const linha = document.createElement("tr");
         linha.innerHTML = `
@@ -3875,6 +3907,7 @@ function atualizarTabelaVendas() {
             <td>
                 <div class="d-flex gap-1">
                     <button type="button" class="btn btn-sm btn-outline-primary">Itens</button>
+                    <button type="button" class="btn btn-sm btn-outline-success" data-acao="mensagem" ${telefoneWhatsApp ? "" : "disabled title=\"Cliente sem telefone válido cadastrado\""}>Enviar Mensagem</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-acao="editar">Editar</button>
                     <button type="button" class="btn btn-sm btn-outline-danger" data-acao="excluir">Excluir</button>
                 </div>
@@ -3924,6 +3957,7 @@ function atualizarTabelaVendas() {
         `;
 
         const botaoItens = linha.querySelector("button");
+        const botaoMensagem = linha.querySelector('[data-acao="mensagem"]');
         const botaoEditar = linha.querySelector('[data-acao="editar"]');
         const botaoExcluir = linha.querySelector('[data-acao="excluir"]');
 
@@ -3931,6 +3965,12 @@ function atualizarTabelaVendas() {
             const oculto = linhaItens.classList.toggle("d-none");
             botaoItens.textContent = oculto ? "Itens" : "Ocultar";
             botaoItens.setAttribute("aria-expanded", String(!oculto));
+        });
+
+        botaoMensagem.addEventListener("click", function() {
+            const urlWhatsApp =
+                `https://wa.me/${telefoneWhatsApp}?text=${encodeURIComponent(mensagemWhatsApp)}`;
+            window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
         });
 
         botaoEditar.addEventListener("click", function() {
@@ -4447,4 +4487,3 @@ idClienteCadastro.value = obterProximoIdRegistro(clientes);
 </body>
 
 </html>
-

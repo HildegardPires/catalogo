@@ -238,6 +238,18 @@ function gravarTudo(PDO $pdo, array $d): void
     $vendas = lista($d, 'vendas');
     $compras = lista($d, 'compras');
 
+    foreach ($clientes as $cliente) {
+        $telefone = (string)($cliente['telefone'] ?? '');
+        $digitosTelefone = preg_replace('/\D/', '', $telefone);
+        if (
+            $digitosTelefone === null
+            || strlen($digitosTelefone) !== 11
+            || preg_match('/^[0-9\s()+.-]+$/D', $telefone) !== 1
+        ) {
+            throw new InvalidArgumentException('O telefone de cada cliente deve conter exatamente 11 números, incluindo o DDD.');
+        }
+    }
+
     $pdo->beginTransaction();
     try {
         $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
