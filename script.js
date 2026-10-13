@@ -129,6 +129,11 @@ function criarSlugCategoria(descricao) {
         .replace(/^-|-$/g, "");
 }
 
+function urlProduto(produto) {
+    const slug = criarSlugCategoria(produto.nome) || "produto";
+    return `/produto/${encodeURIComponent(produto.id)}/${slug}`;
+}
+
 
 function aplicarCategoriaDaUrl() {
     const slug = new URLSearchParams(window.location.search).get("cat");
@@ -539,9 +544,10 @@ function criarCardProduto(
 
                 <h5 class="card-title">
 
-                    ${escaparHtml(
-                        produto.nome
-                    )}
+                    <a class="text-dark text-decoration-none"
+                       href="${escaparHtml(urlProduto(produto))}">
+                        ${escaparHtml(produto.nome)}
+                    </a>
 
                 </h5>
 
@@ -561,6 +567,11 @@ function criarCardProduto(
 
                 <div class="mt-auto">
 
+                    <a
+                        href="${escaparHtml(urlProduto(produto))}"
+                        class="btn btn-outline-success w-100 mb-2">
+                        Ver detalhes do produto
+                    </a>
 
                     <div class="preco mb-2">
 
@@ -816,4 +827,3 @@ function abrirImagem(imagem, titulo) {
 // =============================================================
 
 carregarProdutos();
-
