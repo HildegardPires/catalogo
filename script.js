@@ -1,4 +1,4 @@
-﻿
+
 // =============================================================
 // CONFIGURAÇÃO
 // =============================================================
@@ -332,13 +332,18 @@ function selecionarCategoria(
 // MOSTRAR PRODUTOS
 // =============================================================
 
+function normalizarTexto(valor) {
+    return String(valor || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+}
+
 function mostrarProdutos() {
 
 
     const textoPesquisa =
-        pesquisa.value
-            .trim()
-            .toLowerCase();
+        normalizarTexto(pesquisa.value.trim());
 
 
     let produtosFiltrados =
@@ -375,21 +380,15 @@ function mostrarProdutos() {
                 produto => {
 
                     const nome =
-                        String(
-                            produto.nome || ""
-                        ).toLowerCase();
+                        normalizarTexto(produto.nome);
 
 
                     const descricao =
-                        String(
-                            produto.descricao || ""
-                        ).toLowerCase();
+                        normalizarTexto(produto.descricao);
 
 
                     const categoria =
-                        String(
-                            obterDescricaoCategoria(produto.categoria)
-                        ).toLowerCase();
+                        normalizarTexto(obterDescricaoCategoria(produto.categoria));
 
 
                     return (
