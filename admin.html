@@ -2054,7 +2054,8 @@ async function salvarNoBanco(elementoMensagem) {
         });
 
         if (!resposta.ok) {
-            throw new Error(`Erro HTTP: ${resposta.status}`);
+            const corpo = await resposta.json().catch(() => ({}));
+            throw new Error(corpo.erro || `Erro HTTP: ${resposta.status}`);
         }
 
         if (elementoMensagem) {
@@ -2072,7 +2073,7 @@ async function salvarNoBanco(elementoMensagem) {
         if (elementoMensagem) {
             mostrarMensagem(
                 elementoMensagem,
-                "Não foi possível salvar os dados no banco de dados.",
+                `Não foi possível salvar os dados no banco de dados. ${erro.message || ""}`,
                 "danger"
             );
         }

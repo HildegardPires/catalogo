@@ -238,8 +238,17 @@ function gravarTudo(PDO $pdo, array $d): void
     $vendas = lista($d, 'vendas');
     $compras = lista($d, 'compras');
 
+    // Clientes já gravados com outro telefone só são validados se o telefone for alterado
+    $telefonesGravados = [];
+    foreach ($pdo->query('SELECT id, telefone FROM clientes') as $linha) {
+        $telefonesGravados[(int)$linha['id']] = (string)$linha['telefone'];
+    }
+
     foreach ($clientes as $cliente) {
         $telefone = (string)($cliente['telefone'] ?? '');
+        if (($telefonesGravados[(int)($cliente['id'] ?? 0)] ?? null) === $telefone) {
+            continue;
+        }
         $digitosTelefone = preg_replace('/\D/', '', $telefone);
         if (
             $digitosTelefone === null
@@ -376,7 +385,8 @@ try {
                     gravarTudo(conectar($config), $dados);
                 } catch (InvalidArgumentException | PDOException | TypeError | ErrorException $e) {
                     error_log('[catalogo] ' . $e->getMessage());
-                    responder(422, ['erro' => 'Dados rejeitados (referencias ou formato invalidos).']);
+                    $motivo = $e instanceof InvalidArgumentException ? $e->getMessage() : 'Dados rejeitados (referencias ou formato invalidos).';
+                    responder(422, ['erro' => $motivo]);
                 }
                 responder(200, ['ok' => true]);
             }
