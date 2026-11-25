@@ -42,6 +42,7 @@ jobs:
             **/node_modules/**
             **/Backup_Dados.sql
             **/senha_banco_dados.txt
+            **/senhas_hostinger.txt
             **/Comandos Git.txt
             **/public_html.zip
             **/pmwvariedades.com.br.zip
