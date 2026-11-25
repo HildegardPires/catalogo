@@ -76,6 +76,9 @@
                 Dashboard
             </button>
             <button type="button" class="nav-link" data-tela="produtos">
+                Produtos
+            </button>
+            <button type="button" class="nav-link" data-tela="cadastro">
                 Cadastro de Produtos
             </button>
             <button type="button" class="nav-link" data-tela="clientes">
@@ -150,7 +153,7 @@
     </section>
 
 
-    <section id="telaProdutos" class="d-none">
+    <section id="telaCadastro" class="d-none">
 
     <!-- STATUS -->
 
@@ -556,6 +559,13 @@
         </div>
 
 
+    </div>
+
+    </section>
+
+
+    <section id="telaProdutos" class="d-none">
+
         <!-- ===================================================== -->
         <!-- LISTA DE PRODUTOS -->
         <!-- ===================================================== -->
@@ -727,7 +737,7 @@
     </div>
 
 
-    </div>
+    </section>
 
 
     <!-- ================================================= -->
@@ -810,9 +820,6 @@
         </div>
 
     </div>
-
-
-    </section>
 
 
     <section id="telaClientes" class="d-none">
@@ -2483,6 +2490,9 @@ function editarProduto(id) {
         return;
 
     }
+
+
+    mostrarTela("cadastro");
 
 
     produtoEditando = id;
@@ -4448,18 +4458,23 @@ function carregarPeriodoAtualNoRelatorio() {
 }
 
 
+function mostrarTela(tela) {
+    const telas = ["dashboard", "produtos", "cadastro", "clientes", "compras", "vendas", "estoque", "relatorios", "json"];
+
+    telas.forEach(function(nomeTela) {
+        document.getElementById(`tela${nomeTela.charAt(0).toUpperCase()}${nomeTela.slice(1)}`)
+            .classList.toggle("d-none", nomeTela !== tela);
+    });
+
+    document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(item) {
+        item.classList.toggle("active", item.dataset.tela === tela);
+    });
+}
+
+
 document.querySelectorAll("#menuAdmin [data-tela]").forEach(function(botao) {
     botao.addEventListener("click", function() {
-        const tela = this.dataset.tela;
-        document.getElementById("telaDashboard").classList.toggle("d-none", tela !== "dashboard");
-        document.getElementById("telaProdutos").classList.toggle("d-none", tela !== "produtos");
-        document.getElementById("telaClientes").classList.toggle("d-none", tela !== "clientes");
-        document.getElementById("telaCompras").classList.toggle("d-none", tela !== "compras");
-        document.getElementById("telaVendas").classList.toggle("d-none", tela !== "vendas");
-        document.getElementById("telaEstoque").classList.toggle("d-none", tela !== "estoque");
-        document.getElementById("telaRelatorios").classList.toggle("d-none", tela !== "relatorios");
-        document.getElementById("telaJson").classList.toggle("d-none", tela !== "json");
-        document.querySelectorAll("#menuAdmin [data-tela]").forEach(item => item.classList.toggle("active", item === this));
+        mostrarTela(this.dataset.tela);
     });
 });
 
