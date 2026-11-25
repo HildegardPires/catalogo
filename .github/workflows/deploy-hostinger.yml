@@ -1,0 +1,40 @@
+name: Deploy na Hostinger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-hostinger-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Publicar site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código publicado
+        uses: actions/checkout@v4
+
+      - name: Enviar arquivos para a Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          server-dir: ${{ secrets.HOSTINGER_FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/Backup_Dados.sql
+            **/senha_banco_dados.txt
+            **/Comandos Git.txt
+            **/public_html.zip
+            **/pmwvariedades.com.br.zip
